@@ -1,0 +1,605 @@
+% evaluation.
+% update the following
+\newpage 
+
+\setcounter{page}{1}
+\lfoot{\fancyplain{Printed: \today}{Nick Feamster}}
+\cfoot{\fancyplain{Revised: \today}{Annual Evaluation 2009}}
+\rfoot{Page \thepage}
+
+\setcounter{page}{1}
+\begin{center}
+{\Large\textbf{Accomplishments for 2008 \\ April 2009}}\\[.1in]
+{\large\textbf{Nick Feamster}}\\[.05in]
+feamster@cc.gatech.edu \\
+\url{http://www.cc.gatech.edu/~feamster/} \\[.1in]
+\end{center}
+
+\begin{sloppypar}
+
+\section*{Research}
+
+In this section, I outline my research accomplishments.  I divide this
+work into several distinct areas: recognition and publication,
+software/systems artifacts, and funding.  Overall, this has been a good
+year, both for attracting funding and for having published papers in
+top-tier conferences.  The year was highlighted by the Sloan and PECASE
+Awards, and three publications in {\em SIGCOMM} (as many as I have had
+in all previous years combined).  My research group also began releasing
+software for its respective papers and projects, a milestone which I see
+as very important for long-term impact.  Several of the algorithms we
+have developed for spam filtering are also making their way into
+commercial products and defense technology.
+
+Over the pasy year by research group grew significantly.  The biggest
+challenge this year will be maintaining high-quality research output and
+ensuring that all students received adequate mentoring to develop their
+careers.  This year, my first student will graduate.  In the coming year
+or two, I aim to make sure that my more senior students are
+well-prepared for the job market. 
+
+\subsection*{Recognition/Publication}
+
+This year I received several awards recognizing my contributions to
+networking research, including the Sloan Reseach Fellowship and the NSF
+Presidential Early Career Award for Scientists and Engineers (PECASE).
+Additionally, our group had the following major conference paper
+acceptances last year:
+
+\begin{itemize}
+\itemsep=-1pt
+\item Path splicing ,a scalable multipath routing scheme, was accepted
+at {\em SIGCOMM 2008}.
+\item AIP, an architecture for Internet accountability, was accepted at
+at {\em SIGCOMM 2008}.
+\item WISE, a system for predicting ``what if'' network configuration
+scenarios, was accepted at {\em SIGCOMM 2008}.
+\item NANO, a system for detecting network neutrality violations, was
+acepted at {\em HotNets 2008}.
+\item FlexSample, a traffic sampling algorithm for allowing operators to
+focus traffic sampling on specific subpopulations, was accepted at {\em
+ACM Internet Measurement Confernece 2008}.
+\end{itemize}
+\noindent
+My group also had a strong showing at the Sigcomm workshops and the
+CoNext workshops, with several publications at each of these venues.
+
+This was a strong year for research publications; this goal was one of
+the major things that I set out to achieve from last year where I was
+successful.  Part of the reason for this wave of successful publications
+was that the previous year was slightly weaker, so I had several papers
+in the pipeline that were already mature.  We have another ten papers in
+submission in 2009 already; it is difficulty to attain the same amount
+of success as last year, but I expect that 2009 will also see a handful
+of strong conference publications.
+
+One particular weakness I see is that the research group has not had any
+success at either {\em NSDI} or {\em SOSP}.  I attribute this partially
+to the fact that it can sometimes take several years to build complete,
+working systems that are ``publication ready'' at these conferences.
+This year, however, I hope to have a handful of submissions to {\em
+NSDI}, coinciding with the completion of several software systems (see
+below).
+
+\subsection*{Funding}
+
+It was another strong year for funding, with five new grants awarded,
+including a large Cybertrust proposal (co-PI, with Wenke
+Lee)\footnote{Although there are many co-PIs on this grant, I would
+classify myself as the ``lead co-PI''; Wenke and I wrote the grant
+almost singlehandedly.}, a large grant from the Office of Naval Research
+(for which I am the lead PI), and two single-PI grants: one from Cisco
+(thus achieving my goal from last year), one from the Office of Naval
+Research, and one from the GENI Project Office.  My funding successes
+this year diversified from NSF funding and have also been instrumental
+in showing my ability to lead large single-PI projects (notably, the
+GENI project).
+
+\begin{itemize}
+\itemsep=-1pt
+\item Co-PI for new large NSF Cybertrust grant.
+\item Lead PI on new Office of Naval Research project to develop a new
+Interdomain routing protocol based around Internet connectivity markets.
+\item PI on project from the GENI project office to develop topology
+creation mechanisms and technologies for bringing external connectivity
+to network testbeds.
+\end{itemize}
+\noindent
+Given this level of funding success, I intend to spend much of next
+year focusing on paper submissions, while still submitting where
+appropriate, and to ensure a steady stream of funding for my research
+group.
+
+\subsection*{Software and Systems}
+
+This year has been a relatively strong year for software development.
+Several projects which had previously existed only in paper form have
+taken shape in the form of software systems.  Notably, we have released
+a preliminary version of {\em NANO}, a tool to help users determine
+whether their ISP is discriminating against them.  We are testing a
+preliminary version of this tool with a small group of users.  We are
+planning a larger release for early summer 2009.  
+
+We have also begun developing and testing a new anti-censorship system
+called Collage.  This system relies on the large amount of
+user-generated content that is currently being published on the Internet
+as ``cover traffic'' to allow senders and receivers to exchange censored
+content.  We submitted a design and simulation-based evaluation of
+Collage to SIGCOMM and are currently working on an implementation of the
+system, which we plan to release in summer 2009.
+
+We have also continued software implementations associated with several
+other projects, including the path splicing and spam filtering projects.
+Implementations are currently preliminary.  We intend to spend a large
+portion of spring and summer on these implementations and others for
+possible submissions later this year (more details under ``goals''
+below).  I should note that progress on software development for both of
+these systems has been painstakingly slow.  Adding several students to
+these projects (notably an undergraduate student, Megan Elmore, and a
+masters student, Yogesh Mundada) has increased the pace of software
+development on path splicing, but the systems have yet to be deployed.
+I am making a push to get a preliminary version of this software
+released by Summer 2009, for an eventual submission to {\em NSDI} in
+October 2009.
+
+\begin{itemize}
+\itemsep=-1pt
+\item Released a preliminary version of NANO, a tool to help users
+determine when their traffic is being discriminated against by access
+ISPs.
+\item Released software related to the GENI prototyping effort.
+\item Began building a testbed for network experimentation with
+programmable switches, for greater interaction with the Georgia Tech
+campus network office of information technology on various research
+projects. 
+\end{itemize}
+
+\section*{Service}
+
+I have continued my service both internally to the department, and
+externally on program committees and organizing committees.  In addition
+to serving on program committees, I have given various tutorials, and
+have helped organize sessions at NSF PI meetings, as outlined below. 
+
+In the past year, I have done more than my share of service on program
+committees, mostly because I was being asked to serve on very good
+program committees. I served on the program committees of all major
+networking and some security conferences: {\em SIGCOMM 2008}, {\em
+SIGMETRICS 2009}, {\em IMC 2008}, {\em NSDI 2009}, {\em CCS 2008}, and
+{\em CoNext 2008}.  This year, I have already been asked to serve on
+{\em NSDI 2010}.  I am also the poster/demo co-chair of {\em SIGCOMM
+2009}, so I am taking more of a leadership role on these committees as
+well.
+
+Additionally, I am continuing in my role as an organizer of the DIMACS
+workshop series on secure Internet routing.
+
+\begin{itemize}
+\itemsep=-1pt
+\item Co-Chair of the demo and poster committee for {\em SIGCOMM 2009}. 
+\item Program committee member of all major networking conferences, and
+  also some major security conferences.
+\item Lead organizer for the DIMACS workshop series on secure Internet
+routing. 
+\end{itemize}
+
+Internally, I am serving on the faculty recruiting committee and the
+search committee for the new College of Computing dean.  I am also
+involved, with Alex Gray, as part of an effort to re-design the
+Ph.D. process.  At the college retreat in the fall, I presented a new
+model for the Ph.D. program entitled ``cross threads''.  This program
+re-design has been thrown into a somewhat uncertain state with the dean
+transition, but I hope to resume this process in the coming year.
+
+\section*{Education}
+
+
+My work with Alex Gray on the redesign of a course on ``Introduction to
+Ph.D. Research'' appeared in {\em ACM SIGCSE} in March 2008.  Based on
+this writeup, he and I re-vamped the syllabus for this course in Fall
+2008. The course now has a complete, coherent syllabus organized around
+themes ranging from research creativity to more practical matters (\eg,
+time management).  Alex and I are continuing to make improvements to the
+course.  Now that the course content has solidified somewhat, we hope to
+turn our attention towards turning our course notes into a book.
+
+I undertook the teaching of two new courses: CS~4251 (undergraduate
+computer networking) and CS~6262 (graduate network security).  In both
+of these courses, I updated course content---from lectures to problem
+sets to projects---and added content to each of these courses of a more
+hands-on, operational flavor.  Many of the problem sets, project ideas,
+and lecture materials are in use in courses at other universities as
+well (e.g., Princeton). Some of the improvements to each of these
+courses include:
+\begin{itemize}
+\itemsep=-1pt
+\item Updated CS~6262 project list to include more research-related
+projects involving network security and operations.
+\item Updated CS~6262 syllabus to include research papers and projects
+related to current work and developments in the area.
+\item Updated problem sets in CS~4251 to include more hands-on
+assignments (e.g., experiments on Emulab).
+\end{itemize}
+\noindent
+Many of the improvements to these courses are also detailed in my CV.  
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\begin{center}
+{\Large\textbf{Goals for 2009}}\\[.1in]
+{\large\textbf{Nick Feamster}}\\[.05in]
+feamster@cc.gatech.edu \\
+\url{http://www.cc.gatech.edu/~feamster/} \\[.1in]
+\end{center}
+
+\section*{Research}
+
+Many of my conceptual goals and future directions are outlined in the
+future directions section of my research statement.  Over the next few
+years, I will seek to develop agendas along the lines of accessibility,
+accountability, and availability.  One of my main goals for this year is
+to begin developing and deploying secure network architectures from the
+ground up, based on a refactoring of control and enabled by the advent
+of programmable network devices (e.g., OpenFlow-enabled switches).
+Along these lines, we will work with TSO and OIT to develop a campus
+testbed for this research that can also be used in courses.
+
+I also intend to begin considering principled approaches to some of the
+problems I have been working on for the past several years.  For
+example, much of my work on network monitoring to date has focused on
+using off-the-shelf machine learning and statistica inference algorithms
+to solve network operations and security problems.  In the coming year,
+I hope to begin exploring how redesigning network protocols could
+improve inference.  I also intend to develop my work on Internet
+censorship with a release of a working anti-censorship system.
+
+% improved visibility for research
+% ultimate deployment of systems
+
+I have two logistical goals for this year.  First, I plan an increased
+focus on the {\em development and deployment of real-world systems}.
+Much of our research has matured to the point where the ideas,
+algorithms, concepts, and prototypes can be transferred to practice.
+There are several opportunities for tech transfer, deployment, and
+possibly even commercialization, which I discuss in more detail
+below. Second, I plan to spend time {\em improving the visibility} of
+the work coming out of my research group, with a Web site describing
+active projects and a blog discussing current research issues.
+
+\subsection*{Network Security}
+
+Our work on spam filtering has matured; this year should constitute the
+final push to get the last wave of systems and papers deployed on spam
+filtering.  In the past year, we developed SNARE (Spatio-Temporal
+Network-level Automated Reputation Engine), a supervised learning
+algorithm that differentiates spammers from legitimate email senders
+based solely on properties that can be gleaned from network-level
+traffic (and often from a single packet!).  This work has been rejected
+a couple of times---from IMC and from NDSS---but it is in resubmission
+to USENIX Security.  I am hoping that this work is accepted, since the
+student, Shuang Hao, could certainly use a confidence boost with a paper
+acceptance at a top-tier conference.  If it is not accepted to USENIX
+Security, we will likely resubmit the work to CCS.  From a practical
+standpoint, the work is mature, and is seeing adoption by major spam
+filtering companies (e.g., Cisco/Ironport) and mail service provider
+(e.g., Yahoo).  The student who led this work, Shuang Hao, is going to
+Yahoo for the summer to work on deployment of some of these ideas into
+Yahoo's spam filtering system.
+
+The other aspect of our spam filtering work is the development and
+deployment of a real-time sender reputation blacklist, based on the
+SNARE algorithms and the SpamTracker algorithms (previously published at
+{\em ACM CCS}).  The system development has been progressing somewhat
+slowly---I had hoped that this deployment would have been complete by
+now, but some aspects of the system (in particular, the integration of
+the algorithms) has stalled somewhat.  We spent time last summer
+developing the platform for serving a real-time blacklist, but the
+system is still not complete.  We submitted to NSDI, and the paper was
+rejected. We are aiming for publication at a security conference, or
+ultimately a submission to NSDI, this year.  In my opinion, this work
+needs to be completed in order for Anirudh to graduate.
+
+There are also two new directions that we are starting along these
+lines: a taint-tracking system called Pedigree, and a dynamic access
+control system that may ultimately form the basis of a new architecture
+for the Georgia Tech authentication and access control system.  With the
+advent of programmable switches (specifically OpenFlow), we have a
+unique opportunity to develop and deploy the algorithms and systems that
+result from our research on the Georgia Tech campus network.  We have
+submitted a com,plete design of this system to the SIGCOMM {\em WREN}
+workshop on enterprise networks.  This year, I will take steps towards
+enabling this ultimate deployment, with help from Ron Hutchins at OIT.
+I am also planning to submit a full conference paper based on this
+topic.
+
+% deployment of spamspotter - old!
+% - get the paper published
+% - yahoo
+% pedigree - deployment on testbed that we're building 
+% - implementation and deployment.  commercialization?
+% - nsdi submission
+% implementation/deployment of dynamic access control
+% - nsdi submission
+
+
+\begin{itemize}
+\itemsep=-1pt
+\item Deploy SpamSpotter, the real-time DNS-based blacklist for spammer
+reputation. 
+\item Work with students to transfer algorithms developed in the SNARE
+and SpamTracker work to real-world spam filtering systems and mail
+service providers (e.g., Yahoo).
+\item Develop a prototype implementation of Pedigree and submit this
+work to {\em NSDI}.  Explore possible commercialization opportunities
+along these lines.
+\item Continue the development of the dynamic access control work,
+including deployment and testing on the testbed that we are developing.
+Submit a version of this work to {\em NSDI}.
+\end{itemize}
+
+\subsection*{Virtual Networks and Network Architecture}
+
+
+This year marked the start of a virtual network testbed at Georgia Tech,
+as part of the larger GENI effort.  As part of our GENI contract,
+``Bringing Experimenters and External Connectivity to GENI'', we have
+developed a topology creation service, as well as a mechanism for
+bringing external connectivity to the campus testbed (this will be the
+same testbed as the one mentioned above, on which we perform the
+OpenFlow-related work).  The second aspect of the project, bringing
+external connectivity to the testbed, is also progressing.  We have
+worked with Georgia Tech's office of IT to establish a direct, layer two
+connection to our research cluster, as well as an external BGP session.
+This capability will allow us to essentially operate our own
+experimental autonomous system within the campus network.  I intend to
+use this platform for continued research on virtual networks, as well as
+a teaching tool for more ``hands on'' networking and systems assignments
+(see the Education section below, as well).
+
+From a prototyping standpoint, my goal is to complete the implementation
+of the BGP session multiplexer, which will allow virtual networks in
+this testbed to have global connectivity.  We will also integrate our
+framework with Emulab, at last achieving the goal of having a virtual
+network testbed that is integrated with Emulab's ``ProtoGENI'' front
+end.
+
+One of the major challenges of this work has been to generate
+publishable research.  Along these lines, however, I have come up with a
+new concept---Cloud Networking---that we will develop, using the
+underlying framework we have built as the platform.  The concept is as
+follows: many providers of distributed services and other enterprises
+need networks, but they do not have the desire or capability to maintain
+their own network infrastructure.  The platform we are developing,
+however, could serve as a platform by which these providers might be
+able to ``rent'' parts of their network from a shared physical
+infrastructure, in much the same way that today user's can rent CPU
+cycles from cloud computing clusters.  We will spend the summer
+developing this idea in conjunction with the completion of the BGP
+multiplexer and topology creation service for a possible submission to
+{\em NSDI}.
+
+Finally, continuing on the themes we began with the VINI work, we will
+continue to develop technologies for accelerating packet forwarding in
+virtual networks.  Specifically, we have been developing techniques for
+accelerating packet forwarding in virtual networks using the NetFPGA
+platform.  We have submitted a preliminary version of this work to the
+SIGCOMM VISA workshop (on virtualization); we are planning a full
+conference paper submission to NSDI this fall.
+
+% completion of BGP session multiplexer
+% deployment of FPGA-based virtualization platform, submission to NSDI
+% NSDI submission of ``cloud computing for networking''
+
+\begin{itemize}
+\itemsep=-1pt
+\item Completion of the BGP session multiplexer and topology creation
+service for the GENI project.
+\item Integration of these technical pieces into a ``cloud networking''
+platform, with planned submission to {\em NSDI}.
+\item Deployment, testing, and integration of hardware-accelerated
+virtualization, with planned submission to {\em NSDI}.
+\end{itemize}
+
+\subsection*{Secure, Scalable Network Monitoring}
+
+Our work on secure, scalable network monitoring has become more focused,
+along two lines: (1)~monitoring for spam, botnets, and phishing attacks
+on high-speed networks; (2)~developing mechanisms for secure, in-band
+network troubleshooting.  The former is maturing and is based largely on
+our exiting spam work; the latter is a resurrection of some work from a
+couple of years ago.
+
+We have been working with BBN on a DARPA contract to integrate our spam
+filtering algorithms (described above) into a hardware-based system that
+can be deployed on military networks and monitor traffic at very
+high speeds (upwards of 10~Gbps).  It is unclear whether there are
+interesting research problems as part of this project, but there are two
+possibilities.  The first possibility is that monitoring at high speeds
+will require intelligent sampling; if necessary, we could build on our
+earlier traffic sampling work (FlexSample, which appeared at {\em IMC
+2008}) to help develop better sampling algorithms for spam and botnet
+detection at high speed.  The second possibility is that the hardware
+implementation of the algorithms will give rise to new research
+problems; I am sending one student to BBN for the summer to work on these
+hardware implementations in hopes that we can get a conference
+publication from the work.
+
+One a related note, another student, Yiyi Huang, has been working on
+developing streaming algorithms to detect botnets in real time (i.e., a
+real-time version of BotMiner).  The work is in submission to USENIX
+Security; if the work is not published there, our goal is to send this
+work to another venue where it is more likely to be published (e.g.,
+RAID).
+
+\begin{itemize}
+\itemsep=-1pt
+\item Deploy monitoring algorithms at BBN.  Aim for
+a conference publication based on this work.
+\item Get Yiyi's work on real-time botnet detection published at a first
+or second-tier conference.
+\end{itemize}
+
+
+\subsection*{New Directions}
+
+% programmable networks - OIT/GENI involvement
+% cross-domain troubleshooting
+% social networks - ?
+% contract enforcement
+
+One of the main directions I see with ample opportunity for new
+directions and impact is the refactoring of network security and
+availability based on programmable layer-two switching technology (i.e.,
+OpenFlow-enabled switches).  I plan to spend much of my effort in the
+coming year exploring how this technology might be used in three
+specific scenarios: (1)~information flow control and tracking in
+networks (specifically, the Pedigree work); (2)~dynamic access control
+in enterprise networks (specifically, the design, implementation, and
+deployment of a new network access control framework for the Georgia
+Tech campus network); (3)~improving capacity and availability in data
+center networks, using technologyies that we have previously developed
+(specifically, path splicing).
+
+Another direction that I continue to explore is how better market design
+can improve the connectivity and efficiency of Internet routing.  We
+submitted a paper to SIGCOMM that proposes a market for Internet
+transit.  I plan to continue to explore this area, both from an economic
+perspective and in terms of figuring out possible implementation and
+deployment strategies.  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Education}
+
+% integration of testbeds as a teaching tool
+% develop course on next-gen network management, etc.
+% solidify course content 
+% better mentoring of students
+
+With much of my work on CS~7001 completed, I would like to turn my
+attention to solidifying this course content, in the form of a monogram
+or book, so that the course content can be used as a model for others
+(both others teaching the course here at Georgia Tech and other
+computer science departments).   
+
+I would also like to turn some of my attention towards developing more
+hands-on material for networking, systems, and security courses, based
+on the network testbed technology that we are developing.  Specifically,
+the deployment of the campus network testbed as part of the GENI project
+may make Georgia Tech the only campus in the world where students can
+experiment with programmable network devices {\em and} have external
+connectivity (i.e., they will essentially be able to act as network
+operators within their own AS).  I would like to design a component of
+some networking course whereby students can use this testbed to learn
+about network security, operations, and design, as well as to develop
+and test new network protocols and architectures.  
+
+Finally, with my group growing large, I intend to pay particular
+attention to my mentoring of students.  I will ensure that I meet my
+students regularly, and give them rigorous feedback on their papers and
+talks, so that these students develop a culture of high-quality output
+that is seen at other top-ranked schools.
+
+\begin{itemize}
+\itemsep=-1pt
+\item Integrate the emerging network testbed as a teaching tool in
+networking, security, and systems courses. 
+\item Solidify CS~7001 course content as a monogram or short book.
+\item Provide better mentoring of students: more timely and rigorous
+feedback on papers, talks, etc. 
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Service}
+
+I have been somewhat over-extended with service in the past couple of
+years, so I don't plan to do anything overly ambitous as far as service.
+One thing I might like to do is to organize a network operations
+workshop in conjunction with one of the NANOG meetings.  I will also
+continue my activity as organizer of the DIMACS workshops on securing
+Internet routing.  As organizer of the networking seminar in the fall, I
+plan to make a concerted effort to bring in a series external speakers
+on network security.  In my opinion, the seminar could be much more
+lively with a better selection of external visitors and speakers.
+
+I will remain active on program committees, though I plan to continue to
+narrow my focus so that I am only serving on the PCs of the top
+conferences.  I also hope to, and plan to, remain active in faculty
+recruiting in the coming years.
+
+% sigcomm poster/demo chair
+% possible routing/network management workshop in fall?
+% seminar with external speakers
+% faculty recruiting committee
+
+\begin{itemize}
+\itemsep=-1pt
+\item Do a good job as SIGCOMM demo/poster co-chair.
+\item Organize a network operations workshop to be held in conjunction
+with NANOG.
+\item Organize a network security seminar at Georgia Tech with external
+speakers. 
+\item Continue service on various program committees.
+\item Continue service on the faculty recruiting committee.
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Enablers}
+
+
+I think at this point I am well-equipped to succeed on the above goals.
+One possible exception is that I woul like to develop more hands-on
+networking assignments (which, apart from being one of my own goals, is
+a committment I have made to the GPO), but, as I am not teaching a
+networking course next year, I may not be able to spend adequate time
+doing this.  I may simply develop a few example problems for inclusion
+in networking courses that I teach in future years.
+
+Over the past year, I have encountered significant obstacles in our
+finance office, which have consumed a large fraction of my time.  On one
+end, I have had to track down missing awards.  On the submission side of
+things, operations became so bad that I have ended up doing the
+administrative parts of three different grants already this year.  As
+someone who needs significant funds to keep my research group going, I
+would like much more streamlined support from our financial office.
+
+Our group is also experiencing technical growing pains.  While TSO is
+helpful for some things (and, in particular, Debbie Davis has been
+incredibly supportive and helpful in our testbed deployment---please do
+whatever we can to keep her!), they are not helpful in maintaining basic
+research infrastructure (which we have had to do ourselves for years).
+I need some way to pay a system administrator affordably; I would like
+to be able to do this without having to pay for system administration
+twice.  In the past, Russ Poole has mentioned the possibility of
+providing partial support for a technical staff member that could
+support my research group; I would like to pursue this possibility in
+earnest, and could use the department's support in doing so.
+
+Finally, my students could benefit from lab space where they could
+interact more directly with students across areas (e.g., with network
+security).  Department support for construction of the Internet War Room
+will help significantly with this effort.
+
+% retaining teaching relief
+% a more cohesive lab space - Internet War Room
+% better support from the financial office
+% better technical support
+% retaining money for a postdoc
+
+\begin{itemize}
+\itemsep=-1pt
+\item Better support from the financial office.
+\item Better support from TSO; if possible, financial support to hire
+our own system administrator.
+\item Opportunity to spend time developing course materials.
+\item A lab space that is more conducive to cross-area research (e.g.,
+the Internet War Room).
+\end{itemize}
+
+
+\end{sloppypar}

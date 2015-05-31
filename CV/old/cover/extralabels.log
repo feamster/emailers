@@ -1,0 +1,169 @@
+This is TeX, Version 3.14159 (Web2C 7.4.5) (format=latex 2004.3.25)  14 DEC 2004 15:51
+**extralabels
+(./extralabels.tex
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for american, french, german, ngerman, n
+ohyphenation, loaded.
+(/usr/share/texmf/tex/latex/base/letter.cls
+Document Class: letter 1999/04/29 v1.2z Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size10.clo
+File: size10.clo 2001/04/21 v1.4e Standard LaTeX file (size option)
+)
+\longindentation=\dimen102
+\indentedwidth=\dimen103
+\labelcount=\count79
+) (./envlab.sty
+Package: envlab 1997/07/16 v1.2 Envelopes and Labels
+Package envlab Info: Envelopes & Labels package: found makelabels...
+(envlab)             Seems everything is OK. Good luck. on input line 54.
+\@envelopeposition=\count80
+\PSEnvelopeTray=\toks14
+\EnvelopeWidth=\skip41
+\EnvelopeHeight=\skip42
+\EnvelopeTopMargin=\skip43
+\EnvelopeLeftMargin=\skip44
+\LabelWidth=\skip45
+\LabelHeight=\skip46
+\LabelTopMargin=\skip47
+\LabelLeftMargin=\skip48
+\LabelRightMargin=\skip49
+\c@LabelMaxCol=\count81
+\c@LabelMaxRow=\count82
+\FromAddressTopMargin=\skip50
+\FromAddressLeftMargin=\skip51
+\FromAddressHeight=\skip52
+\FromAddressWidth=\skip53
+\ToAddressTopMargin=\skip54
+\ToAddressLeftMargin=\skip55
+\ToAddressWidth=\skip56
+
+Loading configuration file envlab.cfg
+(./envlab.cfg
+File: envlab.cfg 1997/07/16 v1.2 Envelopes and Labels
+) (/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2001/08/31 v1.1 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: dvips.def on input line 80.
+
+(/usr/share/texmf/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\c@LabelCountCol=\count83
+\c@LabelCountRow=\count84
+\c@LabelOffsetCol=\count85
+\c@LabelOffsetRow=\count86
+\@numreturnlabels=\count87
+\@zipcode=\toks15
+\@zipcodesum=\count88
+\@barcodewidth=\skip57
+\@barcodeLheight=\skip58
+\@barcodeSheight=\skip59
+\@barcodeskip=\skip60
+\@addr@cap=\toks16
+) (./extralabels.aux)
+\openout1 = `extralabels.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+ [1
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+
+ []
+
+[2
+
+] (./extralabels.aux) ) 
+Here is how much of TeX's memory you used:
+ 559 strings out of 95847
+ 6875 string characters out of 1193874
+ 55599 words of memory out of 1000001
+ 3556 multiletter control sequences out of 10000+50000
+ 3640 words of font info for 14 fonts, out of 500000 for 1000
+ 14 hyphenation exceptions out of 1000
+ 25i,4n,25p,193b,184s stack positions out of 1500i,500n,5000p,200000b,5000s
+
+Output written on extralabels.dvi (2 pages, 5492 bytes).

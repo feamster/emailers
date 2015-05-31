@@ -1,0 +1,346 @@
+% evaluation.
+% update the following
+\newpage 
+
+\setcounter{page}{1}
+\lfoot{\fancyplain{Printed: \today}{Nick Feamster}}
+\cfoot{\fancyplain{Revised: \today}{Annual Evaluation 2007}}
+\rfoot{Page \thepage}
+
+\setcounter{page}{1}
+\begin{center}
+{\Large\textbf{Accomplishments for 2006 \\ February 2007}}\\[.1in]
+{\large\textbf{Nick Feamster}}\\[.05in]
+feamster@cc.gatech.edu \\
+\url{http://www.cc.gatech.edu/~feamster/} \\[.1in]
+\end{center}
+
+\begin{sloppypar}
+
+\section*{Research}
+
+In this section, I outline my research accomplishments.  I divide this
+work into several distinct areas: recognition and publication,
+software/systems artifacts, and funding.
+
+\subsection*{Recognition/Publication}
+
+We were very lucky this year to receive the award paper at {\em
+SIGCOMM}, which propelled me and my student, Anirudh Ramachandran, into
+the limelight as ``experts'' in spam research and has subsequently
+helped us further this research agenda (with data, funding, etc.).
+
+\begin{itemize}
+\itemsep=-1pt
+\item Spam filtering work received Best Student Paper award at {\em
+  SIGCOMM 2006}.
+\item Two papers accepted to {\em SIGCOMM 2006}, one paper accepted to
+  {\em SIGMETRICS 2007}. 
+\item Two journal papers accepted to {\em IEEE Transactions on
+  Networking}, for publication in 2007.
+\end{itemize}
+
+\subsection*{Funding}
+
+This was a good year for NSF funding; I received two NSF awards (out of
+three proposals submitted).  Commercial funding has been slower to
+acquire: my proposals to Cisco were rejected in two separate rounds. 
+
+\begin{itemize}
+\itemsep=-1pt
+\item PI for two new NSF awards (CAREER award and NeTS-FIND award).
+\item Established relationships with Ironport (spam filtering
+  company, recently acquired by Cisco) and Outblaze (large email hosting
+  provider). 
+\item Established new relationships at Cisco for hopeful funding in 2007.
+\end{itemize}
+
+\subsection*{Software and Systems}
+
+My main accomplishments in developing new software has been in work on
+the VINI network testbed, jointly with my student, Murtaza Motiwala, and
+researchers at Princeton University.  This year, we got the VINI testbed
+up and running with different types of software routers and ran the
+first successful set of ``network architecture'' experiments on the
+testbed.
+
+\begin{itemize}
+\itemsep=-1pt
+\item Created a framework for experimental setup, now an integral part of
+  the VINI codebase.
+\item Augmented the testbed to run different software routers (XORP,
+  Quagga, etc.).
+\item Used VINI as an evaluation platform for modifications to the
+  network-layer protocol to enable network troubleshooting.
+\end{itemize}
+
+\section*{Service}
+
+Most of my ``unusual'' service this year was external, so I will focus
+on that in my writeup.
+
+My hallmark achievement in service this year was organizing and hosting
+the {\em Workshop on Internet Routing Evolution and Design (WIRED)} at
+Georgia Tech.  This workshop (website available at
+\url{http://www.wired2006.org/}) brought together 30 of the top
+researchers in Internet routing from around the world for a two-day
+workshop at Georgia Tech.  Although the workshop had several
+co-organizers, I took the lead role in organizing the workshop, from
+inviting researchers, to organizing sessions, to managing workshop
+logistics.  Several researchers personally thanked me, saying that they
+were indebted to me for organizing the workshop and that it was very
+good that I organized the workshop.  I am not certain whether I want to
+spend the time to do this annually, but I was happy to resurrect it and
+to provide a service both to the community and to younger researchers
+(i.e., students) in Internet routing.
+
+This year was also good in providing me the opportunity to have several
+leadership roles in service.  In 2006, I was fortunate to co-chair two
+workshops---the {\em First Workshop on the Economics of Networked
+Systems (NetEcon)} (with Jeff Chase) and the {\em CoNext Student
+Workshop} (with Renata Teixeira).
+
+\begin{itemize}
+\itemsep=-1pt
+\item Lead organizer of the {\em Workshop on Internet Routing Evolution
+  and Design}.
+\item Co-chair of two workshops.
+\item Appointed to {\em NANOG} Program Committee.
+\end{itemize}
+
+\section*{Education}
+
+My main accomplishments in education have been the re-vamping of two
+courses, CS~7260 (Internet Architectures and Protocols) and CS~7001
+(Introduction to Graduate Studies).  In CS~7260, my contributions were
+as follows:
+\begin{itemize}
+\itemsep=-1pt
+\item Developed a new project-based graduate course
+with substantial programming assignments using a wide variety of
+state-of-the-art networking software tools and platforms (\eg, rcc,
+PlanetLab, scriptroute, NetFlow, etc.).  
+\item Contributed questions to a
+larger bank of questions also used in graduate-level networking courses
+at Carnegie Mellon and MIT.  
+\item Developed 24 new lectures, many based on
+current ``hot topics'' in computer networking (\eg, spam, botnets,
+traffic anomaly detection, etc.)
+\end{itemize}
+\noindent
+This year, I have also continued to add new content to this course, parts
+of which are detailed in my CV.  
+
+My CV also details my contributions to CS~7001; most notably, with Alex
+Gray, I have undertaken a complete redesign of this course to help
+students get more involved with research from the moment they arrive in
+the Ph.D. program at Georgia Tech.  Our focus on assignments has been to
+encourage interdisciplinary thinking in the assignments, by getting
+groups of students from different areas to try to apply research ideas
+and concepts across areas.
+
+\newpage
+\begin{center}
+{\Large\textbf{Goals for 2007}}\\[.1in]
+{\large\textbf{Nick Feamster}}\\[.05in]
+feamster@cc.gatech.edu \\
+\url{http://www.cc.gatech.edu/~feamster/} \\[.1in]
+\end{center}
+
+\section*{Research: Network Operations}
+
+I will continue to develop my research program around the broader theme
+of {\em network operations}, developing tools, techniques, and
+algorithms that make a network operator's job of running the network
+easier.  Specifically, my high-level goals for my research program this
+year involve developing a firmer position as one of the leading
+researchers in the following two areas: (1)~distributed network
+monitoring and (2)~network virtualization.  These two broad areas
+because roughly correspond to my two funded NSF grants.  I will briefly
+discuss my specific goals in each of these areas.
+
+\subsection*{Distributed Network Monitoring}
+
+Many network tasks become easier when an operator has multiple vantage
+points from which to view a particular problem or phenomenon.  The NANOG
+mailing list is rife with examples where network operators send ``SOS''
+mails when a problem arises, to see whether other operators witness the
+same problem.  Similarly, within a single network, an operator can
+monitor the network from many independent vantage points to collect
+information about network conditions.  In both of these cases, operators
+do not suffer from a lack of data, but rather an inability to {\em mine}
+the data for interesting features.  
+
+In my work this year, I hope to write two large conference papers on
+topics relating to mining network data for anomaly and fault diagnosis.
+As part of this work, my research will leverage machine learning
+techniques, which I believe could bring much to bear in solving many of
+these problems.  While others have tackled network diagnosis from
+various angles in the past, few have aplied a rigorous machine learning
+approach to these problems, and none have built working systems that
+apply these techniques to solve real problems.  My goal for this year in
+distributed network monitoring research is to do both of these (i.e.,
+applying machine learning algorithms to distributed diagnosis and
+actually {\em building} these algorithms into real, working systems).
+
+\begin{itemize}
+\itemsep=-1pt
+\item Learn about statistical inference and machine learning techniques
+  and study how they can be aplied to networking problems.
+\item Write two conference papers on new distributed network monitoring
+  algorithms for network fault detection.
+\item Write one conference paper on using distributed network monitoring
+  for predictive spam filtering.
+\end{itemize}
+
+Finally, I have been working on developing a network data repository,
+with Dave Andersen at CMU.  I plan to continue building this
+infrastructure, and I would like to send a paper to {\em NSDI} on
+network measurement infrastructure for supporting sound Internet
+measurement strategies.
+
+\subsection*{Network Virtualization}
+
+I plan to continue two research threads as part of the Cabo
+(``Concurrent Architectures are Better than One'') project: in-band
+network diagnosis and using network virtualization to improve
+availability.  The first problem relates to improving {\em
+accountability} in the network; it does not directly relate to using
+network virtualization as a network architecture, but it uses the VINI
+testbed as a deployment and evaluation platform.  With Murtaza Motiwala,
+I have built a preliminary prototype of an in-band troubleshooting
+protocol; we would like to deploy this as a long-running service on the
+VINI testbed, which involves designing ways to attract real users to the
+service.
+
+The second research project area involves exploring how network
+virtualization can be used to improve availability (i.e., the fraction
+of time that groups of hosts can use paths in the network to communicate
+with one another).  As part of this research thread, I plan to work on
+three specific research project areas: path splicing, a market-based
+routing architecture, and multi-layer network architectures.  The first
+project involves developing new a forwarding paradigm that significantly
+improves path diversity in networks by running multiple routing
+protocols in parallel.  We already have algorithms designed for this
+purpose, so the main task now is to implement evaluate these protocols
+on the VINI testbed.  My goal for the market-based architecture work is
+to design and implement a version of this routing protocol by the end of
+the year, which involves research in both economics and protocol design.
+My work on investigating multi-layer network architectures is much more
+preliminary, so I have no specific problems that I am tackling at this
+point.
+
+\begin{itemize}
+\itemsep=-1pt
+\item Implement path splicing and deploy it on VINI.  Write the path
+  splicing paper and get it accepted to a major conference (i.e., {\em
+  SIGCOMM}, {\em NSDI}, or {\em SOSP/OSDI}).
+\item Submit two papers on market-based network architectures: one to
+  the {\em JSAC} special issue on economics in networks (deadline in
+  August) and one to {\em SIGCOMM}.
+\item Write at least one paper on multi-layer network architectures.  
+\end{itemize}
+
+A related problem area is better understanding the use of various
+evaluation techniques (i.e., simulation, emulation, wide-area
+deployment) to evaluate new protocols and architectures.  I would like
+to conduct some research that can help the community better understand
+when each of these evaluation techniques is an appropriate evaluation
+method. 
+
+\section*{Education}
+
+My educational goals this year will once again focus around CS~7260 and
+CS~7001.  With respect to CS~7260, I am working with my advisor, Hari
+Balakrishnan, on writing a graduate-level networking textbook from our
+lecture notes.  As part of this effort, I have been writing new problem
+set questions for CS~7260 that span a wide range of areas and testing
+these in my class.  As mentioned in my CV, I have also been developing
+new course modules (e.g., on network measurement and performance
+evaluation).  
+
+\begin{itemize}
+\itemsep=-1pt
+\item Complete book chapters on network security and Internet routing
+  (presuming book writing continues this year).
+\item Develop new problem set questions and lectures for CS~7260
+  focusing on network performance evaluation and measurement.
+\end{itemize}
+
+As far as CS~7001 is concerned, I would like to continue developing
+projects and assignments for this course with Alex Gray, further
+developing our themes of teaching students how to find research ideas
+and perform interdisciplinary research.  Our ultimate goal is to submit
+a SIGCSE paper on this introductory graduate course, though, since
+the deadline is September, it us unclear whether we will be able to
+submit such a paper this year or whether it will have to wait for
+another year. 
+
+\begin{itemize}
+\itemsep=-1pt
+\item Continue developing CS~7001 assignments on developing research
+  ideas and performing interdisciplinary research.
+\end{itemize}
+
+\section*{Service}
+
+I tend to take service opportunities that make sense as they come my
+way, so I don't have specific goals as far as service on specific
+program committees, etc.  However, I see two opportunities for service
+within the context of committees I am already serving on and research I
+am doing: (1)~using my position on the NANOG program committee to better
+bridge the gap between researchers and network operations; an (2)~using
+VINI's need for real users as an opportunity to extend network
+connectivity to under-served communities.  
+
+My position as the only academic faculty member on the NANOG program
+committee firmly emphasizes position as the leader in the field of
+operationally relevant network research.  I would like to use this
+position to bring operators and network researchers closer together.  In
+this regard, I have one specific goal:
+\begin{itemize}
+\item Establish a ``Research BOF'' session at NANOG, and specifically
+  invite university researchers (faculty and students) to give
+  workshop-style talks at this BOF session.  The next NANOG (in June)
+  will be in Redmond, WA, which presents a unique opportunity to invite
+  many of the top networking researchers from Washington and Microsoft
+  to participate.  In a sense, I view this activity as bringing the
+  previously mentioned {\em WIRED} workshop to NANOG, rather than
+  enticing the operators come to {\em WIRED}.
+\end{itemize}
+
+I am less clear on specific steps to take for the second goal above, but
+it is clear that VINI needs real user traffic, and one thought for how
+to get real user traffic on VINI is to install wireless access points in
+places where there is otherwise no Internet connectivity and tunneling
+this back to VINI.  This situation seems like a perfect opportunity to
+deploy Internet connectivity in under-served communities, although this
+goal is admittedly somewhat ambitious, and I'm not certain it is
+possible.  I would need to collaborate with an expert in wireless
+networking to make this happen.
+
+\section*{Enablers}
+
+I will briefly list some of the areas where I believe I will need
+assistance to make some of these goals happen.  There may be other
+factors that didn't come to mind.
+
+\begin{itemize}
+\itemsep=-1pt
+\item Help attracting the best networking students to work with me.  (I
+  sense some competition for these students in our discussions this
+  year, but, of the networking faculty, I am the most vulnerable to the
+  consequences of ``starvation'' of good students.).  
+
+  I intend to make efforts to attract the best students to my group
+  (e.g., making a trip to India, giving talks at other universities,
+  getting my research in the news, etc.), but I sense I may need
+  protection from certain other faculty members and appropriate
+  ``advertisements'' of my work to other students and faculty when
+  appropriate.
+
+\item The ability to ``cash in'' on my teaching relief sometime in the
+  next two years.
+\end{itemize}
+
+\end{sloppypar}

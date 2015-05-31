@@ -1,0 +1,60 @@
+{\em What are the extent of faults in real-world BGP configurations?  Do
+  these configuration faults have the potential to induce routing
+  failures?}  Conventional wisdom has long recognized the shortcomings
+  of today's router configuration languages---they are ``primitive'',
+  ``too low-level'', and so forth.  My research on the router
+  configuration checker, {\bf rcc}, has allowed me to study the
+  properties of real-world configurations from 17 different operational
+  networks on the Internet and understand the extent to which various
+  errors appear.  {\bf rcc} performs static analysis on a group of
+  router configurations from a single AS and detects possible
+  configuration faults.
+
+  Our work on {\bf rcc} has resulted in several significant findings.
+  First, we demonstrated that static analysis can be useful for
+  detecting configuration faults that affect complex aspects of protocol
+  operation that are otherwise difficult to uncover.  For example, by
+  examining how the BGP session-level topology within an AS is
+  configured, {\bf rcc} can determine whether or not BGP will correctly
+  propagate external routes to all routers within the AS, regardless of
+  the router that learns the external route (a failure to correctly
+  propagate routes can create network partitions).  Second, our study
+  indicated the types of configuration faults that are most prevalent in
+  practice.  {\bf rcc}'s discovery that internal BGP (the protocol that
+  disseminates BGP routes within an AS) has motivated the need for a
+  better architecture for disseminating BGP routing information within
+  an AS; we have incorporated this insight into our work on designing a
+  new interdomain routing architecture.
+
+{\em Can these types of configuration faults be observed dynamically in
+  practice?}  A separate question from whether BGP configurations
+  actually have faults is whether these faults can actually be observed
+  in practice.  We performed a measurement study to study one particular
+  configuration fault---the failure to advertise consistent routes
+  across all peering points---from the perspective of a tier-1 Internet
+  Service Provider (ISP).  Typically, two ISPs establish a bilateral
+  ``settlement-free peering'' contracts with a provision that requires
+  each ISP to advertise each route on all peering points (thus affording
+  the neighboring AS complete flexibility over the peering points to
+  which it can direct traffic).  Our study highlighted that, while most
+  violations of this provision can be explained by transient protocol
+  behavior, some ISPs consistently violate this condition.  This study
+  provides further evidence that BGP configuration faults can in fact
+  result in routing that does not comply with an ISP's high-level
+  policy.
+
+{\em How do routing failures and instability affect the end-to-end
+  performance of Internet paths?}  Ultimately, end users and network
+  operators are concerned with whether or not {\em data} packets
+  ultimately reach their intended destinations along loop-free paths
+  with low latencies and loss rates.  Thus, I believe it is important to
+  understand the extent to which routing failures are reflected in
+  end-to-end path performance.  Our work on correlating BGP routing
+  instability with end-to-end path failures, as well as our subsequent
+  work on quantifying the effects of routing instability on end-to-end
+  path performance, extensively quantifies the relationships between
+  ``control plane'' behavior and ``data plane'' performance.  We have
+  developed techniques and algorithms to understand the control plane
+  phenomena that result in packet loss and have discovered via empirical
+  measurements that routing dynamics account for a significant fraction
+  of all packet loss.

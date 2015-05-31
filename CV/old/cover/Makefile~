@@ -1,0 +1,3 @@
+
+all: cover.tex
+	latex cover; dvips -tletter -o cover.ps cover

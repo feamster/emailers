@@ -1,0 +1,41 @@
+
+{\em Which aspects of BGP introduce unnecessary complexity into route
+  computation?}  The answer to this question has important implications
+  for protocol design, but determining it requires modeling: i.e.,
+  understanding which aspects of BGP constitute irrelevant details and
+  which are responsible for the problem.  Our analysis identified
+  that a route attribute called the multiple exit discriminator (MED)
+  and a scaling technique called ``route reflection'' were most
+  responsible for introducing unnecessary complexity into BGP route
+  selection (these artifacts are responsible for vagaries such as
+  persistent oscillation, partitions, etc.).  Our model provides
+  theoretical results on the complexity of BGP route computation with
+  and without both route reflectors and MED.  Using these insights, we
+  were able to propose protocol modifications that eliminate the
+  negative side effects imposed by these two artifacts without limiting
+  function.
+
+Because interdomain routing facilitates the exchange of routing
+information between cooperating, yet competing, ASes, an interdomain
+routing protocol must support flexible policy expression.  For example,
+the protocol must be able to allow an AS the flexibility to express
+different rankings over multiple candidate routes to a destination
+(``import policy''), as well as the ability to prevent a given route
+from being readvertised to certain neighboring ASes (``export
+policy'').  My current research involves developing a model of
+interdomain routing that answers the following fundamental question
+about policy-based routing:
+
+{\em What are the fundamental tradeoffs between policy flexibility and
+  guaranteed stability?}  Previous work has observed that BGP may not
+  always converge to a stable route assignment.  Although there has been
+  some work that explores how placing certain restrictions on import and
+  export policies can guarantee stability, the tradeoff between policy
+  flexibility and guaranteed stability is still poorly understood.
+  Specifically, restrictions on export policy is (1)~not enforceable,
+  since any AS can make a decision to export a route based on bilateral
+  contracts and (2)~not verifiable, since any AS may violate such a
+  restriction simply by advertising a route.  In light of this, my
+  ongoing research is exploring how expressive each AS's {\em local}
+  import policy (i.e., rankings over paths) can be, given no
+  restrictions on export policy.

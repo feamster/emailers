@@ -1,0 +1,271 @@
+% evaluation.
+% update the following
+\newpage \setcounter{page}{1}
+\lfoot{\fancyplain{Printed: \today}{Nick Feamster}}
+\cfoot{\fancyplain{Revised: \today}{Annual Evaluation 2006}}
+\rfoot{Page \thepage}
+
+\begin{center}
+
+{\Large\textbf{Research Threads and Goals \\ May 2006}}\\[.1in]
+{\large\textbf{Nick Feamster}}\\[.05in]
+feamster@cc.gatech.edu \\
+\url{http://www.cc.gatech.edu/~feamster/} \\[.1in]
+
+\end{center}
+
+\subsection*{Research Threads}
+
+\noindent
+{\bf Tools and Techniques for Robust and Secure Network Operations.}
+Network operators face a daunting challenge of having to run their
+networks at peak performance in the face of constantly changing
+conditions and continual threats.  Unfortunately, the complexity of
+network configuration, the large number of heterogeneous network
+devices, and continually changing network conditions make it difficult
+for operators to achieve high availability and performance while
+satisfying the high-level policies (\eg, security policies) for
+operations of their networks.  Today, network operators are unable to
+correctly configure their networks to achieve the tasks they would like
+to accomplish, they are unable to protect their networks from emerging
+threads such as botnets (and botnet ``applications'', such as spam,
+click fraud, etc.), and they are unable to troubleshoot their network
+configurations when problems do arise.  By and large, network operators
+debug faults and anomalies manually; these operators do not have
+efficient, automated tools and techniques to help operators perform
+proactive, predictive analysis (\eg, the effects of a change to the
+network configuration, etc.).  
+
+These problems in proactive fault detection, network security, and
+reactive troubleshooting harm network availability and consume a large
+amount of operator time.  Furthermore, these tasks contribute
+significant costs to running networks; ISPs are becoming more
+competitive, and as the cost of bandwidth drops, they must reduce the
+considerable cost (in time and money) of running their networks.  One
+thrust of my research is to develop tools and techniques to help network
+operators (of both service provider and enterprise networks) run their
+networks better: specifically, my research aims to help network
+operators (1)~attain assurances of the correctness, security, and
+robustness of network configurations; (2)~locate the source of problems
+when the network does not behave as expected.
+
+\noindent
+{\bf Inherently Correct and Robust Network Protocols and Architectures.}
+Today's Internet architecture imposes constraints that can make network
+operations tasks staggeringly difficult.  My first research thread helps
+network operators run their networks in the context of today's Internet
+routing architecture; my second thread, on the other hand, is based
+around the following question: How should the Internet architecture be
+changed to facilitate better network operations?  In this thread, I
+construe network operations somewhat broadly; in addition to tackling
+problems such as helping network operators perform traffic engineering,
+improve network security, and provision and deploy new services.  This
+research thread incorporates work both on network architecture and
+protocol design, and comprises two main subthreads:
+\begin{enumerate}
+\item {\em Improving the fairness and efficiency of Internet routing
+through market-based routing protocol design.} Over the past fifteen
+years, the Internet has become increasingly commercialized and
+federated, but the Internet's routing protocols have not evolved along
+with the Internet's economic landscape.  As a result, the mechanisms
+that network operators need to implement business policies have been
+retrofitted into the existing protocols, which were never designed to
+support such functions.This proposal posits that, to satisfy the above
+design goals while keeping pace with the Internet's rapidly changing
+economic landscape, {\bf a future Internet routing architecture must
+decouple business policy from the dissemination of network topology
+information.}  This property implies that end hosts may see {\em
+multiple} paths to any given destination, so it necessitates that end
+hosts that send traffic (sources) must have some control over the paths
+that their traffic takes en route to other end hosts (destinations).
+Although this characteristic implies a departure from destination-based
+routing, there is a broad spectrum of routing architectures where
+sources can retain some control over the path that traffic takes to a
+destination without having to specify the entire path.  We call this
+large class of routing architectures {\em source-assisted routing}.
+
+Developing such an architecture requires not only an understanding of
+the design space but also an understanding of the economics and the {\em
+market} formed by service providers (who are selling reachability in the
+form of path segments) and end users (who are purchasing reachability in
+the form of complete paths to other end hosts), in which the overall
+goal is to maximize the overall efficiency seen by both parties.  A key
+issue that must be explored is the role of {\em settlements}, which
+provide the right incentives to both end users and providers.
+
+\item {\em Designing, implementing, and deploying inherently robust
+communication networks.}  Although network operators can immediately
+benefit from the tools and techniques that are being produced as a
+result of my first research thread, networking research should strive to
+design communication networks that inherently offer robust communication
+channels between communicating parties.  
+
+Communication networks should facilitate open communication between any
+two parties, but, in recent years, opressive governments and
+organizations routinely limit their users' access to various Internet
+destinations (\eg, China routinely blocks access to external news
+sources, telecmmunication companies have attempted to block voice over
+IP traffic, etc.).  My research involves designing and implementing
+systems that help these groups of users gain open acccess to
+information and achieve open communications, even in the face of
+opressive parties.
+
+In addition to designing tools and techniques to help network operators
+run their networks better today, within the contraints of the current
+Internet infrastructure, I am also designing and implementing new
+network architectures and systems that could help the network be more
+inherently robust and secure.  I am investigating how a network
+architecture that separates infrastructure providers (the entities that
+deploy and maintain the network equipment) from service providers (the
+entities that deploy network protocols and end-to-end services). This
+separation allows the future Internet to support multiple simultaneous
+{\em virtual networks\/}, each of which could offer multiple end-to-end
+network services.  I am also planning to investigate how such an
+architecture could improve Internet security by allowing malicious or
+untrusted traffic to be sandboxed onto a separate, ``dirty'' virtual
+network (analogous to previous research on sandboxing with virtual
+machines).  Indeed, malicious traffic might even be quarantined and
+observed on an Internet-wide basis to help network operators perform
+forensics (\eg, tracking botnets).
+\end{enumerate}
+
+\noindent 
+
+\subsection*{Objectives for the Coming Year and Current Progress}
+
+My two main goals for the coming year are (1)~to establish a coherent
+research program around the above-mentioned threads; and (2)~to begin
+building a research group around this research theme.  I will discuss
+each of these goals in more detail in the following paragraphs.
+
+\subsubsection*{Goal \#1: Developing a research program}
+
+My first goal for this year is to establish a coherent research theme
+around network operations.  Actionable goals for establishing this
+research theme include establishing visibility for my work in this area
+(\ie, by submitting papers to top networking conferences and giving
+presentations to the network operations community) and obtaining funding
+for my research in this area.
+
+{\bf Progress: Paper submissions.}  As of April 2006, I have made some
+progress towards achieving these actionable goals.  First, I submitted
+two papers to {\em ACM SIGCOMM} based on network operations: one on an
+analysis of spamming behavior, towards the goal of ultimately designing
+better techniques and network architectures for mitigating
+spam~[\refbib{Feamster2006:spam}]; and another on the design and
+implementation of a virtual network infrastructure
+(VINI)~[\refbib{Bavier2006}].  Our work on studying the network-level
+behavior of spammers has already received attention at the North
+American Network Operator's Group (NANOG) (see
+talk~\refbib{nanog36:bgp-spam}).
+
+{\bf Progress: Grant proposals.}  Based on these initial pieces of work,
+and a work that has recently been accepted (pending minor revisions) to
+{\em ACM/IEEE Transactions on Networks}~[\refbib{Feamster2006:policy}],
+I submitted two collaborative grant proposals to the NSF NeTS ``Future
+Internet Design'' (FIND) area (see grants \ref{funding:nsf-cabo} and
+\ref{funding:nsf-routing}).  Based on this initial work on the study of
+spam and botnets, I have submitted a grant to Cisco asking for money to
+develop techniques to help network operators discover botnet activity in
+their networks.  Finally, I submitted a second grant to the Cisco URP
+program to extend the static configuration analysis techniques in my
+Ph.D. thesis to include fault detection capabilities for secure network
+services (\eg, BGP/MPLS layer 3 VPNs, packet filters, etc.) (see
+grant~\ref{funding:cisco-rsec}).
+
+{\bf Action items for remainder of 2006.} The major goal for this year,
+and, in particular, this summer, will be to submit a grant proposal to
+the NSF CAREER program.  This grant proposal is due at the end of July,
+leaving approximately 14 weeks until the proposal is due.  In the next
+six weeks (\ie, until the beginning of June), I plan to develop a theme
+for this proposal based broadly around network operations, which will
+incorporate material from the two grant proposals that I sent to Cisco
+this spring.  I will spend June and July fleshing out the details of the
+proposal itself.
+
+The remaining major conference deadlines for this year are {\em ACM
+Internet Measurement Conference}, {\em ACM SIGMETRICS} and {\em USENIX
+NSDI}.  My current plan is to send some preliminary characterization
+studies that will help in the design of our botnet detection algorithms
+to the {\em ACM Internet Measurement Conference}.  With Jim Xu and Yiyi
+Huang, I may also sent a short paper on a taxonomy of routing dynamics,
+based on some initial work that is related to Cisco
+URP~\ref{funding:cisco-rsec}; the current plan is to design and
+implement some anomaly detection and troubleshooting algorithms based on
+this taxonomy for submission to {\em ACM SIGMETRICS}.  For the upcoming
+{\em NSDI} deadline (October~2006), I would like to send some work on
+one or more of the projects related to grants~\ref{funding:nsf-cabo}
+and~\ref{funding:nsf-mri}.
+
+Other possible conference and workshop deadlines to which smaller pieces
+of this work may be submitted are {\em IEEE Infocom}, {\em HotNets}, and
+various workshops at {\em ACM SIGCOMM}.
+
+\subsubsection*{Goal \#2: Building a research group}
+
+By the end of this year, I would like to build my research group around
+the theme of network operations and security.  A possible name for this
+group, reflecting its focus on network operations, security, and future
+network architectures, would be the ``Network Operations and Systems
+Group'', or something to this effect.  Aside from developing the
+research themes of the group by submitting papers and obtaining funding
+for this research will be the following goals:
+
+\begin{enumerate}
+\item Attracting strong students and research staff.
+\item Holding regular group meetings to allow members to
+exchange ideas and discuss papers.
+\end{enumerate}
+My philosophy for forming this group is that having such a structure
+will provide scope for work within our group, keeping students abreast
+of current reseach in this area and allowing their research to develop
+under this broad theme.  Having regular group meetings will also provide
+a cohesiveness that I want my students to experience.  Such meetings
+will be particularly important until the new College of Computing
+building provides regular interaction with students.
+
+As far as attracting students, my goal is to add roughly two new
+Ph.D. students per year, three in exceptional circumstances (\ie, if the
+pool is strong).  With the exception of the project related to spam and
+botnets (papers~\refbib{Feamster2006:spam},
+~\refbib{Ramachandran2006:dnsbl}), none of the remaining projects above
+have Georgia Tech students participating.  My goal is to have graduate
+students working on many of the projects above.
+
+{\bf Progress.}  My main focus this spring has been to attract the
+strongest possible students to my research program at Georgia Tech.  I
+have recruited Murtaza Motiwala and Manos Antonakakis to Georgia Tech,
+who have both indicated an interest in working with me.  Manos has
+indicated an interest in working on projects related to network
+security, although his interest in wireless networking may prove to be
+difficult; Murtaza has also expressed interest in working on projects
+related to a virtual network infrastructure.  At this point, the main
+challenge appears to be to find enough good students to ramp up on the
+projects that I would like to get going.  Part of my strategy for
+solving this problem without falling prey to taking too many
+Ph.D. students is to post ads on the UROC forum, etc., to try to attract
+some undergraduates to work on various problems (\eg, anti-censorship
+systems).
+
+\subsubsection*{Goal \#3: Following through on dissertation work}
+
+Another goal for the remainder of this year will be to follow through on
+my dissertation work in two ways: sending thesis chapters to journals,
+and transferring technology developed as part of my thesis to industry.
+The first part of this process is already well underway: two chapters
+from my dissertation have been accepted for publication in {\em IEEE/ACM
+Transactions on Networking}, and a third is in submission.  The only
+remaining technical chapter from my thesis, on a tool for static
+configuration analysis of BGP configuration, has not yet been submitted
+to a journal.  At this point, I have no plans to send this work to a
+journal, although I could certainly change that; the main roadblock in
+this case would be the development of a significant fraction of new
+material to turn it into a journal paper.
+
+I have been working on the second half of this follow-through for quite
+some time now, in various ways.  The latest effort to get some of the
+contributions from my thesis used in some lasting way is to work with
+Cisco to integrate some of this technology (and follow-on work) into
+their management products as part of ongoing work (see grant
+proposal~\ref{funding:cisco-rsec}, which would be the basis for this
+collaboration). 

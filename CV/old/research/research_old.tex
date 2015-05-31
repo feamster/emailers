@@ -1,0 +1,96 @@
+\documentclass{article}
+
+\begin{document}
+\title{Research Statement}
+\author{Nick Feamster}
+\maketitle
+
+My research focuses on helping people construct more robust distributed
+systems.  My work has focused on today's interdomain routing protocol,
+Border Gateway Protocol version 4 (BGP), but, more generally, my
+research interests involve the analysis and design of large-scale
+distributed systems.  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Research Philosophy}
+
+Rather than trying to apply a specific tool to solve various problems, I
+search for interesting problems and try to discover (or devise) the
+tools for solving those problems.  I'm most inspired by problems that
+involve complex, poorly understood systems that affect a large user
+community.  Internet routing is an example of such a system.  Internet
+routing is essentially a large distributed program where individual
+routers exchange reachability information and perform route selection.
+The correct operation of Internet routing depends on thousands of
+operators each correctly configuring the tens to hundreds of routers in
+each of their networks; a misconfiguration, design mistake, or other
+mishap can affect the ability of end users to successfully contact
+Internet destination.
+
+Working in problem domains with
+challenging, underexplored problems has proved .  
+Much previous work on Internet routing had characterized various
+specific ills of the routing protocols.  Despite all of this previous
+work, the large community of operators that actually configures the
+deployed routing infrastructure was still experiencing the same trouble
+configuring and managing their networks, and the research community had
+reached a standstill concerning proposals for routing protocol design
+aimed at remedying these various ills.  These problems created the
+following opportunities: (1)~addressing the immediate needs of the
+network operations community and (2)~a problem domain about which very
+little was known at a fundamental level.  The first opportunity excited
+me because it was an opportunity for synergy with a community of people
+with domain-specific knowledge that could help fuel further research on
+applied problems in Internet routing.  The second presented the
+opportunity to expose the (as of then unknown) fundamental problems with
+today's Internet routing architecture, as well as myriad possibilities
+for creative, open-ended protocol design.
+
+To advance the state of the art in interdomain routing, it is crucial to
+understand which details matter and which have no bearing on the problem
+at hand.  Unlike some more mature areas of computer networking research
+(e.g., congestion control), the complexity of today's interdomain
+routing infrastructure has, to this point, been poorly understood.  To
+this end, much of my research has studied interdomain routing from the
+"bottom up".  The models of BGP routing that I developed to help network
+operators perform traffic engineering, which appeared at {\em ACM
+SIGMETRICS} 2004, require intimate knowledge of how various details of
+the protocol interact to affect BGP's route selection process.  We
+implemented our model and validated it using the routing and
+configuration data from a large tier-1 ISP.  This modeling exercise has
+provided a better understanding of which aspects of BGP introduce
+unncessary complexity and make the protocol so difficult to model.  More
+recently, I developed a tool for detecting faults in BGP configuration,
+"rcc", that not only helps network operators with immediate
+configuration problems but also allows us to better understand which
+aspects of BGP configuration make the protocol so error-prone.  rcc is
+widely available, has been presented at the meeting of the North
+American Network Operators Group (NANOG), and has been downloaded by
+over sixty network operators.
+
+Thinking about "top-down" solutions often requires understanding
+protocol details from the bottom up.  Many top-down proposals for
+radical changes to network architecture or protocols have no hope of
+being deployed because they are not inspired a clear grasp of the
+problems in today's architecture, let alone what is causing the
+problems.  My work on a "routing logic" was the first attempt to
+classify the specific problems that people have observed into a
+definition, which recognizes that a routing protocol should, first and
+foremost, satisfy two properties: {\em route validity} and {\em path
+visibility}.  My "bottom up" work on route prediction for network
+engineering and on rcc gave me insight into the aspects of BGP that
+caused both route validity and path visibility problems.  This insight
+helped me design a substantive "top down" change to the interdomain
+routing architecture, the Routing Control Platform (RCP), that fixes
+many of BGP's problems in a manner that is both backwards compatible
+with today's routing architecture and compatible with an operator
+incentives.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% get into some details here
+
+\section*{Future Research Areas}
+
+\end{document}

@@ -1,0 +1,689 @@
+\documentclass{article}
+\usepackage{fullpage}
+\usepackage{times}
+\usepackage{url}
+\usepackage{fancyhdr}
+
+\newcommand{\ie}{{\em i.e.}}
+\newcommand{\eg}{{\em e.g.}}
+
+\newcommand{\fp}{\vspace*{0.08in}\noindent}
+
+
+\setcounter{page}{1}
+\lfoot[Printed: \today]{Nick Feamster}
+\cfoot{\fancyplain{Revised: December 22, 2013}{Research Statement}}
+\rfoot{Page \thepage~of \pageref{lastpage}}
+
+\begin{document}
+
+\begin{center}
+{\Large\textbf{Nick Feamster}}\\[0.1in] {\large\textbf{
+Research Statement}}\\
+%feamster@cc.gatech.edu \\
+%http://www.cc.gatech.edu/$\sim$feamster/ \\[.1in] 
+\end{center}
+
+\section*{Summary}
+
+{\bf My research focuses on developing techniques, algorithms, and
+  protocols that make the network easier to manage, more secure, and
+  more available.} I am an experimental networked systems and security
+researcher.  A hallmark of my work is building, designing, and
+monitoring real networked systems.
+
+\fp
+Nobody notices when the network works well, but everyone suffers when it
+doesn't.  Thus, communications networks should be both secure and
+available.  Network {\em security} has many facets, ranging from the
+ability to stop ``unwanted traffic'' (\eg, spam and denial-of-service
+attacks) to the ability to trace back attacks to their perpetrators
+(``accountability'').  {\em Availability} means that the network must
+provide good performance for users whenever they want to use
+it---unfortunately, the increasing complexity of the network, coupled
+with hardware faults, software bugs, misconfigurations, and malice, make
+it difficult to achieve this goal.  Unfortunately, these two important
+goals have also been among the most difficult to achieve.  Breakthroughs require not
+only extensive domain knowledge, but also the ability to apply techniques from
+a wide range of areas, ranging from economics to machine learning.  My
+work combines domain knowledge, extensive interactions with network
+operators, techniques from a wide range of disciplines, and---perhaps
+most importantly---the competence and tenacity to implement and deploy
+these systems in practice.  This unique combination has allowed me to
+build one of the few networking research groups in the world that
+interacts directly with network operators to deploy fundamentally new
+systems and technologies in real-world networks.
+
+I discover interesting and challenging practical problems through
+frequent discussions and meetings with network operators and people in
+industry.  I then tackle these problems from first principles, develop
+new methods, and transfer these solutions back to practice in the form
+of working systems.  I have tackled a variety of problems in network
+operations, ranging from real-time network diagnosis to stopping
+unwanted traffic like spam to architectures for fast failure recovery.
+Many people---most notably, operators ``in the trenches''---are also
+working on these problems.  Unfortunately, many of the people who have
+the domain knowledge that best equip them to solve these problems are
+busy with day-to-day operations, putting out fires as they arise but
+rarely taking time to think about fundamental changes to the network
+that might eradicate these problems.  My research fills this niche.  I
+first devise methods to understand the nature of the problem in
+practice.  I tackle domain-specific problems with tools and techniques
+from other disciplines---ranging from machine learning to economics to
+program analysis---whose principles might provide insights into a new,
+previously undiscovered solution.  I then devise a new approach or
+solution, and I transfer it to practice through implementation and
+deployment of real-world systems.
+
+My research in this broad area is currently focusing on several themes:
+(1)~Internet censorship and open access; (2)~home and access networks;
+and (3)~software defined networking.  These themes, which I have been
+developing in the past several years since receiving tenure, build on
+the broader research themes I have developed on network security and
+operations.  I first survey the new leadership roles that I have assumed
+in research, teaching, and service.  Then, I discuss each of the new
+research themes I have developed since tenure and the impact that they
+have had on both other researchers and on industry.
+
+\section*{Ongoing and Future Research}
+
+In the past three years, I have focused on three research themes:
+Internet censorship and information control, home and access networks,
+and software defined networking.  
+\begin{itemize}
+\itemsep=-1pt
+\item {\em Access Networks.}  We began our research studying
+the performance of home networks and mobile networks in June 2010, when
+we began studying the performance of DSL networks in France.  Upon
+realizing that accurate measurements would require deploying
+infrastructure in the home router itself, we began developing BISmark
+(Broadband Internet Service Benchmark), custom router firmware which has
+now been deployed in more than 300 home networks in nearly 30 countries
+around the world.  We also developed a version of this software that
+runs on Android phones and has been installed by more than 4,000 users
+in 130 countries.  
+The testbed that we have developed is the first of
+its kind to study access and cellular networks.
+%%  and our work
+%% characterizing broadband Internet performance has already produced two
+%% {\em SIGCOMM} papers, a {\em Communications of the ACM} journal article,
+%% and several other workshop papers.  The work has won three prestigious
+%% awards: the IETF Advanced Networking Research Prize, an ACM {\em
+%% Communications of the ACM} research highlight, and the {\em ACM SIGCOMM
+%% Community Award Paper} at the {\em SIGCOMM Internet Measurement
+%% Conference}, for recognition of research that contributes broadly to the
+%% research community.  Our research has also garnered more than \$2M in
+%% funding from various funding agencies, as well as initial seed money for
+%% commercialization.
+%
+\item {\em Censorship and Information Manipulation.} Although my first
+work on censorship circumvention dates back to my work on the Infranet
+system in 2002, we revived this work in a system called Collage
+%, which
+%appeared in the {\em USENIX Security Symposium} in 2010 and has received
+%attention from multiple news outlets, including {\em The Economist},
+%{\em Slashdot}, and {\em Ars Technica}.  
+Recently, I founded the {\em
+USENIX Workshop on Free and Open Communications on the Internet}.
+% and I
+%successfully led a new large \$3M NSF project (awarded 2012) on
+%censorship measurement and circumvention.  In 2011, I also received
+%a \$1.5M Google Focused Research Award (with co-PI Wenke Lee) on
+%Internet Transparency.  
+This work has broadened to include {\em profile pollution
+attacks}, whereby an attacker can affect the content that a user sees
+(\eg, search results, recommended products) by polluting the users
+profile with cross-site scripting attacks.
+% 
+\item {\em Shared Programmable Networking.} Our work on 
+shared programmable networking over the past three years includes
+research in support of network virtualization, fast packet forwarding in
+programmable hardware, and control systems for Software Defined Networks
+(SDN) that make it easier for network operators to write programs that
+control network behavior under changing network conditions.
+% has led to one {\em SIGCOMM} paper,
+%a journal article in {\em IEEE Network Magazine}, and several workshop
+%papers in the {\em ACM SIGCOMM Workshop on Hot Topics in Software
+%Defined Networking (HotSDN)}, a workshop that I co-founded in 2012.
+%Additionally, our work on event-driven network control is being licensed
+%by Huawei; I have presented our work on event-driven network control at
+%invited keynote presentations at the {\em Open Network Summit} (and
+%industry forum that draws more than one thousand attendees), the {\em
+%Internet Research Task Force}, and the {\em IEEE Conference on Network
+%and Service Management}.  This research has also appeared in many popular
+%technical publications such as {\em Ars Technica}.
+\end{itemize}
+\noindent
+In the following subsections, I describe my contributions in these areas
+in more detail and discuss both the intellectual depth and impact of the
+contributions of the work in each of these areas.
+
+\subsection*{Access Networks}
+
+Access networks (\ie, cellular networks and home broadband networks) are
+proliferating: Over 90\% of US households now have Internet access, and
+networks have become an essential part of every home.  Video streaming
+already accounts for over 60\% of the peak download bandwidth for the
+Internet;
+%http://www.sandvine.com/news/pr_detail.asp?ID=340];
+remote learning is flourishing, with Khan Academy alone delivering over
+86 million videos; and within five years, Forrester
+Research expects 63 million Americans to telecommute from
+home. Bandwidth to the home is also growing
+rapidly: Huge investments by industry and government mean that over 60\%
+of US homes have broadband access.  Inside the
+home, 55\% of traffic is delivered to game consoles, set-top boxes,
+smart TVs, and mobile devices.  Further, cellular
+networks have become the predominant mode of Internet access for many
+people: For example, in Brazil, Russia, India, China, and Indonesia,
+there are 610 million Internet users, but 1.8 billion mobile-phone
+connections.
+
+Towards providing better {\em transparency} to users concerning their
+Internet service, I am developing objective, independent third-party
+services for users that help them both determine whether their Internet
+service provider or government is restricting access to certain content
+or services or degrading service for particular applications and gain
+access to information that they might not otherwise have access to.  My
+research on Internet transparency is focusing on three areas: (1)~the
+{\em performance} that they receive from their ISP; (2)~{\em
+connectivity} to various Internet destinations; (3)~the {\em
+information} that they can discover via search engines and social media.
+
+To provide users better information about the performance that they are
+receiving, I started Project BISmark (\url{http://projectbismark.net})
+in 2010. BISmark is a software platform for home routers.  We have
+already used BISmark to develop a network measurement suite for access
+Internet service providers; our first paper on BISmark appeared in {\em
+ACM SIGCOMM} in 2011.  With collaborators in programming languages and
+human-computer interaction, I am now exploring ways to use BISmark to
+simplify the management of home networks by applying some of the same
+network management principles that we have learned in our studies of
+transit and enterprise networks.
+
+\paragraph{Intellectual depth.} Despite the great extent to which billions
+of users around the world depend on broadband access networks every day,
+very little is known about how well they perform, and even less is known
+about the causes of poor performance when it does arise.  Yet,
+understanding the performance of broadband access networks has important
+implications for people who make decisions about how to invest in
+technology and about how policies should be set to improve network
+reliability and performance.  To design networks to be more reliable and
+secure, and to provision and connect them so that they perform better
+first requires a deep understanding of where the reliability problems
+and performance bottlenecks exist.  Our work in this area has thus
+developed a variety of new measurement methods and statistical
+techniques to both reliably measure access network performance and
+locate the source of performance bottlenecks.  For example, our work in
+diagnosing home network performance problems required the design of a
+maximum likelihood detector to identify the location of performance
+faults, using only observations of indirect features (\eg, queueing
+delay).  Such detectors have been used in other fields of science where
+the phenomenon trying to be measured can only be observed indirectly
+(\eg, radar, astronomy).  
+
+The work we have done is important, but at the same time it is also
+difficult to carry out because it requires deploying measurement
+observation points in the home networks of ``real users'' (in contrast
+to previous measurement infrastructure, which has primarily been
+deployed on academic networks, which face are subject to much different
+constraints than commercial networks).  We have spent several years
+developing both reliable metrics and software platforms that are
+reliable enough to collect accurate measurements without disrupting the
+connectivity of the users who are hosting our measurement devices.   As
+a result of our efforts, more than ten other research groups are now
+using the BISmark platform for their own research projects.
+
+\paragraph{Impact.} 
+Our results from the initial BISmark study influenced the design and
+implementation of the performance measurements used by the Federal
+Communications Commission's study of broadband connectivity across the
+United States.  The project has been featured in {\em Ars Technica} and
+{\em GigaOm} and has received over 20,000 signups from interested users.
+We have currently deployed BISmark routers in about 250 home networks
+around the world; it is also currently deployed on Google's Measurement
+Lab.  To transition some of the technologies we are developing in
+research to practice, I participated in Georgia Tech's venture program,
+Flashpoint, to scale our efforts to a larger number of users and learn
+more about the problems faced by ISPs, content providers, and consumers.
+We also received an NSF Innovation Corps grant and Georgia Research
+Alliance grant to help us commercialize this technology.
+
+More recently, we have been expanding our work on BISmark across
+developing countries and across a broader range of devices.  For
+example, we recently completed a study with Research ICT Africa (RIA) to
+characterize fixed and mobile performance across South Africa; we are in
+the process of expanding this study to other countries in Africa.
+Second, we have developed a home network performance troubleshooting
+tool that helps users identify whether performance bottlenecks are
+within their home network or in the Internet service provider (ISP)
+network.  The Federal Communications Commission (FCC) has recently
+agreed to back the deployment of our software in 4,000 home networks
+across the United States, and Comcast has also recently agreed to a
+trial deployment of this software. 
+
+Beyond the impact of the technology itself in industry, I have been
+developing the BISmark platform as an educational tool.  In Summer 2011,
+I hosted a BISmark ``summer camp'' at Georgia Tech to help students
+become familiar with programming network applications on the OpenWrt
+router platform; the week-long event was attended by about twenty
+students and faculty members from across the United States, France, and
+Italy.  I have incorporated much of the material into the graduate
+networking course at Georgia Tech, to give students hands on experience
+with developing and deploying a variety of network measurement tools.
+Through these activities, I aim to provide students both concrete
+exposure to problems and concepts in networking and a platform on which
+they can innovate.
+
+
+\subsection*{Internet Censorship and Information Manipulation}
+
+Free and open access to information and communications on the Internet
+is at risk: the Open Net Initiative reports that nearly 60 countries
+censor some access to information on the Internet.  Similarly, ISPs can
+degrade network performance for certain subsets of users for some or all
+services.  For example, some ISPs have been found to routinely block or
+throttle certain application traffic (\eg, BitTorrent); additionally,
+studies of access network performance in the United Kingdom and France
+have revealed that the level of performance that users achieve in their
+homes is sometimes as little as half of the rates that ISPs advertise to
+their users.  Although it may not be feasible to always guarantee open,
+unfettered access to information, users should know when their access to
+information has been obstructed, restricted, or tampered with.
+
+I have developed several techniques that help users gain access
+to information that they might not otherwise see as a result of
+overt censorship.  Ten years ago, we developed Infranet, a tool to
+circumvent Internet censorship that was both robust to blocking attempts
+and deniable---meaning that an adversary could not easily detect that a
+user was engaged in activities to circumvent censorship; the work won
+the Best Student Paper Award at the {\em USENIX Security Symposium} in
+2002.  Recent developments, such as the rise of user-generated content,
+have made it easier to deploy censorship circumvention systems, since
+sites that host user-generated content can be used as covert ``drop
+sites'' for messages; based on this insight, we designed and implemented
+Collage, a tool that allows users to circumvent censorship firewalls by
+building covert channels into user-generated content.  
+
+A growing threat to free and open access to information in the coming
+years is the emergence of ``soft'' forms of censorship, such as
+intentional performance degradation, the spread of propaganda through
+social media, and selective filtering or placement of search results.
+To defend against these threats, we have begun developing techniques to
+identify propagandistic behavior in social media and to allow users to
+compare their search results with a baseline set of search results
+assembled through crowdsourced measurements.  Users of communications
+networks also face the potential of intentional performance degradation
+or manipulation by Internet Service Providers (ISPs); these problems are
+popularly referred to as ``network neutrality violations''.  This
+transparency can help users determine whether their network is the cause
+of performance degradation, or whether performance problems that they
+are seeing are due to some other cause.  With students, I designed,
+built, and deployed the {\em Network Neutrality Access Observatory
+  (NANO)}, a system that aggregates measurements from end systems to
+help users and operators of edge networks infer when transit networks
+may be discriminating against certain types of traffic.  We are now
+applying the same statistical techniques that we developed for NANO to
+detect intentional performance degradation that censors may be
+perpetrating to discourage users from visiting certain cites.
+
+\paragraph{Intellectual depth.}  Censorship circumvention is an
+intellectually difficult problem because of the need to provide not only
+confidentiality but also {\em covertness}---in other words, the
+communication between parties must not only be private, but it must also
+be inconspicuous (with some degree of measurable confidence that the
+communication is unobservable).  The work thus first involved
+applying the concept of ``deniability'', whereby messages can be
+encoded in traffic streams that look innocuous (or, otherwise, like a
+user's normal behavior) and subsequently involved developing encoding
+schemes that produce traffic that is statistically indistinguishable
+from that of normal user activity.  
+
+Measurement of censorship and, more generally, information manipulation
+also requires a set of statistical tools to attribute {\em causality} of
+performance degradation to the ISP (or to some other cause).  In many of
+the research problems we have worked on (\eg, network neutrality
+violation, censorship detection), we have built on existing theories of
+causality to improve the confidence concerning the cause of performance
+degradation or other type of manipulation.  The study of information
+manipulation represents a significant conceptual advance in security,
+which has conventionally focused on more traditional attacks against
+infrastructure (\eg, hosts, networks).  In contrast, our work 
+focuses on {\em semantic} attacks, which not only involve more
+subtle attacks (\eg, on the information that is passed through search
+engines and other information portals), but also entail attacks on
+information and ideas, as opposed to simply assets.
+
+\paragraph{Impact.}
+Collage was presented at the {\em USENIX Security Symposium} in 2010; it
+has been downloaded hundreds of times and appeared in various news
+outlets including {\em Ars Technica}, {\em GigaOm}, and {\em Slashdot}.
+To measure the effects of personalization, we have developed and
+released tools such as Bobble (\url {http://bobble.gtisc.gatech.edu/})
+and Appu (\url{http://appu.gtnoise.net/}), both of which now have large
+groups of users, to help users track online information manipulation and
+privacy.  Our work on search poisoning, whereby an attacker can affect
+the search results that a user sees by polluting a user's search history
+through cross-site request forgery (XSRF) attacks.  This work appeared
+in the 2013 {\em USENIX Security Symposium}.  Our NANO tool appeared in
+{\em ACM SIGCOMM CoNext} in 2009, and we have deployed the system on
+Google's Measurement Lab (\url{http://www.measurementlab.net/}).
+
+
+\subsection*{Shared Programmable Networks}
+
+I began working on network virtualization during my
+postdoc at Princeton.  Network virtualization allows multiple networks
+to operate in parallel on the same physical infrastructure.  Although
+this concept is not new (commonly used Virtual Private Networks, or
+``VPNs'', come to mind as a prominent real-world example of network
+virtualization), virtualizing all aspects of the network
+infrastructure---in particular, both the links {\em and} the routers
+themselves---holds great promise for enabling innovation.  With Andy
+Bavier, Jennifer Rexford, and Larry Peterson, we built a Virtual Network
+Infrastructure (VINI), a testbed that allows researchers to build
+virtual networks.  This work appeared in {\em ACM SIGCOMM} in 2006.  The
+concepts behind virtual programmable networks, in concert with some of
+our work on the Routing Control Platform (RCP) ultimately led to the
+advent of Software Defined Networking~(SDN).  Since this initial work, I
+have focused on three aspects of software defined networking:
+(1)~providing Internet connectivity and routing control to software
+defined networks; (2)~designing very fast packet forwarding technologies
+for software defined networks; (3)~designing better languages and
+control models for software defined networks.
+
+A virtual network---either an experiment or a distributed ``cloud''
+service---typically needs connectivity to the rest of the Internet so
+that users can actually exchange traffic with it.  To provide such
+connectivity, and to give each virtual network direct control over how
+user traffic reaches it, I designed, implemented and deployed the
+Transit Portal, a software-defined controller for interdomain routing
+that provides individual virtual networks the illusion of having a
+direct, physical upstream connection to multiple Internet service
+providers.  This work appeared in {\em USENIX Annual Technical
+Conference} in June 2010.  We performed several research projects to
+follow up on this work, which used the Transit Portal to improve both
+the reliability and performance of cloud-hosted Internet services.  This
+follow-up work has appeared in {\em ACM SIGCOMM} in 2012, and {\em ACM
+SIGMETRICS} in 2013.  The Transit Portal is also a cornerstone of the
+larger nationwide GENI effort (featured here, for
+example: \url{http://www.geni.net/?p=1682}).
+
+Our work on designing faster packet forwarding technologies for virtual
+networks started with the Trellis project, which moved packet forwarding
+for virtual networks into the kernel; although this work resulted only
+in a workshop publication, the software itself was adopted by University
+of Utah's Emulab, the most prominent emulation-based testbed for
+networking research.  Our current efforts have focused on accelerating
+packet forwarding further by supporting custom packet forwarding for
+virtual networks in Field Programmable Gate Arrays (FPGAs); our work on
+SwitchBlade, a platform for rapidly developing and deploying custom
+forwarding engines in hardware for virtual networks, appeared at {\em
+ACM SIGCOMM} in August 2010.
+
+Finally, I have been developing new control models and languages to
+support event-based control for software defined networks.  I have
+focused on how better control models and languages can help solve three
+problems in network management: (1)~enabling frequent changes to network
+conditions and state; (2)~providing support for network configuration in
+a high-level language (including developing one of the first formal
+languages for software defined networks, Procera); and (3)~providing
+better visibility and control over tasks for performing network
+diagnosis and troubleshooting.  With my students, I built and deployed
+software defined networks in campus and home networks to demonstrate how
+SDN can improve common network management tasks.  
+%An early version of
+%this work appears in the February 2013 issue of {\em IEEE Network
+%Magazine}.
+
+\paragraph{Intellectual depth.}  Although software defined networking
+has made it possible for network operators to exert greater control over
+their networks, the existing protocols for controlling network devices
+do not make it easy to control network behavior to perform high-level
+tasks.  Moreover, even as new ways of configuring and managing networks
+take root, they must be designed to co-exist and interconnect with
+legacy networks.  The Transit Portal resulted in developing new
+abstractions for interconnecting virtual networks; our work on fast,
+programmable data planes was the first to demonstrate how to provide a
+hardware-based programmable data plane for virtual networks, and many
+other works on programmable data planes (\eg, recent work on newer
+versions of ASICs for SDNs) have proposed using similar abstractions and
+mechanisms; and our work on developing new control models and languages
+for SDNs has identified sources of complexity in network management and
+developed abstractions for reducing the complexity of common tasks.
+
+\paragraph{Impact.}  
+%% The impact of this work thus far has been to support
+%% network experimentation for researchers; many other virtual network
+%% technologies and platforms have built on this work. Our work on virtual
+%% networks has been over nearly 500 times (the VINI paper has been cited
+%% more than 300 times, and our work describing a network architecture
+%% based around network virtualization has been cited over 200 times).
+The results of our research have not only appeared in top-tier
+publications, but have also resulted in real, running software systems,
+some of which have been used by thousands of users.  The Transit Portal
+is currently deployed in six locations---including a recent deployment
+in the Amsterdam Internet Exchange in May 2013---and I am using it in my
+courses to provide students with hands-on experience configuring
+networks of routers and connecting them to real BGP-speaking routers on
+the Internet.  The course I have developed that uses this technology is
+the first course in the world where students can directly configure
+networks of routers that are connected to the global Internet.  The
+Transit Portal is also being actively used in research and has supported
+many other research projects, including several projects at the
+University of Souther California and the University of Washington that
+have resulted in multiple independent research papers that have appeared
+at {\em ACM SIGCOMM}.  Our work on better control models and languages
+for software defined networks is the basis for a controller that has
+been deployed in tens of home networks around the world and is now in
+use as part of a trial deployment with Comcast; the contoller we
+developed was also used in a Coursera course on SDN that I taught in
+2013, which was completed by several thousand students.
+
+%% \subsection*{Other Impact}
+
+%% My work in these areas over the past three years produced four {\em
+%%   SIGCOMM} papers, five {\em SIGCOMM Internet Measurement Conference}
+%% papers, one {\em SIGMETRICS} paper, one {\em USENIX Security} paper, and
+%% more than \$5M in research funding.  My work in home networking has
+%% already received several awards, such as the IRTF Advanced Networking
+%% Research Prize and a Research Highlight in {\em Communications of the
+%%   ACM}.  Our home networking work is now being commercialized, and our
+%% technologies and Huawei is now attempting to license our innovations in
+%% Software Defined Networking (SDN) from Georgia Tech.  According to
+%% Google Scholar, as of December 2013, my h-index is 41 and my citation
+%% count is over 6,500.
+
+
+\section*{Older (and Ongoing) Research Themes}
+
+Below, I highlight two previous broad research themes---data-driven
+network security and network operations---which have formed the
+foundation of much of my work since the start of my faculty career, and
+which I continue to work in.
+
+\subsection*{Data-Driven Network Security}
+
+\paragraph{Spam filtering.}
+Conventional spam filters attempted to distinguish spam from legitimate
+email by looking at message contents: that is, they would look at the
+words or language used in the messages themselves and try to detect spam
+based on what the message said.  This approach has become increasingly
+untenable, since spammers have begun to embed their messages in all
+sorts of media, ranging from images to PDFs to audio files to
+spreadsheets---by the time developers perfected their content filters
+for one type of medium, spammers moved onto the next.  My line of work
+has taken an entirely different, but complementary approach: I look at
+features of the senders' {\em behavior} (\eg, the time of day they are
+sending, whether there are other ``nearby'' senders on the network,
+whether and how the sizes of the messages of the senders vary over time)
+to distinguish spamming behavior from legitimate email use.  The method
+is harder for spammers to evade, it is more flexible because it can be
+deployed anywhere in the network, and it can work at much higher traffic
+rates than conventional approaches.  This idea was first laid out in the
+initial award paper at {\em SIGCOMM} and finally realized in the SNARE
+paper from August 2009 at {\em USENIX Security}.  A cornerstone of this
+research is a system that was published in August 2009 called ``SNARE''
+(Spatio-temporal Network-level Automated Reputation Engine). This work
+appeared at the {\em USENIX Security Symposium}, a top-tier security
+conference. The main idea behind SNARE---and the key insight behind my
+research in spam filtering---is that spammers have different sending
+behavior than legitimate senders.  Filters can distinguish spammers from
+legitimate senders by examining their {\em sending behavior} (i.e., how
+they send traffic), rather than what is in the messages themselves.
+
+\paragraph{Lightweight reputation and early-warning systems.}
+I have continued my research in network security by studying how
+attackers use the underlying Internet infrastructure to achieve {\em
+agility}.  In particular, we performed a study that explored the initial
+DNS behavior of spammers that appeared in the {\em ACM SIGCOMM Internet
+Measurement Conference} in 2011. We also performed a second study that
+explored how attackers use the Internet's interdomain routing protocol,
+Border Gateway Protocol~(BGP) to evade detection when sending spam and
+performing other malicious activities.  That study appeared in the {\em
+Passive and Active Measurement Conference} in 2011.  Finally, we are
+exploring how to prevent data leaks from cloud-based Web applications,
+even when the applications themselves may be compromised.  
+%We have one
+%preliminary paper in the {\em USENIX Workshop on Hot Topics in Cloud
+%Computing (HotCloud '11)}.
+
+
+\paragraph{Impact.}
+My network security research has had impact in research, in industry,
+and on the national level.  My research on this topic has earned the
+Presidential Early Career Award for Scientists and Engineers (PECASE), a
+Sloan fellowship, and the Best Paper Award at {\em ACM SIGCOMM} (the
+premier computer networking conference).  Aspects of my work have also
+been incorporated into commercial spam filtering products and Web mail
+clients at companies including Yahoo, Cisco/Ironport, and McAfee, as
+well as a project for the Department of Defense on high-speed network
+monitoring.  My paper on understanding the network-level behavior of
+spammers---which won the Best Student Paper award at {\em SIGCOMM} in
+2006---has been cited over 300 times since its initial publication in
+August 2006---it spawned a variety of high-impact follow-on work,
+including looking at network-level behavior not only to develop better
+spam filters, but also to detect botnets more effectively and defend
+against phishing attacks, click fraud, and other serious threats to the
+Internet infrastructure.  I have also been working on similar approaches
+to help detect and dismantle the Internet's scam hosting infrastructure
+(\eg, Web sites that attempt to steal user passwords, money, and so
+forth).  My initial paper on this topic (``Dynamics of Online
+Scam-Hosting Infrastructure'') won the Best Paper award at the {\em
+Passive and Active Measurement} conference in April 2009.  SNARE was
+featured in {\em Technology Review} and on Slashdot (a popular,
+high-traffic site for news in information technology).  Several
+companies including Yahoo have incorporated the network-level features
+that SNARE identifies into its spam filters, and companies that develop
+spam filtering appliances, such as McAfee, are also using these features
+to improve the accuracy and performance of their spam filtering
+appliances.  Our work on DNS and BGP reputation has been patented and
+implemented by Verisign, and is currently in use in several of their
+security products.  Our work on detecting fraudulent voting on webmail
+messages was implemented and deployed in Yahoo's webmail system.
+
+
+%% My impact on the broader field of cybersecurity goes beyond my own
+%% research.  I am also having impact in the national arena in several
+%% ways.  In 2009, I was involved in setting the nation's agenda for
+%% cyber security, through multiple additional activities.  First, I led a
+%% community-wide effort to develop a ``wish list'' document that describes
+%% the security community's needs for access to better data---ranging from
+%% network traffic data, to data about our country's infrastructure.  This
+%% report was ultimately delivered to Tom Kalil, the deputy director for
+%% policy in the Office of Science and Technology Policy.  Second, with
+%% program managers Karl Levitt and Lenore Zuck at NSF, I organized a
+%% community-wide, multi-agency workshop on ``Security-Driven
+%% Architectures''.  The workshop included participants from computer
+%% science, with an eye towards setting a research agenda for developing
+%% more holistic approaches to computer security that consider {\em all}
+%% aspects of computer and communications systems, rather than just a
+%% single piece (like the network).  Finally, my work on developing
+%% next-generation Internet protocols to improve accountability (which
+%% could eradicate spam in the first place), based on work that appeared at
+%% {\em ACM SIGCOMM} in 2008, was included in reports for the
+%% National Cyber Leap Year.
+
+
+\subsection*{Network Operations}
+
+
+Much of my work in {\em network operations} (the practice of designing
+tools, algorithms, and protocols to help the network operate better) has
+focused on fault detection, troubleshooting, and optimization.  
+
+\paragraph{Proactive fault detection and performance prediction.}
+Prior to my dissertation work, operators relied on detecting problems
+with networks ``at runtime'' on a live network.  My dissertation work
+demonstrated that, in fact, many routing problems could be detected
+simply by examining the configuration of the routing protocols, before
+the configuration is even deployed.  I applied techniques from static
+program analysis to routing configuration to help network operators
+catch mistakes and predict dynamic network behavior before the
+configurations are deployed on a live network, preventing costly and
+catastrophic network downtime.  I have also applied statistical inference
+techniques to help network operators determine the answers to ``what
+if'' configuration questions in content distribution networks; we
+developed a system called ``WISE'' (What-If Scenario Evaluator) to help
+network operators determine the effects of configuration changes on
+network response time.  A paper on this system appeared at {\em ACM
+SIGCOMM} and {\em IEEE/ACM
+Transactions on Networking}.
+
+%% Beyond predicting behavior and proactively detecting configuration
+%% faults, operators must understand the network's behavior {\em as it is
+%% running} (\eg, to detect equipment failures, attacks, or unplanned
+%% shifts in network traffic).  Unfortunately, operators are drowning in
+%% heterogeneous data.  To help operators better understand network faults
+%% ``at runtime'', I have applied unsupervised learning techniques to
+%% Internet routing data to help them efficiently mine the data for network
+%% events that require corrective action.  This work appeared in {\em ACM
+%% SIGMETRICS} in 2007.
+
+\paragraph{Studying and improving network configuration.}
+In the past several years, I have continued to work on tools and
+protocols that help operators configure their networks better.  To
+better understand how network operators make changes to network
+configurations, we performed a study of the evolution of network
+configuration over five years across two campus networks and have
+clustered these changes into common tasks, with an eye towards raising
+the level of abstraction for network configuration.  This work appeared
+in the {\em ACM SIGCOMM Internet Measurement Conference} in 2011.
+Second, I have been actively developing systems on top of the Internet
+routing infrastructure to help network operators optimize the
+performance of their applications that run in the network.  We developed
+a system called PECAN which jointly optimizes content routing (\ie, the
+mapping of clients to service replicas) and network routing (\ie, the
+network-level paths between clients and their respective replicas).  We
+discovered that jointly optimizing network and content routing can
+significantly improve performance over simply performing each operation
+independently; our results will appear in {\em ACM SIGMETRICS} 2013.
+Finally, we have performed a data-driven econometric analysis that
+showed how a tiered pricing model can yield both higher profit margins
+for Internet service providers and greater consumer surplus for users.
+These results appeared in {\em ACM SIGCOMM} in 2011.
+
+The foundation of this research theme comes from a system I built called
+called ``rcc'' (router configuration checker).  This system was the
+centerpiece of my doctoral dissertation and has had significant impact
+in both research and industry.  The work received the Best Paper Award
+at {\em ACM/USENIX Networked Systems Design and Implementation (NSDI)}
+in 2005 and has been used by hundreds of Internet Service Providers
+(ISPs) around the world to check their network configurations for
+errors.  Other work resulted in a Sigma Xi undergraduate research award
+for Megan Elmore.  Our work on tiered pricing was covered extensively in
+the media, including in {\em The Economist}.
+
+
+
+\label{lastpage}
+\end{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% next steps
+% secure foundations: openflow, pedigree
+% economic foundations: MINT
+% open access: collage
+% fusing machine learning+networks
+

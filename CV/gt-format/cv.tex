@@ -1,0 +1,56 @@
+% Nick Feamster
+\documentclass[ManyBibs,LabelsAligned,TextAligned]{gtcv}
+\setversion{internal} % internal OR external 
+%\setversion{external}
+
+\usepackage{bibunits}
+\usepackage{breakurl}
+\usepackage{pdfpages}
+
+% external removes paper expectance detials
+\setmode{final}         %final OR draft
+\sethighlightnew{none}  %none OR twokthree (2003), twokfour (2004), etc.
+% use to highlight specific years.  so far only above two implemented,
+
+% processes above options
+\input{gtcv-options.sty}
+%\graphicspath{{Figures/}}
+\usepackage{palatino}  %OR newcent ncntrsbk helvet times palatino
+
+\input{cover}
+
+\newcommand{\fp}{\vspace*{0.1in}\noindent}
+
+\begin{document}
+\begin{cv}
+
+\include{cv-main}
+
+\internalonly{
+\setlength{\parskip}{.075in }
+\setlength{\parindent}{0em}
+%\include{references}
+\include{pubs}
+\include{research2013}
+\include{teaching2013}
+\include{letter-writers}
+%\include{teaching2011}
+
+
+% third-year
+%\include{research2009}
+%\include{teaching2009}
+% 2009
+%\include{evaluation2009}
+% 2008
+%\include{research2008}
+%\include{evaluation2008}
+% 2007
+%\include{evaluation}
+%\include{research2007}
+%\include{teaching}
+
+}
+\end{cv}
+
+\end{document}
