@@ -1,2 +1,0 @@
-hw1.dep: Makefile  hw1.tex
-hw1.aux:  hw1.tex

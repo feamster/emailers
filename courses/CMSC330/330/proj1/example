@@ -1,8 +1,0 @@
-class Example {
-  int x;
-  static String s;
-  { x= 330; }
-  static {
-    s= "We love Ruby!";
-  }
-}
