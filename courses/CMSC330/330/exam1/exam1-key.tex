@@ -1,0 +1,804 @@
+\documentclass[11pt,fleqn]{article}
+
+  %
+  % After the grading has been going on a while doublecheck the TAs'
+  % grading.
+  %
+
+  %
+  % Should have added something to the grading key for most questions that
+  % grading decisions should be written down on the grading sheet.
+  %
+
+  %
+  % The final exam grading key has more detailed procedural instructions
+  % after each question.
+  %
+
+  \usepackage{330-f12}
+
+  \addtolength{\headsep}{-7mm}
+
+  \addtolength{\textheight}{7mm}
+
+  \showinfo
+
+\begin{document}
+
+  \header{\course}{Exam \#1 grading key}{\Term}
+
+  {
+
+    \setlength{\leftmargini}{5mm}
+
+    \vspace*{-6mm}
+
+    \begin{info}{\textbf{\underline{\Large Common grading criteria for all
+                 parts}}}
+
+      \vspace*{-2mm}
+
+      \enlargethispage{6mm}
+
+      \setlength{\leftmarginii}{5mm}
+
+      \begin{enumerate}
+
+        \addtolength{\itemsep}{.5mm}
+
+        \item Be sure to first check that our answers are correct, that the
+              grading criteria make sense, and that the point values add up
+              right.
+
+        \item Circle or mark \textbf{anything} that is incorrect.  You don't
+              need to write the correct answers but students
+              \textbf{\underline{must}} be able to tell what they are losing
+              credit for (what was wrong or missing in their answer), and not
+              have any points subtracted without being clear what the reason
+              is.  Students will ask us about the grading, and we need to be
+              able to tell why they lost points.
+
+              If something is wrong circle or mark it with an 'X'.  If
+              something that was supposed to be present is missing you can
+              just circle the part of the question describing what was missed,
+              rather than writing out a description.  If you need to write a
+              description of an error just write a \textbf{few short} words.
+
+        \item Mark negative deductions next to any mistakes, but write the
+              total (positive) points for each question \textbf{next to its
+              number} (\underline{next to where the question says ``[XX
+              pts\.]}'').
+
+              Also write the total score for that question in the space
+              \textbf{\underline{on the front of the exam}} (so the total
+              score for each question is written twice).
+
+        \item For any problems with subparts where the subparts are worth
+              different numbers of points, if the points for each subpart
+              are not already marked on the exam then mark the points for each
+              subpart as a fraction $\left(\frac{n}{m}\right)$ next to that
+              subpart.
+
+        \item Don't deduct fractional points; grade using whole number points
+              only.
+
+        \item Unless noted below, give partial credit according to the
+              grading key if something is partially, but not completely,
+              incorrect.
+
+              Unless otherwise indicated, the points for tasks should be
+              prorated if the task is partially but not completely right
+              (i.e., partial credit should be given).
+
+              In general try to avoid penalizing twice for the same problem,
+              or don't penalize for a problem and then for each of its
+              effects.
+
+              % For example, suppose the grading key for a question says that
+              % making a proper function call is \pts{3}-- you can deduct
+              % (using uniform criteria) \pts{-1} if a call was given but has
+              % some small mistakes, \pts{-2} if a call was given but has
+              % larger mistakes, and \pts{-3} if the call is completely
+              % missing or totally wrong.
+
+        \item Anything correct gets full credit, even if it's not the same as
+              the solution on the answer key (unless it contradicts what the
+              question was asking for in some way, such as using some language
+              feature that the problem said could not be used).
+
+        \item Put your initials at the bottom of the page for each question you
+              grade.
+
+        \item Carefully add the point deductions for each problem to avoid
+              mistakes.
+
+        \item Write the numbers (the score for each question next to the
+              question number, and on the front page)
+              \textbf{\underline{\underline{neatly}}}.
+
+        \item If you find common mistakes students made, or that several
+              students have given the same incorrect answer, let us know.  It
+              may be a common conceptual mistake that we didn't anticipate
+              when writing the answer key.  In that case we may want to adjust
+              the grading key, or make up a special deduction to handle that
+              case.
+
+        \item Write down all decisions about grading that are made on the
+              grading key (anything that's not already on the grading key).
+              Write your name on the pages of the key on the problems you
+              graded.
+
+        \item If you're grading a question together with anyone else the
+              most important things are correctness of grading and
+              \underline{consistency} of grading.  If you see any situations
+              not addressed by the grading key, and we make any decisions
+              about how to handle them, everyone grading that question must
+              commnunicate that between yourselves, and you need to ask when
+              you come across different situations to make certain you're
+              deducting the same credit as everyone is for the same mistake.
+              Anytime you see something you aren't sure about, check with the
+              other graders grading that question to ensure any special
+              situations are handled uniformly.
+
+        \item If you have questions about anything while grading, be sure to
+              ask.  We want to avoid having to go back and correct mistakes
+              after things have been graded!
+
+        \item After the exams are graded and returned, don't tell the students
+              what the grading criteria were (number of points off for
+              different mistakes).
+
+      \end{enumerate}
+
+      \vspace{-2.5mm}
+
+      \pagebreak
+
+    \end{info}
+
+  }
+
+  \begin{enumerate}
+
+    \addtolength{\itemsep}{12mm}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \item {[20 pts.]} Any correct answer should have the following
+          properties:
+
+          \vspace{-1.75mm}
+
+          \begin{description}
+
+            \item[completeness:] The regular expression should describe all
+                  valid strings.
+
+            \item[correctness:] The regular expression should not describe
+                  any invalid strings.
+
+          \end{description}
+
+          \vspace{-1.75mm}
+
+          Some correct regular expressions are:
+
+          \vspace{-1.75mm}
+
+          \begin{centering}
+
+            \addtolength{\baselineskip}{2.5mm}  % increased space between lines
+
+            \(
+              \left(
+                ( baaa^{*} )^{*}
+                \midspc
+                ( aaa^{*}b )^{*}
+                \midspc
+                b( aaa^{*}b )^{*}
+                \midspc
+                ( aaa^{*}b )^{*} aaa^{*}
+              \right)
+            \)
+
+            \smallskip
+
+            \(
+              \left(
+                ( b \mid \epsilon)
+                \left(
+                  aaa^{*} \mid aabaa
+                \right)^{*}
+                ( b \mid \epsilon)
+              \midspc
+                b
+              \right)
+            \)
+
+            \smallskip
+
+            \(
+              ( b \mid \epsilon)
+              ( aaa^{*}b )^{*}
+              (\epsilon \mid aaa^{*})
+            \)
+
+            \smallskip
+
+            \(
+              ( aaa^{*} \mid \epsilon )
+              ( baaa^{*} )^{*}
+              ( b \mid \epsilon)
+            \)
+
+            \smallskip
+
+            \(
+              \left(
+                ( b \mid \epsilon) \, aaa^{*}
+              \right)^{*}
+              (b \mid \epsilon)
+            \)
+
+          \end{centering}
+
+          \medskip
+
+          Of course other answers could be correct also.
+
+          \medskip
+
+          \begin{info}{\textbf{\underline{Grading key:}}}
+
+            \smallskip
+
+            \begin{itemize}
+
+              \addtolength{\itemsep}{1mm}
+
+              \item Correctness and completeness are \pts[circle]{10} each:
+
+                    \smallskip
+
+                    \begin{itemize}
+
+                      \addtolength{\itemsep}{.5mm}
+
+                      \item Give full credit if the property is completely
+                            satisfied.
+
+                      \item Deduct \pts{-2} per property for one small
+                            problem in that property.
+
+                      \item Deduct \pts{-5} per property for a larger
+                            problem in that property.
+
+                      \item Deduct \pts{-7} per property if there are major
+                            problems in that property, but at least some
+                            attempt in the solution (successful or not) to
+                            enforce it.
+
+                      \item No credit for that property otherwise.
+
+                    \end{itemize}
+
+                    \smallskip
+
+              \item Deduct up to \pts{-2} for omitting parentheses around
+                    regular expressions that use alternation when the
+                    effect could be unclear, or using incorrect parentheses.
+
+              \item Deduct up to \pts{-5} for using disallowed (Ruby)
+                    regular expression operations, such as $+$ or ? or
+                    numeric superscripts or something like $a\{1,2\}$ or
+                    character classes, none of which should have been used
+                    (up to \pts{-5} depending upon how many disallowed Ruby
+                    regular expression operations were used).
+
+            \end{itemize}
+
+          \end{info}
+
+          \begin{info}{\textbf{\underline{Grading notes:}}}
+
+            \smallskip
+
+            \begin{itemize}
+
+              \addtolength{\itemsep}{1mm}
+
+              \item Since different valid answers exist, check the
+                    correctness of the answer by ensuring it describes valid
+                    strings of various forms, and does not describe invalid
+                    strings of various forms.  Note special cases, for
+                    example the answer should allow strings that don't have
+                    any \emph{a}'s or any \emph{b}'s, ones that can begin
+                    and with each letter, etc.
+
+              \item If parentheses were omitted around regular expressions
+                    where the meaning is clear and unambiguous, then don't
+                    deduct any credit, but show where the parentheses should
+                    have been so the student knows they should have been
+                    used.
+
+              \item No answer should receive so many deductions it has a
+                    negative score (in other words, stop deducting points if
+                    you ever get to zero).
+
+              \item Don't penalize for using extra unnecessary parentheses
+                    in regular expressions.
+
+              \item Although it's incorrect, don't penalize for omitting
+                    $\epsilon$ in a regular expression and using an empty
+                    alternative instead, such as in $(a \mid \: )$.  (Write
+                    it in, but don't deduct.)
+
+            \end{itemize}
+
+          \end{info}
+
+          \pagebreak
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \item {[26 pts.]} As in the previous problem, a correct answer must
+          accept all valid strings and only valid strings.  One correct DFA
+          is:
+
+          \begin{automaton}(-25,0)(120,68)
+
+            \psset{unit=.9mm}
+
+            \state[start,final](5,65){s0}
+            \state(35,65){s1}
+            \state[final](65,65){s2}
+            \state[final](5,35){s3}
+            \state(5,5){s4}
+
+            \transition(s0,\emph{a},s1)
+            \transition[labellocation=below](s0,\emph{b},s3)
+
+            \transition(s1,\emph{a},s2)
+            \transition(s1,\emph{b},s4)
+
+            \transition[loopdirection=right](s2,\emph{a},s2)
+            \transition(s2,\emph{b},s3)
+
+            \transition(s3,\emph{a},s1)
+            \transition(s3,\emph{b},s4)
+
+            \transition[loopdirection=left](s4,\emph{a},s4)
+            \transition[loopdirection=right](s4,\emph{b},s4)
+
+          \end{automaton}
+
+          \enlargethispage{3mm}
+
+          \bigskip
+
+          As the problem emphasizes, no notational shortcuts should be used.
+          A DFA always has exactly one outgoing transition for every symbol
+          of its alphabet (otherwise it is not a valid DFA).  Omitting a
+          dead state and transitions to it, or transitions from the dead
+          state to itself, are notational shortcuts that the problem said
+          were not allowed.
+
+          \begin{info}{\textbf{\underline{Grading key:}}}
+
+            \smallskip
+
+            \begin{itemize}
+
+              \addtolength{\itemsep}{2mm}
+
+              \item The grading procedure for this question involves finding
+                    the closest isomorphism between the student's answer and
+                    the correct DFA.  In doing this, ignore things that are
+                    extra in the student's DFA that don't make it
+                    incorrect, for example, an answer may have more states
+                    than necessary, but there's no penalty as long as it
+                    recognizes the correct language.  However, if the answer
+                    is missing something required (states, transitions,
+                    etc.), causing it not to correctly recognize the
+                    language in some way, then deduct as described below.
+
+              \item For each missing state that the DFA must have to
+                    recognize the correct language but that is not present,
+                    deduct \pts{-4}  This deduction is for both the missing
+                    state and for all of its outgoing (but not incoming)
+                    transitions.
+
+              \item For each missing or incorrect transition deduct \pts{-3}
+                    Incorrect transitions are transitions that aren't shown
+                    at all, or transitions that should go to a state other
+                    than the state they actually do go to (including
+                    transitions that go to some existing state but that
+                    should really go to some state that does not appear in
+                    the DFA).
+
+                    (Note the transitions from the dead state are handled as
+                    a special case below).
+
+                    When a needed state is missing from the DFA, the answer
+                    should lose credit for both the missing state, and for
+                    all of the incorrect transitions that should have gone
+                    to that state but that obviously don't go there
+                    (they're missing or they go somewhere else).
+
+              \item For each state in the DFA that is final when it should
+                    be nonfinal, or that is nonfinal when it should be
+                    final, deduct \pts{-2}
+
+              \item Deduct \pts{-2} if the start state is unlabelled or
+                    wrong.
+
+              \item If notational shortcuts were used then deduct anywhere
+                    from \pts{-2} to \pts{-6}( for the whole problem),
+                    depending on how many notational shortcuts were used.
+                    Disallowed notational shortcuts would include omitting
+                    the dead state, omitting the transitions to it, or
+                    having transitions labelled with multiple symbols.
+
+              \item If the answer is an NFA, not a DFA, talk to me about how
+                    to grade it.
+
+              % \item Strings in this language must have two basic properties
+              %       (the first two symbols aren't the same, and the last two
+              %       symbols the same and in the same order as the first
+              %       two).  If one of the two properties is basically
+              %       enforced by the DFA, but there are problems with the
+              %       other property, then the minimum score the answer should
+              %       receive should be \pts{13} In other words, in this case
+              %       indicate all mistakes in the solution, but stop
+              %       deducting at \pts{-13}
+              %
+              % \item If the DFA is a poor solution that doesn't really
+              %       enforce either property but at least makes some partial
+              %       attempt at enforcing one property, then the minimum
+              %       score the answer should receive should be \pts{8} In
+              %       other words, in this case indicate all mistakes in the
+              %       solution, but stop deducting points at \pts{-20} An
+              %       answer should receive less than \pts{8} only if it's
+              %       completely missing or does not show even a minimal
+              %       understanding or attempt.
+              %
+              % \item If the same mistakes were made in both halves of the DFA
+              %       then we may not want to deduct twice for of them.  If in
+              %       the process of grading it seems like we should deduct
+              %       only once for such errors, let me know and we can
+              %       discuss it.
+
+              \item If the DFA is a poor solution that doesn't really
+                    enforce the language property but at least makes some
+                    partial attempt at enforcing it, then the
+                    minimum score the answer should receive should be
+                    \pts{6} In other words, in this case indicate all
+                    mistakes in the solution, but stop deducting points at
+                    \pts{-14} An answer should receive less than \pts{6}
+                    only if it's completely missing or does not show even a
+                    minimal understanding of DFAs or a reasonable attempt to
+                    solve the problem.
+
+            \end{itemize}
+
+          \end{info}
+
+          \begin{info}{\textbf{\underline{Grading notes:}}}
+
+            \smallskip
+
+            \begin{itemize}
+
+              \addtolength{\itemsep}{1mm}
+
+              \item Make sure the answer accepts $\epsilon$.
+
+              \item Note as above that there is \textbf{no deduction} for
+                    having extra states, as long as the DFA is correct (many
+                    answers are correct but the DFA just isn't minimal).
+                    But if the DFA has extra states and any extra states
+                    have incorrect transitions, then deduct for each
+                    incorrect transition as described above.
+
+              \item Carefully check that each state has two outgoing
+                    transitions (one on each symbol), and only two outgoing
+                    transitions.
+
+                    Carefully check that each transition goes to the correct
+                    state in order to recognize or accept all and only valid
+                    strings.
+
+              % \item Note that entirely omitting the dead state and all of
+              %       the transitions to it counts as a missing state
+              %       (\pts{-3}).  But including it and omitting only the
+              %       transitions from itself to itself is \pts{-2}
+
+            \end{itemize}
+
+          \end{info}
+
+          \vspace{.25in}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \item {[12 pts.]} Notice that the problem says that not any NFA is
+          desired (even if it is correct), but the specific NFA that would
+          result from applying the construction given in class.  Although
+          there are many different NFAs that would recognize or accept this
+          langauge (an infinite number in fact), there is only one NFA that
+          would result from following the construction given in class.
+
+          \begin{automaton}(-5,0)(130,44)
+
+            \psset{unit=.8mm}
+
+            \state[start](10,20){s0}
+            \state(35,20){s1}
+            \state(60,35){s2}
+            \state(60,5){s3}
+            \state(85,35){s4}
+            \state(85,5){s5}
+            \state(110,20){s6}
+            \state(135,20){s7}
+            \state(160,20){s8}
+            \state[final](185,20){s9}
+
+            \transition(s0,$\epsilon$,s1)
+            \transition[curved,angle=48](s0,$\epsilon$,s7)
+
+            \transition(s1,$\epsilon$,s2)
+            \transition[labeloffset=-7](s1,$\epsilon$,s3)
+
+            \transition(s2,\emph{a},s4)
+
+            \transition[labeloffset=-7](s3,\emph{c},s5)
+
+            \transition(s4,$\epsilon$,s6)
+
+            \transition[labeloffset=-7](s5,$\epsilon$,s6)
+
+            \transition(s6,$\epsilon$,s7)
+
+            \transition(s7,$\epsilon$,s8)
+            \transition[curved,angle=48](s7,$\epsilon$,s0)
+
+            \transition(s8,\emph{b},s9)
+
+          \end{automaton}
+
+          \bigskip
+
+          \begin{info}{\textbf{\underline{Grading key:}}}
+
+            \smallskip
+
+            \begin{itemize}
+
+              \addtolength{\itemsep}{2mm}
+
+              \item Each missing or extra state is \pts{-3} This
+                    \textbf{includes} the missing state, \textbf{and} all of
+                    its outgoing transitions.
+
+              \item Each missing or incorrect or extra transition is
+                    \pts{-2}
+
+              \item If the start state is missing or incorrect, deduct
+                    \pts{-2}
+
+              \item If the final state is missing or incorrect, deduct
+                    \pts{-2}
+
+              \item All of the above is for NFAs that are basically similar
+                    to the above (that were created using the procedure
+                    given in class).  If anyone wrote a small two--state or
+                    three--state NFA (not using the procedure given in
+                    class) that is correct then deduct \pts{-7}.  If anyone
+                    wrote a small NFA (not using the procedure given in
+                    class) but it's not even correct then deduct \pts{-9}
+
+            \end{itemize}
+
+          \end{info}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \item {[12 pts.]}
+
+          \vspace{-2.5mm}
+
+          \begin{enumerate}
+
+            \addtolength{\itemsep}{4mm}
+
+            \item \begin{enumerate}
+
+                    \addtolength{\itemsep}{2mm}
+
+                    \renewcommand{\labelenumiii}{\arabic{enumiii})}
+
+                    \item \texttt{[]}
+
+                    \item \texttt{[7; 6; 5]}
+
+                    \item \texttt{2}
+
+                  \end{enumerate}
+
+            \item \begin{enumerate}
+
+                    \addtolength{\itemsep}{2mm}
+
+                    \renewcommand{\labelenumiii}{\arabic{enumiii})}
+
+                    \item Three examples are \texttt{[[1]]} and
+                          \texttt{[[1; 2]]} and \texttt{[[1; 2]; [3; 4]]}
+
+                    \item Two examples are \texttt{[(1, 2)]} and
+                          \texttt{[(1, 2); (3, 4)]}
+
+                    \item Two examples are \texttt{(1, [2])} and
+                          \texttt{(1, [2; 3; 4])}
+
+                  \end{enumerate}
+
+          \end{enumerate}
+
+          \begin{info}{\textbf{\underline{Grading key:}}}
+
+            \smallskip
+
+            \begin{itemize}
+
+              \addtolength{\itemsep}{2mm}
+
+              \item Each subpart is \pts[circle]{2}
+
+              \item Give partial credit as you feel appropriate on
+                    subparts (although I'm not really seeing right now where
+                    partial credit might be warranted for part (a)), using
+                    uniform and consistent criteria.
+
+            \end{itemize}
+
+          \end{info}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \item {[30 pts.]} Different solutions are obviously possible.  The first
+          solution below builds a hash (\texttt{element\_counts}) mapping values
+          to their number of occurrences in the input list.  Then we want to
+          get the largest value in the \texttt{element\_counts} hash, and
+          determine the key corresponding to it.  The easiest way is to
+          invert the hash by creating a new hash with the keys and values of
+          \texttt{element\_counts} reversed.  There's actually a method in
+          the \texttt{Hash} class that does that (\texttt{invert()}), which
+          those who read about \texttt{Hash} may know about, but it's not
+          required.  (The solution below just does the hash inversion
+          explicitly, without using the library method.)
+
+          The second solution is a variation that just iterates over the
+          hash to find the key that has the largest corresponding value:
+
+          Another approach that could work would be to use nested loops, but
+          that would be $\mathcal{O}(n^2)$, and the problem says that
+          efficiency matters.
+
+          The easiest way to extract the body of the list is probably a
+          backreference, as used in the solution below.
+
+          Notice that the problem says that the program should only read
+          \textbf{one} input line.  Also, integers are sequences of one or
+          more digit characters, so a regular expression like
+          \texttt{\string\d*(;\string\d*)*} would recognize sequences of
+          adjacent semicolons with zero--length integers between them.
+
+          \vspace{-.5mm}
+
+          \VerbatimInput[gobble=0,baselinestretch=.925]{most-occurrences.rb}
+
+          \medskip
+
+          \enlargethispage{8mm}
+
+          \VerbatimInput[gobble=0,baselinestretch=.925]{most-occurrences2.rb}
+
+          \vspace{-2.5mm}
+
+          \begin{info}{\textbf{\underline{Grading key:}}}
+
+            \begin{itemize}
+
+              \addtolength{\itemsep}{2mm}
+
+              \item A correct solution should perform the following
+                    conceptual tasks, which are listed with their point
+                    values:
+
+                    \smallskip
+
+                    \begin{itemize}
+
+                      \addtolength{\itemsep}{0mm}
+
+                      \renewcommand{\labelitemii}{$\ast$}
+
+                      \item Read one line from standard input.
+                            (\pts[circle]{1})
+
+                      \item Test the line read for being of the correct
+                            syntactic form. (\pts[circle]{5})
+
+                      \item Print the specified message and don't produce
+                            any other output if the line is not of the right
+                            form. (\pts[circle]{2})
+
+                      \item Extract the body of the list from the input
+                            line. (\pts[circle]{4})
+
+                      \item Iterate over all the integers in the list (using
+                            \texttt{split()} or \texttt{scan()} would be
+                            easiest, but repeatedly matching a regular
+                            expression against the beginning line, then
+                            removing the part that matched, would also
+                            work). (\pts[circle]{5})
+
+                      \item Keep track of the count of occurrences of each
+                            value in the input list. (\pts[circle]{4})
+
+                      \item Find the number of occurrences that was largest
+                            (or a maximal one). (\pts[circle]{5})
+
+                      \item Print the element that had that largest number
+                            of occurrences.  (This mostly refers to
+                            identifying the element that had the most
+                            occurrences; just printing it is probably just
+                            worth a point.)  (\pts[circle]{4})
+
+                    \end{itemize}
+
+                    Partial credit should be given for tasks that are
+                    attempted and partly right, but that have some
+                    mistakes, using consistent and uniform criteria.
+
+                    \smallskip
+
+              \item Ignore minor mistakes in syntax if the intention is
+                    clear.
+
+            \end{itemize}
+
+          \end{info}
+
+          \begin{info}{\textbf{\underline{Grading notes:}}}
+
+            \smallskip
+
+            \begin{itemize}
+
+              \addtolength{\itemsep}{1mm}
+
+              \item The first line (\texttt{!\#}) isn't required (mark, but
+                    don't deduct for mistakes in it if it is present but
+                    incorrect).
+
+              \item If anyone's r.e.\ is accepting signed integers I would
+                    circle the part of the problem that says that integers
+                    are just ``sequences of one or more digit characters'',
+                    but I wouldn't deduct anything.
+
+              \item If the solution is not efficient (uses nested loops
+                    rather than a hash to find the element with the most
+                    occurrences) I'm inclined to deduct \pts{-5}, but if
+                    anyone actually does this talk to me about it and we can
+                    decide for sure.
+
+            \end{itemize}
+
+          \end{info}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  \end{enumerate}
+
+\end{document}

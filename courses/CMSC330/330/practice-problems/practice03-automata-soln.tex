@@ -1,0 +1,597 @@
+\documentclass[11pt]{article}
+
+  \usepackage{330-f12}
+
+\begin{document}
+
+  \header{\course}{Finite automata-- solutions}{\Term}
+
+  \begin{enumerate}
+
+    \item Note that different solutions are possible.
+
+          \vspace{-3mm}
+
+          \begin{enumerate}
+
+          \addtolength{\itemsep}{20mm}
+
+          \item \begin{automaton}(0,24)(100,35)
+
+                  \state[start](10,25){s0}
+                  \state(35,25){s1}
+                  \state(60,25){s2}
+                  \state(85,25){s3}
+                  \state[final](110,25){s4}
+                  \state[label={\renewcommand{\arraystretch}{.75}%
+                                \normalsize%
+                                \begin{tabular}[t]{c}%
+                                  dead%
+                                    \\%
+                                  state%
+                                \end{tabular}}%
+                         ](35,0){s5}%
+
+                  \transition(s0,\emph{a},s1)
+                  \transition(s0,\emph{b},s5)
+
+                  \transition[labellocation=below](s1,\emph{a},s5)
+                  \transition(s1,\emph{b},s2)
+
+                  \transition(s2,\emph{a},s3)
+                  \transition[labellocation=below](s2,\emph{b},s5)
+
+                  \transition[offsetto=-1mm](s3,\emph{a},s5)
+                  \transition(s3,\emph{b},s4)
+
+                  \transition(s4,\emph{a},s4)
+                  \transition[loopdirection=down](s4,\emph{b},s4)
+
+                  \transition[loopdirection=left](s5,\emph{a},s5)
+                  \transition[loopdirection=right](s5,\emph{b},s5)
+
+                \end{automaton}
+
+                \vspace{-1mm}
+
+          \item \begin{automaton}(0,19)(100,58)
+
+                  \state[start](10,20){s0}
+                  \state(35,20){s1}
+                  \state(60,20){s2}
+                  \state(85,20){s3}
+                  \state[final](110,20){s4}
+
+                  \transition(s0,\emph{a},s1)
+                  \transition[labelposition=.85](s0,\emph{b},s0)
+
+                  \transition(s1,\emph{a},s1)
+                  \transition(s1,\emph{b},s2)
+
+                  \transition(s2,\emph{a},s3)
+                  \transition[angle=-45,curvature=1.2,labelposition=0.8,
+                              labellocation=below](s2,\emph{b},s0)
+
+                  \transition[angle=36](s3,\emph{a},s1)
+                  \transition[offset=2](s3,\emph{b},s4)
+
+                  \transition[offset=2](s4,\emph{a},s3)
+                  \transition[curved,labelposition=.85,angle=40]%
+                              (s4,\emph{b},s0)
+
+                \end{automaton}
+
+                \vspace{5mm}
+
+          \setlength{\columnsep}{15mm}
+
+          \raggedcolumns
+
+          \begin{multicols}{2}
+
+            \item \begin{automaton}(0,24)(70,60)
+
+                    \state[start](10,25){s0}
+                    \state(30,25){s1}
+                    \state(50,25){s2}
+                    \state[final](70,25){s3}
+                    \state[label={\renewcommand{\arraystretch}{.75}%
+                                  \normalsize%
+                                  \begin{tabular}[t]{c}%
+                                    dead%
+                                      \\%
+                                    state%
+                                  \end{tabular}}%
+                           ](20,5){s4}
+                    \state(60,5){s5}
+
+                    \transition(s0,\emph{a},s1)
+                    \transition[labelposition=.35,labellocation=below]%
+                                (s0,\emph{b},s4)
+
+                    \transition[labelposition=.35](s1,\emph{a},s4)
+                    \transition(s1,\emph{b},s2)
+
+                    \transition[offset=2](s2,\emph{a},s3)
+                    \transition[labelposition=.85](s2,\emph{b},s2)
+
+                    \transition(s3,\emph{a},s5)
+                    \transition[offset=2](s3,\emph{b},s2)
+
+                    \transition[loopdirection=left](s4,\emph{a},s4)
+                    \transition[loopdirection=right](s4,\emph{b},s4)
+
+                    \transition[loopdirection=down](s5,\emph{a},s5)
+                    \transition(s5,\emph{b},s2)
+
+                  \end{automaton}
+
+          \columnbreak
+
+            \item \begin{automaton}(0,24)(70,60)
+
+                    \state[start](10,25){s0}
+                    \state(30,25){s1}
+                    \state[final](50,15){s2}
+                    \state(10,5){s3}
+                    \state(30,5){s4}
+
+                    \transition(s0,\emph{a},s1)
+                    \transition[labelposition=.85](s0,\emph{b},s0)
+
+                    \transition(s1,\emph{a},s2)
+                    \transition(s1,\emph{b},s1)
+
+                    \transition(s2,\emph{a},s4)
+                    \transition[loopdirection=right](s2,\emph{b},s2)
+
+                    \transition(s3,\emph{a},s0)
+                    \transition[loopdirection=down,labelposition=.85]%
+                                (s3,\emph{b},s3)
+
+                    \transition(s4,\emph{a},s3)
+                    \transition[loopdirection=down](s4,\emph{b},s4)
+
+                  \end{automaton}
+
+          \end{multicols}
+
+          \vspace{16mm}
+
+          \item \begin{tabular}[t]{@{}p{1.75in}@{\hspace{.25in}}p{4.25in}@{}}
+
+                  \begin{automaton}(0,29)(42,40)
+
+                    \state[start,final](10,30){s0}
+                    \state[final](35,30){s1}
+                    \state[final](10,5){s2}
+                    \state(35,5){s3}
+
+                    \transition[offset=2,labeloffset=1,labelposition=.15]%
+                                (s0,\emph{a},s3)
+                    \transition[labellocation=below,offset=-2](s0,\emph{b},s2)
+
+                    \transition[offset=2,labeloffset=1,labelposition=.85]%
+                                (s1,\emph{a},s2)
+                    \transition[offset=-2,labeloffset=.5,labelposition=.5]%
+                               (s1,\emph{b},s3)
+
+                    \transition[offset=2,labeloffset=1,labelposition=.85]%
+                                (s2,\emph{a},s1)
+                    \transition[offset=-2,labeloffset=.25,labelposition=.5]%
+                                (s2,\emph{b},s0)
+
+                    \transition[offset=2,labeloffset=1,labelposition=.15]%
+                                (s3,\emph{a},s0)
+                    \transition[labellocation=below,offset=-2](s3,\emph{b},s1)
+
+                  \end{automaton}
+
+              &
+
+                Note that when a language is expressed as a conjunction or
+                disjunction of properties, as this one is, it is often
+                convenient to construct a DFA by identifying all of the
+                possibilities for each property and then creating a separate
+                state corresponding to each combination of the properties.
+                Then for each state you need to determine for each symbol of
+                the input alphabet which other state a transition should
+                lead to.  Lastly you have to identify which of the states
+                represent final states and which is the start state.
+
+                \end{tabular}
+
+                \vspace{-4mm}
+
+                In this DFA, the states represent the following combinations of
+                properties:
+
+                \begin{itemize}
+
+                  \addtolength{\itemsep}{.5mm}
+
+                  \item The upper--left state represents strings with an even
+                        number of $a$'s and that have even lengths.
+
+                  \item The lower--left state represents strings with an even
+                        number of $a$'s and that have odd lengths.
+
+                  \item The upper--right state represents strings with an odd
+                        number of $a$'s and that have even lengths.
+
+                  \item The upper--left state represents strings with an odd
+                        number of $a$'s and that have odd lengths.
+
+                \end{itemize}
+
+                \vspace{0mm}
+
+          \begin{multicols}{2}
+
+            \item \begin{automaton}(0,14)(70,32)
+
+                    \state[start](10,15){s0}
+                    \state(30,15){s1}
+                    \state(50,15){s2}
+                    \state[final](70,15){s3}
+
+                    \transition[offset=2](s0,\emph{a},s1)
+                    \transition[labelposition=.85](s0,\emph{b},s0)
+
+                    \transition(s1,\emph{a},s2)
+                    \transition[offset=2](s1,\emph{b},s0)
+
+                    \transition(s2,\emph{a},s3)
+                    \transition[angle=55,labelposition=.15](s2,\emph{b},s0)
+
+                    \transition(s3,\emph{a},s3)
+                    \transition[loopdirection=down](s3,\emph{b},s3)
+
+                  \end{automaton}
+
+          \columnbreak
+
+            \item \begin{automaton}(0,14)(70,32)
+
+                    \state[start,final](10,15){s0}
+                    \state[final](30,15){s1}
+                    \state[final](50,15){s2}
+                    \state[label={\renewcommand{\arraystretch}{.75}%
+                                  \normalsize%
+                                  \begin{tabular}[t]{c}%
+                                    dead%
+                                      \\%
+                                    state%
+                                  \end{tabular}}%
+                           ](70,15){s3}
+
+                    \transition[offset=2](s0,\emph{a},s1)
+                    \transition[labelposition=.85](s0,\emph{b},s0)
+
+                    \transition(s1,\emph{a},s2)
+                    \transition[offset=2](s1,\emph{b},s0)
+
+                    \transition(s2,\emph{a},s3)
+                    \transition[angle=55,labelposition=.15](s2,\emph{b},s0)
+
+                    \transition(s3,\emph{a},s3)
+                    \transition[loopdirection=down](s3,\emph{b},s3)
+
+                  \end{automaton}
+
+          \end{multicols}
+
+          \item \begin{automaton}(0,28)(100,47)
+
+                  \state[start](10,30){s0}
+                  \state(35,30){s1}
+                  \state(60,30){s2}
+                  \state[final](85,30){s3}
+                  \state[final](110,30){s4}
+                  \state[final](135,30){s5}
+                  \state[label={\renewcommand{\arraystretch}{.75}%
+                                \normalsize%
+                                \begin{tabular}[t]{c}%
+                                  dead%
+                                    \\%
+                                  state%
+                                \end{tabular}}%
+                        ](85,5){s6}
+                  \state[final](135,5){s7}
+
+                  \transition[offset=2](s0,\emph{a},s1)
+                  \transition[labelposition=.85](s0,\emph{b},s0)
+
+                  \transition(s1,\emph{a},s2)
+                  \transition[offset=2](s1,\emph{b},s0)
+
+                  \transition(s2,\emph{a},s3)
+                  \transition[angle=45,curvature=.75](s2,\emph{b},s0)
+
+                  \transition(s3,\emph{a},s6)
+                  \transition(s3,\emph{b},s4)
+
+                  \transition[offset=2](s4,\emph{a},s5)
+                  \transition(s4,\emph{b},s4)
+
+                  \transition(s5,\emph{a},s7)
+                  \transition[offset=2](s5,\emph{b},s4)
+
+                  \transition[loopdirection=left](s6,\emph{a},s6)
+                  \transition[loopdirection=down](s6,\emph{b},s6)
+
+                  \transition(s7,\emph{a},s6)
+                  \transition(s7,\emph{b},s4)
+
+                \end{automaton}
+
+                \vspace{26mm}
+
+          \item \begin{tabular}[t]{@{}p{3.25in}@{\hspace{.25in}}p{2.95in}@{}}
+
+                  \begin{automaton}(0,33)(70,52)
+
+                    \state[start,final](10,35){s0}
+                    \state[final](30,35){s1}
+                    \state[final](50,35){s2}
+                    \state[final](70,35){s3}
+                    \state[final](10,10){s4}
+                    \state(40,10){s5}
+                    \state(70,10){s6}
+
+                    \transition[labellocation=below](s0,\emph{a},s5)
+                    \transition(s0,\emph{b},s1)
+
+                    \transition(s1,\emph{a},s5)
+                    \transition(s1,\emph{b},s2)
+
+                    \transition(s2,\emph{a},s5)
+                    \transition(s2,\emph{b},s3)
+
+                    \transition(s3,\emph{a},s3)
+                    \transition[loopdirection=down](s3,\emph{b},s3)
+
+                    \transition[labellocation=below](s4,\emph{a},s5)
+                    \transition[loopdirection=down,labelposition=.85]%
+                                (s4,\emph{b},s4)
+
+                    \transition[labellocation=below](s5,\emph{a},s6)
+                    \transition[loopdirection=down](s5,\emph{b},s5)
+
+                    \transition[angle=45,curvature=1,labelposition=.85]%
+                                (s6,\emph{a},s4)
+                    \transition[loopdirection=down](s6,\emph{b},s6)
+
+                  \end{automaton}
+
+                &
+
+                  Below is a regular expression based directly on the DFA.
+
+                  Note that every subsidiary clause in the regular expression
+                  corresponds to some path in the DFA from the start state to
+                  a final state, with Kleene closure corresponding to a cycle
+                  in the DFA.
+
+                  This regular expression isn't as short as it could be.  I
+                  wrote this version this way as one example illustration of
+                  the correspondence between DFAs and regular expressions.
+
+                \end{tabular}
+
+                \vspace{-4mm}
+
+                \(
+                  \lpar \
+                    \largeepsilon \ | \
+                    b \ | \
+                    bb \ | \
+                    bbb(a|b)^* \ | \
+                    ab^*ab^*ab^*(ab^*ab^*ab^*)^* \ | \
+                    bab^*ab^*ab^*(ab^*ab^*ab^*)^* \ | \
+                    bbab^*ab^*ab^*(ab^*ab^*ab^*)^*
+                    \
+                  \rpar
+                \)
+
+                \medskip
+
+                Here's a shorter version that also recognizes or accepts
+                the same langauge as the DFA does:
+
+                \smallskip
+
+                \(
+                  \lpar \
+                    b \ | \
+                    bb \ | \
+                    bbb(a|b)^* \ | \
+                    (b^*ab^*ab^*ab^*)^*
+                    \
+                  \rpar
+                \)
+
+          \item \begin{tabular}[t]{@{}p{2.8in}@{\hspace{.25in}}p{3.4in}@{}}
+
+                  \begin{automaton}(0,28)(70,45)
+
+                    \state[start](10,30){s0}
+                    \state(35,30){s1}
+                    \state(60,30){s2}
+                    \state(10,5){s3}
+                    \state[final](35,5){s4}
+                    \state(60,5){s5}
+
+                    \transition(s0,\emph{a},s1)
+                    \transition[offset=-2,labellocation=below](s0,\emph{b},s3)
+
+                    \transition(s1,\emph{a},s2)
+                    \transition[offset=-2,labellocation=below](s1,\emph{b},s4)
+
+                    \transition[angle=-35,curvature=.75,labelposition=.85,
+                                labellocation=below](s2,\emph{a},s0)
+                    \transition[offset=-2,labellocation=below](s2,\emph{b},s5)
+
+                    \transition(s3,\emph{a},s4)
+                    \transition[offset=-2,labellocation=below](s3,\emph{b},s0)
+
+                    \transition(s4,\emph{a},s5)
+                    \transition[offset=-2,labellocation=below](s4,\emph{b},s1)
+
+                    \transition[angle=35,curvature=.75,labelposition=.85]%
+                                (s5,\emph{a},s3)
+                    \transition[offset=-2,labellocation=below](s5,\emph{b},s2)
+
+                  \end{automaton}
+
+                &
+
+                  This DFA can again be constructed by creating a state
+                  corresponding to each possible combination of the two
+                  properties given in the definition of the language.  The
+                  top row of states represents strings that have an even
+                  number of $b$'s and the bottom row represents strings
+                  that have an odd number of $b$'s.  The left column of
+                  states represents strings $w$ for which $\#a(w) \, \equiv
+                  0 \pmod{3}$, while the middle column of states represents
+                  strings $w$ for which $\#a(w) \, \equiv 1 \pmod{3}$, and
+                  the rightmost column of states represents strings $w$ for
+                  which $\#a(w) \, \equiv 2 \pmod{3}$.
+
+                \end{tabular}
+
+                \vspace{-4mm}
+
+                After determining each such state, the transitions between
+                them should be relatively easy to identify.
+
+                \vspace{-10mm}
+
+          \item \begin{automaton}(0,28)(100,37)
+
+                  \state[start,final](10,30){s0}
+                  \state[final](35,30){s1}
+                  \state[final](10,5){s2}
+                  \state[label={\renewcommand{\arraystretch}{.75}%
+                                \normalsize%
+                                \begin{tabular}[t]{c}%
+                                  dead%
+                                    \\%
+                                  state%
+                                \end{tabular}}%
+                        ](35,5){s3}
+
+                  \transition(s0,\emph{a},s1)
+                  \transition[labellocation=below](s0,\emph{b},s2)
+
+                  \transition(s1,\emph{a},s3)
+                  \transition[offset=-2,labellocation=below](s1,\emph{b},s2)
+
+                  \transition[offset=-2,labellocation=below](s2,\emph{a},s1)
+                  \transition[labellocation=below](s2,\emph{b},s3)
+
+                  \transition[loopdirection=right](s3,\emph{a},s3)
+                  \transition[loopdirection=down](s3,\emph{b},s3)
+
+                \end{automaton}
+
+                \vspace{26mm}
+
+          \item \begin{tabular}[t]{@{}p{3.8in}@{\hspace{.25in}}p{2.4in}@{}}
+
+                  \begin{automaton}(0,18)(90,45)
+
+                    \state[start,final](10,20){s0}
+                    \state(35,35){s1}
+                    \state(60,35){s2}
+                    \state[final](85,35){s3}
+                    \state[final](35,5){s4}
+                    \state(60,5){s5}
+                    \state(85,5){s6}
+
+                    \transition(s0,\emph{b},s1)
+                    \transition[labellocation=below](s0,\largeepsilon,s4)
+
+                    \transition(s1,\emph{b},s2)
+
+                    \transition(s2,\emph{b},s3)
+
+                    \transition(s3,\emph{a},s3)
+                    \transition[loopdirection=down](s3,\emph{b},s3)
+
+                    \transition[labellocation=below](s4,\emph{a},s5)
+                    \transition[loopdirection=down](s4,\emph{b},s4)
+
+                    \transition[labellocation=below](s5,\emph{a},s6)
+                    \transition[loopdirection=down](s5,\emph{b},s5)
+
+                    \transition[angle=-35,curvature=.75,labellocation=below]%
+                                (s6,\emph{a},s4)
+                    \transition[loopdirection=down](s6,\emph{b},s6)
+
+                  \end{automaton}
+
+                  &
+
+                  Note that not only does this NFA have an
+                  \largeepsilon--transition, but some of its states don't have
+                  transitions for every alphabet symbol.  There are some paths
+                  for some strings in the language (such as \emph{baaa}) that
+                  don't lead to a final state, but there is a path that does
+                  lead to a final state for each string in the language.
+
+                \end{tabular}
+
+          \end{enumerate}
+
+          \pagebreak
+
+    \item Similar to the previous practice problems, you may have noticed in
+          a few cases in this problem that even making a small change in a
+          DFA can have a big effect on the language it accepts.
+
+          \vspace{-1.5mm}
+
+          \begin{enumerate}
+
+            \addtolength{\itemsep}{3mm}
+
+            \item This DFA is wrong.  Strings like 01011 for example are in
+                  the language, so the DFA should recognize or accept them,
+                  but it does not.  Furthermore, some strings like 10 and 01
+                  for example are not in the language, so the DFA should not
+                  recognize or accept them, but it does.
+
+            \item This DFA is wrong.  Strings like 010, 100, and 0011 for
+                  example are in the language, so the DFA should recognize
+                  or accept them, but it does not.
+
+            \item This DFA is wrong.  Strings like 1010 for example are in
+                  the language, so the DFA should recognize or accept them,
+                  but it does not.  Furthermore, a string like 01 for
+                  example is not in the language, so the DFA should not
+                  recognize or accept it, but it does.
+
+            \item This DFA is wrong.  Strings like \largeepsilon, 100, and 010,
+                  and 0101 for example are in the language, so the DFA
+                  should recognize or accept them, but it does not.
+
+            \item This DFA is wrong.  A string like 10011 for example is in
+                  the language, so the DFA should recognize or accept it,
+                  but it does not.
+
+            \item This DFA is wrong.  A string like 0101010 for example is
+                  in the language, so the DFA should recognize or accept it,
+                  but it does not.
+
+            \item This DFA is wrong.  Some strings like 110 and 0010 for
+                  example are not in the language, so the DFA should not
+                  recognize or accept them, but it does.
+
+            \item This DFA is correct.
+
+          \end{enumerate}
+
+  \end{enumerate}
+
+\end{document}

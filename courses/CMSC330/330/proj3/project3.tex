@@ -1,0 +1,1240 @@
+\documentclass[11pt]{article}
+
+  % unclear or undefined- dotproduct [] [], power_of_2 for zero or negative
+  % numbers, and the fact that the definition of chebychev (which may be
+  % spelled wrong) is not exactly standard.
+
+  %
+  % Could have mentioned that it's been shown that Life can emulate a
+  % universal Turing machine.
+  %
+
+  %
+  % gcd of 0 and any nonzero number x is the absolute value of x, since the
+  % absolute value of x divides x and any number is a divisor of 0.  Therefore,
+  % since we divide x by the absolute value of x to reduce, we're always going
+  % to wind up with 0/1.
+  % 
+  % If both numbers are 0, any nonzero number divides them, so technically
+  % there also there is no gcd, although gcd of 0 and 0 is usually just
+  % called 0.  However, I would say that the project assignment does not say
+  % how to handle this case.
+  %
+
+  %
+  % "Note that all functions should work appropriately, without errors, with
+  % fractions having the value zero." meant with numerator zero, not both
+  % numerator and denominator zero (but that wasn't really explicit).
+  %
+
+  %
+  % The definition of Chebyshev is wrong, and it can actually be calculated
+  % in O(1) as is.  Just stuck with the current definition.
+  %
+
+  %
+  % Should have just renamed (our) string_of_int_list in utilities.ml,
+  % because apparently it's what's being run when students submit, not their
+  % own string_of_int_list.
+  %
+
+  %
+  % Having a one-line shell script in the public bin directory to run "ledit
+  % ocaml" when a student runs "ocaml" interferes with running the public
+  % tests the way the projects says.  Instead the student has to create an
+  % alias for ocaml, e.g.:
+  %
+  % alias ocaml 'ledit ocaml'
+  %
+
+  %
+  % Besides giving students the .cmo files of any precompiled files/modules,
+  % they also have to be given the .cmi files (which I originally didn't do,
+  % sigh).
+  %
+
+  %
+  % Note: edited the output of the OCaml interpreter so as to not give away
+  % what helper functions had been written in my implementation.
+  %
+
+  %
+  % Should have said that the functions from one part can be used in other
+  % parts.
+  %
+
+  % your functions can use currying or not
+
+  % if your parameters don't match
+
+  % no match errors
+
+  % how the tests are written
+
+  % our module
+
+  %  #load "graphics.cma";;
+  %  #load "unix.cma";;
+
+  % ocamlc graphics.cma utilities.ml
+
+  % note no input files
+
+  % the mod operator is mod
+
+  % the & and | operators
+
+  % if both are negative do both become positive???
+
+  % if you make any changes in Rational need to reopen
+
+  % can't reduce when storing or ceil will be off
+
+  % ceil 0 (be sure all fns work for 0)
+
+  % can't use any refs or loops
+
+  \usepackage[none,light,outline,timestamp]{draftcopy}
+
+  \usepackage{wasysym}  % for smiley face character
+
+  % For some reason \definecolor is defined on home Linux machine, but not
+  % department Linux machine, without this package.
+  %
+  % \usepackage{color}
+
+  \usepackage{330-f12}
+
+  \psset{unit=.5mm,linewidth=.6pt}
+
+  % \newrgbcolor{lightblue}{0.000 0.900 1.000}  % custom light blue color
+
+  \usepackage[dvips,
+              colorlinks=true,
+              urlcolor=red,         % \href{...}{...} external (URL)
+              % filecolor=...  seems to have no effect
+              % filecolor=green,    % \href{...} local file
+              linkcolor=blue,       % \ref{...} and \pageref{...}
+              pdftitle={CMSC 330 project},
+              pdfauthor={Nick Feamster and Larry Herman},
+              pdfsubject={CMSC 330 project},
+              pdfkeywords={CMSC, 330},
+              pdfproducer={LaTeX},
+              pagebackref,
+              bookmarks=true,
+              pdfstartview=FitH
+             ]{hyperref}
+
+\begin{document}
+
+  \header{\course}{Project \#3}{\Term}
+
+  \vspace{-3mm}
+
+  \begin{centering}
+
+    Date due: Tuesday, November 6, 10:00:00 p.m.
+
+  \end{centering}
+
+  \vspace{-6mm}
+
+  % \addtolength{\baselineskip}{1.25mm}
+
+  \section{Introduction}
+
+    In this project you will write a variety of small OCaml functions, write a
+  rational number module, and implement a computer science simulation called
+  the Game of Life, which models or mimics some biological aspects of life
+  including loneliness, congregation, and overcrowding.  The purpose of the
+  project is to get practice with OCaml data, recursion, and modules.  With
+  one exception, all functions to be written that have more than one
+  argument will use currying, so a call to the function would simply be in
+  the form of the function name followed by arguments (i.e., the arguments
+  would not be in the form of a tuple.)
+
+    The project is divided into four parts.  Each part must be written in a
+  separate source file,named \texttt{part1.ml} through \texttt{part4.ml}.
+  You may write helper function definitions in any of the files as you need,
+  but do \textbf{not} include any top--level print calls or expression
+  evaluations.  (In other words, if we were to run OCaml and type for
+  example \texttt{\#use "part1.ml"}, we should only see definitions of
+  functions.)  If you include print calls or expression evaluations in any
+  of the files their results will throw off the comparison of the output,
+  and consequently your program will fail all of the tests of that part on
+  the submit server.  That would be unfortunate.
+
+    In several places, some functions are described as having to throw
+  \texttt{Failure} exceptions (as mentioned in class, \texttt{Failure} is an
+  OCaml library exception that takes one argument, which is commonly used
+  for a description of the problem).  In these cases it doesn't matter what
+  argument string the exception is constructed with.  Some of our tests may
+  check that the right exception is being thrown in these cases, but we will
+  not check its argument string's value.  In the discussion below, ``pair''
+  refers to a 2--tuple.
+
+  \section{Part \#1: Small OCaml functions}
+
+    Put all of the functions for this part in a single file \texttt{part1.ml}.
+  All functions in this part that take individual numbers as arguments
+  should take \texttt{int}s.  For functions that take lists, in any cases
+  where it matters the element types of the lists have been specified below;
+  other functions that have list arguments may be called with any type of
+  list.  The first few functions are quite simple.  Some of the functions,
+  including the simple ones, may be used in writing other ones, or in our
+  tests of other ones.  As Section \ref{section:requirements} says, you may
+  \textbf{not} use any OCaml library functions in any of your functions.
+  For a couple of the functions you also may not use any user--written
+  helper functions, as specified below.
+
+    \vspace{-2.5mm}
+
+    \begin{itemize}
+
+      \addtolength{\itemsep}{-1mm}
+
+      \item Write a function \texttt{double x} that returns two times
+            \texttt{x}'s value.
+
+      \item Write a function \texttt{absolute\_value x} that returns the
+            absolute value of \texttt{x}.
+
+            Note: if you write a call like \texttt{absolute\_value -1} in
+            OCaml the interpretation is that you are trying to subtract
+            \texttt{1} from something named \texttt{absolute\_value}, but
+            \texttt{absolute\_value} is a function, which you can't subtract
+            an integer from.  Instead, use \texttt{absolute\_value (-1)}.
+
+      \item Write a function \texttt{power\_of\_2 x} that returns true if
+            and only if \texttt{x} is a power of 2.  Use the following
+            facts:
+
+            \vspace{-2.5mm}
+
+            \begin{itemize}
+
+              \item 1 is a power of 2
+
+              \item \texttt{x} is a power of 2 if 2 divides \texttt{x} and
+                    \texttt{x / 2} is a power of 2.  Hint-- you may want to
+                    use the \texttt{mod} function here, which returns the
+                    remainder of a division (like \texttt{\%} in Java or C).
+
+            \end{itemize}
+
+            \vspace{-2.5mm}
+
+            If its parameter \texttt{x} is negative the function should
+            throw a \texttt{Failure} exception.
+
+      \item Write a function \texttt{chebyshev x k} that computes the
+            function $T_k(\texttt{x})$, which is defined as follows:
+
+            \enlargethispage{3mm}
+
+            \vspace{-2.5mm}
+
+            \begin{displaymath}
+              T_k(x) = \left\{
+              \begin{array}{ll}
+
+                1 & \textrm{if} \ k = 0 \\
+
+                x & \textrm{if} \ k = 1 \\
+
+                2T_{k-1}(x) - T_{k-2}(x) & \textrm{if} \ k > 1
+
+              \end{array}
+              \right.
+            \end{displaymath}
+
+            \vspace{-2.5mm}
+
+            If its parameter \texttt{k} is negative the function should
+            throw a \texttt{Failure} exception.  (The definition of the
+            function above shows that it is not a problem if \texttt{x} is
+            negative.)
+
+            \textbf{Important:} The computation of \texttt{chebyshev x k}
+            should take time $\mathcal{O}(\texttt{k})$.  To achieve this,
+            you will need to write a second function (you may want to name
+            it \texttt{chebyshev' x y z k}; note that identifiers in OCaml
+            can contain single quotes, so helper functions are frequently
+            named with a trailing quote like this) where \texttt{y} and
+            \texttt{z} are $T_{k-1}(\texttt{x})$ and $T_{k-2}(\texttt{x})$.
+            Hint: You may also want to implement the straightforward version
+            of \texttt{chebyshev} to check your results.
+
+      \item Write a function \texttt{product list} that returns the product
+            of the elements in the list \texttt{list}.  (You may assume that
+            its argument is a list of integers.)  The function should
+            \textbf{not} use any other user--defined (helper) functions.
+            The product of the empty list is defined to be 1.
+
+      \item Write a function \texttt{dotproduct list1 list2} that returns
+            the dot product of the lists \texttt{list1} and \texttt{list2}.
+            (You may assume that both arguments are lists of integers.)  If
+            you haven't had linear algebra, the dot product of two lists
+            \emph{x} and \emph{y}, which each have \emph{n} elements, is
+            defined as $\sum_{i = 1}^{n} (x_i \cdot y_i) \: = \: x_{1}y_{1}
+            + \cdots + x_{n}y_{n}$.  For example, \texttt{dotproduct [1; 2;
+            3] [4; 5; 6]} should return 32.  If the lists do not have
+            the same length the function should throw a \texttt{Failure}
+            exception.
+
+      \item Write a function \texttt{remove\_first x list} that returns a
+            copy of the list \texttt{list} with the \textbf{first}
+            occurrence (and only the first occurrence) of the element
+            \texttt{x} removed.  It should return \texttt{list} itself if
+            \texttt{x} is not in the list.  The function should \textbf{not}
+            use any other user-defined helper functions.
+
+      \item Write a function \texttt{smallest list} that returns the
+            smallest element in the list \texttt{list}.  (You may assume
+            that its argument is a list of integers, although you may be
+            surprised after you have written it to see that it will work with
+            a variety of types anyway.)  If the list is empty the function
+            should throw the exception \texttt{Failure}.  The function
+            should not assume anything about the values in the list; there
+            may be negative numbers in it, and there's no guarantee that
+            everything in the list will be greater than some particular
+            number.
+
+      \item Write a function \texttt{selection\_sort list} that returns a
+            copy of the list \texttt{list} sorted from smallest to largest
+            element, using the selection sort algorithm.  (You may assume
+            that its argument is a list of things that can be compared with
+            comparison operators, and as above may be surprised after you
+            have written it to see that it will work with a variety of
+            types.)
+
+            Consider the following idea: If the first element of the list is
+            the smallest element, it will be at the beginning of the result.
+            Otherwise, find the smallest element in the list, and make it
+            the head of the result list.  The functions
+            \texttt{remove\_first} and \texttt{smallest} may be useful
+            in accomplishing this.
+
+      \item Write a function \texttt{string\_of\_int\_list list} that
+            converts a list of integers to a string, using the
+            \texttt{string\_of\_int} OCaml library function, and returns the
+            string produced.  The string returned should be exactly the same
+            as if the list were printed by the top--level in OCaml, e.g.,
+            the last element should not have a trailing semicolon.  Note
+            that OCaml's string concatenation function is \texttt{\^}.  For
+            example, the call \texttt{string\_of\_int\_list [3; 3; 0]}
+            should return the string (blank spaces are shown as \verb*@ @)
+            ``\verb*@[3; 3; 0]@'' (without the quotes).
+
+      \item Write a function \texttt{addpairs list} whose parameter
+            \texttt{list} is a list of pairs of integers, and which returns
+            a list containing the sum of each pair in the same order the
+            pairs appeared in the list.  For example, \texttt{addpairs [(1,
+            2); (3, 4); (5, 6)]} should return the list \texttt{[3; 7;
+            11]}.
+
+      \item Write a function \texttt{flatten list} whose parameter
+            \texttt{list} is a list of lists of integers, and which returns
+            a single list containing all the integers in \texttt{list} in
+            order, from the first list to the last.  For example,
+            \texttt{flatten [[1; 2; 3]; []; [4; 5]]} should return
+            \texttt{[1; 2; 3; 4; 5]}.  Note that the lengths of the inner
+            lists may not be the same.
+
+    \end{itemize}
+
+    \vspace{-3.5mm}
+
+  \section{Part \#2: Higher--order functions}
+
+    Put all of the functions for this part in the file \texttt{part2.ml}.  You
+  may assume that all parameters in this part that are of a function type
+  will be of type \texttt{int -> int}.
+
+    \vspace{-2.5mm}
+
+    \begin{itemize}
+
+      \addtolength{\itemsep}{-1mm}
+
+      \item Write a function \texttt{app\_pair fn pair} that returns a new
+            pair (as above, a two-tuple) containing \texttt{fn} applied to
+            each component of \texttt{pair}, which you may assume is a pair.
+            For example, \texttt{app\_pair double (3, 4)} should return
+            \texttt{(6, 8)}.
+
+      \item Write a function \texttt{apply\_n\_times fn n x} that returns
+            \texttt{fn(fn(\textrm{\ldots}fn(x)))}, where the function
+            \texttt{fn} is applied \texttt{n} times to \texttt{x}.
+            \texttt{apply\_n\_times fn 0 x} is just \texttt{x}.  If
+            \texttt{n} is negative the function should throw a
+            \texttt{Failure} exception.
+
+      \item Write a function \texttt{apply\_to\_range fn m n} that returns a
+            list containing the function \texttt{fn} applied to each of the
+            integers from \texttt{m} to \texttt{n}, inclusive.  For example,
+            \texttt{apply\_to\_range double 3 5} should return \texttt{[6;
+            8; 10]}.  If \texttt{m} is greater than \texttt{n} the
+            function should throw a \texttt{Failure} exception.
+
+      \item Write a function \texttt{compose list x}, where \texttt{list} is
+            a list of functions, that returns the composition of all the
+            functions in \texttt{list} applied to \texttt{x}.  If
+            \texttt{list} is empty, the result produced should just be
+            \texttt{x}, which is just the identity function applied to
+            \texttt{x}.  For example, \texttt{compose [double;
+            absolute\_value] (-3)} = (mathematically)
+            $\mathtt{double}(\mathtt{absolute\_value}(-3)) = 6$.  Note the
+            order of function application.
+
+    \end{itemize}
+
+    \vspace{-4.5mm}
+
+  \section{Part \#3: A rational number module}
+
+    In this part you will implement a module for working with rational
+  numbers.  In floating point, numbers such as $1/3$ cannot be represented
+  exactly---the closest we can come is something like 0.333333, but
+  eventually we run out of digits.  In order to avoid rounding errors, we
+  would like to keep the numerator and denominator separate, as integers.
+  For example, you could represent a rational number $n/d$ as the pair
+  (\texttt{(n, d)}.  Your task is to implement a module \texttt{Rational}
+  with the following signature:
+
+    \vspace{-1mm}
+
+    \begin{center}
+
+      \begin{BVerbatim}[gobble=6,baselinestretch=.925]
+      module type RATIONAL =
+        sig
+          type t
+
+          val rational : int -> int -> t        (* num -> den -> rat *)
+          val string_of_rational : t -> string  (* num/den, reduced *)
+          val numerator : t -> int              (* numerator *)
+          val denominator : t -> int            (* denominator *)
+          val greaterthan : t -> t -> bool      (* true if 1st arg > 2nd arg *)
+          val multiply : t -> t -> t            (* multiplication *)
+          val add : t -> t -> t                 (* addition *)
+          val ceiling : t -> int                (* ceiling *)
+        end
+      \end{BVerbatim}
+
+    \end{center}
+
+    \vspace{-1mm}
+
+    Here \texttt{t} is an abstract type representing rational numbers.  A
+  client using this module will not be able to assume anything about how
+  rationals are represented.  Here is a description of the functions'
+  behavior:
+
+    \vspace{-2.5mm}
+
+    \begin{description}
+
+      \addtolength{\itemsep}{-1mm}
+
+      \item[\texttt{\textmd{rational}}:] A more conventional OCaml name
+            for this function, to follow the naming convention used by
+            other functions that convert one type to another, would be
+            \texttt{string\_of\_rational}, but we named it
+            \texttt{rational} because it's sort of like a constructor, and
+            in languages that have been taught up to this point a
+            constructor would have the name of its class or type.  It should
+            produce a rational number from two integers, whose values may
+            both be positive, both be negative, or one may be positive and
+            the other negative (or either or both may be zero).  Note that
+            all functions should work appropriately, without errors, with
+            fractions having the value zero.
+
+            \enlargethispage{5mm}
+
+      \item[\texttt{\textmd{string\_of\_rational}}:] This function should
+            convert a rational to a string representation \texttt{n/d},
+            where \texttt{n} is the numerator and \texttt{d} is the
+            denominator.  Negative rational numbers should be returned as
+            \texttt{-n/d}, and never as \texttt{n/-d}.  It must always
+            return a string representing the rational in \textbf{reduced}
+            form, so that the greatest common divisor (gcd) of \texttt{n}
+            and \texttt{d} is 1.  To achieve this you will probably need to
+            write a function to compute the gcd.  To calculate the gcd of
+            two numbers you can use the naive algorithm (dividing both
+            numbers by all possible numbers that could be the gcd, and
+            returning the largest), or you can use Euclid's algorithm, one
+            form of which is:
+
+            \hspace{4mm}
+            \begin{minipage}[t]{3in}
+
+              \begin{tabbing}
+
+                % mm\=mm\=mm\=mm\=\kill
+
+                xx\=xx\=xx\=xx\=\kill
+
+                \textbf{gcd}(a, b):
+                  \\
+
+                  \> \textbf{if} a \texttt{==} 0
+                    \\
+
+                    \> \> \textbf{return} b
+                      \\
+
+                  \> \textbf{else}
+                    \\
+
+                    \> \> \textbf{while} b \texttt{!=} 0
+                      \\
+
+                      \> \> \> \textbf{if} a \texttt{>} b
+                        \\
+
+                        \> \> \> \> a\texttt{=} a \texttt{-} b
+                          \\
+
+                      \> \> \> \textbf{else} b\texttt{=} b \texttt{-} a
+                        \\
+
+                    \> \> \textbf{return} a
+
+              \end{tabbing}
+
+            \end{minipage}
+
+            \smallskip
+
+            There is also a modulus--based version of Euclid's algorithm,
+            which you can look up and use if you prefer.
+
+      \item[\texttt{\textmd{numerator}}:] This function should return the
+            numerator of the rational it is applied to, also in reduced
+            form.  \texttt{numerator} of a negative rational should always
+            be negative.
+
+      \item[\texttt{\textmd{denominator}}:] This function should return
+            the denominator of the rational it is applied to, also in
+            reduced form.  \texttt{denominator} of a negative rational
+            should be \textbf{positive}.
+
+      \item[\texttt{\textmd{greaterthan}}:] This function should return
+            true if the value of its first rational argument is (strictly)
+            greater than the value of its second rational argument.
+
+      \item[\texttt{\textmd{multiply}}:] This function should return a new
+            rational representing the product of its two rational
+            arguments.
+
+      \item[\texttt{\textmd{add}}:] This function should return a new
+            rational representing the sum of its two rational
+            arguments.
+
+      \item[\texttt{\textmd{ceiling}}:] This function should return the
+            smallest integer greater than or equal to its rational
+            argument.  (E.g., $\mathrm{ceiling}(2/3)$ is 1, and
+            $\mathrm{ceiling}(-2/3)$ is 0.)
+
+    \end{description}
+
+    \vspace{-1.5mm}
+
+    \noindent
+    Handling negative rationals may unexpectedly be more tricky than handling
+  positive rationals.  You may want to just get the functions to work at
+  first with positive rationals, then modify them.
+
+    Put your solution for this part in a file \texttt{part3.ml}.  Don't create
+  separate \texttt{.mli} and \texttt{.ml} files; just put both the module
+  signature and implementation into the same file \texttt{part3.ml}.
+
+  \section{Part \#4: Implement the Game of Life\label{section:life}}
+
+    The Game of Life was originally invented by John H. Conway, a
+  mathematician at Cambridge, and described by Martin Gardner in his
+  ``Mathematical Games'' column in the October 1970 issue of
+  \emph{Scientific American}.  Although it's called a game, Life is an
+  example of a cellular automaton; these have applicability in simulations
+  of physics, chemistry, and biology, as well as studying computer viruses,
+  and they're used in image processing and image generation.  A 1997
+  Scientific American article mentioned using cellular automata to simulate
+  and study solutions to traffic problems.
+
+    Life occurs on a two--dimensional rectangular grid divided into different
+  cells, and takes place over one or more generations.  Each cell in the
+  grid may be either empty or occupied by a single creature.  The cells that
+  will contain creatures in any generation are determined according to how
+  many neighbors each has in the previous generation.  The rules in Conway's
+  original version of the game that govern how creatures multiply and
+  decrease are quite simple; for this project, in order to be able to
+  experiment with different situations, we will allow the rules to be varied
+  during any particular execution.
+
+    \enlargethispage{6mm}
+
+    In order to explain the game rules we need to describe what the neighbors
+  of a cell are, namely all the cells that are adjacent to it.  Note that a
+  cell is not a neighbor of itself.  Not all cells in a grid have the same
+  number of neighbors.  An interior cell, like the one marked 1 below, has
+  eight neighbors (any, all, or none of which may be occupied by a
+  creature), which are the ones shaded in green.
+
+    \vspace{-5mm}
+
+    \begin{center}
+
+      \LARGE
+
+      \begin{pspicture}(70,70)
+
+        \multirput(0,0)(0,10){7}{\qline(0,0)(60,0)}
+
+        \multirput(0,0)(10,0){7}{\qline(0,0)(0,60)}
+
+        \put(20,20){\makebox(10,10){\Large 1}}
+
+        %
+        % the first cell is the one right above the one with #1, and they
+        % go counterclockwise from there
+        %
+        \psframe[fillcolor=green,fillstyle=solid](20,30)(30,40)
+        \psframe[fillcolor=green,fillstyle=solid](10,30)(20,40)
+        \psframe[fillcolor=green,fillstyle=solid](10,20)(20,30)
+        \psframe[fillcolor=green,fillstyle=solid](10,10)(20,20)
+        \psframe[fillcolor=green,fillstyle=solid](20,10)(30,20)
+        \psframe[fillcolor=green,fillstyle=solid](30,10)(40,20)
+        \psframe[fillcolor=green,fillstyle=solid](30,20)(40,30)
+        \psframe[fillcolor=green,fillstyle=solid](30,30)(40,40)
+
+        \put(30,50){\makebox(10,10){\Large 2}}
+
+        \psframe[fillcolor=red,fillstyle=solid](20,50)(30,60)
+        \psframe[fillcolor=red,fillstyle=solid](20,40)(30,50)
+        \psframe[fillcolor=red,fillstyle=solid](30,40)(40,50)
+        \psframe[fillcolor=red,fillstyle=solid](40,40)(50,50)
+        \psframe[fillcolor=red,fillstyle=solid](40,50)(50,60)
+
+        \put(50,0){\makebox(10,10){\Large 3}}
+
+        \psframe[fillcolor=yellow,fillstyle=solid](40,0)(50,10)
+        \psframe[fillcolor=yellow,fillstyle=solid](40,10)(50,20)
+        \psframe[fillcolor=yellow,fillstyle=solid](50,10)(60,20)
+
+      \end{pspicture}
+
+    \end{center}
+
+    \medskip
+
+    An edge cell, like the one marked 2 above, has five neighbors; the ones
+  shaded in red, and a corner cell, like the one marked 3 above, has three
+  neighbors, which are the ones shaded in yellow.  Your program will have to
+  examine all of the neighbors of each cell and count how many are occupied
+  by creatures, to be able to implement rules that determine what the next
+  generation will be.
+
+    In Conway's original version the creatures' population changes according
+  to the following rules:
+
+    \vspace{-2.75mm}
+
+    \begin{itemize}
+
+      \addtolength{\itemsep}{-2mm}
+
+      \item An empty cell with exactly three neighboring creatures will
+            undergo a ``birth'', meaning it will contain a creature in the
+            next generation, simulating that a certain population density is
+            necessary for population growth and reproduction, but conditions
+            cannot be too crowded or a species will not expand.
+
+      \item An empty cell with fewer than three or with more than three
+            neighboring creatures will remain empty in the next generation.
+
+      \item The creature in an occupied cell will continue to live for
+            another generation only if it has either two or three
+            neighboring creatures.
+
+      \item A creature with fewer than two neighboring creatures will not
+            survive in the next generation (its cell will become empty),
+            simulating the effect of loneliness on population and modeling
+            the situation where a minimum population density is necessary
+            for individuals of a species to survive.
+
+      \item Any creature with more than three neighboring creatures will
+            also not survive in the next generation, simulating the effects
+            of overcrowding and contention for scarce resources on a
+            population.
+
+    \end{itemize}
+
+    \vspace{-2mm}
+
+    For example, if {\large\smiley} represents a creature, the arrangement of
+  creatures in the grid on the left below gives rise to the succeeding
+  generation shown on the right:
+
+    \vspace{-5mm}
+
+    \begin{multicols}{2}
+
+      \LARGE
+
+      \begin{centering}
+
+        \begin{pspicture}(70,70)
+
+          \multirput(0,0)(0,10){7}{\qline(0,0)(60,0)}
+
+          \multirput(0,0)(10,0){7}{\qline(0,0)(0,60)}
+
+          \put(20,10){\makebox(10,10){\smiley}}
+
+          \put(30,10){\makebox(10,10){\smiley}}
+
+          \put(30,20){\makebox(10,10){\smiley}}
+
+          \put(20,40){\makebox(10,10){\smiley}}
+
+          \put(30,40){\makebox(10,10){\smiley}}
+
+        \end{pspicture}
+
+      \end{centering}
+
+      \columnbreak
+
+      \begin{centering}
+
+        \begin{pspicture}(70,70)
+
+          \multirput(0,0)(0,10){7}{\qline(0,0)(60,0)}
+
+          \multirput(0,0)(10,0){7}{\qline(0,0)(0,60)}
+
+          \put(20,10){\makebox(10,10){\smiley}}
+
+          \put(30,10){\makebox(10,10){\smiley}}
+
+          \put(20,20){\makebox(10,10){\smiley}}
+
+          \put(30,20){\makebox(10,10){\smiley}}
+
+          \put(20,30){\makebox(10,10){\smiley}}
+
+          \put(30,30){\makebox(10,10){\smiley}}
+
+        \end{pspicture}
+
+      \end{centering}
+
+    \end{multicols}
+
+    \vspace{-2mm}
+
+    The two creatures in the second row did not survive to the next
+  generation, as they only had one neighbor apiece (each had the other).
+  There were two births in the third row, as the two center cells in that
+  row each had three neighbors: the two in the second row (one directly
+  above and the other diagonally above), and the one in the fourth row below
+  (directly below in one case, and diagonally below in the other).  There
+  was one birth in the fourth row, and the three remaining creatures
+  remained alive in the next generation as they each had two neighbors.
+  Note that cells not on the grid can be considered to be dead neighbors.
+
+    The Game of Life gives rise to a number of interesting possibilities; in
+  particular substantial variations in eventual results can arise from even
+  minor differences in the starting conditions:
+
+    \vspace{-2.5mm}
+
+    \begin{itemize}
+
+      \addtolength{\itemsep}{-1.75mm}
+
+      \item Some initial arrangements of creatures on the grid are examples
+            of stasis, meaning they are patterns that stay exactly the same
+            when the rules governing reproduction and death are applied, so
+            every generation is exactly the same as the initial generation
+            or starting arrangement of creatures.
+
+      \item Some starting arrangements lead to all of the creatures dying
+            within some number of generations.
+
+      \item Some starting arrangements lead to patterns that move across the
+            grid (called gliders).
+
+      \item With some starting arrangements the population of creatures
+            changes for some number of generations, but eventually reaches
+            stasis and doesn't change thereafter.  For instance, consider
+            the example above-- the next or third generation, as well as all
+            subsequent ones, would look like this:
+
+            \vspace{-2mm}
+
+            \enlargethispage{2mm}
+
+            \begin{centering}
+
+              \LARGE
+
+              \begin{pspicture}(70,70)
+
+                \multirput(0,0)(0,10){7}{\qline(0,0)(60,0)}
+
+                \multirput(0,0)(10,0){7}{\qline(0,0)(0,60)}
+
+                \put(20,10){\makebox(10,10){\smiley}}
+
+                \put(30,10){\makebox(10,10){\smiley}}
+
+                \put(10,20){\makebox(10,10){\smiley}}
+
+                \put(40,20){\makebox(10,10){\smiley}}
+
+                \put(20,30){\makebox(10,10){\smiley}}
+
+                \put(30,30){\makebox(10,10){\smiley}}
+
+              \end{pspicture}
+
+            \end{centering}
+
+    \end{itemize}
+
+    \vspace{-2.5mm}
+
+    It can be fascinating to see how some very simple initial arrangements
+  of creatures can lead to the development of complex patterns of
+  reproduction.
+
+    Although your program will be able to simulate Life using Conway's
+  original rules above, we will allow for variation in the rules by
+  permitting the numbers of neighbors that govern the birth and death of
+  creatures to be supplied when the game begins.  There are actually tens of
+  thousands of possible variations on the game rules, that yield very
+  different behavior in some cases.
+
+    In this project, grids of cells will be represented by data of the
+  following type:
+
+    \vspace{-2mm}
+
+    \begin{center}
+
+      \texttt{type board = int * int * int list list}
+
+    \end{center}
+
+    \vspace{-2mm}
+
+    Here a board is a tuple \texttt{(max\_row, max\_col, ll)} where
+  \texttt{max\_row} is the number of rows of the board, \texttt{max\_col} is
+  the number of columns in the board, and \texttt{ll} is a list of lists of
+  integers containing the cells of the board in order by row (i.e.,
+  row--major order).  The integer 1 represents a cell with a living
+  creature, and the integer 0 represents an empty cell.  For example, here
+  is the definition of one sample board:
+
+    \vspace{-1mm}
+
+    \begin{center}
+
+      \begin{BVerbatim}[gobble=6]
+      let sample =
+        (5, 11,
+          [[0;0;0;0;0;1;1;0;0;0;0];
+           [0;0;0;0;1;1;0;0;0;0;0];
+           [0;0;0;0;0;1;0;0;0;1;0];
+           [0;0;0;0;0;0;0;0;0;1;0];
+           [0;0;0;0;0;0;0;0;0;1;0]])
+      \end{BVerbatim}
+
+    \end{center}
+
+    \vspace{-1mm}
+
+    The two integers \texttt{max\_row} and \texttt{max\_col} are actually not
+  necessary, because they could be computed from the length of the list and
+  the lengths of the inner list, but they are just to make things easy and
+  avoid having to count.
+
+    In addition to the playing board, your game simulation will take as input
+  a function specifying the rules of the game.  This function will have the
+  following type: \texttt{type rule = int * int list -> int}.  The rule
+  function takes as input a pair \texttt{(cell, adjacent)}, where
+  \texttt{cell} is an integer representing the state of the cell in question
+  (1 for alive, meaning containing a creature, or 0 for empty), and
+  \texttt{adjacent} is a list containing the states of the surrounding
+  cells.
+  % , starting with the cell to the northwest and proceeding clockwise.
+  It should return either 0 or 1, depending on whether in the next
+  generation the cell will be empty or will have a creature, respectively.
+  As above, if any neighbors of a cell don't exist because the cell is an
+  edge cell, the game behaves as if those neighbors existed and were empty.
+
+    You must define the following functions, which must be in a file
+  \texttt{part4.ml}:
+
+    \vspace{-2.5mm}
+
+    \begin{itemize}
+
+      \addtolength{\itemsep}{-1.25mm}
+
+      \item A function \verb@standard_rule : rule@ that implements Conway's
+            standard rules described above, and
+
+      \item A function \texttt{generate} that takes two arguments as input
+            (not a tuple of arguments), a board and a rule, and runs one
+            step of the game on that board using that rule.
+
+     \end{itemize}
+
+    \vspace{-2.5mm}
+
+    You may assume that the board passed in to the \texttt{generate} function
+  is well--formed (i.e., the list elements are either 0 or 1, the lengths of
+  the inner lists are the same, and the number of the inner lists and their
+  lengths agree with the first two numbers.  \texttt{generate} may behave
+  arbitrarily and produce any result, including raising exceptions, if its
+  board is not well--formed.  You may assume the rule argument is a function
+  that returns either 0 or 1.  You may assume-- although it is not actually
+  necessary-- that any rule function will be called with a list containing
+  exactly eight elements.  Note that the \texttt{generate} function is a
+  higher--order function, since it takes a rule function and applies it to
+  the board, returning the board that results.
+
+    (Note that the secret tests may use other rules besides the standard
+  rule, so you may want to write other rules and test your \texttt{generate}
+  function with them.)
+
+    \enlargethispage{2mm}
+
+  \section{Example}
+
+    The example below shows an interactive session with OCaml; the user's
+  input is entered after each OCaml prompt.  The UNIX prompt on this system
+  is \texttt{grace2:\string~/330/proj3:}.  For clarity the user's input is
+  shown in \textcolor{blue}{blue}, while everything else is output
+  produced by the OCaml top--level.
+
+    \vspace{-1mm}
+
+    \begin{center}
+
+      \begin{BVerbatim}[gobble=6,baselinestretch=.95,commandchars=\\\{\}]
+      grace2:~330/proj3: \textcolor{blue}{ocaml}
+              Objective Caml version 3.12.1
+
+      # \textcolor{blue}{#load "utilities.cmo";;}
+      # \textcolor{blue}{#use "part1.ml";;}
+      val double : int -> int = <fun>
+      val absolute_value : int -> int = <fun>
+      val power_of_2 : int -> bool = <fun>
+      val chebyshev : int -> int -> int = <fun>
+      val product : int list -> int = <fun>
+      val dotproduct : int list -> int list -> int = <fun>
+      val remove_first : 'a -> 'a list -> 'a list = <fun>
+      val smallest : 'a list -> 'a = <fun>
+      val selection_sort : 'a list -> 'a list = <fun>
+      val string_of_int_list : int list -> string = <fun>
+      val addpairs : (int * int) list -> int list = <fun>
+      val flatten : 'a list list -> 'a list = <fun>
+      # \textcolor{blue}{double 330;;}
+      - : int = 660
+      # \textcolor{blue}{power_of_2 1048576;;}
+      - : bool = true
+      # \textcolor{blue}{power_of_2 1048575;;}
+      - : bool = false
+      # \textcolor{blue}{product [3; 1; 4; 1; 5; 6];;}
+      - : int = 360
+      \end{BVerbatim}
+
+    \end{center}
+
+    \vspace{-1mm}
+
+    Pressing control--d stops (quits) the OCaml top--level.
+
+  \section{Test utilities and public tests}
+
+    The previous section showed an interactive session with the OCaml top
+  level, which is probably how you will develop your program.  This won't
+  work on the submit server, so the public tests will work a little
+  differently.
+
+    For each type of value that could be returned by a function we wrote a
+  function that prints that kind of value, for example, \texttt{print\_bool}
+  prints a boolean value, \texttt{print\_int\_list} prints a list of
+  integers, \texttt{print\_char\_list}, prints a list of characters, etc.
+  They all print their argument followed by a newline, using OCaml's
+  \texttt{print\_endline} function.  (The only exception is that we didn't
+  write a function to print a string followed by a newline, because
+  \texttt{print\_endline} already does that.)  These functions are supplied
+  in the compiled OCaml object file \texttt{utilities.cmo}.  The public test
+  ``inputs'' are OCaml source files (there are no files that input should be
+  redirected from), and we use these functions in the public tests to print
+  the results returned by your functions.  Note that it's necessary to use
+  OCaml's \texttt{open} to access the functions in this file.  Each public
+  test file first loads one of your four source files, then loads the
+  utilities, then prints the results of some calls to your functions.  These
+  input files may also contain definitions of variables that are used in
+  later lines.
+
+    For example, a hypothetical public test that tests only two calls to your
+  functions could look like the following (suppose it's in a file named
+  \texttt{public0.ml}):
+
+    \enlargethispage{3mm}
+
+    \vspace{-1mm}
+
+    \begin{center}
+
+      \begin{BVerbatim}[gobble=6]
+      #use "part1.ml";;
+      #load "utilities.cmo";;
+
+      open Utilities;;
+
+      print_int  (double 330);;
+      print_bool (power_of_2 1048576);;
+      \end{BVerbatim}
+
+    \end{center}
+
+    \vspace{-1mm}
+
+    It would be run as \texttt{ocaml public0.ml}.  For this example, the
+  output file would just contain two lines, the first with the number 660
+  and the second with the word true, both ending in newlines.
+
+    The tests of the third part are the same, except that since the rational
+  number module is in fact a module, it must be opened before the functions
+  can be used.  Note that if you are testing the third part in the OCaml top
+  level, change your source file and re--load \texttt{part3.ml}, you will
+  \textbf{also} have to re--\texttt{open Rational}, otherwise the top--level
+  will still be using the \textbf{old} version of the rational module.
+
+  \subsection{Testing the fourth part}
+
+    To test your functions for the Game of Life you can use the routine
+  \texttt{run} that we wrote in the utilities module in
+  \texttt{utilities.cmo} to run the simulation indefinitely, printing text
+  output, using your functions above.  It has three arguments: a board, the
+  generate function, and a rule function.  Every time you press the return
+  or enter key, the next generation is displayed.  For example, try
+  \texttt{run sample\_board generate standard\_rule} to run the game on the
+  sample board that we defined in Section \ref{section:life} (the sample
+  board is predefined in the utilities module).  Use control--c to stop
+  execution.  Note that this is also a higher--order function-- it takes a
+  board, your \texttt{generate} function, and a rule function (such as your
+  \texttt{standard\_rule} function, although another rule function could be
+  written and used), and repeatedly applies the two functions to the board,
+  printing the results.
+
+    Using this \texttt{run} function is not going to work when projects are
+  submitted to the submit server, because there is no one on the submit
+  server to keep pressing enter.  Instead, any tests of the fourth part will
+  use a function (also in \texttt{utilities.cmo}) \texttt{run\_n\_times}
+  that runs the Game of Life for a certain number of generations, and prints
+  the result at the end of that number of generations.  It has four
+  arguments: the same three arguments as \texttt{run} does, plus an integer
+  specifying how many generations to run the simulation for.  For example,
+  \texttt{run\_n\_times sample\_board generate standard\_rule 4} would run
+  the simulation for four generations on the sample board, using your
+  \texttt{generate} and \texttt{standard\_rule} functions.
+
+    These functions work, but their output can be a little hard to read.  You
+  can also use a function \texttt{run\_graphical} that will draw a picture
+  of the board in a window.  This will work for boards up to around 20 by
+  20; for larger boards the bottom will be cut off.
+
+    For the \texttt{run\_graphical} function to work you'll need to have an
+  X--windows server running locally.  For example, if you're logging in from
+  a Windows machine you can install and use
+    \href{http://www.straightrunning.com/XmingNotes}
+         {\texttt{\underline{Xming}}}
+  (you should also install the fonts package), and if you're logging in from
+  a Mac you can install and use
+    \href{http://xquartz.macosforge.org/landing/}
+         {\texttt{\underline{XQuartz}}}.
+  If you're using a Linux machine you're presumably already running an X
+  server, but you may need to log into the Grace machines using \texttt{ssh
+  -X} or \texttt{ssh -Y}.  (If you're currently able to run Emacs on the
+  Grace machines and have it pop up in its own window, you don't need to
+  install anything or to do anything differently).
+
+    The \texttt{run\_graphical} function is in the compiled file
+  \texttt{utilities2.cmo}.  To use it, you will first have to load the
+  graphics library and open the Graphics module.  So a session using this
+  function would look like:
+
+    \vspace{-2mm}
+
+    \begin{center}
+
+      \begin{BVerbatim}[gobble=6]
+      #load "graphics.cma";;
+      open Graphics;;
+      #load "utilities2.cmo";;
+      open Utilities2;;
+      #use "part4.ml";;
+      run_graphical sample_board generate standard_rule;;
+      \end{BVerbatim}
+
+    \end{center}
+
+    \vspace{-2mm}
+
+    (A \texttt{.cma} OCaml file is an archive or library, similar to a static
+  library in C, discussed in CMSC 216.)  To run the graphical simulation,
+  move the cursor into the OCaml graphics window that pops up, and every
+  time you press any key the next generation is generated and appears.  Move
+  cursor back into the window where you're running the OCaml top--level and
+  type control--c to stop it running.  (Of course you may want to define
+  other boards and run the simulation on them.)
+
+    If you want to try an alternative rule, the following produces an
+  interesting result with the sample board: If a cell is dead and has
+  exactly 2 or 3 live neighbors, then the cell becomes live, otherwise it
+  dies or remains dead.
+
+  \section{Project requirements and submitting your
+           project\label{section:requirements}}
+
+    \begin{enumerate}
+
+      \addtolength{\itemsep}{-.5mm}
+
+      \item You \textbf{may not use any OCaml library modules}, for
+            example, anything with a module name and a dot in front of it,
+            such as \texttt{List.length}, \texttt{List.append},
+            \texttt{List.rev}, etc., may not be used.  Built--in types,
+            library exceptions, and the automatically--loaded functions
+            in the \texttt{Pervasives}  module (which include all the
+            mathematical and logical operators, and any functions mentioned
+            above that you may need, like string concatenation), may be
+            freely used.
+
+      \item References and loops (OCaml does actually have loops)
+            \textbf{may not be used at all anywhere}.
+
+      \item You can create helper functions to be called by your other
+            functions if you like (other than for the \texttt{product} and
+            \texttt{remove\_first} functions.  For your own helper functions
+            you may use currying, or tuples as arguments, as you like.
+
+      \item We will be checking your source code to ensure that your
+            implementation of the function \texttt{chebyshev} is
+            $O(\texttt{k})$, that your functions don't call any library
+            module functions, that your function \texttt{product} and
+            \texttt{remove\_first} don't call any helper functions, and that
+            no references or loops are used.  Violation of these
+            requirements may result in a very large grading penalty.
+
+      \item Your code \textbf{cannot produce any incomplete match warnings},
+            or they will throw off the comparison of the output and you will
+            fail all the tests of the affected parts.  If any of your
+            functions do not need to work in some match cases (based on the
+            definitions of the functions above), just have them raise
+            \texttt{Failure} exceptions in those cases, which will eliminate
+            the match warnings.
+
+      \item As mentioned earlier in class, in OCaml the \texttt{==} operator
+            tests for physical equality and \texttt{=} tests for structural
+            equality.  In any cases where you have to compare things for
+            equality you should use \texttt{=}.
+
+      % \item Your program should read all of its input from its standard
+      %       input and the two files whose names appear on the command line,
+      %       and write all of its output to its standard output.  Of course
+      %       in UNIX standard input may be redirected from a file, or
+      %       standard output may be redirected to a file.
+
+      % \item You may use any Ruby language features in your project that you
+      %       would like, regardless of whether they were covered in class or
+      %       not, so long as your program works successfully using the
+      %       version of Ruby installed on the OIT Grace Cluster and on the
+      %       CMSC project submission server.
+
+      \item Your submitted functions \textbf{must} be in the four files
+            named \texttt{part1.ml}, \texttt{part2.ml}, \texttt{part3.ml},
+            \texttt{part4.ml}, otherwise the submit server may not recognize
+            them.
+
+      \item To check that your output matches the expected output you can
+            use the UNIX \texttt{diff} command, for example:
+
+            \vspace{-5.5mm}
+
+            \begin{center}
+
+              \begin{BVerbatim}
+        ocaml public1.ml > my-output
+        diff -u public1.output my-output
+              \end{BVerbatim}
+
+            \end{center}
+
+            \vspace{-3mm}
+
+            (Note that the output should compare
+            \textbf{\underline{exactly}}, including whitespace so do
+            \textbf{not} use diff's \texttt{bB} options.)
+
+            If no output at all is produced by \texttt{diff}, your output
+            matches the expected output and is correct.  This \texttt{diff}
+            command is exactly what the submit server is going to be using
+            to check your program's output, so using it you can see yourself
+            whether your output is right or not; if you don't get matching
+            results when comparing your output this way then the submit
+            server is not going say your results are right either.
+
+      \item Each of your source files \textbf{must have} a comment near the
+            top that contains your name, TerpConnect login ID (which is your
+            directory ID), your university ID number, and your section
+            number.
+
+            The Campus Senate has adopted a policy asking students to
+            include the following statement on each major assignment in
+            every course: ``I pledge on my honor that I have not given or
+            received any unauthorized assistance on this assignment.''
+            Consequently you're requested to include this pledge in a
+            comment near the top of your program source file.  See the next
+            section for important information regarding academic integrity.
+
+      \item Note that although you are not being graded on your source code
+            or style (see the separate project grading handout), if the TAs
+            cannot read or understand your code they cannot help should you
+            have to come to office hours, until you return with a
+            well--written and clear program.
+
+      \item As before, to submit your program just type the single command
+            \texttt{submit} from the \texttt{proj3} directory, where your
+            program files \texttt{part1.ml} through \texttt{part4.ml} should
+            be.  In this project also you may lose credit for having more
+            than fifteen submissions.
+
+    \end{enumerate}
+
+    \vspace{-4.5mm}
+
+  \section{Academic integrity}
+
+    Please \textbf{carefully read} the academic honesty section of the course
+  syllabus.  \textbf{Any evidence} of impermissible cooperation on projects,
+  use of disallowed materials or resources, or unauthorized use of computer
+  accounts, \textbf{will be submitted} to the Student Honor Council, which
+  could result in an XF for the course, or suspension or expulsion from the
+  University.  Be sure you understand what you are and what you are not
+  permitted to do in regards to academic integrity when it comes to project
+  assignments.  These policies apply to all students, and the Student Honor
+  Council does not consider lack of knowledge of the policies to be a
+  defense for violating them.  Full information is found in the course
+  syllabus-- please review it at this time.
+
+\end{document}

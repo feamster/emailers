@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CS 6250: Graduate Computer Networks</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="../../../bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+  </head>
+  <body>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="../../../bootstrap/js/bootstrap.min.js"></script>
+
+<header class="jumbotron subhead" id="overview">
+  <div class="container">
+    <h1>Graduate Computer Networks</h1>
+    <p class="lead">CS 6250, Georgia Tech Spring 2014</p>
+  </div>
+</header>
+
+<div class="row">
+<div class="span2">
+</div>
+<div class="span9">
+
+<div class="tabbable"> <!-- Only required for left/right tabs -->
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#tab1" data-toggle="tab">Home</a></li>
+    <li><a href="#tab2" data-toggle="tab">Syllabus</a></li>
+    <li><a href="#tab3" data-toggle="tab">Schedule</a></li>
+    <li><a href="#tab4" data-toggle="tab">Resources</a></li>
+
+
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="tab1">
+      <div class="page-header">       
+	<h3>Overview</h3>
+      </div>
+          <p class="lead">
+	    This project-based course will explore research topics in
+	    computer networking, primarily at the IP layer and above. You
+	    will gain exposure to burgeoning areas of computer
+	    networking and learn how to use the tools commonly used for
+	    networking research today. </p>
+
+	  <p>
+	    Students will gain hands-on experience with various
+	    networking tools and techniques, and be well-equipped to
+	    perform research in the area of computer
+	    networking. Students will also gain exposure to and
+	    experience with current "tools of the trade" in computer
+	    networking that will aid them in preparing for a job in
+	    industry in this dynamic field.
+	  </p>
+
+
+	  <p>
+	    You will be expected to read 2-3 papers a week. There are no required textbooks for the course.
+	  </p>
+
+<p>
+  <address><strong>Contact:</strong><br>
+    Prof. <a href="http://www.cc.gatech.edu/~feamster/">
+      Nick Feamster</a><br>
+    Klaus 3347 <br>
+    &lt;my last name&gt;@cc.gatech.edu<br>
+    </address>
+  <p>
+      <strong>Class Location and Time:</strong><br /> Tuesdays and
+      Thursdays, 4:35pm-5:55pm, CULC 102
+      <p>
+    <strong>Office Hours:</strong><br>
+    Thursdays, 6-7pm and by appointment
+
+      <p>
+    <strong>TAs:</strong><br>
+    <a href="http://www.cc.gatech.edu/~mshahbaz/">Muhammad Shahbaz</a>
+    and <a href="http://www.cc.gatech.edu/grads/s/sdonovan/">Sean Donovan</a>
+
+    <p>
+	<strong>Technology Requirements:</strong><br /> You <strong>must
+	bring a laptop</strong> to every class. 
+	If you would like to take the course, but do not have access
+	to a laptop, contact the instructor, as a
+	small number of "loaner" laptops for class time may be
+	available for this purpose.
+	<p>
+
+	  <p>
+	  Students are expected to abide by the Georgia Tech Honor
+	  Code. Honest and ethical behavior is expected at all
+	  times. All incidents of suspected dishonesty will be reported
+	  to and handled by the office of student affairs. You are to do
+	  all assignments yourself, unless explicitly told
+	  otherwise. You may discuss the assignments with your
+	  classmates, but you may not copy any solution (or part of a
+	  solution) from a classmate.</p>
+
+
+    </div>
+
+
+
+<div class="tab-pane" id="tab2">
+
+<h3>
+Course Format
+</h3>
+
+<p>
+The course will meet twice a week for eighty minutes per session.  The course will be
+offered in a "flipped" style, with students watching video lectures
+before coming to class.  Classroom time will be used for discussion of
+technical topics and research problems and in-class lab time.
+</p>
+
+<p>
+The first half of each session will
+be devoted to paper and topic discussion.  <b>You should read the
+papers, watch the videos, and participate in online discussion before
+coming to class.</b></p>
+
+<p>
+The last half of each session will be devoted to in-class activities and
+lab time.
+</p>
+
+<p>
+Assignments for the course will be lab-based programming assignments,
+building off of the Mininet software developed at Stanford University,
+which can run networks in emulated environments on a single laptop.
+</p>
+
+
+<h3>Recommended Background</h3>
+Students should have taken at least an undergraduate-level networking
+      course and have programming experience in Python.  Experience
+      with virtual machines and other virtual networking environments
+      may also be useful.
+
+<h3>Getting Started</h3>
+There are some useful videos available online; these might be a good
+      starting point for many people:
+
+<ul>
+<li> Prof. Nick McKeown, Stanford
+<a href="https://www.youtube.com/watch?v=c9-K5O_qYgA">"How SDN will Shape Networking"</a></li>
+<li> Prof. Scott Shenker, Berkeley:
+<a href="https://www.youtube.com/watch?v=WVs7Pc99S7w">"An attempt to motivate and clarify Software-Defined Networking (SDN)"</a>
+(watch the first 35 minutes or so)</li>
+</ul>
+
+You may find the additional reading useful for introductory material:
+<ul>
+<li>  <a href="http://www.openflow.org/documents/openflow-wp-latest.pdf">OpenFlow</a>: Basic description of OpenFlow</a></li>
+<li>  <a href="https://www.opennetworking.org/">Open Networking Foundation</a>: For recent OpenFlow specifications, etc.</li>
+<li>  <a href="http://yuba.stanford.edu/foswiki/bin/view/OpenFlow/Mininet">Mininet</a>: Environment that allows you to emulate OpenFlow networks on
+  a laptop.</li>
+</ul>
+
+<h3>Grading</h3>
+
+<p>
+Grading will be based on seven problem sets, three quizzes, and a
+semester-long project with a presentation and writeup. Participation
+will count for "fudge factors". 
+
+<ul>
+<li>50% Problem Sets</li>
+<li>30% Quizzes</li>
+<li>20% Final Project</li>
+</ul>
+
+<p>
+<strong>Participation</strong> includes:
+<ul>
+<li> Watching the videos (as determined with in-class quizzes). </li>
+<li> Participating in online discussion on Piazza. </li>
+<li> Attending class. </li>
+</ul>
+</p>
+
+<p>The <strong>project</strong> can be done in groups of any size,
+  subject to approval of the instructor. Important milestones:</p>
+<ul>
+<li> One-page project proposal (<b>due by February 4</b>). </li>
+<li> Project video/demo posted to YouTube. </li>
+<li> Code release on github. </li>
+<li> Project writeup (pre-publication draft) </li>
+</ul>
+
+
+    </div>
+
+
+    <div class="tab-pane" id="tab3">
+
+
+      <p>Please watch all videos and read all papers <b>before</b>
+      class.  The teaching style will be "flipped", so class time will
+      be devoted to discussion and questions.</p>
+
+      <p>
+	Videos, assignments, and papers will be posted by the beginning
+      of the corresponding week of class.  Assignments will generally be
+      due immediately before the subsequent assignment is released.</p>
+
+<table class="table table-striped">
+  <tr class=success>
+    <td>
+      <strong>Date</strong>
+      </td>
+    <td>
+      <strong>Modules</strong>
+      </td>
+    <td>
+      <strong>Readings</strong>
+      </td>
+    <td>
+      <strong>Assignment</strong>
+      </td>
+    </tr>
+
+  <tr>
+    <td>
+      January 7
+      </td>
+    <td>
+      <ul>
+	<li>
+	  Overview
+	  <ul><li><a href="https://www.youtube.com/watch?v=F8Fw9iyrDYM">Welcome</a>, 
+	      <li><a href="https://www.youtube.com/watch?v=KVfX6iVLAVo">Overview</a>, 
+	      <li><a href="https://www.youtube.com/watch?v=D8OIN1oC348">Components</a>,
+	      <li><a href="https://www.youtube.com/watch?v=Z_mtuuCwzHw">Goals and
+	Non-Goals</a>,
+	      <li><a href="https://www.youtube.com/watch?v=FnGYY3VAyRo">Structure</a><br />
+	  </ul>
+	<li>
+	  <a href="https://www.youtube.com/watch?v=hUQ_joadrJg">A Brief
+	  History of the Internet</a>
+	  <li>
+	    <a href="https://www.youtube.com/watch?v=Y6YI64WI1II">Growing Pains</a></li>
+	</ul>
+    </td>
+    <td>
+    </td>
+    <td>
+    </td>
+    </tr>
+
+
+    <td>
+      January 9
+      </td>
+    <td>
+      <ul>
+	<li> <a href="https://www.youtube.com/watch?v=zH_XoC4lRS8">Architectural
+	design principles in Internet</a>
+	<li> <a href="https://www.youtube.com/watch?v=FqB1nlXkwnU">Fundamental
+	Design Goal</a>
+	<li> <a href="https://www.youtube.com/watch?v=pWLSS9fFhiM">Packet
+	Switching</a>
+	and <a href="https://www.youtube.com/watch?v=uXumm52oBMo">Narrow
+	Waist</a>
+	<li>
+	Goals: <a href="https://www.youtube.com/watch?v=NBcNG0X-QeM">Survivability</a>,
+	<a href="https://www.youtube.com/watch?v=clxymecK1aA">Heterogeneity</a>,
+	<a href="https://www.youtube.com/watch?v=TWnlsNwQ6vY">Distributed
+	Management</a>, <a href="https://www.youtube.com/watch?v=TlqJQ3FJHVs">What's Missing</a>
+	<li> <a href="https://www.youtube.com/watch?v=sgD2IPqGeY4">End-to-end
+	Arguments in System Design</a>
+	(Example: <a href="https://www.youtube.com/watch?v=DtfNFo-IHks">File
+	Transfer</a>)
+	<li> <a href="https://www.youtube.com/watch?v=br-HokGC0Qw">Violations
+	of end-to-end</a>: NAT
+	(<a href="https://www.youtube.com/watch?v=br-HokGC0Qw">Part
+	1</a>, <a href="https://www.youtube.com/watch?v=tCHL_-ghc8o">Part 2</a>) 
+      </ul>
+    </td>
+    <td>
+      <ul>
+	<li><a href="http://goo.gl/9a4Wxq">DARPA Design Philosophy</a>
+	<li><a href="http://goo.gl/YQUuEs">End-to-end</a>
+      </ul>
+    </td>
+    <td>
+    </td>
+    </tr>
+
+
+
+<tr>
+<td valign="top">January 14</td>
+<td valign="top">
+<ul>
+<li>Switching and bridging</li>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=OuBOt8Cxa7I#t=1">Overview</a></li>
+<li><a href="https://www.youtube.com/watch?v=icxGl1yBuuQ">Bootstrapping:
+    Connecting Two Hosts</a></li>
+<li><a href="https://www.youtube.com/watch?v=Lf6JC5KGigQ">ARP</a></li>
+<li><a href="https://www.youtube.com/watch?v=Q7M8tB5Ake4">Hubs</a></li>
+<li><a href="https://www.youtube.com/watch?v=O8qbqfnTJOs">Switches</a></li>
+<li><a href="https://www.youtube.com/watch?v=ikWA0L3CNKY">Learning</a></li>
+<li>Spanning Trees</li>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=zyM9e-D0p2o">Overview</a></li>
+<li><a href="https://www.youtube.com/watch?v=CQFEMVj5_wI">Example</a></li>
+</ul>
+<li><a href="https://www.youtube.com/watch?v=bizLZGNnk4I">Switches
+    vs. Routers</a></li>
+
+<li>Buffer sizing in switches and routers</li>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=GDe77B9lts4">Overview</a></li>
+<li><a href="https://www.youtube.com/watch?v=1K_DVt1XSQo">Buffer Sizing
+    and TCP</a></li>
+<li><a href="https://www.youtube.com/watch?v=L584DxbTGa4">When Flows
+    are Unsynchronized</a></li>
+</ul>
+</ul>
+</td>
+<td valign="top">
+<ul>
+<li><a href="http://goo.gl/WdpKf9">Buffer Sizing</a><br/></li>
+</ul>
+</td>
+<td valign="top"><br/></td>
+</tr>
+
+
+<tr>
+<td valign="top">January 16</td>
+<td valign="top">
+<ul>
+<li>Mininet</li>
+<li style="list-style: none; display: inline">
+<ul>
+<li><a href="http://youtu.be/cuej8DaQOwk">Virtual Networking in Mininet</a></li>
+<li><a href="http://youtu.be/tn1-Pxm0ckc">Mininet and the Python API</a></li>
+</ul>
+</li>
+</ul>
+</td>
+<td valign="top">
+<ul>
+<li><a href="http://goo.gl/ySsVV2">Mininet</a><br/></li>
+</ul>
+</td>
+<td valign="top"><a href="http://www.youtube.com/watch?v=yNmv7GiHIKE">VirtualBox
+    and Mininet Setup</a><br/></td>
+</tr>
+
+
+<tr>
+<td valign="top">January 21</td>
+<td valign="top">
+<ul>
+<li><a href="https://www.youtube.com/watch?v=8y1_DjHN_eg">Internet Routing Overview</a></li>
+<li>Intradomain routing</li>
+<li style="list-style: none; display: inline">
+<ul>
+<li><a href="https://www.youtube.com/watch?v=3g61oipPvls">Intra-AS Topology</a></li>
+<li><a href="https://www.youtube.com/watch?v=WIa2iJQCgd0">Distance Vector Overview</a></li>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=00AAnwgl2DI">Example</a></li>
+<li><a href="https://www.youtube.com/watch?v=_lAJyA70Z-o">Poison Reverse</a></li>
+<li><a href="https://www.youtube.com/watch?v=0rNeFwp8CXI">RIP</a></li>
+</ul>
+<li><a href="https://www.youtube.com/watch?v=vnO18KKX9Gw">Link state</a></li>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=R7zweSNByXc">Hierarchy</a></li>
+</ul>
+</ul>
+</ul>
+</td>
+<td valign="top">
+<ul>
+<li><a href="http://goo.gl/hHvQDN">Fast intradomain routing convergence</a><br/></li>
+</ul>
+</td>
+<td valign="top"><br/></td>
+</tr>
+<tr>
+<td valign="top">January 23</td>
+<td valign="top">
+<ul>
+<li>Interdomain routing</li>
+<li style="list-style: none; display: inline">
+<ul>
+<li><a href="https://www.youtube.com/watch?v=HmtJxJslXVI">Overview</a></li>
+<li><a href="https://www.youtube.com/watch?v=DUDp7cFRBSQ">Route Attributes</a></li>
+<li><a href="https://www.youtube.com/watch?v=TmuiSnAPUJs">IGP vs. iBGP</a></li>
+<li>BGP Route Selection</li>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=KBwRhvzy9oA">Overview</a></li>
+<li><a href="https://www.youtube.com/watch?v=yDOtcR1QWe0">Selection Process</a></li>
+<li><a href="https://www.youtube.com/watch?v=dUbmihoygdk">Local Preference</a></li>
+<li><a href="https://www.youtube.com/watch?v=Z6Wc8o2ObUY">Multiple Exit Discriminator</a></li>
+</li>
+<li><a href="https://www.youtube.com/watch?v=aoUHvvcaicA">Interdomain business models</a></li>
+<li><a href="https://www.youtube.com/watch?v=Cb5VSo6h5_0">Interdomain routing oscillations</a></li>
+</ul>
+</li>
+</ul>
+</td>
+<td valign="top">
+<ul>
+<li><a href="http://goo.gl/1DRVHZ">Tiered pricing</a><br/></li>
+</ul>
+</td>
+<td valign="top"><a href="http://goo.gl/MtL8ZV">Mininet Topology</a></td>
+</tr>
+<tr>
+<td valign="top">January 28</td>
+<td valign="top">
+<ul>
+<li>IP Addressing</li>
+<li style="list-style: none; display: inline">
+<ul>
+<li><a href="https://www.youtube.com/watch?v=HeeeFqnnDzI">Background</a></li>
+<li><a href="https://www.youtube.com/watch?v=9A6bbjveMHg">Classful
+    Addressing</a></li>
+<li><a href="https://www.youtube.com/watch?v=14C2GQyxBfQ">Address
+    allocation</a></li>
+<li><a href="https://www.youtube.com/watch?v=6Ud_Fn8aDUs">CIDR</a></li>
+<li><a href="https://www.youtube.com/watch?v=nFTPYj2mxk0">Longest Prefix
+    Match</a></li>
+<li><a href="https://www.youtube.com/watch?v=niUWkzKAsRI">Multihoming
+    and Aggregation</a></li>
+<li><a href="https://www.youtube.com/watch?v=OYJ-3V1p2e4">Inbound
+    Traffic Control and LPM</a></li>
+</ul>
+</li>
+<li>IP Forwarding</li>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=r4HvEaMzaMo">CIDR</a></li>
+<li><a href="https://www.youtube.com/watch?v=MtT7lhR346s">How LPM
+    Works</a></li>
+<li><a href="https://www.youtube.com/watch?v=iXIVGWka9zQ">Lookups and
+    Protocols</a></li>
+<li><a href="https://www.youtube.com/watch?v=MYaG_u1kSns">Finding Long
+    Prefixes</a></li>
+<li><a href="https://www.youtube.com/watch?v=htdZ5eJkPE8">Strawman LPM:
+    Exact Match</a></li>
+<li><a href="https://www.youtube.com/watch?v=8tcPbGVVnDo">LPM Using
+    Tries</a></li>
+<li><a href="https://www.youtube.com/watch?v=eoltXZ1JXP8">Direct Trie
+    Example</a></li>
+</ul>
+<li>Hardware forwarding considerations</li>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=57-8-cmlPuw">Memory
+    Efficiency and Fast Lookup</a></li>
+<li><a href="https://www.youtube.com/watch?v=e_5cnbLCeDw">Example: 4-ary
+    Trie</a></li>
+<li><a href="https://www.youtube.com/watch?v=9O11qHHMIHM">Content
+    Addressable Memory</a></li>
+</ul>
+</ul>
+</td>
+<td valign="top">
+<ul>
+<li><a href="http://goo.gl/4Y1djV">Lookup Algorithm Taxonomy</a></li>
+<li><a href="http://goo.gl/C1hJVe">How CAMs work</a></li>
+</ul>
+</td>
+<td valign="top"><br/></td>
+</tr>
+<tr>
+<td valign="top">January 30</td>
+<td valign="top">
+<ul>
+<li>Scaling Techniques
+<ul>
+<li><a href="https://www.youtube.com/watch?v=zXyGn0YaNs0">NAT and IPv6 Overview</a></li>
+<li><a href="https://www.youtube.com/watch?v=EcxO6a5Um-w">NAT</a></li>
+<li>IPv6</li>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=Z6i9BRtXy_I">Overview</a></li>
+<li><a href="https://www.youtube.com/watch?v=ZJNPQBnno4A">Routng Table
+    Entries in IPv6</a></li>
+<li><a href="https://www.youtube.com/watch?v=S7IjvVcqFqY">Incremental
+    Deployment of IPv6</a></li>
+</ul>
+</ul>
+</ul>
+</td>
+<td valign="top"><br/></td>
+<td valign="top"></td>
+</tr>
+<tr>
+<td valign="top">February 4</td>
+<td valign="top">
+<ul>
+<li>Router design</li>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=iXykP7PgyRA">Overview</a></li>
+<li><a href="https://www.youtube.com/watch?v=mVbICZ1CrGU">Basic Router
+    Architecture</a></li>
+<li><a href="https://www.youtube.com/watch?v=ALhOKtZ95EQ">Shared
+    Bus</a></li>
+<li><a href="https://www.youtube.com/watch?v=z_m5NU6XH2M">Crossbar
+    Switching</a>
+    (<a href="https://www.youtube.com/watch?v=LKn2zEHpIhI">Continued</a>)</li>
+<li><a href="https://www.youtube.com/watch?v=GJHB5KW6JXY">Maximal
+    Matching</a></li>
+<li><a href="https://www.youtube.com/watch?v=JRTpYRyQVfU">Head of Line
+    Blocking</a></li>
+</ul>
+<li>Scheduling and fairness</li>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=j5qq00xGnTU">Overview</a></li>
+<li><a href="https://www.youtube.com/watch?v=58Jg58pWByM">Max-Min
+    Fairness</a>
+    (<a href="https://www.youtube.com/watch?v=z5uHTkM17P8">Example</a>)</li>
+<li><a href="https://www.youtube.com/watch?v=wfP9mkCTh2w">Achiving
+    Max-Min Fairness</a></li>
+</ul>
+</ul>
+</td>
+<td valign="top">
+<li><a href="http://goo.gl/Se1HZ8">iSLIP</a><br/></li>
+</ul>
+</td>
+<td valign="top"><br/></td>
+</tr>
+<tr>
+<td valign="top">February 6</td>
+<td valign="top">
+<ul>
+<li>DNS 
+<ul>
+<li><a href="https://www.youtube.com/watch?v=AHslLzcMIqM">Resolution</a></li> 
+<li><a href="https://www.youtube.com/watch?v=-ktIklQv_6k">Nameserver
+    Hierarchy</a></li>
+<li><a href="https://www.youtube.com/watch?v=hSLNgI9Sr9s">Record
+    Types</a></li>
+<li>Examples</li>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=feCpFW2uRx8">A and MX
+    Records</a></li>
+<li><a href="https://www.youtube.com/watch?v=yI5pJ1HzdBo">Lookup Hierarchy</a></li>
+</ul>
+</ul>
+</td>
+<td valign="top">
+<ul>
+<li><a href="http://goo.gl/pcNUlZ">DNS Caching</a></li>
+<li><a href="http://goo.gl/K4kpuV">Fast Flux</a></li>
+</ul>
+</td>
+<td valign="top"><a href="http://goo.gl/D8wd0G">Buffer Sizing<a/><br/></td>
+</tr>
+<tr>
+<td valign="top">February 11</td>
+<td valign="top">
+<ul>
+<li><font color="#F63426"><b>Quiz 1</b></font></li>
+</ul>
+</td>
+<td valign="top"><br/></td>
+<td valign="top"><br/></td>
+</tr>
+<tr>
+<td valign="top">February 13</td>
+<td valign="top">
+<ul>
+<li>Congestion control</li>
+<li style="list-style: none; display: inline">
+<ul>
+<li><a href="https://www.youtube.com/watch?v=4-KPHk-dZ1M">Overview</a></li>
+<li><a href="https://www.youtube.com/watch?v=ewa3FPGwjl0">Congestion</a></li>
+<li><a href="https://www.youtube.com/watch?v=xSFLa4u_BUI">Congestion Collapse</a></li>
+<li><a href="https://www.youtube.com/watch?v=t0Q_jXHdV2E">Goals</a></li>
+<li><a href="https://www.youtube.com/watch?v=n5yoTOWB0eA">Two Approaches</a></li>
+<li><a href="https://www.youtube.com/watch?v=uEN-71R4gjQ">TCP Congestion Control</a></li>
+<li><a href="https://www.youtube.com/watch?v=JoMN_b_aXRw">Adjusting Sending Rate</a></li>
+<li><a href="https://www.youtube.com/watch?v=EfeAglStSd4">Fairness and Efficiency</a></li>
+<li><a href="https://www.youtube.com/watch?v=U5eV9HJtOYw">AIMD</a></li>
+</ul>
+<li>Congestion control in data centers</li>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=-e5Rw2I3QJk">TCP Incast</a></li>
+<li><a href="https://www.youtube.com/watch?v=DzlGqjBJiek">Barrier Synchronization</a></li>
+</ul>
+</li>
+</ul>
+</td>
+<td valign="top">
+<ul>
+<li><a href="http://goo.gl/rmHlRg">Congestion Avoidance and Control</a></li>
+<li>TCP Outcast</li>
+</ul>
+</td>
+<td valign="top"><br/></td>
+</tr>
+<tr>
+<td valign="top">February 18</td>
+<td valign="top">
+<ul>
+<li>Streaming Audio and Video</li>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=dHpM7pR2hU0">Multimedia and Streaming</a></li>
+<li><a href="https://www.youtube.com/watch?v=7AwoH43Aqh8">Streaming Challenges</a></li>
+<li><a href="https://www.youtube.com/watch?v=GS4HUPMI3_g">Digitizing Audio and Video</a></li>
+<li><a href="https://www.youtube.com/watch?v=Nf5jVS2enls">Video Compression</a></li>
+<li><a href="https://www.youtube.com/watch?v=WONPp2aeufc">Streaming Video</a></li>
+<li><a href="https://www.youtube.com/watch?v=ihGmjesGqSI">Playout Delay</a></li>
+</ul>
+<li>Congestion control for streaming media</li>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=XX_zyAuGXsk">Why TCP is not a good fit</a></li>
+<li><a href="https://www.youtube.com/watch?v=TyX5whqB3ug">Streaming: YouTube and Skype</a></li>
+<li><a href="https://www.youtube.com/watch?v=b4ODhLP9MEA">Skype</a></li>
+<li><a href="https://www.youtube.com/watch?v=iFFa7rJ-yxM">Marking and Policing</a></li>
+</ul>
+<br/></td>
+<td valign="top">
+<ul>
+<li>Binomial congestion control</li>
+<li>SR-RTP</li>
+</ul>
+</td>
+<td valign="top"><a href="http://goo.gl/lMbiqc">Parking Lot</a></td>
+</tr>
+<tr>
+<td valign="top">February 20</td>
+<td valign="top">
+<ul>
+<li>Traffic classification</li>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=nGb1543z02U">Overview</a></li>
+<li><a href="https://www.youtube.com/watch?v=1erOd_6OqFs">Source Classification</a></li>
+</ul>
+<li>Traffic shaping</li>
+<li style="list-style: none; display: inline">
+<ul>
+<li><a href="https://www.youtube.com/watch?v=nJGTJ5Hd6Hk">Leaky Bucket Shaping</a></li>
+<li><a href="https://www.youtube.com/watch?v=penMsvUcByM">(r,T) Shaping</a></li>
+<li><a href="https://www.youtube.com/watch?v=ZtgFwhWx7co">Shaping Bursty Traffic Patterns</a></li>
+<li><a href="https://www.youtube.com/watch?v=7QqPkpPkZ4s">Token Bucket vs. Leaky Bucket</a></li>
+<li><a href="https://www.youtube.com/watch?v=0-jJMKUJZRw">Policing with Token Buckets</a></li>
+<li>PowerBoost</li>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=ROLM1CKZuAs">PowerBoost</a></li>
+<li><a href="https://www.youtube.com/watch?v=ahNhdkOPlzg">Calculating PowerBoost Rates</a></li>
+<li><a href="https://www.youtube.com/watch?v=snL2eOVgFvw">Examples of PowerBoost</a></li>
+<li><a href="https://www.youtube.com/watch?v=khwekD6n9LI">Effects of PowerBoost on Latency</a></li>
+</ul>
+<li>BufferBloat</li>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=eC1e6TYfVZk">Overview</a></li>
+<li><a href="https://www.youtube.com/watch?v=U0591dTn25M">BufferBloat Example</a></li>
+</ul>
+</ul>
+</li>
+</ul>
+</td>
+<td valign="top">
+<ul>
+<li><a href="http://goo.gl/zEQ46z">PowerBoost</a><br/></li>
+<li>BufferBloat</li>
+</ul>
+</td>
+<td valign="top"><br/></td>
+</tr>
+<tr>
+<td valign="top">February 25</td>
+<td valign="top">
+<ul>
+<li>Network measurement</li>
+<li style="list-style: none; display: inline">
+<ul>
+<li><a href="https://www.youtube.com/watch?v=3wUW59-pBmE">Overview</a></li>
+<li><a href="https://www.youtube.com/watch?v=EvKoakEmquQ">Why Measure?</a></li>
+<li><a href="https://www.youtube.com/watch?v=oDVZb2iI1AM">How to Measure (Passively)?</a></li>
+<li><a href="https://www.youtube.com/watch?v=g-bE0gAb5xo">Packet Monitoring</a></li>
+<li><a href="https://www.youtube.com/watch?v=GKKD99_27zw">Flow Monitoring</a></li>
+</ul>
+</li>
+</ul>
+</td>
+<td valign="top">
+<ul>
+<li><a href="http://goo.gl/scX0u2">Paxson Strategies and Pitfalls</a></li>
+<li><a href="http://goo.gl/VgXQSW">Broadband access performance (BISmark)</a><br/></li>
+<li><a href="http://goo.gl/lueNcd">Netalyzr</a></li>
+</ul>
+</td>
+<td valign="top"><br/></td>
+</tr>
+<tr>
+<td valign="top">February 27</td>
+<td valign="top">
+<ul>
+<li>The Web</li>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=5ErtWQRbMJg">The Web and Caching</a></li>
+<li><a href="https://www.youtube.com/watch?v=SesDx0GqO6U">HTTP Requests</a> (<a href="https://www.youtube.com/watch?v=CA1dxEFAvNw">Example</a>)</li> 
+<li><a href="https://www.youtube.com/watch?v=ByHeRdSByyw">HTTP Responses</a> (<a href="https://www.youtube.com/watch?v=AKdFpgPctkg">Example</a>)</li>
+<li><a href="https://www.youtube.com/watch?v=OrKQccUBgP0">Early HTTP</a></li>
+<li><a href="https://www.youtube.com/watch?v=QS4eYz6Gf4Q">Persistent Connections</a></li>
+<li><a href="https://www.youtube.com/watch?v=o2KMk_TyC8E">Caching</a></li>
+</ul>
+<li style="list-style: none; display: inline">
+<li>Content distribution networks</li>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=STu6UMf0Qdk">CDN Overview</a></li>
+<li><a href="https://www.youtube.com/watch?v=x45ksxC7Ipw">Challenges in Running a CDN</a></li>
+<li><a href="https://www.youtube.com/watch?v=SQH4H9kYggU">Server Selection</a></li>
+<li><a href="https://www.youtube.com/watch?v=e4MjUPIvies">Content Routing</a></li>
+<li><a href="https://www.youtube.com/watch?v=2PtniPUYcyU">Naming-Based Redirection</a></li>
+<li><a href="https://www.youtube.com/watch?v=QrWX-H0FPgU">Relationships between CDNs and ISPs</a></li>
+</ul>
+</li>
+</ul>
+</td>
+<td valign="top">
+<ul>
+<li><a href="http://goo.gl/Df6NiF">Web performance in Broadband Access Networks</a></li>
+<li><a href="http://goo.gl/qtjHsp">WProf</a></li>
+</ul>
+</td>
+<td valign="top"><a href="http://goo.gl/x4HyBR">Bufferbloat</a></td>
+</tr>
+<tr>
+<td valign="top">March 4</td>
+<td valign="top">
+<ul>
+<li>Peer-to-peer file sharing</li>
+<li style="list-style: none; display: inline">
+<ul>
+<li>Bittorrent</li>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=PXdA11zVjyM">Overview</a></li>
+<li><a href="https://www.youtube.com/watch?v=hrKx_ZNTGW4">Publishing</a></li>
+<li><a href="https://www.youtube.com/watch?v=U8nZWRMI3OY">Solution to Freeriding</a></li>
+<li><a href="https://www.youtube.com/watch?v=gME6jR19nmU">Selecting chunks to swap</a></li>
+</ul>
+<li>Distributed hash tables</li>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=VZDuNB2Pb9Y">Overview</a></li>
+<li><a href="https://www.youtube.com/watch?v=-QVJmhRnsBw">Motivation (Chord)</a></li>
+<li><a href="https://www.youtube.com/watch?v=viaNG1zyx1g">Consistent Hashing</a></li>
+<li><a href="https://www.youtube.com/watch?v=H0hZBsVSt10">Implementing Consistent Hashing</a></li>
+<li><a href="https://www.youtube.com/watch?v=GOOXa2GkPws">Finger Tables</a></li>
+</ul>
+</ul>
+</ul>
+</td>
+<td valign="top">
+<ul>
+<li>Bittorrent</li>
+<li><a href="http://goo.gl/TNnJgx">Chord</a></li>
+</ul>
+</td>
+<td valign="top"><br/></td>
+</tr>
+<tr>
+<td valign="top">March 6</td>
+<td valign="top">
+<ul>
+<li><b><font color="#F63426">Quiz 2</font></b><br/></li>
+</ul>
+</td>
+<td valign="top"><br/></td>
+<td valign="top"><br/></td>
+</tr>
+<tr>
+<td valign="top">March 11</td>
+<td valign="top">
+<ul>
+<li>Network Management</li>
+<li style="list-style: none; display: inline">
+<ul>
+<li><a href="https://www.youtube.com/watch?v=QsM21F2DsY4">Overview</a></li>
+<li><a href="https://www.youtube.com/watch?v=1cDs6uZVw3E">Why Network
+    Management is hard and how SDN can help</a></li> 
+<li><a href="https://www.youtube.com/watch?v=W40QVxDxw0s">Advantages of
+    SDN</a></li>
+</ul>
+</li>
+</ul>
+</td>
+<td valign="top">
+<ul>
+<li><a href="http://goo.gl/b5FVZx">rcc</a></li>
+<li><a href="http://goo.gl/X8TCjy">The Road to SDN</a></li>
+</ul>
+</td>
+<td valign="top"/>
+</tr>
+<tr>
+<td valign="top">March 13</td>
+<td valign="top">
+<ul>
+<li><a href="https://www.youtube.com/watch?v=Bws5TAZJRac">What is
+       Software Defined Networking?</a></li> 
+<li><a href="https://www.youtube.com/watch?v=W40QVxDxw0s">Advantages of SDN</a></li>
+<li><a href="https://www.youtube.com/watch?v=3AsOZni-bPA">Control/data
+    plane separation</a></li> 
+<li><a href="https://www.youtube.com/watch?v=FlJkQXCQj_M">Challenges in
+    Designing SDNs</a></li>
+</ul>
+</td>
+<td valign="top">
+<ul>
+<li><a href="http://goo.gl/mVlWYw">RCP</a></li>
+<li><a href="http://goo.gl/y3FUIh">OpenFlow</a></li>
+<li><a href="http://goo.gl/FVGNw2">Forwarding metamorphosis</a><br/></li>
+</ul>
+</td>
+<td valign="top"><br/></td>
+</tr>
+<tr>
+<td valign="top">March 25</td>
+<td valign="top">
+<ul>
+<li><a href="https://www.youtube.com/watch?v=SSsG1qrRPOs">SDN
+    Controllers</a></li>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=ZeJKF5y7uFM">NOX
+    Overview</a></li>
+<li><a href="https://www.youtube.com/watch?v=ZeJKF5y7uFM">Ryu,
+    Floodlight, NOX, Pox</a></li>
+<li><a href="https://www.youtube.com/watch?v=vKZWy6uOnsA">Customizing
+    SDN control</a></li>
+<li><a href="https://www.youtube.com/watch?v=X8Jsan9v_oA">Summary</a></li>
+</ul>
+<li><a href="https://www.youtube.com/watch?v=WS1k8_dmPM8">Consistent
+    updates</a></li>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=qawEUEXbC-8">Programming
+    SDNs (Overview)</a></li>
+<li><a href="https://www.youtube.com/watch?v=WKtpHlJN6us">Reading
+    Network State</a></li>
+<li><a href="https://www.youtube.com/watch?v=DvWqlnBGkzA">Writing Network State</a></li>
+</ul>
+</ul>
+</td>
+<td valign="top">
+<ul>
+<li><a href="http://goo.gl/xCOesj">NOX</a></li>
+<li><a href="http://goo.gl/KVrzb4">Consistent Updates</a></li>
+</ul>
+</td>
+<td valign="top"><a href="http://goo.gl/LrwWxT">TCP Fast Open</a></td>
+</tr>
+<tr>
+<td valign="top">March 27</td>
+<td valign="top">
+<ul>
+<li>Network Virtualization</li>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=0SRQWPeRiqQ">Overview</a></li>
+<li><a href="https://www.youtube.com/watch?v=_hca0QJO4lY">Motivation for
+    Network Virtualization</a></li>
+<li><a href="https://www.youtube.com/watch?v=XzAfAqhn53U">Network
+    Virtualization and SDN</a></li>
+<li><a href="https://www.youtube.com/watch?v=smUcdZKb-aI">Design
+    Goals</a>
+<li><a href="https://www.youtube.com/watch?v=brMgRBNEeac">Virtualization
+    in Mininet</a></li>
+</ul>
+</ul>
+</td>
+<td valign="top">
+<ul>
+<li><a href="http://goo.gl/Jk0MV4">VINI</a></li>
+<li><a href="http://goo.gl/cnTFW2">Fabric</a></li>
+</ul>
+</td>
+<td valign="top"><br/></td>
+</tr>
+<tr>
+<td valign="top">April 1</td>
+<td valign="top">
+<ul>
+<li>Programming SDNs</li>
+<li style="list-style: none; display: inline">
+<ul>
+<li><a href="https://www.youtube.com/watch?v=4PRYM95zeyg">Difficulty of
+    programming SDNs</a></li> 
+<li><a href="https://www.youtube.com/watch?v=KfPDRlt5lWM">SDN
+    Programming Interface</a></li>
+<li><a href="https://www.youtube.com/watch?v=EYy4YO2mcoU">Frenetic
+    Language</a></li>
+<li><a href="https://www.youtube.com/watch?v=oZGYK3QrXNI">Overlapping
+    Network Policies</a></li>
+<li><a href="https://www.youtube.com/watch?v=hx2rDdMNmR0">Composing SDN
+    Policies with Pyretic</a></li> 
+<li><a href="https://www.youtube.com/watch?v=z0GSdshJmg8">Pyretic
+    Language</a></li>
+<li><a href="https://www.youtube.com/watch?v=rW-8qa_jBY0">Sequential and
+    Parallel Composition</a></li>
+<li><a href="https://www.youtube.com/watch?v=ifH__GjItVw">Dynamic Policies</a></li>
+</ul>
+</li>
+</ul>
+</td>
+<td valign="top">
+<ul>
+<li><a href="http://goo.gl/1vwstB">Frenetic</a></li>
+<li><a href="http://goo.gl/Haigfz">Pyretic</a></li>
+</ul>
+</td>
+<td valign="top"><br/></td>
+</tr>
+<tr>
+<td valign="top">April 3</td>
+<td valign="top">
+<ul>
+<li>Traffic Engineering (Intradomain)</li>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=5z4LDT3zQGI">Overview</a></li>
+<li><a href="https://www.youtube.com/watch?v=3Na0J0_WCNc">Interdomain
+    TE</a></li>
+<li><a href="https://www.youtube.com/watch?v=ATwZjQF0A8Q">TE Control
+    Loop</a></li>
+<li><a href="https://www.youtube.com/watch?v=q-8HlJrjMr0">TE and
+    Optimization</a></li>
+<li><a href="https://www.youtube.com/watch?v=Eza5ei5quCA">Equal-Cost
+    Multipath</a></li> 
+</ul>
+<li>Interdomain Traffic Engineering</li>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=E8_cKhBCVQA">Background</a></li>
+<li><a href="https://www.youtube.com/watch?v=bIS7e9pvfpA">Goals</a></li>
+</ul>
+</ul>
+</li>
+</ul>
+</td>
+<td valign="top">
+<ul>
+<li><a href="http://goo.gl/j2XY0v">B4</a></li>
+</ul>
+</td>
+<td valign="top"><br/></td>
+</tr>
+<tr>
+<td valign="top">April 8</td>
+<td valign="top">
+<ul>
+<li>Data centers</li>
+<li style="list-style: none; display: inline">
+<ul>
+<li><a href="https://www.youtube.com/watch?v=11_F4hKwNSE">Data center
+    networking</a></li>
+<li><a href="https://www.youtube.com/watch?v=I08tqnJqmvk">Challenges</a></li>
+<li><a href="https://www.youtube.com/watch?v=hWvfM5Xxcbw">Topologies</a></li>
+<li><a href="https://www.youtube.com/watch?v=VmQZyuZDe6U">Traffic
+    engineering in data centers</li>
+<li><a href="https://www.youtube.com/watch?v=BzNYSrcextU">VL2</a></li>
+<li>Jellyfish</li>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=P5GosiGvL38">Overview</a></li>
+<li><a href="https://www.youtube.com/watch?v=X5Tj1d6j4qU">Random Regular
+    Graph</a></li>
+<li><a href="https://www.youtube.com/watch?v=2SVHNRNhQtM">Constructing a
+    Jellyfish Topology</a></li>
+</ul>
+</ul>
+</li>
+</ul>
+</td>
+<td valign="top">
+<ul>
+<li><a href="http://goo.gl/9GDAVg">Portland</a></li>
+<li><a href="http://goo.gl/c8tXag">Jellyfish</a></li>
+</ul>
+</td>
+<td valign="top"><a href="http://goo.gl/tfuvCl">MAC Learning in SDN</a></td>
+</tr>
+<tr>
+<td valign="top">April 10</td>
+<td valign="top">
+<ul>
+<li>Network Security I</li>
+<li style="list-style: none; display: inline">
+<ul>
+<li><a href="https://www.youtube.com/watch?v=2uJguJ5jNHs">Motivation<a/></li>
+<li><a href="https://www.youtube.com/watch?v=LA5AJzDEQ3M">Internet insecurity</a></li>
+<li><a href="https://www.youtube.com/watch?v=QqaDLt4UGOc">Resource exhaustion attacks</a></li>
+<li><a href="https://www.youtube.com/watch?v=0M7fXqeR7FQ">Confidentiality and authenticity</a></li>
+<li><a href="https://www.youtube.com/watch?v=KESqBGRRToo">Negative effects of attacks</a></li>
+<li><a href="https://www.youtube.com/watch?v=He0N9WwILW4">Routing Security</a></li>
+<li><a href="https://www.youtube.com/watch?v=SErrcq_cDY4">Attacks on Routing</a></li>
+<li><a href="https://www.youtube.com/watch?v=E3PtQHSwFcQ">Route Hijacks</a></li>
+<li>S-BGP</li>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=zcqBO9UBx3M">BGP Session Authentication</a></li>
+<li><a href="https://www.youtube.com/watch?v=WCsZ8-AONUQ">Origin and Path Authentication</a></li>
+<li><a href="https://www.youtube.com/watch?v=B1j6WgU55gY">AS Path Attestations</a></li>
+</ul>
+</ul>
+</li>
+</ul>
+</td>
+<td valign="top">
+<ul>
+<li><a href="http://goo.gl/8ibB5R">Traffic Attraction</a></li>
+</ul>
+</td>
+<td valign="top"><br/></td>
+</tr>
+<tr>
+<td valign="top">April 15</td>
+<td valign="top">
+<ul>
+<li>Network Security II</li>
+<li style="list-style: none; display: inline">
+<ul>
+<li><a href="https://www.youtube.com/watch?v=ObPtCi05x5E">Naming security (DNS)</a></li>
+<li><a href="https://www.youtube.com/watch?v=30GExjWOpwA">Why is DNS vulnerable?</a></li>
+<li><a href="https://www.youtube.com/watch?v=leTiP1s6RCk">DNS cache poisoning</a> (<a href="https://www.youtube.com/watch?v=-pCGEbe49Js">Defense</a>)</li>
+<li><a href="https://www.youtube.com/watch?v=Z3JkmKE984Q">DNS Amplification Attacks</a></li>
+<li><a href="https://www.youtube.com/watch?v=KgjKAZ-4hJg">DNSSEC</a></li>
+<li>Viruses, worms</li>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=KXeE05px_3I">Overview</a></li>
+<li><a href="https://www.youtube.com/watch?v=LgBJuDMl1SU">Lifecycle</a></li>
+<li><a href="https://www.youtube.com/watch?v=Jwr_NLNRS0g">Morris Worm</a></li>
+<li><a href="https://www.youtube.com/watch?v=Gchbb6EVqUM">Worm outbreak case studies</a></li>
+<li><a href="https://www.youtube.com/watch?v=6oWgDcpMd_k">Modeling fast-spreading worms</a></li>
+<li><a href="https://www.youtube.com/watch?v=ZDKgNHfMydo">Increasing speed of spreading</a></li>
+</ul>
+</ul>
+</ul>
+</td>
+<td valign="top">
+<ul>
+<li><a href="http://goo.gl/cL1yw3">How to 0wn the Internet in Your Spare Time</a></li>
+</ul>
+</td>
+<td valign="top"><br/></td>
+</tr>
+<tr>
+<td valign="top">April 17</td>
+<td valign="top">
+<ul>
+<li>Network Security: Attacks</li>
+<li style="list-style: none; display: inline">
+<ul>
+<li>Spam</li>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=9vCvTIMJk34">Overview</a></li>
+<li><a href="https://www.youtube.com/watch?v=MaVX9M-UYUE">IP Blacklisting</a></li>
+<li><a href="https://www.youtube.com/watch?v=hBARMjGYkTI">BGP Agility</a></li>
+</ul>
+<li>Denial of Service</li>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=ecHm2zal55k">Overview</a></li>
+<li><a href="https://www.youtube.com/watch?v=V-90fx65mQM">TCP 3-way handshake review</a></li>
+<li><a href="https://www.youtube.com/watch?v=chCzc4--ZZ0">Inferring DDoS using backscatter</a></li>
+<li><a href="https://www.youtube.com/watch?v=qSTe8SoSgXU">Automated DoS mitigation</a></li>
+</ul>
+</li>
+</ul>
+</td>
+<td valign="top">
+<ul>
+<li><a href="http://goo.gl/NsRxUL">Network-level behavior of spammers</a></li>
+<li><a href="http://goo.gl/sQDq9Y">Notos</a></li>
+</ul>
+</td>
+<td valign="top"><a href="http://goo.gl/IPPNuI">DDoS Mitigation</a></td>
+</tr>
+<tr>
+<td valign="top">April 22</td>
+<td valign="top">
+<ul>
+<li><b><font color="#F63426"><span style="-evernote-last-insertion-point:true;"/>Quiz 3</font></b><br/></li>
+</ul>
+</td>
+<td valign="top"><br/></td>
+<td valign="top"><br/></td>
+</tr>
+<tr>
+<td valign="top">April 24</td>
+<td valign="top">
+<ul>
+<li>Project Presentations</li>
+</ul>
+</td>
+<td valign="top"><br/></td>
+<td valign="top"><br/></td>
+</tr>
+
+
+
+
+</table>
+
+    </div>
+
+
+    <div class="tab-pane" id="tab4">
+
+      <h3>Course Resources</h3>
+      <ul>
+	<li><a href="https://piazza.com/class/hpwm5h44b544pl">Piazza
+	Online Discussion Forum</a>
+	  <li>Various Online Reading from Professor Feamster</li>
+	  <ul>
+	    <li><a href="http://connectionmanagement.org/">Connection
+		Management Blog</a>: Blog where various topics will be discussed during the
+	      course.</li>
+	    <li><a href="http://greatresearch.org/">A Research "How To"
+	    Blog</a></li>
+	    <li><a href="http://twitter.com/feamster/">Prof. Feamster's
+	    Twitter Feed</a>
+	  </ul>
+
+	  <li>Udacity Course Modules (which mirror this course)</li>
+	  <ul>
+	    <li><a href="https://www.udacity.com/ud819">Module 1</a></li>
+	    <li><a href="https://www.udacity.com/ud399">Module 2</a></li>
+	    <li><a href="https://www.udacity.com/ud432">Module
+	    3</a></li>
+	  </ul>
+</ul>
+
+      <h3>Software Resources</h3>
+
+      <ul>
+	<li> <a href="http://virtualbox.org/">VirtualBox</a>
+	Environment</li>
+	<ul>
+	  <li> <a href="http://dowdberry.blogspot.com/2013/07/virtualbox-host-only-networking.html">Hints
+	  on VM Setup</a>
+	<li> Official virtual machine image</li></ul>
+	<li> <a href="http://mininet.org/">Mininet</a>: Virtual network emulation environment
+	  <ul>
+	    <li> <a href="http://mininet.org/walkthrough/">Mininet
+	    Walkthrough</a> </li> 
+	    <li> <a href="http://www.openflow.org/wk/index.php/OpenFlow_Tutorial">OpenFlow Tutorial</a> </li>
+	  </ul>
+	<li> <a href="http://frenetic-lang.org/pyretic/">Pyretic</a>:
+	Python-based SDN programming language </li>
+	<li> <a href="http://resonance.noise.gatech.edu/">PyResonance</a>:
+	Event-driven network control </li>
+	<li> Martin
+	Casado's <a href="http://yuba.stanford.edu/~casado/of-sw.html">list
+	of OpenFlow Software Projects</a>
+      </ul>
+
+      <h3>Readings</h3>
+      <ul>
+	<li> Cristian
+	Lumezanu's <a href="http://www.nec-labs.com/~lume/sdn-reading-list.html">SDN
+	Reading List</a></li>
+	<li> SDN Bibliography (To be built during the course.)</li>
+      </ul>
+      
+
+    </div>
+
+
+
+  </div>
+</div>
+
+</div>
+</div>
+
+  </body>
+</html>

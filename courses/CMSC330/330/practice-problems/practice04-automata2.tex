@@ -1,0 +1,113 @@
+\documentclass[11pt]{article}
+
+  \usepackage{330-f12}
+
+  \psset{unit=1mm}
+  \psset{arrowsize=2.25 1,arrowinset=0,nodesep=0,offset=0,doublesep=.65}%
+
+\begin{document}
+
+  \header{\course}{Automata transformations}{\Term}
+
+  \begin{enumerate}
+
+    \addtolength{\itemsep}{4mm}
+
+    \item When does an NFA accept a string?
+
+    \item How long could it take to reduce a NFA with \emph{n} states and
+          \emph{t} transitions to a DFA?
+
+    \item What language (or set of strings) is accepted by the following
+          NFA?
+
+          \begin{pspicture}(-20,57)(55,5)%
+
+            \Large%
+
+            \state[start,label=S0](10,30){s0}
+            \state[label=S1](40,50){s1}
+            \state[label=S2](70,50){s2}
+            \state[final,label=S3](100,30){s3}
+            \state[label=S4](40,10){s4}
+            \state[label=S5](70,10){s5}
+
+            \large
+
+            \transition(s0,0,s1)
+            \transition[labelposition=.15](s0,\largeepsilon,s3)
+
+            \transition(s1,1,s2)
+            \transition[labelposition=.15,labeloffset=-6](s1,\largeepsilon,s5)
+
+            \transition(s2,0,s3)
+            \transition[labelposition=.15](s2,0,s4)
+
+            \transition(s4,\largeepsilon,s0)
+            \transition[labeloffset=-5](s4,0,s5)
+
+            \transition[labeloffset=-5](s5,\largeepsilon,s3)
+
+          \end{pspicture}
+
+    \item Construct an NFA that accepts or recognizes binary numbers that
+          contain the digit sequence 101.
+
+    \item Construct an NFA that accepts or recognizes binary numbers that
+          include either the digit sequence 00 or the digit sequence 11.
+
+    \item Construct an NFA that accepts or recognizes binary numbers that
+          include the digit sequence 00 \textbf{and} the digit sequence 11.
+
+    \item Compute the \largeepsilon--closure of the start state for the
+          the NFAs in the four subparts above.
+
+    \item Apply the construction given in lecture to produce an NFA that
+          accepts or recognizes the same language as the regular expression
+          \(
+            (a{\mid}b)^* \, b
+          \).
+
+   \item For the regular expression $1^*$:
+
+         \vspace{-2.5mm}
+
+         \begin{enumerate}
+
+           \addtolength{\itemsep}{1mm}
+
+           \item Apply the construction given in lecture to produce an NFA that
+                 accepts or recognizes the same language.
+
+           \item Reduce the resulting NFA to a DFA using the subset
+                 algorithm.
+
+           \item Minimize the resulting DFA using Hopcroft reduction
+
+         \end{enumerate}
+
+         \vspace{-2.5mm}
+
+   \item For the regular expression $(0|01)^*0$:
+
+         \vspace{-2.5mm}
+
+         \begin{enumerate}
+
+           \addtolength{\itemsep}{1mm}
+
+           \item Apply the construction given in lecture to produce an NFA that
+                 accepts or recognizes the same language.
+
+           \item Reduce the resulting NFA to a DFA using the subset
+                 algorithm.
+
+           \item Minimize the resulting DFA using Hopcroft reduction
+
+         \end{enumerate}
+
+         \vspace{-2.5mm}
+
+  \end{enumerate}
+
+\end{document}

@@ -1,0 +1,515 @@
+\documentclass[11pt]{article}
+
+  %
+  % State explicitly next time that students don't need to have a laptop to
+  % come to office hours.
+  %
+
+  %
+  % Yeah, the chart is really ugly Latex, but since it's only used once a
+  % semester there's little motivation to spend time trying to rewrite the
+  % macros....
+  %
+
+  \usepackage{330-f12}
+
+  \usepackage[none,light,outline,timestamp]{draftcopy}
+
+  \usepackage{pstricks}
+
+  \usepackage{multirow}
+
+  % For some reason \definecolor is defined on home Linux machine, but not
+  % department Linux machine, without this package.
+  %
+  \usepackage{color}
+
+  \usepackage{calc}
+
+  \newrgbcolor{lecture}   {0.549 0.549 0.549}   % gray55
+  % \newrgbcolor{discussion}{0.000 0.900 1.000} % slightly ligher than
+                                                % deep-sky-blue
+
+  % \newrgbcolor{larry}     {0.757 1.000 0.757} % DarkSeaGreen1
+  %
+  % \newrgbcolor{derek}     {1.000 0.000 0.000} % red
+  % \newrgbcolor{christine} {0.706 0.322 0.804} % MediumOrchid3
+  % \newrgbcolor{bryan}     {1.000 0.843 0.000} % gold
+
+  \newrgbcolor{larry}     {0.000 0.933 0.000}   % green2
+  \newrgbcolor{nick}      {1.000 0.647 0.000}   % orange
+
+  \newrgbcolor{varun}     {0.545 0.353 0.000}   % orange4
+  \newrgbcolor{tommy}     {0.706 0.322 0.804}   % MediumOrchid3
+  \newrgbcolor{derek}     {1.000 0.000 0.000}   % red
+  \newrgbcolor{hao}       {1.000 0.843 0.000}   % gold
+  \newrgbcolor{tammy}     {0.000 0.749 1.000}   % deep-sky-blue
+  % \newrgbcolor{angjoo}  {1.000 0.647 0.000}   % orange
+  % \newrgbcolor{varun}   {1.000 0.961 0.933}   % seashell1
+  % \newrgbcolor{hyunjong}{0.000 0.804 0.000}   % green3
+  % \newrgbcolor{zhengzheng}{1.000 0.753 0.796} % pink
+  % \newrgbcolor{anirudh} {0.933 0.478 0.914}   % orchid2
+  % \newrgbcolor{alex}    {0.749 0.937 1.000}   % LightBlue1
+
+  \newcommand{\boxsize}{14mm}
+  \newcommand{\breakname}[1]{\parbox[t]{\boxsize}{%
+                             \addtolength{\baselineskip}{-.85mm}%
+                             \raggedright#1}}
+  \newcommand{\class}[2]{\begin{minipage}[t]{\boxsize}#1\\#2\end{minipage}}
+  \newcommand{\classcenter}[2]{\begin{minipage}[t]{\boxsize}%
+    \centering#1\\%
+    \centering#2%
+  \end{minipage}}
+
+  %
+  % parameters are:
+  %  1: x location
+  %  2: y location
+  %  3: name
+  %  4: height (40 for one hour, 60 for 1.5 hours, 80 for 2 hours, etc.)
+  %  5: extra x distance for name (negative to move left, positive for right)
+  %  6: extra y distance for name (negative to move up, positive for down)
+  %  7: name of a command to set the color of the text or line which follows
+  %  8: extra amount to add/subtract to width
+  %  9: extra amount to add/subtract to height
+  \newcounter{onetemporary}
+  \newcounter{twotemporary}
+  \newcommand{\hour}[9]{%
+    \setcounter{onetemporary}{#1+\value{cellwidth}+#8}
+    \setcounter{twotemporary}{#2-#4+#9}
+    \psframe[fillcolor=#7,fillstyle=solid]
+             (#1,#2)(\value{onetemporary},\value{twotemporary})
+    \setcounter{onetemporary}{#1+#5+\value{cellheight}+(#8/2)}%
+    \setcounter{twotemporary}{#2-#4+#6}%
+    {\put(\value{onetemporary},\value{twotemporary})%
+      {\makebox(0,#4)[c]{\textbf{#3}}}}%
+  }%
+
+\begin{document}
+
+  \header{\course}{Office hours}{\Term}
+
+  \vspace*{-6mm}
+
+  \section{Email contact\label{section:email}}
+
+    Unfortunately we're not able to explain most course material via email,
+  due to time constraints and other factors.  Answering such questions is
+  more appropriate for class discussion or personal communication; questions
+  can sometimes also be asked via Piazza.  Please discuss administrative
+  issues as well as course material in person when possible (office hours,
+  and before and after class are good times), and use email in case of
+  urgent or emergency matters only.  Lastly, it is not practical to provide
+  detailed information or assistance regarding programming assignments via
+  email, and attempting to do so often results in students receiving
+  incomplete or inadequate information.
+
+  \section{Office hours}
+
+    \subsection{Instructors' office hours}
+
+      \begin{center}
+
+        \begin{tabular}[t]{c@{\hspace{8mm}}c}
+
+          \renewcommand{\arraystretch}{1.2}
+
+          \begin{tabular}[t]{|l|l|}
+
+            \multicolumn{2}{c}{Sections 0101, 0102, 0103}
+            \\ \hline
+
+            Name:
+              & Larry Herman
+              \\ \hline
+
+            Office:
+              & 1111 A. V. Williams
+              \\ \hline
+
+            Phone:
+              & (301) 405--2762
+              \\ \hline
+
+            Email:
+              & larry@cs.umd.edu ($*$)
+              \\ \hline
+
+            Office hours:
+              & M 5:00--6:00, W \& Th 10:00-11:00
+              \\ \hline
+
+          \end{tabular}
+
+          &
+
+          \begin{tabular}[t]{|l|l|}
+
+            \multicolumn{2}{c}{Sections 0201, 0202, 0203, 0204}
+            \\ \hline
+
+            Name:
+              & Dr.\ Nick Feamster
+              \\ \hline
+
+            Office:
+              & 4135 A. V. Williams
+              \\ \hline
+
+            Phone:
+              & (301) 405--8010
+              \\ \hline
+
+            Email:
+              & feamster@cs.umd.edu ($*$)
+              \\ \hline
+
+            Office hours:
+              & Tu 4:45--6:00
+              \\ \hline
+
+          \end{tabular}
+
+        \end{tabular}
+
+      \end{center}
+
+      \smallskip
+
+      ($*$) See Section \ref{section:email} above regarding email.
+
+    \subsection{Teaching assistants' office hours}
+
+      \begin{center}
+
+        \renewcommand{\arraystretch}{1.25}
+
+        \begin{tabular}{@{}*{4}{|l}|@{}}
+
+          \multicolumn{1}{c}{name}
+            & \multicolumn{1}{c}{duties}
+            & \multicolumn{1}{c}{email}
+            & \multicolumn{1}{c}{office hours}
+            \\ \hline
+
+          Tommy Pensyl
+            & teaching, 0101 \& 0102
+            & tpensyl@cs.umd.edu ($*$)
+            & M 2:30--4:30, W 3--5
+            \\ \hline
+
+          Tammy Tran
+            & teaching, 0103 \& 0201
+            & tnt@cs.umd.edu ($*$)
+            & Tu 2:30--4:30, Th 12--2
+            \\ \hline
+
+          Derek Juba
+            & teaching, 0202 \& 0203
+            & juba@cs.umd.edu ($*$)
+            & Tu 12--2, F 3--5
+            \\ \hline
+
+          Varun Nagaraja
+            & teaching, 0204, and grading
+            & varun@cs.umd.edu ($*$)
+            & M 11-1, W 1--3
+            \\ \hline
+
+          Hao Li
+            & grading
+            & haoli@cs.umd.edu ($*$)
+            & Th 3:15--5, F 10:45--1
+            \\ \hline
+
+        \end{tabular}
+
+      \end{center}
+
+      % All of the TAs' email addresses are ``@cs.umd.edu''.  Also
+      ($*$) Please see Section \ref{section:email} above regarding email.
+
+  \section{Regarding office hours}
+
+    All the TAs' office hours will be held in 1112 A.V.\ Williams.
+
+    The TAs' office hours end at the times indicated.  Since the TAs may have
+  class or other obligations immediately following their office hours, there
+  may be times when they have to leave five minutes before the end of their
+  scheduled hours.  The TAs are not required to remain after their hours are
+  over.  To receive assistance you must arrive early enough that you can be
+  helped, taking this into consideration and keeping in mind that there may
+  be others already waiting when you arrive.
+
+    There may be times when the TAs need to swap office hours due to exams
+  or other obligations, so at times you may find a different TA in the
+  office hours room than the schedule here indicates.
+
+    It's understood that students may occasionally miss class for various
+  reasons, but email and office hours are not intended as a replacement for
+  class attendance.
+
+    While the TAs can provide assistance with programming assignments during
+  office hours, you are responsible for developing and debugging your own
+  programs.  You should therefore not rely on the instructional staff for
+  getting a project to work.  Lower--level CMSC courses provide extensive
+  debugging and development help in office hours, but upper--level CMSC
+  courses expect students to complete projects with minimal extra help.
+  Therefore in CMSC 330 we will provide less debugging help than some
+  students may be used to.  If you come in with a question you should expect
+  to be pointed in the right direction, but then it will be up to you to
+  finish solving the problem on your own.
+
+  \section{Office hours chart}
+
+    \medskip
+
+    \begin{center}
+
+      \hspace{7mm}%
+
+      \newcounter{ctr}
+
+      % \psset{unit=.2525mm,linewidth=.6pt}
+      \psset{unit=.27mm,linewidth=.6pt}
+
+      \begin{pspicture}(625,585)(0,0)
+
+        \thicklines  % write grid in heavy lines
+
+        \newcounter{top}
+        \newcounter{horiz}
+        \newcounter{vert}
+        \newcounter{firsthour}
+        \newcounter{numhoursbeforenoon}
+        \newcounter{numhoursafternoon}
+        \newcounter{totnumhours}
+        \newcounter{temp}
+        \newcounter{temptwo}
+        \newcounter{tempthree}
+        \newcounter{cellwidth}
+        \newcounter{cellheight}
+        \newcounter{halfcellwidth}
+        \newcounter{halfcellheight}
+        \newcounter{thirdcellwidth}
+        \newcounter{thirdcellheight}
+        \newcounter{quartercellheight}
+        \newcounter{hourcellwidth}
+        \newcounter{daynamecellheight}
+
+        \newcounter{mon}
+        \newcounter{tue}
+        \newcounter{wed}
+        \newcounter{thu}
+        \newcounter{fri}
+
+        \setcounter{numhoursbeforenoon}{3}  % really, before 1:00
+        \setcounter{numhoursafternoon}{5}
+        % totnumhours needs to be one more than necessary
+        \setcounter{totnumhours}{\value{numhoursbeforenoon} +
+                                 \value{numhoursafternoon} + 1}
+        \setcounter{cellwidth}{120}
+        \setcounter{cellheight}{60}
+        \setcounter{hourcellwidth}{\value{cellwidth} / 3}
+        \setcounter{daynamecellheight}{(\value{cellheight} * 3) / 4}
+        \setcounter{halfcellwidth}{\value{cellwidth} / 2}
+        \setcounter{halfcellheight}{\value{cellheight} / 2}
+        \setcounter{thirdcellwidth}{\value{cellwidth} / 3}
+        \setcounter{thirdcellheight}{\value{cellheight} / 3}
+        \setcounter{quartercellheight}{\value{cellheight} / 4}
+        \setcounter{horiz}{(5 * \value{cellwidth}) + \value{hourcellwidth}}
+        \setcounter{vert}{((\value{totnumhours} - 1) * \value{cellheight}) +
+                          \value{daynamecellheight}}
+        \setcounter{top}{(\value{totnumhours} + 1) * \value{cellheight}}
+        \setcounter{firsthour}{12 - \value{numhoursbeforenoon} + 1}
+
+        \setcounter{mon}{\value{hourcellwidth}}
+        \setcounter{tue}{\value{mon} + (1 * \value{cellwidth})}
+        \setcounter{wed}{\value{mon} + (2 * \value{cellwidth})}
+        \setcounter{thu}{\value{mon} + (3 * \value{cellwidth})}
+        \setcounter{fri}{\value{mon} + (4 * \value{cellwidth})}
+
+        \newcounter{eight}
+        \newcounter{nine}
+        \newcounter{ten}
+        \newcounter{eleven}
+        \newcounter{twelve}
+        \newcounter{one}
+        \newcounter{two}
+        \newcounter{three}
+        \newcounter{four}
+        \newcounter{five}
+        \newcounter{six}
+        \newcounter{seven}
+
+        \setcounter{twelve}{\value{top} - \value{daynamecellheight} -
+          ((\value{numhoursbeforenoon} - 1) * \value{cellheight})}
+        \setcounter{eleven}{\value{twelve} + \value{cellheight}}
+        \setcounter{ten}{\value{eleven} + \value{cellheight}}
+        \setcounter{nine}{\value{ten} + \value{cellheight}}
+        \setcounter{eight}{\value{nine} + \value{cellheight}}
+        \setcounter{one}{\value{twelve} - \value{cellheight}}
+        \setcounter{two}{\value{one} - \value{cellheight}}
+        \setcounter{three}{\value{two} - \value{cellheight}}
+        \setcounter{four}{\value{three} - \value{cellheight}}
+        \setcounter{five}{\value{four} - \value{cellheight}}
+        \setcounter{six}{\value{five} - \value{cellheight}}
+        \setcounter{seven}{\value{six} - \value{cellheight}}
+
+        %
+        % We make the part of the picture with the office hours themselves a
+        % sub-picture, just so the thickness of the lines applies only to
+        % it and not to the remaining part of the picture (the grid which is
+        % superimposed on the office hours).
+        %
+
+        \thicklines
+
+        % draw horizontal lines
+        \setcounter{temp}{\value{top}}
+        \addtocounter{temp}{-\value{daynamecellheight}}
+        \multiput(0,\value{temp})(0,-\value{cellheight}){
+          \value{totnumhours}}{\line(1,0){\value{horiz}}
+        }
+        % far top horizontal line
+        \put(0,\value{top}){\line(1,0){\value{horiz}}}
+
+        % draw vertical lines
+        \multiput(\value{hourcellwidth},\value{top})(\value{cellwidth},0){6}
+          {\line(0,-1){\value{vert}}}
+        % far left vertical line
+        \put(0,\value{top}){\line(0,-1){\value{vert}}}
+
+        % extra horizontal line under column headers
+        \addtocounter{temp}{3}
+        \put(0,\value{temp}){\line(1,0){\value{horiz}}}
+
+        % \thinlines
+
+        % write hour labels
+
+        % Not sure why the -5.  The day labels are horizontally centered, but
+        % the hour labels seem to have their left edge centered, so need some
+        % horizontal adjustment.  (Note -5 in two places below.)
+        %
+        \setcounter{ctr}{\value{firsthour}}
+        \setcounter{temp}{\value{top} - \value{daynamecellheight} -
+                          \value{cellheight}}
+        \multiput(-5,\value{temp})(0,-\value{cellheight})
+          {\value{numhoursbeforenoon}}{
+          {\makebox(\value{hourcellwidth},\value{cellheight})[c]
+            {\arabic{ctr}\stepcounter{ctr}}}}
+
+        \setcounter{ctr}{1}
+        \setcounter{temp}{\value{top} - \value{daynamecellheight} -
+          (\value{cellheight} * (\value{numhoursbeforenoon} + 1))}
+        \multiput(-5,\value{temp})(0,-\value{cellheight})
+          {\value{numhoursafternoon}}{
+          {\makebox(\value{hourcellwidth},\value{cellheight})[c]
+            {\arabic{ctr}\stepcounter{ctr}}}}
+
+        % write column headers
+
+        \setcounter{temp}{\value{top}}
+        \addtocounter{temp}{-\value{daynamecellheight}}
+
+        \put(\value{mon},\value{temp})
+          {\makebox(\value{cellwidth},\value{daynamecellheight})[c]{Monday}}
+        \put(\value{tue},\value{temp})
+          {\makebox(\value{cellwidth},\value{daynamecellheight})[c]{Tuesday}}
+        \put(\value{wed},\value{temp})
+          {\makebox(\value{cellwidth},\value{daynamecellheight})[c]{Wednesday}}
+        \put(\value{thu},\value{temp})
+          {\makebox(\value{cellwidth},\value{daynamecellheight})[c]{Thursday}}
+        \put(\value{fri},\value{temp})
+          {\makebox(\value{cellwidth},\value{daynamecellheight})[c]{Friday}}
+
+        % Monday
+
+        \hour{\value{mon}}{\value{eleven}}{Varun}
+             {120}{0}{0}{varun}{0}{0}
+
+        \setcounter{temp}{\value{two} - \value{halfcellheight}}
+        \hour{\value{mon}}{\value{temp}}{Tommy}
+             {120}{0}{0}{tommy}{0}{0}
+
+        \hour{\value{mon}}{\value{five}}{Larry}
+             {60}{0}{0}{larry}{0}{0}
+
+        % Tuesday
+
+        \hour{\value{tue}}{\value{twelve}}{Derek}
+             {120}{0}{0}{derek}{0}{0}
+
+        \hour{\value{tue}}{\value{two}}{%
+             \begin{tabular}[t]{@{}c@{}}lecture\\010X\end{tabular}}
+             {75}{0}{0}{lecture}{-\value{halfcellwidth}}{0}
+
+        \setcounter{temp}{\value{three} - \value{halfcellheight}}
+        \hour{\value{tue}}{\value{temp}}{%
+             \begin{tabular}[t]{@{}c@{}}lecture\\020X\end{tabular}}
+             {75}{0}{0}{lecture}{-\value{halfcellwidth}}{0}
+
+        \setcounter{temp}{\value{tue} + \value{halfcellwidth}}
+        \setcounter{temptwo}{\value{two} - \value{halfcellheight}}
+        \hour{\value{temp}}{\value{temptwo}}{Tammy}
+             {120}{0}{0}{tammy}{-\value{halfcellwidth}}{0}
+
+        \setcounter{temp}{\value{five} + \value{quartercellheight}}
+        \hour{\value{tue}}{\value{temp}}{Nick}
+             {75}{0}{0}{nick}{0}{0}
+
+        % Wednesday
+
+        \hour{\value{wed}}{\value{ten}}{Larry}
+             {60}{0}{0}{larry}{0}{0}
+
+        \hour{\value{wed}}{\value{one}}{Varun}
+             {120}{0}{0}{varun}{0}{0}
+
+        \hour{\value{wed}}{\value{three}}{Tommy}
+             {120}{0}{0}{tommy}{0}{0}
+
+        % Thursday
+
+        \hour{\value{thu}}{\value{ten}}{Larry}
+             {60}{0}{0}{larry}{0}{0}
+
+        \hour{\value{thu}}{\value{twelve}}{Tammy}
+             {120}{0}{0}{tammy}{0}{0}
+
+        \hour{\value{thu}}{\value{two}}{%
+             \begin{tabular}[t]{@{}c@{}}lecture\\010X\end{tabular}}
+             {75}{0}{0}{lecture}{-\value{halfcellwidth}}{0}
+
+        \setcounter{temp}{\value{three} - \value{halfcellheight}}
+        \hour{\value{thu}}{\value{temp}}{%
+             \begin{tabular}[t]{@{}c@{}}lecture\\020X\end{tabular}}
+             {75}{0}{0}{lecture}{-\value{halfcellwidth}}{0}
+
+        \setcounter{temp}{\value{thu} + \value{halfcellwidth}}
+        \setcounter{temptwo}{\value{three} - \value{quartercellheight}}
+        \hour{\value{temp}}{\value{temptwo}}{Hao}
+             {105}{0}{0}{hao}{-\value{halfcellwidth}}{0}
+
+        % Friday
+
+        \setcounter{temp}{\value{eleven} + \value{quartercellheight}}
+        \hour{\value{fri}}{\value{temp}}{Hao}
+             {135}{0}{0}{hao}{0}{0}
+
+        \hour{\value{fri}}{\value{three}}{Derek}
+             {120}{0}{0}{derek}{0}{0}
+
+      \end{pspicture}
+
+    \end{center}
+
+    \vspace{-18mm}
+
+  %   \noindent
+  %   Note: the dark blue entries (0101, 0102, 0401, 0402) indicate the
+  % discussion sections, while the light blue ones (010X, 040X) indicate the
+  % lectures.
+
+\end{document}

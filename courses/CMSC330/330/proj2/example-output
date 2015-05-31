@@ -1,0 +1,30 @@
+Section #1:
+  bugs: 4 time(s).
+  donald: 2 time(s).
+  goofy: 1 time(s).
+  jessica: 2 time(s).
+  mickey: 2 time(s).
+  tweety: 5 time(s).
+
+Section #2:
+  devel group: 6 time(s).
+  sysadmin group: 1 time(s).
+  users group: 9 time(s).
+
+Section #3:
+  bugs:
+    Wed Sep 12 15:00:00 04:00:00 914-45a.umd.edu
+    Wed Sep 12 17:00:00 04:01:00 libwkmck1f2.umd.edu
+
+  bugs:
+    Wed Sep 12 15:00:00 04:00:00 914-45a.umd.edu
+    Wed Sep 12 18:00:00 00:01:00 209.39.175.23
+
+  bugs:
+    Wed Sep 12 17:00:00 04:01:00 libwkmck1f2.umd.edu
+    Wed Sep 12 18:00:00 00:01:00 209.39.175.23
+
+  bugs:
+    Wed Sep 12 17:00:00 04:01:00 libwkmck1f2.umd.edu
+    Wed Sep 12 20:00:00 00:02:00 coredump.umd.edu
+

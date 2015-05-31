@@ -1,0 +1,223 @@
+\documentclass[12pt]{article}
+
+  \usepackage{330-f12}
+
+  \usepackage{wasysym}
+
+\begin{document}
+
+  \header{\course}{Discussion section topics -- Week \#9}{\Term}
+
+  \section{Discussion \#8, Friday, October 26}
+
+    \subsection{More OCaml}
+
+      \subsubsection{References (review and examples)}
+
+        You can ask the students how to do some of these things, and see if
+      they can tell you the right way, then you can demonstrate using the
+      room PC.
+
+        Demonstrate how you can create a list of references to integers, and
+      then modify elements of the list, for example something like:
+
+        \vspace{-1mm}
+
+        \begin{center}
+
+          \begin{BVerbatim}
+        let list= [ref 1; ref 2; ref 3; ref 4];;
+
+        (List.hd (List.tl list)):= 5;;
+        match list with _::_::y::_ -> y:= 6;;
+
+        list;;
+          \end{BVerbatim}
+
+        \end{center}
+
+        \vspace{-1mm}
+
+        But you can't ``reassign'' the entire list (e.g., something like
+      \texttt{list:= [ref 9; ref 10];;} won't work).
+
+        Of course you can create a reference to a list, and then reassign it:
+
+        \vspace{-1mm}
+
+        \begin{center}
+
+          \begin{BVerbatim}
+        let list= ref [1; 2; 3; 4];;
+        let list= ref [5; 6; 7];;
+        let list= [8; 9];;
+          \end{BVerbatim}
+
+        \end{center}
+
+        \vspace{-1mm}
+
+      But show that now you can't ``reassign'' elements of the list.
+
+        Of course you can create a reference to a list of references; here
+      just to be different it's a reference to a list of references to
+      tuples of integers:
+
+        \vspace{-2mm}
+
+        \begin{center}
+
+          \begin{BVerbatim}
+        let list= ref [ref (1, 2); ref (2, 3); ref (3, 4); ref (4, 5)];;
+          \end{BVerbatim}
+
+        \end{center}
+
+        \vspace{-1mm}
+
+        Now you can ``reassign'' the entire list, as well as individual
+      elements.
+
+        Be sure to point out what the type of the list itself and of the
+      elements are in each case.  Also illustrate what the type of the
+      \texttt{:=} operator is, using \texttt{(:=);;}.
+
+      \subsubsection{References, closures, and modules}
+
+        In the lecture slides from Tuesday of this week is an example
+      encapsulating a reference in a closure, to create a counter that
+      returns a new, incremented value every time it's called:
+
+        \vspace{-1mm}
+
+        \begin{center}
+
+          \begin{BVerbatim}
+        let next =
+          let count = ref 0 in
+            function () ->
+              let temp = !count in
+                count := (!count) + 1;
+                temp;;
+          \end{BVerbatim}
+
+        \end{center}
+
+        \vspace{-1mm}
+
+        One student asked how the counter could be reset.  Show students how
+      to do this:
+
+        \vspace{-2.5mm}
+
+        \begin{itemize}
+
+          \addtolength{\itemsep}{0mm}
+
+          \item What we need is to define two functions (that will be
+                closures) in the scope where \texttt{count} is defined-- the
+                function above that advances \texttt{count}, and another one
+                that resets it.
+
+          \item Then we need to have the function return \textbf{both}
+                functions- it should return a pair of both closures (maybe
+                the function should now be named something other than
+                \texttt{next}, below I assume it's now named \texttt{pair},
+                because it returns a pair of functions).
+
+          \item Then we need to bind names to the two functions returned in
+                the tuple; either of these will work:
+
+                \begin{Verbatim}[xleftmargin=1.5in]
+        let (next, reset) = pair;;
+                \end{Verbatim}
+
+                \vspace{-2mm}
+
+                or
+
+                \vspace{-3mm}
+
+                \begin{Verbatim}[xleftmargin=1.5in]
+        let next = match pair with (n, r) -> n;;
+        let reset = match pair with (n, r) -> r;;
+                \end{Verbatim}
+
+                Show this and demonstrate the functions.
+
+          \item It's kind of neat and clever that we can do this, but it's
+                sort of awkward.  If we need a counter that can be reset, a
+                better approach would be to turn it into a module, with two
+                different functions exernally visible (\texttt{next} and
+                \texttt{reset}), where the \texttt{count} ref is hidden
+                inside the module
+
+                Go ahead and develop it- the reference part (the actual
+                implementation) should not be difficult by this point; the
+                main point it to show writing a module.  Go ahead and make
+                it a full--blown module, putting the signature in a
+                \texttt{.mli} file and the struct in a \texttt{.ml} file.
+
+                (Just make sure students realize that they are \textbf{not}
+                creating separate module signature and implementation files
+                for their rational module in Project \#3.)
+
+        \end{itemize}
+
+        \vspace{-3.5mm}
+
+      \subsubsection{Tracing and debugging}
+
+        Show how to turn function tracing on and off, and show an example of
+      tracing the execution of a function, similar to the example in the
+      OCaml O'Reilly book.  Ideally you can come up with a function or set
+      of functions which are syntactically correct but don't work like
+      they're supposed to, in a way that isn't obvious by just looking at
+      their definitions, but show how by tracing or by using the debugger
+      it's fairly easy to figure out what's going wrong.
+
+        Try to show some simple use of the OCaml debugger \texttt{ocamldebug}.
+      Students learned and used \texttt{gdb} in CMSC 216, so they should
+      understand the basic use of a debugger.
+
+      \subsubsection{\texttt{ocamlrun -b}}
+
+        It could be useful to take a moment to show the students that running
+      their program via \texttt{ocamlrun -b} will give a stack backtrace if
+      their program has an uncaught exception, so it's easy to see where the
+      exception originated.  (Of course, if they are developing their
+      program by writing one function at a time and testing each one, then
+      the chance of having an uncaught exception without having any idea
+      where it came from is small, so this is important to encourage also.)
+
+    \subsection{If you have extra time}
+
+      If you have any extra time, instead of letting the students go early,
+    see if they have any questions and try to answer them if so.  There may
+    be questions about the project.
+
+    \subsection{Return Quiz \#3}
+
+      Return the quizzes and go over the answers as needed, and answer any
+    questions about the answers.  If there are problems that many students
+    got wrong show how to solve them if time permits.  (If there's ever not
+    enough time to go over all the answers when returning a quiz then just
+    return them and encourage students to try to figure out what mistakes
+    they made, and ask questions in office hours if needed.)
+
+    %   Before returning the quizzes, if you still have any unreturned Quiz
+    % \#1s, \textbf{staple them to the student's current quiz}, so if they
+    % pick that one up they will get them both.  And keep bringing unclaimed
+    % quizzes to subsequent discussion sections in case the students show up,
+    % so you can give them back if so.
+
+      Before returning the quizzes, make a strong effort to encourage anyone
+    who didn't do that well (whatever the lower range of scores turns out to
+    be) to come to office hours for extra help or explanation right away, so
+    they can get caught up before they are even further behind.
+
+      If any students didn't put their University ID number, TA's name, or
+    discussion time, or any of these were wrong, please write a short note
+    telling them they must put all their identifying information correctly.
+
+\end{document}

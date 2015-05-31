@@ -1,0 +1,13 @@
+interface I {
+
+  void m() throws Exception;
+
+}
+
+abstract public class C {
+
+  int abc;
+  double def;
+  boolean how = true;
+
+}

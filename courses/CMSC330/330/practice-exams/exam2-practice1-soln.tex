@@ -1,0 +1,703 @@
+\documentclass[11pt,fleqn]{article}
+
+  \usepackage{330-f12}
+
+  \usepackage{pst-tree}
+
+  \hideinfo
+
+\begin{document}
+
+  \header{\course}{Exam \#2 practice questions \#1-- solutions}{\Term}
+
+  \begin{enumerate}
+
+    \addtolength{\itemsep}{15mm}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    % \item \begin{enumerate}
+    % 
+    %         \vspace{-2.25mm}
+    % 
+    %         \addtolength{\itemsep}{6mm}
+    % 
+    %         \item The result would be 8.  The rule is saying that in an
+    %               application of a closure to an argument, variable bindings
+    %               in the closure'e environment take precedence over the
+    %               binding of the value of the argument to the closure's
+    %               parameter.  In other words, it's like an inverse static
+    %               scoping, in which outermost variable bindings take
+    %               precedence over inner ones.  (Of course this behavior
+    %               would make no sense for a real language, it's just to test
+    %               understanding of operational semantics rules.)
+    % 
+    %               Note that the original rule (which describes what real
+    %               Scheme would use) the function application would return 6,
+    %               as the outer x and its value 4 are shadowed by the inner x
+    %               and its value 3.
+    % 
+    %         \item \begin{enumerate}
+    % 
+    %                 \vspace{-2.75mm}
+    % 
+    %                 \addtolength{\itemsep}{4mm}
+    % 
+    %                 \item $\mathrm{\lambda y.z \: y}$
+    % 
+    %                 \item $\mathrm{\lambda z.y \: z}$ (where z can be any
+    %                       variable other than y)
+    % 
+    %                 \item $\mathrm{\lambda y.y}$
+    % 
+    %               \end{enumerate}
+    % 
+    %               \vspace{-1mm}
+    % 
+    %         \item In translation via erasure Java replaces type parameters
+    %               with \texttt{Object}, since any type which the type
+    %               parameter is instantiated with will be a subclass of
+    %               \texttt{Object}.  C++ does not have a class like
+    %               \texttt{Object} which is the root of the entire
+    %               inheritance hierarchy, without which this approach won't
+    %               work.
+    % 
+    %       \end{enumerate}
+    % 
+    %       \begin{info}{\textbf{\underline{Grading scale:}}}{6.5in}
+    % 
+    %         \begin{itemize}
+    % 
+    %           \addtolength{\itemsep}{1mm}
+    % 
+    %           \item Part (a) is \pts{8}, part (b) is \pts{10}, and part (c) is
+    %                 \pts{8}
+    % 
+    %           \item For part (a):
+    % 
+    %                 \begin{itemize}
+    % 
+    %                   \addtolength{\itemsep}{1mm}
+    % 
+    %                   \item Give full credit if the answer is 8 and a
+    %                         reasonable explanation is given.
+    % 
+    %                   \item Give \pts{2} for giving the correct numeric answer
+    %                         8, if the explanation is missing or incorrect.
+    % 
+    %                   \item If the numeric answer is wrong (e.g., 6), but
+    %                         somehow the explanation is correct (maybe the
+    %                         student just made a calculation mistake, or got
+    %                         their x's mixed up), then give \pts{4}.
+    % 
+    %                 \end{itemize}
+    % 
+    %           \item For part (b):
+    % 
+    %                 \begin{itemize}
+    % 
+    %                   \addtolength{\itemsep}{1mm}
+    % 
+    %                   \item Part (i) is \pts{2}, part (ii) is \pts{3}, and
+    %                         part (iii) is \pts{5}.
+    % 
+    %                   \item If the answer is wrong but is partly right, in
+    %                         that the student did some reductions correctly
+    %                         (e.g., in (ii) the answer could be
+    %                         $\mathrm{\lambda y.y \: y}$, or in (iii) some
+    %                         reductions might have been carried out correctly
+    %                         but not all, or the result wasn't completely
+    %                         reduced), then give half credit for that part
+    %                         (rounding upward for parts with odd point values).
+    % 
+    %                 \end{itemize}
+    % 
+    %           \item For part (c), if you find a case where partial credit
+    %                 seems appropriate then give it, using uniform and
+    %                 consistent criteria (and keeping track of the criteria).
+    % 
+    %         \end{itemize}
+    % 
+    %       \end{info}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \item Here are three slightly different solutions:
+
+          \vspace{-2.75mm}
+
+          \begin{Verbatim}
+        let create_contact_list names =
+          let rec search list name =
+            match list with first::phone::rest ->
+              if name = first
+                then phone
+                else search rest name
+          in search names
+
+        let rec create_contact_list names =
+          let rec lookup name =
+            match names with first::phone::rest ->
+              if first = name
+                then phone
+                else ((create_contact_list rest) name)
+          in lookup
+
+        let rec create_contact_list names =
+          fun name -> match names with
+            first::phone::rest ->
+              if first = name
+                then phone
+                else ((create_contact_list rest) name)
+          \end{Verbatim}
+
+          \vspace{-1mm}
+
+          \begin{info}{\textbf{\underline{Grading scale:}}}{6.5in}
+
+            \begin{itemize}
+
+              \addtolength{\itemsep}{1mm}
+
+              \item Just defining a function with the correct name (the first
+                    line) is \pts{2}
+
+              \item Defining a (recursive) function inside the function, with
+                    the proper parameters, using any correct syntax (anonymous
+                    or named) is \pts{5}.
+
+              \item Correctly using \texttt{match} in the inner function on
+                    the list of names, to be able to extract the first name
+                    and phone number, and the rest of the list, is \pts{4}
+
+              \item The base case (returning the phone number corresponding to
+                    the first name in the list if it's equal to the inner
+                    function's parameter, including testing that the first
+                    name in the list is equal to the parameter) is \pts{4}
+
+              \item The recursive case (the inner function calling itself on
+                    the rest of the list if the first name in the list isn't
+                    equal to the inner function's parameter) is \pts{4}
+
+              \item Returning the inner function is \pts{5}
+
+            \end{itemize}
+
+          \end{info}
+
+          \begin{info}{\textbf{\underline{Grading notes:}}}{6.5in}
+
+            \begin{itemize}
+
+              \addtolength{\itemsep}{1mm}
+
+              \item Ignore minor mistakes in syntax.
+
+              \item Give partial credit for the above tasks as appropriate.
+                    For instance, if a recursive function is defined inside
+                    the outer function but its parameters aren't correct,
+                    give part of the second \pts{5} for that tasks, using
+                    some consistent criteria (and keep track of decisions in
+                    such cases).
+
+            \end{itemize}
+
+          \end{info}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \item One note before giving the solution: recall from
+          CMSC 250 that zero is a multiple of 3 (the multiples of 3 are $\{
+          \ldots, \, -9, \, -6, \, -3, \, 0, \, 3, \, 6, \, 9, \,
+          \ldots\}$).  Therefore $\largeepsilon$ is not a valid string in this
+          language.
+
+          % This is a language which is regular, but it's atypical
+          % in that for this language it's actually probably easier to just
+          % write the grammar directly, rather than writing the DFA and
+          % converting it to a regular grammar, which is usually simpler
+          % (although that could definitely work though, as shown below).
+
+          Your first thought might be to write a grammar that looked
+          something like the following, which would generate strings where
+          $\mathrm{m \, + \, n}$ \textbf{is} a multiple of 3 and then
+          generate either one or two extra \emph{a}'s or \emph{b}'s, thereby
+          forcing $\mathrm{m \, + \, n}$ to \textbf{not} be a multiple of 3:
+
+          \vspace{-2mm}
+
+          \raggedcolumns
+
+          \begin{multicols}{2}
+
+            \begin{center}
+
+              \begin{grammar}[1.5]
+                \production{S}{\mathit{aaa}S \midspc \mathit{aa}S\mathit{b}
+                               \midspc \mathit{a}S\mathit{bb} \midspc
+                               S\mathit{bbb} \midspc T}
+                  \\
+                \production{T}{\mathit{a} \midspc \mathit{aa} \midspc
+                               \mathit{b} \midspc \mathit{bb} \midspc
+                               \mathit{ab}}
+                  \\
+              \end{grammar}
+
+            \end{center}
+
+            \begin{center}
+
+              \begin{grammar}[1.5]
+                \production{S}{\mathit{a}T \midspc \mathit{aa}T \midspc
+                               T\mathit{b} \midspc T\mathit{bb} \midspc
+                               \mathit{a}T\mathit{b}}
+                  \\
+                \production{T}{\mathit{aaa}T \midspc \mathit{aa}T\mathit{b}
+                               \midspc \mathit{a}T\mathit{bb} \midspc
+                               T\mathit{bbb} \midspc \largeepsilon}
+                  \\
+              \end{grammar}
+
+            \end{center}
+
+          \end{multicols}
+
+          \vspace{-2mm}
+
+          The problem with these grammars is that they're ambiguous.  For
+          example, in the grammar on the left:
+
+          \vspace{-2.75mm}
+
+          {
+
+            \psset{unit=1mm,levelsep=12,treesep=10,nodesep=1.5}
+
+            \raggedcolumns
+
+            \begin{multicols}{2}
+
+                \pstree{\TR{S}}{
+                  \pstree{\TR{\emph{a}}}{
+                  }
+                  \pstree{\TR{\emph{a}}}{
+                  }
+                  \pstree{\TR{\emph{a}}}{
+                  }
+                  \pstree{\TR{S}}{
+                    \pstree{\TR{\emph{a}}}{
+                    }
+                    \pstree{\TR{S}}{
+                      \pstree{\TR{\emph{a}}}{
+                      }
+                    }
+                    \pstree{\TR{\emph{b}}}{
+                    }
+                    \pstree{\TR{\emph{b}}}{
+                    }
+                  }
+                }
+
+            \columnbreak
+
+              \begin{center}
+
+                \pstree{\TR{S}}{
+                  \pstree{\TR{\emph{a}}}{
+                  }
+                  \pstree{\TR{S}}{
+                    \pstree{\TR{\emph{a}}}{
+                    }
+                    \pstree{\TR{\emph{a}}}{
+                    }
+                    \pstree{\TR{\emph{a}}}{
+                    }
+                    \pstree{\TR{S}}{
+                      \pstree{\TR{\emph{a}}}{
+                      }
+                    }
+                  }
+                  \pstree{\TR{\emph{b}}}{
+                  }
+                  \pstree{\TR{\emph{b}}}{
+                  }
+                }
+
+              \end{center}
+
+            \end{multicols}
+
+          }
+
+          \vspace{-7.75mm}
+
+          Here are several unambiguous versions:
+
+          \vspace{-2mm}
+
+          \raggedcolumns
+
+          {
+
+          \setlength{\columnsep}{30mm}
+
+          \begin{multicols}{3}
+
+            \begin{center}
+
+              \begin{grammar}[1.5]
+                \production{S}{\mathit{aaa}S \midspc T}
+                  \\
+                \production{T}{\mathit{aa}T\mathit{b} \midspc U}
+                  \\
+                \production{U}{\mathit{a}U\mathit{bb} \midspc V}
+                  \\
+                \production{V}{V\mathit{bbb} \midspc W}
+                  \\
+                \production{W}{\mathit{a} \midspc \mathit{aa} \midspc
+                               \mathit{b} \midspc \mathit{bb} \midspc
+                               \mathit{ab}}
+                  \\
+              \end{grammar}
+
+            \end{center}
+
+          \columnbreak
+
+            \begin{center}
+
+              \begin{grammar}[1.5]
+                \production{S}{S\mathit{bbb} \midspc T}
+                  \\
+                \production{T}{\mathit{a}T\mathit{bb} \midspc U}
+                  \\
+                \production{U}{\mathit{aa}U\mathit{b} \midspc V}
+                  \\
+                \production{V}{\mathit{aaa}V \midspc W}
+                  \\
+                \production{W}{\mathit{a} \midspc \mathit{aa} \midspc
+                               \mathit{b} \midspc \mathit{bb} \midspc
+                               \mathit{ab}}
+                  \\
+              \end{grammar}
+
+            \end{center}
+
+          \end{multicols}
+
+          }
+
+          \bigskip\bigskip
+
+              \begin{grammar}[1.5]
+                \production{S}{\mathit{a}T \midspc \mathit{aa}T \midspc
+                               T\mathit{b} \midspc T\mathit{bb} \midspc
+                               \mathit{a}T\mathit{b}}
+                  \\
+                \production{T}{\mathit{aaa}T \midspc U}
+                  \\
+                \production{U}{\mathit{aa}U\mathit{b} \midspc V}
+                  \\
+                \production{V}{\mathit{a}V\mathit{bb} \midspc W}
+                  \\
+                \production{W}{W\mathit{bbb} \midspc \largeepsilon}
+                  \\
+              \end{grammar}
+
+              \bigskip\bigskip
+
+          % \vspace{-3mm}
+          % 
+          % Below is a DFA which recognizes the language, and a grammar which
+          % is generated from it, using the construction shown in discussion
+          % section.  Note that the DFA keeps track of the number of
+          % \emph{a}'s generated and whether they're a multiple of 3, and once
+          % a \emph{b} is seen it's able to keep track of whether the
+          % remainder of the string consists of only \emph{b}'s and would
+          % preserve the total string length as being not a multiple of 3:
+          % 
+          % \pagebreak
+          % 
+          % \begin{multicols}{2}
+          % 
+          %   \begin{automaton}(0,0)(80,91)
+          % 
+          %     \state[start,label=S](5,75){S}
+          %     \state[final,label=T](35,75){T}
+          %     \state[final,label=U](65,75){U}
+          %     \state[label=V](5,45){V}
+          %     \state[final,label=W](35,45){W}
+          %     \state[final,label=X](65,45){X}
+          %     \state[label=Y](35,25){Y}
+          % 
+          %     \transition(S,\emph{a},T)
+          %     \transition(S,\emph{b},W)
+          % 
+          %     \transition(T,\emph{a},U)
+          %     \transition(T,\emph{b},X)
+          % 
+          %     \transition[labellocation=below,angle=-35,curvature=.67]%
+          %                 (U,\emph{a},S)
+          %     \transition[labellocation=below](U,\emph{b},V)
+          % 
+          %     \transition[labellocation=below](V,\emph{a},Y)
+          %     \transition(V,\emph{b},W)
+          % 
+          %     \transition(W,\emph{a},Y)
+          %     \transition(W,\emph{b},X)
+          % 
+          %     \transition(X,\emph{a},Y)
+          %     \transition[curved,curvature=1.65,angle=70,labellocation=below]%
+          %                 (X,\emph{b},V)
+          % 
+          %     \transition[loopdirection=sw,labelposition=.8,labeloffset=2]%
+          %                 (Y,\emph{a},Y)
+          %     \transition[loopdirection=se,labelposition=.8](Y,\emph{b},Y)
+          % 
+          %   \end{automaton}
+          % 
+          % \columnbreak
+          % 
+          %   \begin{center}
+          % 
+          %     \begin{grammar}[1.5]
+          %       \production{S}{\mathit{a}T \midspc \mathit{a} \midspc
+          %                      \mathit{b}W \midspc \mathit{b}}
+          %         \\
+          %       \production{T}{\mathit{a}U \midspc \mathit{a} \midspc
+          %                      \mathit{b}X \midspc \mathit{b}}
+          %         \\
+          %       \production{U}{\mathit{a}S \midspc \mathit{b}V}
+          %         \\
+          %       \production{V}{\mathit{a}Y \midspc \mathit{b}W \midspc
+          %                      \mathit{b}}
+          %         \\
+          %       \production{W}{\mathit{a}Y \midspc \mathit{b}X \midspc
+          %                      \mathit{b}}
+          %         \\
+          %       \production{X}{\mathit{a}Y \midspc \mathit{b}V}
+          %         \\
+          %       \production{Y}{\mathit{a}Y \midspc \mathit{b}Y}
+          %         \\
+          %     \end{grammar}
+          % 
+          %   \end{center}
+          % 
+          %   Note: the productions for Y would be optional (the grammar would
+          %   generate the same language if they weren't shown).
+          % 
+          % \end{multicols}
+
+          Any completely--correct answer should have the following
+          properties:
+
+          \vspace{-2mm}
+
+          \begin{enumerate}
+
+            \item[p1:] (completeness) It generates every valid
+                       string.
+
+            \item[p2:] (correctness) It generates only valid
+                       strings (it does not generate any invalid strings).
+
+            \item[p3:] (ambiguity) It's unambiguous.
+
+          \end{enumerate}
+
+          \vspace{-2mm}
+
+          \begin{info}{\textbf{\underline{Grading scale:}}}{6.5in}
+
+            \begin{itemize}
+
+              \addtolength{\itemsep}{1mm}
+
+              \item \begin{itemize}
+
+                      \addtolength{\itemsep}{1mm}
+
+                      \item Each property above which the grammar fully
+                            enforces is full--credit for that property.
+
+                      \item Each property above which the grammar partly
+                            enforces or attempts to enforce, but there is one
+                            mistake in the way that property is handled in the
+                            grammar, is \pts{-2} for that property.
+
+                      \item Each property above which the grammar partly
+                            enforces or attempts to enforce, but there are
+                            two mistakes in the way that property is handled
+                            in the grammar, is \pts{-5} for that property.
+
+                      \item Each property above which the grammar has more
+                            than two mistakes trying to enforce, or which
+                            the grammar makes no attempt to enforce, is no
+                            credit for that property.
+
+                 \end{itemize}
+
+            \item Deduct \pts{1} for minor mistakes such as using angle
+                  braces around terminals (\verb@<a>@, \verb@<b>@).
+
+                  % Add any new properties to the list as necessary while
+                  % grading, and let me know their names/numbers.
+
+            \end{itemize}
+
+          \end{info}
+
+          \vspace{-1.5mm}
+
+          \begin{info}{\textbf{\underline{Grading notes:}}}{6.5in}
+
+            \begin{itemize}
+
+              \addtolength{\itemsep}{1mm}
+
+              \item For ambiguity look for whether some productions
+                    incorrectly contain nonterminals of several other
+                    productions as right--side alternatives, for example
+                    something like
+
+                    \production{S}{\mathit{aaa}S \midspc T \midspc U}
+
+                    where T also goes to U.  Also be careful whenever any
+                    productions go to nonterminals of earlier productions,
+                    such as in
+                    \production{T}{\mathit{aa}T\mathit{b} \midspc U \midspc S}
+
+                    Nothing prevents derivations containing repeated
+                    cycles of
+                    \(
+                      \mathrm{S} \: \Longrightarrow \:
+                      \mathrm{T} \: \Longrightarrow \:
+                      \mathrm{S} \: \Longrightarrow \:
+                      \mathrm{S} \: \Longrightarrow \:
+                      \mathrm{T} \: \Longrightarrow \ldots
+                    \)
+
+                    Needless to say, any production in which the left--side
+                    nonterminal is also a right--side alternative, as in
+                    \production{T}{\mathit{aa}T\mathit{b} \midspc U \midspc T}
+                    is about as ambiguous as you can get.
+
+              \item There's no penalty for extra productions.  In other words,
+                    the grammar need not be minimal and there is no penalty
+                    for useless or unnecessary nonterminals.
+
+              \item Consider each mistake in productions in isolation, and
+                    pretend that mistake isn't present when considering other
+                    mistakes.  Otherwise one mistake in one production could
+                    cause the grammar not to generate any strings, although
+                    other than that one problem the grammar might be perfect.
+
+                    Another way to look at this would be to consider each
+                    mistake in a production (or each thing omitted in a
+                    production) to be a single mistake, rather than
+                    considering each form of string generated or not generated
+                    to be a single mistake.
+
+              \item If the answer uses regular expressions in productions
+                    deduct \pts{-5} from property p1.
+
+            \end{itemize}
+
+          \end{info}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \item \texttt{13 17}
+
+          \begin{info}{\textbf{\underline{Grading scale:}}}{6.5in}
+
+            \begin{itemize}
+
+              \addtolength{\itemsep}{1mm}
+
+              \item Each correct value is \pts{5}
+
+              \item If you can tell that the student knew what
+                    call--by--name is and how it works, and set things up
+                    correctly, but just made an arithmetic error, then
+                    deduct \pts{-2} for each value incorrect as a result of
+                    an arithmetic error.
+
+            \end{itemize}
+
+          \end{info}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \item  \begin{enumerate}
+
+             \addtolength{\itemsep}{8mm}
+
+             \item \begin{Verbatim}
+        f1
+        f1
+        f2
+        g1
+        g2
+        g2
+             \end{Verbatim}
+
+             \item Only \texttt{z}.
+
+             \item Parametric polymorphism.
+
+           \end{enumerate}
+
+           \begin{info}{\textbf{\underline{Grading scale:}}}{3.6in}
+
+             \begin{itemize}
+
+               \addtolength{\itemsep}{2mm}
+
+               \item Part (a) is \pts{10}; the points for each output value
+                     are as follows:
+
+                     \begin{tabular}[t]{ll}
+
+                       \texttt{f1}
+                         & \pts{1}
+                         \\
+
+                       \texttt{f1}
+                         & \pts{3}
+                         \\
+
+                       \texttt{f2}
+                         & \pts{1}
+                         \\
+
+                       \texttt{g1}
+                         & \pts{1}
+                         \\
+
+                       \texttt{g2}
+                         & \pts{3}
+                         \\
+
+                       \texttt{g2}
+                         & \pts{1}
+                         \\
+
+                     \end{tabular}
+
+                     \smallskip
+
+               \item Part (b) is \pts{3}; if the answer \texttt{z} is given
+                     but extra incorrect answers are also given, deduct
+                     \pts{-1} for each additional incorrect answer.
+
+               \item Part (c) is \pts{2};I'm not sure what kind of situation
+                     would deserver partial credit for part (c).
+
+             \end{itemize}
+
+           \end{info}
+
+  \end{enumerate}
+
+\end{document}

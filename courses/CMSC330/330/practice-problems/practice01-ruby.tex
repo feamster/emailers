@@ -1,0 +1,213 @@
+\documentclass[11pt]{article}
+
+  \usepackage{330-f12}
+
+\begin{document}
+
+  \header{\course}{Ruby and Ruby regular expressions}{\Term}
+
+  \begin{enumerate}
+
+    \addtolength{\itemsep}{6mm}
+
+    \item Programming languages
+
+          \vspace{-1.5mm}
+
+          \begin{enumerate}
+
+            \addtolength{\itemsep}{3mm}
+
+            \item Explain how goals for programming languages have changed
+                  since the 1960’s.
+
+            \item List two desirable attributes for a programming language
+                  where Ruby is better than C.  Explain why.
+
+            \item Give two methods for executing a program.  Which method is
+                  used by Ruby?
+
+          \end{enumerate}
+
+    \item Ruby basics
+
+          \vspace{-1.5mm}
+
+          \begin{enumerate}
+
+            \addtolength{\itemsep}{3mm}
+
+            \item Write a Ruby method \texttt{printit} that takes an integer
+                  as a parameter, and prints it.  Write a call to
+                  \texttt{printit} with 2 as its argument.  Circle and label
+                  the formal and actual parameters in your code.
+
+            \item Using different Ruby control statements, write four
+                  different code fragments that each iterate and print the
+                  values between 1 and 10.
+
+            \item Explain the difference between explicit and implicit
+                  variable declarations.
+
+            \item Give two advantages of static types.
+
+            \item \sloppy Write a Ruby class \texttt{Teacher} that contains
+                  an integer field \texttt{students} and an integer field
+                  named \texttt{totalStudents} that is shared across all
+                  objects of the class.  You don't have to write any methods
+                  for the class. \fussy
+
+            \item Give an example of shallow (reference) copy in Ruby.
+
+            \item Give an example of testing for structural equality in
+                  Ruby.
+
+          \end{enumerate}
+
+    \item Ruby advanced features
+
+          \vspace{-1.5mm}
+
+          \begin{enumerate}
+
+            \addtolength{\itemsep}{3mm}
+
+            \item Describe the strings accepted by the Ruby regular
+                  expression \texttt{/3\string{2\string}/}.
+
+            \item Describe the strings accepted by the Ruby regular
+                  expression \texttt{/[A-Z]/}.
+
+            \item Describe the strings accepted by the Ruby regular
+                  expression \texttt{/[A-Z]*[0-9]/}.
+
+            \item Describe the strings accepted by the Ruby regular
+                  expression \texttt{/0\$/}.
+
+            \item Describe the strings accepted by the Ruby regular
+                  expression \texttt{/\string\./}.
+
+            \item What is the output of the following Ruby program?
+
+                  \begin{Verbatim}
+        a = [4, 5, 6]
+        a[5] = 7
+        a.delete_at(1)
+        puts a
+        a.push(2)
+        a.push(1)
+        puts(a.pop)
+                  \end{Verbatim}
+
+            \item What is the output of the following Ruby program?
+
+                  \begin{Verbatim}
+        a = ["c", "b", "a"]
+        puts(a)
+        b = a
+        a.sort!()
+        puts(b)
+                  \end{Verbatim}
+
+            \item What is the output of the following Ruby program?
+
+                  \begin{Verbatim}
+        a = {4 => 6, 5 => 7}
+        puts(a[4])
+        puts(a[6])
+        puts(a.values())
+                  \end{Verbatim}
+
+
+        %
+        % Didn't cover....
+        %
+        %     \item What is the output of the following Ruby program?
+        % 
+        %           \begin{Verbatim}
+        % h = Hash.new(0)
+        % h["a"] = h["b"]
+        % h["b"] = 7
+        % h["c"] += 2
+        % puts("#{h["a"]} #{h["b"]} #{h["c"]}")
+        %           \end{Verbatim}
+
+            \item What is the output of the following Ruby program?
+
+                  \begin{Verbatim}
+        if ("CMSC 330" =~ /1/) then
+          puts("t")
+        elsif ("CMSC 330" !~ /1/) then
+          puts("f")
+        else
+          puts("n")
+        end
+                  \end{Verbatim}
+
+        %
+        % Didn't cover yet.
+        %
+        %     \item What is the output of the following Ruby program?
+        % 
+        %           \begin{Verbatim}
+        % "CMSC 330" =~ /([0-9]+)/
+        % puts $1
+        % puts $2
+        %           \end{Verbatim}
+
+        %
+        % Didn't cover yet.
+        %
+        %     \item What is the output of the following Ruby program?
+        % 
+        %           \begin{Verbatim}
+        % a = CMSC 330 CMSC 351"
+        % b = a.scan(/[A-Z]+/)
+        % puts(b)
+        % a.scan(/[0-9]+ [A-Z]+/) { |x| puts x }
+        %           \end{Verbatim}
+
+            \item What is returned by \texttt{file = File.new("filename",
+                  "r"); lines = file.readlines();}?
+
+            \item What is returned by \texttt{x = ARGV[0]}?
+
+            \item Write a Ruby method named \texttt{m} that takes a code
+                  block (one that does not have any parameters) and executes
+                  it twice.
+
+          \end{enumerate}
+
+    \item Write a Ruby program that reads the name of a text file from the
+          command line, opens the file, reads every line of text in the
+          file, and prints only the lines that contain exclusively the
+          following characters: uppercase and lowercase letters, digits, and
+          underscore.  For example, lines that contain any spaces or
+          punctuation should not be printed.
+
+    %
+    % Didn't cover yet.
+    %
+    % \item Ruby programming
+    % 
+    %       \vspace{-1.5mm}
+    % 
+    %       \begin{enumerate}
+    % 
+    %         \addtolength{\itemsep}{3mm}
+    % 
+    %         \item Write a Ruby program that reads in lines of input from its
+    %               standard input and remembers all integers (consecutive
+    %               digits) encountered.  Each line of input may contain zero
+    %               or more integers or non--integers.  The program should
+    %               stop and print the list of integers in sorted order (from
+    %               smallest to largest) when the word ``Done!'' is
+    %               encountered.
+    % 
+    %       \end{enumerate}
+    % 
+    %       \vspace{-2.5mm}
+
+  \end{enumerate}
+
+\end{document}

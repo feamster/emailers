@@ -1,0 +1,534 @@
+\documentclass[11pt]{article}
+
+  %
+  % 3:30 lecture n = 110
+  %
+
+  %
+  % Can take draft exam:
+  %
+  % Tommy Tu 9:45-11, 12:30-1:45, 4:30+; Wed 1-2:15, 5+
+  % Tammy anytime Wed
+  % Derek Tuesday 9-12, 5+; Wed 4+
+  % Varun 12-3 Tue
+  % Hao
+  %
+  % Varun 12 Tuesday
+  % Tommy 5 Tuesday
+  % Tammy 1:45 Wednesday
+  % Derek 4 Wednesday
+  % Hao 4:30 Wednesday
+  %
+
+  %
+  % The "good style and formatting" part could have been dropped (dropped in
+  % the second exam).
+  %
+
+  %
+  % Next time just drop the instruction about minor syntax errors being
+  % ignored; students don't need to know it, and all it does is encourage
+  % regrades.
+  %
+
+  %
+  % #3 was actually isomorphic to the practice problem question
+  % (practice04-automata2, #8).  This question could or should have been a
+  % little different.  (Also, the originally-postged practice problem
+  % solution was actually incorrect....)
+  %
+
+  \usepackage{330-f12}
+
+  \usepackage[none,light,outline,timestamp]{draftcopy}
+
+  \newcommand{\sms}{\ensuremath{\hspace{.1mm}}}
+
+  \addtolength{\headsep}{-6mm}
+
+  \addtolength{\textheight}{6mm}
+
+\begin{document}
+
+  \hspace{\fill}%
+  \nameblock
+
+  % We have to use \header{}{}{}, since \maketitle generates a new page
+  % beforehand.
+  %
+  \header{\course}{Exam \#1}{\Term}
+
+  \vspace{-5mm}
+
+  \noindent
+  {\large
+    \textbf{\underline{Do not open this exam until you are told.}
+            Read these instructions:
+    }
+  }
+
+  \vspace{-2mm}
+
+  \thispagestyle{myheadings}
+
+  \begin{enumerate}
+
+    \addtolength{\itemsep}{-2mm}  % reduced space between lines
+
+    \item This is a closed book exam.  {\bf No
+          % calculators,
+          notes %,
+          or other aids are allowed.}  If you have a question during the
+          exam, please raise your hand.  Each question's point value is next
+          to its number.
+
+    \item {\bf You must turn in your exam \underline{immediately} when time is
+          called at the end.}
+
+    \item 8 pages, 5 problems, 100 points, 75 minutes.
+
+    \item In order to be eligible for as much partial credit as possible,
+          show all of your work for each problem, and \textbf{clearly
+          indicate} your answers.  Credit \textbf{cannot} be given for
+          illegible answers.
+
+    \item You will \textbf{lose credit} if \emph{\textbf{any}} information
+          above is incorrect or missing, or your name is missing from any
+          side of any page.
+
+    \item Parts of several pages, and the last page, are for scratch work.
+          If you need extra scratch paper after you have filled these areas
+          up, please raise your hand.  Scratch paper must be turned in with
+          your exam, with your name and ID number written on it.  Scratch
+          paper \textbf{will not} be graded.
+          % Figure out your answer on scratch paper if necessary, then write
+          % it {\bf neatly} in the answer space provided.
+
+    \item To avoid distracting others, \textbf{no one may leave until the
+          exam is over}.
+
+    % \item To avoid distracting others, \textbf{no one may leave in the
+    %       last 10 minutes}.
+
+    \item The Campus Senate has adopted a policy asking students to include
+          the following handwritten statement on each examination and
+          assignment in every course: ``\textit{I pledge on my honor that I
+          have not given or received any unauthorized assistance on this
+          examination\/}.''  Therefore, \textbf{just before turning in your
+          exam}, you are requested to write this pledge \textbf{in full
+          \textmd{and} sign it} below:
+
+          \medskip
+
+          \begin{minipage}[t]{\linewidth}
+
+            \addtolength{\baselineskip}{4mm}
+
+            \ans[\linewidth]
+
+            \ans[\linewidth]
+
+          \end{minipage}
+
+    \medskip
+
+  \end{enumerate}
+
+  \vspace{-2mm}
+
+  \noindent
+  Good luck!
+
+  \enlargethispage{14mm}
+
+  \vspace{\fill}
+
+  \noindent
+  \begin{tabular}[t]{@{}p{2.75in}@{\hspace{.25in}}p{4in}@{}}
+
+    \vspace{8mm}
+
+    \scratchpaper[2.75in]
+
+  &
+
+    \vspace{0mm}
+
+    % 4 exam questions, .5mm scale factor
+    \hspace{\fill}\parbox[t]{3.5in}{\scoreblank{5}{.475mm}}
+    % \scoreblank{4}{.5mm}
+
+    %\vspace{-.75in}
+
+  \end{tabular}
+
+  \pagebreak
+
+  \addtolength{\headsep}{4mm}
+
+  \addtolength{\textheight}{2mm}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  \pagestyle{headings}
+
+  \markright{Name: \hspace{.2mm} \lans\ans}
+
+  \begin{enumerate}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \item {[20 pts.]} \label{re-question} Write a regular expression that
+          describes or recognizes the language:
+
+          \begin{centering}
+
+            \vspace{-.5mm}
+
+            \(
+              \left\{
+                \
+                w \
+                \left| \ \:
+                w \sms \in \sms \{ \sms a, \, b \sms \}^*, \
+                \textrm{and \emph{w} does not contain any individual
+                        \emph{a}'s or any repeated \emph{b}'s}
+                \
+              \right.
+              \right\}
+            \)
+
+          \end{centering}
+
+          An individual \emph{a} is an \emph{a} that is not adjacent to any
+          other \emph{a}, while repeated \emph{b}'s refer to sequences of
+          more than one \emph{b} that are adjacent.
+
+          Strings in this language may be of any length, and may contain any
+          number of zero or more \emph{a}'s and \emph{b}'s, as long as they
+          satisfy the property above.  Some examples are:
+
+          \vspace{-2.5mm}
+
+          \begin{itemize}
+
+            \addtolength{\itemsep}{-.25mm}
+
+            \item The string \emph{aabaaabaa} is in this language, since
+                  every \emph{a} it contains is adjacent to another
+                  \emph{a}, while there is no \emph{b} that is adjacent to
+                  another \emph{b}.
+
+            \item The string \emph{aaaaa} is also in the language.
+
+            \item The string \emph{ab} is \textbf{not} in this language,
+                  because it has an \emph{a} that is not adjacent to another
+                  \emph{a}.
+
+            \item The string \emph{aabb} is also \textbf{not} in this
+                  language, as it contains two \emph{b}'s that are adjacent
+                  to each other.
+
+          \end{itemize}
+
+          \vspace{-2.25mm}
+
+          Note these examples do \textbf{\underline{\underline{not}}}
+          illustrate all possible valid or invalid strings.  Base your
+          regular expression on the definition of the language, not only on
+          the examples.
+
+          Your regular expression may \textbf{\underline{\emph{only}}} use
+          the three formal regular expression operations concatenation,
+          alternation, and Kleene closure, which were defined in class.
+          These operations can be nested, and alphabet symbols, parentheses,
+          and $\epsilon$ may be used as well, but \textbf{\underline{do
+          not}} use any other regular expression operations, and
+          \textbf{\underline{\underline{do not}}} write a Ruby regular
+          expression.
+
+          \vspace{2.5in}
+
+          \ans[\linewidth]
+
+          \medskip
+
+          \begin{centering}
+
+            \scratchpaper[\linewidth]
+
+          \end{centering}
+
+          \pagebreak
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \item {[26 pts.]} Give a valid, complete, deterministic finite automaton
+          (DFA) that recognizes or accepts the language from Problem
+          \#\ref{re-question}.  (Show the DFA by drawing its transition
+          diagram, rather than listing out all its components.)  It is not
+          necessary to ensure that your DFA is minimal or to minimize it;
+          it just needs to be correct.
+
+          Be sure to give a \textbf{complete} DFA, not an NFA, and
+          \textbf{\underline{do not} use any notational shortcuts}.
+          \emph{\textbf{\underline{\underline{Write}}
+          \underline{\underline{neatly}}}} for your DFA to be graded.
+          Clearly indicate what your final DFA answer is (as opposed to any
+          scratch work).
+
+          \pagebreak
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    % new
+
+    \item {[12 pts.]} Apply the construction given in class to produce an
+          NFA from the regular expression
+          \(
+            (a{\mid}c)^*b
+          \).
+          (Show the NFA by drawing its transition diagram, rather than
+          listing out all its components.)  \textbf{Note}: do \textbf{not}
+          simplify the resulting NFA at all, and do \textbf{not} create a
+          DFA.  The purpose of this problem is not to see whether you can
+          create an NFA or DFA ``by hand'' for this language, but to apply
+          the specific construction that was given to transform a regular
+          expression to an NFA.
+
+          \pagebreak
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    % s07
+
+    \item {[12 pts.]} OCaml.
+
+          \vspace{-2.75mm}
+
+          \begin{enumerate}
+
+            \addtolength{\itemsep}{10mm}
+
+            \item Give the value returned by each of the following OCaml
+                  expressions.  If any of the expressions wouldn't have a
+                  value because of any kind of error, just write
+                  ``incorrect'' for them.  Don't worry about any incomplete
+                  match warnings that might occur.  (\textbf{Note:} be careful
+                  not to miss any braces.)
+
+                  \vspace{.5mm}
+
+                  \begin{enumerate}
+
+                    \addtolength{\itemsep}{12mm}
+
+                    \renewcommand{\labelenumiii}{\arabic{enumiii})}%
+
+                    \item \begin{multicols}{2}
+
+                            \begin{Verbatim}
+        match [ [1;2]::[[3;4]] ] with a::b -> b
+                            \end{Verbatim}
+
+                            \flushright\vspace*{1mm}\ans[2.42in]
+
+                          \end{multicols}
+
+                    \item \begin{multicols}{2}
+
+        %                     \begin{Verbatim}
+        % match [[1;2]; [3;4]] with a::[b::c] -> [c;a]
+        %                     \end{Verbatim}
+
+                            \begin{Verbatim}
+        match [9;8;7;6;5] with _::a::b -> b
+                            \end{Verbatim}
+
+                            \flushright\vspace*{1mm}\ans[2.42in]
+
+                          \end{multicols}
+
+                    \item \begin{multicols}{2}
+
+                            \begin{Verbatim}
+        match [ [1::[2]]; [3::[4]]; [5::[]] ] with
+          | a::b::c::d::e -> 1
+          | a::b::c -> 2
+          | a::b -> 3
+          | a -> 4
+                            \end{Verbatim}
+
+                            \flushright\vspace*{1mm}\ans[2.42in]
+
+                          \end{multicols}
+
+                  \end{enumerate}
+
+                  \vspace{-2.5mm}
+
+            \item For each of the following OCaml types, either write a
+                  \textbf{short} OCaml expression that has that type, or
+                  just state that the type is invalid:
+
+                  \newcommand{\ocamlquestionii}[1]{%
+                    \begin{tabular}[t]{@{}p{2in}
+                                       @{\underline{\hspace{4.17in}}}@{}}
+                      \texttt{#1}
+                    \end{tabular}
+                  }
+
+                  \vspace{2.5mm}
+
+                  \begin{enumerate}
+
+                    \addtolength{\itemsep}{7mm}
+
+                    \renewcommand{\labelenumiii}{\arabic{enumiii})}
+
+                    \item \ocamlquestionii{int list list}
+
+                    \item \ocamlquestionii{(int * int) list}
+
+                    \item \ocamlquestionii{int * (int list)}
+
+                  \end{enumerate}
+
+                  \vspace{-2.5mm}
+
+          \end{enumerate}
+
+          \medskip
+
+          \ans[\linewidth]
+
+          \medskip
+
+          \begin{centering}
+
+            \scratchpaper[\linewidth]
+
+          \end{centering}
+
+          \pagebreak
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    % new
+
+    \item {[30 pts.]} On the next page, write a complete Ruby program that
+          reads an input line, which should be in the form of a valid,
+          nonempty OCaml list of integers, and prints the element that
+          appeared the most times in the list.
+
+          \vspace{-2.5mm}
+
+          \begin{itemize}
+
+            \addtolength{\itemsep}{0mm}
+
+            \item A nonempty OCaml list consists of a pair of square braces
+                  (\texttt{[]}) surrounding one or more elements.  Your
+                  program only has to work for nonempty lists whose elements
+                  are \textbf{integers} (meaning sequences of one or more
+                  digit characters), in which no whitespace appears.  If a
+                  list has more than one element they should be separated by
+                  semicolons.
+
+            \item You may assume that one line of input (terminated by a
+                  newline) will be entered when your program is run.  If the
+                  input line read does not match the form of a valid
+                  nonempty OCaml list of integers as described above, your
+                  program should just print a single line reading ``Invalid
+                  list.''\ and quit without printing anything else.
+
+            \item If the input line \textbf{was} in the form of a valid
+                  nonempty OCaml list of integers, your program should print
+                  the element of the list that appeared the \textbf{most}
+                  number of times.  For example, if the input list was
+                  \texttt{[5;3;5;5;12;3;5]} the output should be the single
+                  number 5, because there is only one 12 in the input list,
+                  there are two 3's, and there are four 5's (the most
+                  occurrences).
+
+            \item If more than one element of the list has the same maximal
+                  number of occurrences it doesn't matter which one your
+                  program prints.  For example, for the list
+                  \texttt{[4;6;6;4;3]} either 4 or 6 could be printed.
+
+            \item Your program should work as described no matter how many
+                  elements a valid nonempty list has (one or more).
+
+          \end{itemize}
+
+          \vspace{-2.5mm}
+
+          You may use any Ruby standard library classes and their methods.
+          Minor syntax errors will be ignored if you have the correct
+          concept.  To get a perfect score, your program should be
+          reasonably efficient.  If you're not sure how to get your program
+          to do everything mentioned, do the best you can to get the most
+          credit.
+
+          Comments are optional, but your program must be written
+          \textbf{\underline{\underline{\emph{\large neatly}}}}, with good
+          style and formatting.  Use the scratch area below to plan your
+          program, then write it \textbf{\underline{\underline{\emph{\large
+          neatly}}}} on the next page.
+
+          \vspace{-1mm}
+
+          \underline{\hspace{6.8225in}}
+
+          \medskip
+
+          \begin{centering}
+
+            \scratchpaper[\linewidth]
+
+          \end{centering}
+
+          \pagebreak
+
+          \vspace*{0mm}
+
+          \enlargethispage{8mm}
+
+          \answerblank{27}{\linewidth}{9.5mm}
+
+          % \begin{center}
+          % 
+          %   \LARGE
+          % 
+          %   \textsl{Don't miss the last problem on the next page!}
+          % 
+          % \end{center}
+
+          \pagebreak
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  \end{enumerate}
+
+  % end of numbered questions
+
+  \markright{}
+
+  \begin{center}
+
+    \scratchpaper
+
+    \bigskip
+
+    \Large
+
+    You can separate this page if you like, to use in solving any
+    \linebreak
+    questions, as long as you \textbf{\underline{write your name} on the
+    other side.}
+
+  \end{center}
+
+   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

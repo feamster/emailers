@@ -1,0 +1,435 @@
+\documentclass[11pt]{article}
+
+  \usepackage{330-f12}
+
+  \newcommand{\sms}{\ensuremath{\hspace{.1mm}}}
+  \newcommand{\sss}{\hspace{.35mm}}
+  \newcommand{\mymid}{\mbox{\Large \ensuremath{\sss\mid\sss}}}
+  \psset{unit=1mm}
+  \psset{arrowsize=2.25 1,arrowinset=0,nodesep=0,offset=0,doublesep=.65}%
+
+  \newcommand{\qthreeanswer}[1]{%
+    \begin{tabular}[t]{@{}p{2in}@{\answerblank{2}{4in}{9.5mm}}}%
+      \ensuremath{#1}%
+    \end{tabular}%
+  }
+
+  \usepackage[none,light,outline,timestamp]{draftcopy}
+
+  % for quizzes and exams, due to the nameblock
+  \addtolength{\headsep}{-6mm}
+  \addtolength{\textheight}{6mm}
+
+\begin{document}
+
+  \hspace{\fill}%
+  \nameblock
+
+  \smallskip
+
+  \header{\course}{Quiz\ \#2}{\Term}
+
+  \vspace{-3mm}
+
+    \noindent
+    This quiz is 40 points.  \textbf{Do not start} until you're told you can
+  begin.  You must turn in your quiz \textbf{immediately} when the end of
+  the quiz is announced.
+
+  \vspace{-2mm}
+
+  \begin{enumerate}
+
+    \addtolength{\itemsep}{20mm}
+
+    \item {[4 pts.]} Suppose a DFA has 900 states, and its alphabet $\Sigma$
+          is $\{a, b, c\}$.  How many transitions does it have, or is there
+          no way to know without seeing it and counting them?  Explain
+          \textbf{briefly}.
+
+    \item {[4 pts.]} Consider the following language L:
+           \(
+             \{ a, b, ba \}
+           \).
+          What is $\mathrm{L}^2$ for this language?  (Give all the elements
+          of the language, rather than trying to describe it in words.)
+
+          \addtolength{\itemsep}{18mm}
+
+    \item {[32 pts.]} All the parts of this question use the following
+          language:
+
+          \vspace{-1mm}
+
+          \begin{centering}
+
+            \(
+              \left\{
+                \:
+                \begin{array}[t]{@{}l}
+                w
+                \end{array}
+                \left| \ \:
+                \parbox[c]{3.75in}{
+                  $w \sms \in \sms \{ \sms a, \, b \sms \}^*$,
+                  and \emph{w} contains an even number of
+                        \emph{a}s, and every \emph{a} in \textit{w} is
+                        immediately followed by at least one \emph{b}
+                }
+              \:
+              \right.
+              \right\}
+            \)
+
+          \end{centering}
+
+          \smallskip
+
+          (Recall from CMSC 250 that zero is an even number.)  Below are
+          some regular expressions, some DFAs, and some NFAs.  Does each
+          regular expression, DFA, or NFA recognize or describe the language
+          above?
+
+          \vspace{-2.5mm}
+
+          \begin{itemize}
+
+            \addtolength{\itemsep}{0mm}
+
+            \item If so, just write ``correct''.
+
+            \item If \textbf{not}, then do \textbf{one of the following}:
+
+                  \begin{itemize}
+
+                    \addtolength{\itemsep}{.75mm}
+
+                    \item Give a string that \textbf{is} in the language
+                          above but is \textbf{not} described by the regular
+                          expression, DFA, or NFA, \textbf{and} say that the
+                          string is not recognized as it should be,
+                          \textbf{\underline{or}}
+
+                    \item Give a string that is \textbf{not} in the language
+                          above but \textbf{is} described by the regular
+                          expression, DFA, or NFA, \textbf{and} say that the
+                          string is recognized but should not be.
+
+                  \end{itemize}
+
+          \end{itemize}
+
+          \vspace{-2.5mm}
+
+          \begin{enumerate}
+
+            \addtolength{\itemsep}{30mm}
+
+            \item {{[8 pts.]}} Do these regular expressions describe the
+                  language above?
+
+                  \bigskip
+
+                  \begin{enumerate}
+
+                    \addtolength{\itemsep}{5mm}
+
+                    \item \qthreeanswer{b^* ( \: ab^* ab^* )^*}
+
+                          \bigskip\bigskip
+
+                          \vspace{\fill}
+
+                          \begin{centering}
+
+                            \hspace*{-20mm}(\emph{\LARGE turn over})%
+                            \vspace*{-4mm}
+
+                          \end{centering}
+
+                    \item \qthreeanswer{
+                            b^* \lpar ( \: abb^* )^* \: ( \: abb^* )^*
+                            \rpar^*
+                          }
+                    \item \qthreeanswer{b^* ( \: abb^* abb^* )^*}
+
+                    \item \qthreeanswer{(abb^*abb^*)^*b^*}
+
+                  \end{enumerate}
+
+                  \vspace{-14mm}
+
+            \item {{[12 pts.]}} Do these DFAs recognize or describe the
+                  language above?
+
+                  \vspace{-2.5mm}
+
+                  \begin{enumerate}
+
+                    \addtolength{\itemsep}{8mm}
+
+                    % \item \begin{pspicture}(0,14)(70,34)%
+                    %         \Large%
+                    %         \state[start,final](10,15){s0}
+                    %         \state(40,15){s1}
+                    % 
+                    %         \large
+                    % 
+                    %         \transition[offset=-2,labeloffset=-5]%
+                    %                    (s0,\emph{a},s1)
+                    %         \transition(s0,\emph{b},s0)
+                    % 
+                    %         \transition[offset=-2,labeloffset=-5]%
+                    %                     (s1,\emph{a},s0)
+                    %         \transition(s1,\emph{b},s1)
+                    % 
+                    %       \end{pspicture}%
+                    %       \hspace{\fill}\lans\mans
+
+                    \item \begin{pspicture}(0,14)(70,36)%
+                            \Large%
+
+                            \state[start](10,15){s0}
+                            \state(40,15){s1}
+                            \state[final](70,15){s2}
+
+                            \large
+
+                            \transition(s0,\emph{a},s1)
+                            \transition(s0,\emph{b},s0)
+
+                            \transition(s1,\emph{a},s2)
+                            \transition(s1,\emph{b},s1)
+
+                            \transition[curved,curvature=.9,angle=30]%
+                                        (s2,\emph{a},s0)
+                            \transition(s2,\emph{b},s2)
+
+                          \end{pspicture}%
+                          \hspace{\fill}\parbox[c]{2.9in}{%
+                            \vspace*{0mm}\answerblank{2}{2.9in}{9.5mm}
+                          }
+
+                    \item \begin{pspicture}(0,39)(70,55)
+                            \Large%
+
+                            \state[start,final](10,40){s0}
+                            \state(50,40){s1}
+                            \state(10,0){s2}
+                            \state(50,0){s3}
+                            \state(30,20){s4}
+
+                            \large
+
+                            \transition(s0,\emph{b},s0)
+                            \transition[labeloffset=-5](s0,\emph{a},s2)
+
+                            \transition(s1,\emph{a},s4)
+                            \transition[labeloffset=-6](s1,\emph{b},s0)
+
+                            \transition(s2,\emph{a},s4)
+                            \transition[labeloffset=-5](s2,\emph{b},s3)
+
+                            \transition[labeloffset=-5](s3,\emph{a},s1)
+                            \transition[loopdirection=down](s3,\emph{b},s3)
+
+                            \transition[loopdirection=nw,labelposition=.75]%
+                                        (s4,\emph{a},s4)
+                            \transition[loopdirection=se,labelposition=.75]%
+                                        (s4,\emph{b},s4)
+
+                          \end{pspicture}%
+                          \hspace{\fill}\parbox[c]{3in}{%
+                            \vspace*{30mm}\answerblank{2}{3in}{9.5mm}
+                          }
+
+                    % \item \begin{pspicture}(0,39)(70,87)
+                    %         \Large%
+                    %
+                    %         \state[start,final](10,40){s0}
+                    %         \state(50,40){s1}
+                    %         \state(10,0){s2}
+                    %         \state(50,0){s3}
+                    %         \state(30,20){s4}
+                    % 
+                    %         \large
+                    % 
+                    %         \transition(s0,\emph{b},s0)
+                    %         \transition[labeloffset=-5](s0,\emph{a},s2)
+                    % 
+                    %         \transition(s1,\emph{a},s4)
+                    %         \transition[labeloffset=-6](s1,\emph{b},s0)
+                    % 
+                    %         \transition(s2,\emph{a},s4)
+                    %         \transition[labeloffset=-5](s2,\emph{b},s3)
+                    % 
+                    %         \transition[labeloffset=-5](s3,\emph{a},s1)
+                    %         \transition[loopdirection=down](s3,\emph{b},s4)
+                    % 
+                    %         \transition[loopdirection=w,labelposition=.75]%
+                    %                     (s4,\emph{a},s4)
+                    %         \transition[loopdirection=n,labelposition=.75]%
+                    %                     (s4,\emph{b},s4)
+                    % 
+                    %       \end{pspicture}%
+                    %       \hspace{\fill}\parbox[c]{3in}{%
+                    %         \vspace*{30mm}\lans\mans
+                    %       }
+                    % 
+                    %       \vspace*{\fill}
+
+                    % \item \begin{pspicture}(0,14)(70,80)%
+                    %         \Large%
+                    % 
+                    %         \state[start,final](10,15){s0}
+                    %         \state(35,15){s1}
+                    %         \state(60,15){s2}
+                    %         \state(85,15){s3}
+                    %         \state(60,40){s4}
+                    % 
+                    %         \large
+                    % 
+                    %         \transition(s0,\emph{a},s1)
+                    %         \transition(s0,\emph{b},s0)
+                    % 
+                    %         \transition(s1,\emph{a},s4)
+                    %         \transition(s1,\emph{b},s2)
+                    % 
+                    %         \transition(s2,\emph{a},s3)
+                    %         \transition(s2,\emph{b},s2)
+                    % 
+                    %         \transition[labeloffset=-5](s3,\emph{a},s4)
+                    %         \transition[curved,curvature=.9,angle=25]%
+                    %                     (s3,\emph{b},s0)
+                    % 
+                    %         \transition[loopdirection=w](s4,\emph{a},s4)
+                    %         \transition[loopdirection=e](s4,\emph{b},s4)
+                    % 
+                    %       \end{pspicture}%
+                    %       \hspace{\fill}\parbox[c]{2.35in}{%
+                    %         \vspace*{0mm}\answerblank{2}{2.35in}{9.5mm}
+                    %       }
+
+                    \item \begin{pspicture}(0,14)(70,80)%
+                            \Large%
+
+                            \state[start](10,15){s0}
+                            \state(40,15){s1}
+                            \state[final](70,15){s2}
+                            \state(40,40){s3}
+
+                            \large
+
+                            \transition(s0,\emph{a},s1)
+                            \transition[curved,angle=-40,labellocation=below]%
+                                        (s0,\emph{b},s2)
+
+                            \transition(s1,\emph{a},s3)
+                            \transition[offset=2](s1,\emph{b},s2)
+
+                            \transition[offset=2](s2,\emph{a},s1)
+                            \transition(s2,\emph{b},s2)
+
+                            \transition[loopdirection=w](s3,\emph{a},s3)
+                            \transition[loopdirection=e](s3,\emph{b},s3)
+
+                          \end{pspicture}%
+                          \hspace{\fill}\answerblank{2}{2.35in}{9.5mm}
+
+                  \end{enumerate}
+
+                  \vspace{-2.5mm}
+
+                  \pagebreak
+
+            \item {{[12 pts.]}} Do these NFAs recognize or describe the
+                  language above?
+
+                  \vspace{-2.5mm}
+
+                  \begin{enumerate}
+
+                    \addtolength{\itemsep}{10mm}
+
+                    \item \begin{pspicture}(0,14)(70,38)%
+                            \Large%
+
+                            \state[start](10,15){s0}
+                            \state(40,15){s1}
+                            \state[final](70,15){s2}
+
+                            \large
+
+                            \transition(s0,\emph{a},s1)
+                            \transition[curved](s0,\emph{b},s2)
+
+                            \transition(s1,\emph{b},s2)
+
+                            \transition[curved,curvature=.9,angle=30]%
+                                        (s2,\largeepsilon,s0)
+                            \transition(s2,\emph{b},s2)
+
+                          \end{pspicture}%
+                          \hspace{\fill}\parbox[c]{2.9in}{%
+                            \vspace*{0mm}\answerblank{2}{2.9in}{9.5mm}
+                          }
+
+                    \item \begin{pspicture}(0,14)(70,47)%
+                            \Large%
+
+                            \state[start,final](10,15){s0}
+                            \state(35,15){s1}
+                            \state(60,15){s2}
+                            \state(85,15){s3}
+
+                            \large
+
+                            \transition(s0,\emph{a},s1)
+                            \transition[curved](s0,\largeepsilon,s3)
+
+                            \transition[offset=2](s1,\emph{b},s2)
+
+                            \transition[offset=2](s2,\largeepsilon,s1)
+                            \transition(s2,\emph{a},s3)
+
+                            \transition[curved,curvature=.75](s3,\emph{b},s0)
+
+                          \end{pspicture}%
+                          \hspace{\fill}\parbox[c]{2.35in}{%
+                            \vspace*{0mm}\answerblank{2}{2.35in}{9.5mm}
+                          }
+
+                    \item \begin{pspicture}(0,39)(70,73)%
+                            \Large%
+
+                            \state[start,final](10,40){s0}
+                            \state(40,40){s1}
+                            \state(70,40){s2}
+                            \state(40,15){s3}
+
+                            \large
+
+                            \transition(s0,\emph{a},s1)
+                            \transition[offset=2](s0,\largeepsilon,s3)
+
+                            \transition(s1,\emph{b},s1)
+                            \transition(s1,\emph{b},s2)
+
+                            \transition(s2,\emph{a},s3)
+
+                            \transition[offset=2](s3,\emph{b},s0)
+
+                          \end{pspicture}%
+                          \hspace{\fill}\answerblank{2}{2.9in}{9.5mm}
+
+                  \end{enumerate}
+
+                  \vspace{-2.5mm}
+
+          \end{enumerate}
+
+          \vspace{-2.5mm}
+
+  \end{enumerate}
+
+\end{document}

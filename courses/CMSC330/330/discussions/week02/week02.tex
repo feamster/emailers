@@ -1,0 +1,209 @@
+\documentclass[12pt]{article}
+
+  %
+  % NEXT TIME ADD TO ALL DISCUSSION TOPICS:
+  %
+  % \section{Notes for teaching TAs}
+  % 
+  %   \begin{itemize}
+  % 
+  %     \addtolength{\itemsep}{-1mm}
+  % 
+  %     \item Don't display these discussion topics themselves using the
+  %           projection equipment during class, and don't give students a
+  %           copy of them, whether on paper or electronically, even if they
+  %           missed discussion for a valid reason.  Students who missed
+  %           discussion should be encouraged (are expected) to get notes from
+  %           a classmate who was present.
+  % 
+  %           You can give out \textbf{printed} copies later of any handouts
+  %           or quizzes that were originally given out on paper to any
+  %           students who need one, but do not give out electronic copies of
+  %           anything that was not originally provided electronically.
+  % 
+  %     \item Please read the topics carefully every week.  Sometimes topics
+  %           may be mostly similar from earlier weeks yet have small but
+  %           important differences.
+  %           % (They also have changes from earlier semesters' versions.)
+  % 
+  %   \end{itemize}
+  % 
+  %   \vspace{-2.5mm}
+  %
+
+  \usepackage{330-f12}
+
+\begin{document}
+
+  \header{\course}{Discussion section topics -- Week~\#2}{\Term}
+
+  \section{Discussion \#1, Friday, September 7}
+
+    \subsection{Introduction}
+
+      You can introduce yourself, give the course and section number, etc.,
+    to make sure students are in the right place at the right time.
+
+    \subsection{Attendance}
+
+      Let the students know that on a regular must attend the discussion
+    section that they're registered for.  This is to avoid overcrowding in
+    the discussion rooms.  If anyone has a special reason for attending
+    another section on a particular day (e.g., an exam in another course,
+    car trouble, woke up late, etc.) it's OK if they attend another section
+    on that day, if they ask the TA before the section.  But on a routine
+    basis they are expected to attend their own section.  Quizzes will be
+    given in discussion section and students will only get credit for
+    quizzes taken in their own section (unless they have a reason to attend
+    another one on the day of the quiz, as mentioned above, and ask the TA
+    at the beginning).
+
+    \subsection{Ruby examples}
+
+      In my directory are several Ruby examples that you can show the students
+    and go over.  Feel free to add additional examples of your own, that use
+    similar features (pretty much sticking to what we've covered so far in
+    class), or to modify these if you like.  Copy the programs to the Grace
+    machines and show them using the room projection equipment.
+
+      The idea is not to just show the code, but ideally to explain what we
+    want to do, and where possible to develop the programs one part at a
+    time.  Ask the students how to do the first step, and show it, or type
+    it into a new file.  Then ask them what the next step should be and type
+    it in, etc.  If they tell you the wrong thing you can ask them if it'll
+    work, or why not.  If there are different ways to do something you can
+    discuss them.  Or just show one part at a time of the provided examples.
+
+      There is at least one new feature in one of the examples,
+    \texttt{eval()}, that you will have to explain.  If you find any other
+    things that we didn't explain in class so far, just explain them also.
+
+      Let the students know that they don't need to write the examples down,
+    because we will be providing the discussion example code to them.  They
+    can just pay attention in class, and can copy the examples to their own
+    disk space when they are provided, run them, play around with them, etc.
+
+      You can cover them in any order, but here are some comments about them
+    (just in the order that I would cover them).  I think that the hash
+    examples are the most important.  Note that in the earlier examples I
+    intentionally avoided some things that you might want to use, like
+    iterpolation into double--quoted strings.  You can show the examples and
+    ask students what could be changed.  For instance, instead of something
+    like:
+
+      \begin{Verbatim}[gobble=6]
+      print("You entered: ", str, ".\n")
+      \end{Verbatim}
+
+      \noindent
+      we might more easily do:
+
+      \begin{Verbatim}[gobble=6]
+      print("You entered: #{str}.\n")
+      \end{Verbatim}
+
+      \noindent
+      or
+
+      \begin{Verbatim}[gobble=6]
+      puts("You entered: #{str}.")
+      \end{Verbatim}
+
+      \vspace{-2.5mm}
+
+      \begin{description}
+
+        \addtolength{\itemsep}{1mm}
+
+        \item[\texttt{simple-input.rb}:] This just illustrates simple input,
+              and output, but you can also make sure students understand the
+              mechanism of running the script as an executable (the first
+              line, and having to use \texttt{chmod u+x}).
+
+              By the way, the way the comment is asking about, to write
+              \texttt{str= str.chomp()} without an assignment, is
+              \texttt{str.chomp!()} (the mutator methods end in \texttt{!}).
+
+        \item[\texttt{fib.rb}:] Illustrates use of a command--line argument,
+              use of an observer method (ending in \texttt{?}),
+              \texttt{to\_i()} and \texttt{to\_s()}.  (Why do we need
+              \texttt{to\_i()} and \texttt{to\_s()} where they are used?)
+
+        \item[\texttt{hash-example1.rb}:] This example illustrates a very
+              common paradigm in Ruby, and scripting languages in general.
+
+              Suppose we have a list of students, along with their
+              University ID numbers (a sample input is in the file
+              \texttt{hash-example1+2-input}), or you can change it to be
+              names and scores on an exam, or anything where names are
+              associated with some numbers.  Assume each student has a first
+              name and a last name, and a single space separates the three
+              fields on each line (the names and the ID).  (After we cover
+              regular expressions, it would be very simple to allow
+              arbitrary whitespace.)  We want to print the names in order of
+              increasing Uninversity ID number (ID, last name , comma, first
+              name).
+
+              You might first explain the problem, show the input, and ask
+              students to think for a minute about how they would code this
+              in Java.  They might come up with various ideas, some of which
+              would work and some of which would not, or ideas that would
+              work but be a little long or awkward to write.  It's very
+              simple and short in Ruby though.
+
+              The idea is to use a hash, where the hash key is each
+              student's ID number, and the value is their name (just as a
+              string, last name followed by a comma followed by first name).
+              Then (this is the very common idiom in scripting languages) we
+              get the keys of the hash-- which in Ruby returns an array--
+              iterate over that, and access the value corresponding to each
+              key.
+
+              You could show it first without the \texttt{sort()}, to see
+              that it works, but doesn't print the results in the order we
+              want.  The \texttt{Array} \texttt{sort()} method easily fixes
+              that though.
+
+        \item[\texttt{hash-example2.rb}:] What if we want to do almost the
+              same thing, with the same input except print the output in
+              alphabetical order by student name rather than ID?  Just use
+              the names as hash keys instead, and the IDs as the hash
+              values.
+
+        \item[\texttt{hash-example3.rb}:] Now what if we want to do the same
+              thing as the first example, but for multiple sections?  Now
+              each line (of the input file \texttt{hash-example3-input}) has
+              a section number as well.
+
+              The idea is to create a hash in which the keys are section
+              numbers, and the value associated with each section number key
+              is another hash just like the hash in the first hash example
+              (that associates names with keys of IDs).  Now we need a
+              outer code block to iterate over the section numbers, and an
+              inner one to iterate over the students in each section.
+
+        \item[\texttt{loops.rb}:] This illustrates different ways of writing
+              loops.  The interesting thing is that the loops are each passed
+              as input (a string) into the \texttt{show\_loop()} method,
+              which uses \texttt{eval()} to treat the string as code and
+              execute it.
+
+              Do C or Java have an analogue to \texttt{eval()}?  What is it
+              about Ruby that allows it (and similar languages) to have an
+              \texttt{eval()} mechanism?
+
+      \end{description}
+
+      \vspace{-2.5mm}
+
+    \subsection{If you have extra time}
+
+      If you have any extra time, instead of letting the students go early,
+    see if they have any questions about Ruby, and try to answer them if so.
+    Or you can think of any other similar examples ahead of time, or any
+    modifications to the above ones, and ask the students to try to write
+    the program, or make the modifications, for a few minutes, just using
+    pencil and paper.  Then you can ask them to tell you how to write it and
+    you can type it in and run it
+
+\end{document}

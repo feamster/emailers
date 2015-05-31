@@ -1,0 +1,1200 @@
+\documentclass[11pt]{article}
+
+  % doesn't matter what's produced if an expression results in an operator
+
+  % operators in ASTs
+
+  % Could relax and have first operand of define be an expression resulting
+  % in a variable name, except variable names aren't primitives.
+
+  % two ocaml types
+
+  % didn't implement lists (cons, car, or cdr), or functions and closures,
+  % although some code is present
+
+  %
+  % get_input actually has a bug; the line
+  %
+  %   let temp = (!buffer) ^ trimmed in
+  %
+  % probably should be
+  %
+  %   let temp = (!buffer) ^ " " ^ trimmed in
+  %
+  % The effect is that the penultimate line is joined to the last line
+  % without a space.  (Workaround- just make sure the penultimate line has a
+  % trailing space....)
+  %
+  % Apparently it's also adding a blank space to the front of the string in
+  % a case like this; did not look to see why.
+  %
+
+  %
+  % There was a little confusion about whether () should evaluate to nil;
+  % maybe this could have been clearer, and also that the first element of a
+  % list must be an operator or built-in function, so an expression like (2)
+  % is invalid.
+  %
+
+  %
+  % Should have said something like the following: whitespace separates
+  % tokens, but is not required to separate tokens.  For example, "a b" is
+  % two tokens, but "(a)" is three tokens and "#true" is two tokens, because
+  % parentheses can't be part of another token, and "#t" is a token, so
+  % "rue" is a separate token.
+  %
+
+  \usepackage[none,light,outline,timestamp]{draftcopy}
+
+  % For some reason \definecolor is defined on home Linux machine, but not
+  % department Linux machine, without this package.
+  %
+  % \usepackage{color}
+
+  \usepackage{330-f12}
+
+  \psset{unit=1mm,levelsep=12,treesep=10,nodesep=1.5}
+
+  \usepackage[dvips,
+              colorlinks=true,
+              urlcolor=red,         % \href{...}{...} external (URL)
+              % filecolor=...  seems to have no effect
+              % filecolor=green,    % \href{...} local file
+              linkcolor=blue,       % \ref{...} and \pageref{...}
+              pdftitle={CMSC 330 project},
+              pdfauthor={Nick Feamster and Larry Herman},
+              pdfsubject={CMSC 330 project},
+              pdfkeywords={CMSC, 330},
+              pdfproducer={LaTeX},
+              pagebackref,
+              bookmarks=true,
+              pdfstartview=FitH
+             ]{hyperref}
+
+\begin{document}
+
+  \header{\course}{Project \#4}{\Term}
+
+  \vspace{-3mm}
+
+  \begin{centering}
+
+    Date due: Tuesday, November 27, 10:00:00 p.m.
+
+  \end{centering}
+
+  \vspace{-6mm}
+
+  % \addtolength{\baselineskip}{1.25mm}
+
+  \section{Introduction}
+
+    In this project you will write an interpreter in OCaml for a subset of the
+  Scheme programming language.  To do this you will need to write a simple
+  lexer and parser to turn a Scheme program into an abstract syntax tree.
+  Then you will write an evaluator that executes the code represented as an
+  AST.  Although this project is of course different, the example covered in
+  the last discussion section that involved parsing and evaluating
+  arithmetic expressions should be instructive in a variety of respects.
+
+    Although you need all of the pieces written to have a ``complete'' Scheme
+  interpreter, the project is structured so that you can develop one part at
+  a time, test the phases separately, and get credit for the first parts
+  even if you can't quite finish the last part entirely.
+
+  \section{A very brief introduction to Scheme syntax}
+
+    Scheme is a version of Lisp; although Lisp was one of the earliest
+  high--level languages to be developed, it is still in common use.  Scheme
+  and Lisp are functional languages, like OCaml.  Both Scheme and Lisp use
+  what is called Cambridge Polish Notation, in which operators or functions
+  are always written before their operands, and every function application
+  is fully enclosed by parentheses, meaning an opening parenthesis precedes
+  the operator, and a closing parenthesis follows the last operand (if the
+  function or operator has any arguments).  For instance, here are a couple
+  of examples of expressions that would be valid in both Lisp and Scheme:
+
+    \vspace{-2mm}
+
+    \begin{center}
+
+      \begin{tabular}[t]{|c|c|}
+
+        \multicolumn{1}{l}{expression}
+          & \multicolumn{1}{c}{value}
+          \\ \hline
+
+        \texttt{(+ 2 5)}
+          & \texttt{7}
+          \\ \hline
+
+        \texttt{(* 3 (+ 2 5))}
+          & \texttt{21}
+          \\ \hline
+
+        \texttt{(* (- 10 4) (+ 2 5))}
+          & \texttt{42}
+          \\ \hline
+
+      \end{tabular}
+
+    \end{center}
+
+  Note that the consequence of this syntax is that all expressions are
+  always fully parenthesized, so no notion of the precedence or
+  associativity of operators is necessary.  As in OCaml, lists are the
+  primary data type in Lisp and Scheme, but one of their interesting aspects
+  is that programs are also stored in lists.  Since programs are
+  represented exactly the same as data is,  it's easy in these languages
+  to write programs that write or modify other programs-- or even programs
+  that can modify or change themselves in the process of execution.
+
+    Rather than list some of Scheme's operators and built--in functions here,
+  we just describe the ones that you have to implement in Section
+  \ref{section:eval}
+
+    If you want to experiment with Scheme there is a Scheme interpreter on
+  Grace, named \texttt{guile}.  If you run it you can type in expressions at
+  the top level and see their results, just like the OCaml top level (or
+  \texttt{irb}).  Typing \texttt{(exit)} or \texttt{(quit)} will quit.
+  Note, however, that although it may be useful to experiment with real
+  Scheme to get a better idea of how it works and what you should be
+  implementing, the subset of the language that you have to implement is
+  limited, and to make the project easier what you have to implement has
+  been defined differently from real Scheme in various respects.
+
+  \section{Overview of what to submit}
+
+    There are no required source files, source filenames, or functions for
+  this project.  You can divide your program up however you like.  You will
+  need to submit a makefile along with your project (that \textbf{must} be
+  named \texttt{Makefile}, with an uppercase \texttt{M}), that will create
+  (at least) three executables: one must be named \texttt{scanner}, the next
+  will be named \texttt{parser}, and the last will be named
+  \texttt{interpreter} (these names \textbf{must} be spelled and capitalized
+  exactly as shown).  Your makefile can have additional targets or create
+  other executables for your testing purposes.
+
+    All three of these executables must, when run, continually repeat the
+  process of reading an expression, processing it, and printing the results,
+  until the end of the input is seen (where ``expression'' refers to the
+  input that that phase of the program should process, as described below).
+  We are supplying you with an input function that can be used to read
+  input that your programs will then process.
+
+    \vspace{-2.5mm}
+
+    \begin{itemize}
+
+      \addtolength{\itemsep}{-1mm}
+
+      \item The executable \texttt{scanner} must continually read Scheme
+            expressions and tokenize each one, breaking it up into a list of
+            tokens; the list of tokens for each expression should be
+            printed.
+
+      \item The executable \texttt{parser} must read Scheme expressions,
+            tokenize each one, and then try to parse it, printing whether
+            each one is valid or not.
+
+      \item The executable \texttt{interpreter} must continually read Scheme
+            expressions, parse them, construct an abstract syntax tree (AST)
+            for each one (you may have already done that in the previous
+            part), and interpret or execute each one, printing the output or
+            result that it produces.
+
+    \end{itemize}
+
+    \vspace{-2.5mm}
+
+    The input function that we are supplying is in the compiled file
+  \texttt{get\_input.cmo} (and the associated interface file
+  \texttt{get\_input.cmi}).  Its module name is therefore
+  \texttt{Get\_input}, so to use it you will need to \texttt{open
+  Get\_input}.  The function to call is also named \texttt{get\_input} and
+  it takes no arguments, so it would be called as \texttt{get\_input ()}.
+  It will read zero or more lines of input, concatenate them all together
+  (adding a blank space between each pair of lines), and return the
+  resulting string.  Before every line read the function prints the prompt
+  character \texttt{>}.  It will read and join strings until a string is
+  entered that ends with the character sequence \texttt{;;}.  Unlike OCaml,
+  real Scheme does not use this character sequence to terminate expressions
+  at the top level, but this is done just to make it easier to enter
+  multiline expressions to be processed.  When the end of the input is seen
+  the \texttt{get\_input} function will raise an \texttt{End\_of\_file}
+  exception, so your processing in each part must continue until this
+  exception is seen, which is when your processing should terminate.  When
+  reading input using input redirection the end of the input will be
+  detected automatically when trying to read after the last input has been
+  consumed; recall from CMSC 216 that when running a program in UNIX
+  interactively, pressing control--d signals the end of the input.
+
+  \section{Part \#1: Lexing or scanning\label{section:scanning}}
+
+    The first phase of any interpreter is turning the source code, which is
+  just a very long string, into a sequence of tokens, which for purposes of
+  this project will just be smaller strings that are the grammatical units
+  the parser will consume.  You will need to write code that reads input
+  strings and converts them to a list of tokens, which are defined as
+  follows:
+
+    \vspace{-2.5mm}
+
+    \begin{itemize}
+
+      \addtolength{\itemsep}{-1.5mm}
+
+      \item \texttt{(} and \texttt{)} are tokens.
+
+      \item Scheme identifiers are tokens.  An identifier is made up of one
+            or more uppercase and lowercase letters, digits, \texttt{=},
+            \texttt{*}, \texttt{+}, \texttt{/}, \texttt{<}, \texttt{>},
+            \texttt{!}, \texttt{?}, or \texttt{-}.  For example, valid
+            identifiers are \texttt{Cmsc}, \texttt{set!}, \texttt{<three},
+            and \texttt{<=}.
+
+      \item The two boolean constants \texttt{\#t} and \texttt{\#f} are
+            tokens.
+
+      \item Integers are tokens.  Integers are made up of one or more of the
+            digits \texttt{0} through \texttt{9} and may \textbf{not}
+            include a minus or a plus sign.
+
+      \item Scheme strings are tokens.  A string is a sequence of characters
+            between double quotes, where the sequences do not contain double
+            quotes.  For purposes of this project, the only characters
+            allowed within a string are those that may appear in Scheme
+            identifiers, as well as \texttt{(}, \texttt{)}, \texttt{\#}, and
+            blank space characters.  You do not need to worry about escape
+            characters (e.g., escaped quotes) in the string.  However, your
+            parser is going to need to be able to tell the difference
+            between strings and identifiers.  So when you tokenize a Scheme
+            string, the quotes should be included in the returned token.
+            Since our tests will expect this, your program will not give
+            correct results unless you preserve double quotes around
+            strings.
+
+      \item The operators and built--in functions listed below in Section
+            \ref{section:eval} are all tokens, however, notice that your
+            lexer can recognize them all as identifiers, and your parser and
+            interpreter will just figure out what they are, and which ones
+            are identifiers and which ones are operators and functions, when
+            the sequence of input tokens is further analyzed.
+
+    \end{itemize}
+
+    \vspace{-1.5mm}
+
+    The list of tokens that is returned by your scanner should be printed to
+  the program's standard output, exactly like an OCaml list, surrounded by
+  square braces, and with a semicolon and single space separating each pair
+  of elements of the list.  You may find the approach used in your function
+  \texttt{string\_of\_int\_list} from Project \#3 to be useful, although in
+  this case the list that is to be printed will be a list of strings, not of
+  ints.
+
+    Your scanner or lexer should discard spaces, tabs, and newlines.  However,
+  this whitespace should cause your lexer to break up tokens.  For example,
+  given the input line \texttt{ice cream;;} your lexer should create and
+  print the list \texttt{["ice"; "cream"]}.  The end of the string also
+  serves as a terminator for tokens.  An empty input string may be entered,
+  which will be signified by just entering \texttt{;;} (an empty list
+  \texttt{[]} would simply be the output produced).
+
+    For example, when the input line \texttt{(f (g 3) 4 "banana");;} is
+  entered and read, your scanner should print the output line:
+
+    \vspace{-4mm}
+
+    \begin{center}
+
+      \verb@[(; f; (; g; 3; ); 4; "banana"; )]@
+
+    \end{center}
+
+    \vspace{-1mm}
+
+    When deciding what each token should be, your scanner should return the
+  longest valid token according to the definition above.  For example, if
+  the input string is \texttt{"icecream"}, it should return
+  \texttt{["icecream"]}, and not \texttt{["ice"; "cream"]} or any similar
+  result.
+
+    You may find the OCaml regular expression library handy for doing this
+  part of the project.  You can find a description of it in the OCaml
+  manual.  If you want to use this library at the top level you'll need to
+  type \texttt{\#load "str.cma"} into the top--level of OCaml, and you will
+  need to include \texttt{str.cma} in compilation commands in your makefile
+  as described below.  Notice that parentheses for grouping and the vertical
+  bar for alternation must both be preceded by a backslash; to prevent the
+  backslash from looking like the beginning of an escape sequence two
+  backslashes must be used (which is itself an escape sequence).  The
+  easiest function to use is \texttt{Str.string\_match}, which is called
+  with a regular expression, a string, and a starting position where to
+  begin matching the regular expression against the string, and which
+  returns true only if the string matches the regular expression starting at
+  that position.  For example, consider the following (the entire module and
+  its other functions and capabilities are described in the OCaml reference
+  manual):
+
+    \begin{center}
+
+      \begin{BVerbatim}[gobble=6]
+      # Str.string_match (Str.regexp "\\(.*ab\\|cd.*\\)") "xxabyy" 0;;
+      - : bool = true
+      # Str.string_match (Str.regexp "\\(.*ab\\|cd.*\\)") "xxadyy" 0;;
+      - : bool = false
+      \end{BVerbatim}
+
+    \end{center}
+
+    In order to have your executable program continually read and tokenize
+  lines you will have to have code somewhere that looks the following
+  pseudocode:
+
+    \medskip
+
+    \hspace{4mm}
+    \begin{minipage}[t]{3in}
+
+      \begin{tabbing}
+
+        % mm\=mm\=mm\=mm\=\kill
+
+        xx\=xx\=xx\=xx\=\kill
+
+        \textbf{while} the end of the input has not yet been seen
+        (\texttt{End\_of\_file} has not yet been raised)
+          \\
+
+          \> call \texttt{get\_input} to read an input expression, terminated
+             by \texttt{;;}
+             \\
+
+          \> tokenize the string returned by \texttt{get\_input}, which
+             results in a list of strings
+             \\
+
+          \> print the list of strings, followed by a newline
+
+      \end{tabbing}
+
+    \end{minipage}
+
+    \bigskip
+
+    We will \textbf{only be running your scanner with tokens that are valid}
+  according to the descriptions above.  Note, though, that any sequence of
+  tokens may not necessarily be in the form of a valid Scheme expression.
+  Verifying that the input tokens form valid expressions is the job of the
+  parser, not the scanner, so any nonsensical sequence of valid Scheme
+  tokens may be input.  For example the following input line is decidedly
+  not valid Scheme, but all of its tokens are valid:
+
+    \vspace{-2mm}
+
+    \begin{center}
+
+      \verb@#t ( 2 "weird" < <;;@
+
+    \end{center}
+
+    \vspace{-2mm}
+
+    Therefore it would be a potential input and the output that should be
+  produced for it is just the list of its tokens:
+
+    \vspace{-5mm}
+
+    \begin{center}
+
+      \verb@[#t; (; 2; "weird"; <; <]@
+
+    \end{center}
+
+    \vspace{-1mm}
+
+    Although your scanner only has to work for valid tokens it is recommend
+  though that in the process of coding you add reasonable error handling to
+  your project for cases of malformed or otherwise incorrect Scheme input,
+  because it will make developing your project easier.  As you are testing
+  your program you may inadvertently create incorrect input data;
+  substantial time may be lost in trying to debug the program, only to find
+  a few mistyped characters in your input data are the source of the
+  problem.
+
+  \section{Part \#2: Parsing}
+
+    The next part of the project involves parsing.  The grammar for Scheme is
+  particularly simple:
+
+    \vspace{-2.5mm}
+
+    \begin{center}
+
+      \begin{grammar}
+
+        \production{S}{id \midspc n \midspc b \midspc str \midspc ( L )}
+          \\
+
+        \production{L}{S\; L \midspc \largeepsilon}
+          \\
+
+        \production{id}{\hbox{identifiers}}
+          \\
+
+        \production{n}{\hbox{integers}}
+          \\
+
+        \production{b}{\texttt{\#t} \midspc \texttt{\#f}}
+          \\
+
+        \production{str}{\hbox{strings}}
+          \\
+
+      \end{grammar}
+
+    \end{center}
+
+    \vspace{-1.5mm}
+
+    Productions aren't given for ``identifiers'', ``integers'', and
+  ``strings'' that are used in the grammar, but their syntax is described
+  above.  Since their syntax is regular, it is much easier to use regular
+  expressions to recognize tokens, like real compilers do, rather than
+  having the parser handle them.
+
+    You should use a recursive descent parser, as discussed in class.  Thus
+  you should probably write two functions: \texttt{parseS}, which parses the
+  nonterminal S representing all valid Scheme expressions (which are called
+  S--expressions), and \texttt{parseL}, which parses the nonterminal L
+  representing a list of S--expressions.  Note that due to the differences
+  between this project and the expression parsing example from discussion
+  section your parser may not really need an analogue to the
+  \texttt{match\_terminal} function; it may simply be able to repeatedly
+  examine the first element of the list of tokens returned by the scanner,
+  figure out what it is, take the appropriate action, and continue with the
+  rest of the list of tokens.
+
+    Your parser will have to have code that executes until the end of the
+  input, similar to the pseudocode given at the end of the previous section.
+  However, instead of just printing the list of tokens that the scanner
+  returns, this code will have to call your parser to parse them.  If the
+  parser says that an input expression is valid Scheme according to the
+  grammar above your executable \texttt{parser} should print a single line
+  with the word ``\texttt{Valid.}'', spelled and capitalized
+  \textbf{exactly} as shown, including the period, and ending with a
+  newline.  If the parser says that an input expression is not valid Scheme
+  your parser should print a single line with the word ``\texttt{Invalid.}'',
+  spelled and capitalized exactly as shown and also ending with a newline.
+
+    We will \textbf{only be running your parser with tokens that are valid}
+  according to the descriptions above.  Note, though, that the tokens may
+  not necessarily be in the form of valid Scheme expressions, because that
+  is the job of your parser to determine.  Ones that are not valid Scheme
+  expressions should just be called invalid.  For example, the following
+  input line is not valid Scheme, but all of its tokens are valid:
+
+    \vspace{-1.5mm}
+
+    \begin{center}
+
+      \verb@("weird" < 100 > "strange" if <> #t(;;@
+
+    \end{center}
+
+    \vspace{-1.5mm}
+
+    Although this is a valid input for this part of the project, the output
+  for it should certainly be \texttt{Invalid.}
+
+    Although your parser only has to work for valid tokens, as above it's
+  recommended that you add reasonable error handling in the process of
+  coding.
+
+  \section{Part \#3: Interpretation or execution\label{section:eval}}
+
+    The last but largest and most difficult part of the project is to write a
+  Scheme interpreter or evaluator that, given an AST, executes the
+  expression corresponding to that AST.  The subset of the language your
+  interpreter should handle is described below.  If you didn't explicitly
+  build the AST for Scheme expressions in the process of parsing them in the
+  prior part you will have to construct it now, like the second version of
+  the arithmetic expression parsing and evaluation example covered in the
+  most recent discussion section.  Then you have to write code that executes
+  or evaluates the ASTs representing expressions.
+
+    Your AST will have to use an OCaml type that can represent the different
+  components of Scheme expressions.  Rather than having different
+  alternatives for every of operator and built--in function, it would be
+  easier to just represent them all as identifiers in the AST, and have your
+  evaluator differentiate between them by their names.  In this case the
+  different alternatives that your type has to represent are numbers,
+  booleans, strings, lists, and identifiers.
+
+    The arithmetic expression parsing and evaluation example from discussion
+  section produces just one kind of value, because the only operands of
+  arithmetic expressions (at least the ones that it handles) are integers,
+  and all of the operators that it supports return integers.  In this
+  project, Scheme expressions can result in different types of values:
+  integers, strings, boolean constants, and the special value \texttt{nil}.
+  Where the result of evaluating expressions was always just a number, in
+  this project it will have to be some sort of OCaml type that you will need
+  to define, that can represent either an integer, a string, a boolean, or
+  \texttt{nil}, which are the types of values that Scheme expressions can
+  result in (although depending upon the way you implement the project you
+  could add to these alternatives).
+
+    Note that you are going to need two OCaml types-- one representing the
+  components of ASTs described two paragraphs above, and another
+  representing the different possible values that executing ASTs can produce
+  described in the preceding paragraph.
+
+    The following subsections describe the language features your interpreter
+  should support.
+
+    \subsection{Primitive types}
+
+      Your evaluation function should evaluate integers, boolean constants,
+    strings, and the special predefined constant \texttt{nil} to themselves.
+    One example of what we mean by evaluating primitive type values to
+    themselves is that the expression \texttt{3} (entered as \texttt{3;;})
+    should result in the value \texttt{3}, which is what should be printed
+    as a result.  Evaluating \texttt{"banana"} should result in the string
+    \texttt{banana} as the result, which will be printed.  Evaluating
+    \texttt{\#t} should result in \texttt{\#t}, etc.  \texttt{nil} is a
+    special constant indicating an empty list, sort of like \texttt{[]} in
+    OCaml.
+
+    \subsection{Operators}
+
+      Your evaluation function should support the following operators, which
+    we list grouped by the type of result that they produce.
+
+      \subsubsection{Numeric operators}
+
+        These operators always have integer operands and produce integer
+      results.  All of these operators may be applied to \textbf{one or
+      more} arguments.
+
+        \vspace{-2.5mm}
+
+        \begin{description}
+
+          \addtolength{\itemsep}{-.5mm}
+
+          \item[\texttt{+}:] This operator accepts one or more arguments and
+                returns their sum.
+
+          \item[\texttt{-}:] This operator may take any number of one or
+                more arguments, and it subtracts its second through last
+                argument from its first argument; given only one argument,
+                it compute unary negation.  For example, \texttt{(- 3)}
+                evaluates to \texttt{-3}, while \texttt{(- 4 3)} evaluates
+                to \texttt{1} and \texttt{(- 4 3 1)} evaluates to
+                \texttt{0}.
+
+          \item[\texttt{*}:] This operator should return the product of its
+               arguments.
+
+          \item[\texttt{/}:] This operator performs integer division.  If
+                applied to one argument it just returns that argument
+                unchanged (which is not the same as real Scheme; also in
+                real Scheme division may result in a real number).  If
+                applied to two or more arguments it divides the first one by
+                the second one, the result of that is divided by the third
+                one, etc.  For example, \texttt{(/ 64 2)} evaluates to
+                \texttt{32}, while \texttt{(/ 64 4 2)} evaluates to
+                \texttt{8} and \texttt{(/ 64 2 4 2)} evaluates to
+                \texttt{4}.  Note that since integer division is performed
+                \texttt{(/ 11 4)} evaluates to \texttt{2}.
+
+        \end{description}
+
+        \vspace{-2.5mm}
+
+        Before describing the other operators, note that since Scheme
+      expressions may be arbitrarily nested, the operand of any of these
+      operators may be just a numeric operand, or may be another Scheme
+      expression.  For example, consider the expression \texttt{(+ 2 (* 3
+      4))}.  Your parser is going to have to turn this into an AST that
+      conceptually looks something like the following:
+
+        \vspace{-4mm}
+
+        \begin{center}
+
+          \pstree{\TR{\texttt{+} operator}}{
+            \pstree{\TR{\texttt{2}}}{
+            }
+            \pstree{\TR{\texttt{*} operator}}{
+              \pstree{\TR{\texttt{3}}}{
+              }
+              \pstree{\TR{\texttt{4}}}{
+              }
+            }
+          }
+
+        \end{center}
+
+        \vspace{-12mm}
+
+        \enlargethispage{4mm}
+
+        Then execution of the expression will be performed by first evaluating
+      2 (which has the value 2), then evaluating the subexpression
+      \texttt{(* 3 4)} (which has the value 12, produced by evalauting its
+      operands first, then applying the multiplication to their results),
+      then applying the addition to those results.  Notice that this implies
+      that Scheme uses call--by--value as its parameter transmission
+      mechanism (to be discussed in lecture shortly, or discussed more
+      fully), because arguments of operators (and functions) are always
+      evaluated before the function or operator is applied, with one
+      exception.
+
+      \subsubsection{Boolean comparison operators}
+
+        These operators always have two operands of the same type, and produce
+      a boolean result; recall that the two boolean constants are
+      \texttt{\#t} and \texttt{\#f}.  These operators may be applied to
+      exactly two arguments.
+
+        \vspace{-1.5mm}
+
+        \begin{description}
+
+          \addtolength{\itemsep}{-1.25mm}
+
+          \item[\texttt{=}:] This operator compares its two arguments for
+                structural equality and returns either \texttt{\#t} or
+                \texttt{\#f}.
+
+          \item[\texttt{<>}:] This operator (which is not in real Scheme)
+                compares its two arguments for structural inequality and
+                returns either \texttt{\#t} or \texttt{\#f}.
+
+          \item[\texttt{<}:] This operator compares its two arguments and
+                returns \texttt{\#t} if the first argument's value is less
+                than the second argument's value, and \texttt{\#f}
+                otherwise.
+
+          \item[\texttt{<=}:] This operator compares its two arguments and
+                returns \texttt{\#t} if the first argument's value is less
+                than or equal to the second argument's value, and
+                \texttt{\#f} otherwise.
+
+          \item[\texttt{>}:] This operator compares its two arguments and
+                returns \texttt{\#t} if the first argument's value is
+                greater than the second argument's value, and \texttt{\#f}
+                otherwise.
+
+          \item[\texttt{>=}:] This operator compares its two arguments and
+                returns \texttt{\#t} if the first argument's value is
+                greater than or equal to the second argument's value, and
+                \texttt{\#f} otherwise.
+
+        \end{description}
+
+        \vspace{-1.5mm}
+
+        In real Scheme the relational operators may be applied to numeric type
+      arguments only, but in this project they may be applied to any two
+      arguments of the same type (of course this means that either or both
+      arguments may be subexpressions that result, when evaluated, in
+      arguments of the same type).  In comparing strings, lexicographic
+      comparisons should be performed.  In comparing booleans, note that
+      (perhaps analogous to real life) truth is greater than falsehood, or
+      in other words \texttt{(> \#t \#f)} results in \texttt{\#t}.
+      \texttt{nil} is equal only to itself.
+
+      \subsubsection{Boolean predicates}
+
+        These built--in functions also always have boolean results, but since
+      they are applied to only one argument we describe them in a separate
+      subsection than the comparison operators above.  These operators may
+      be applied to one operand of \textbf{any type}, but always produce a
+      boolean result (\texttt{\#t} or \texttt{\#f}) as described below.
+      Note that these function names end with the question--mark character.
+
+        \vspace{-1.5mm}
+
+        \begin{description}
+
+          \addtolength{\itemsep}{-1mm}
+
+          \item[\texttt{boolean?}:] This operator evaluates its operand,
+                which may be a primitive type or an arbitrary Scheme
+                expression, and returns \texttt{\#t} if it has a boolean
+                value, or \texttt{\#f} otherwise.
+
+          \item[\texttt{number?}:] This operator evaluates its operand,
+                which may be a primitive type or an arbitrary Scheme
+                expression, and returns \texttt{\#t} if it has a numeric
+                value, or \texttt{\#f} otherwise.
+
+          \item[\texttt{string?}:] This operator evaluates its operand,
+                which may be a primitive type or an arbitrary Scheme
+                expression, and returns \texttt{\#t} if it has a string
+                value, or \texttt{\#f} otherwise.  Note that none of the
+                primitive operators you are to implement produce string
+                values, but string constants may appear in Scheme
+                expressions, and conditionals (described below) may result
+                in strings (if they are applied to strings).
+
+          \item[\texttt{list?}:] This operator evaluates its operand,
+                which may be a primitive type or an arbitrary Scheme
+                expression, and returns \texttt{\#t} if it has a list
+                value, or \texttt{\#f} otherwise.  Note that the only list
+                value in this project, unlike real Scheme is the special
+                constant \texttt{nil}, but besides \texttt{nil} being
+                used as a constant one form of conditional can return
+                \texttt{nil}.
+
+                Note that in real Scheme \texttt{nil} is written as
+                \texttt{'()}, but in versions of Lisp \texttt{nil} and
+                \texttt{'()} are typically equivalent.  (The quote mark
+                before anything in Scheme and Lisp prevents that thing from
+                being evaluated, but we have included in this project only
+                Scheme features that make using the quote mark unnecessary.)
+
+        \end{description}
+
+        \vspace{-2.5mm}
+
+    \subsection{Conditionals}
+
+      Your interpreter should allow both conditional forms \texttt{(if
+    \emph{\textrm{condition}} \emph{\textrm{true--branch}}
+    \emph{\textrm{false--branch}})}, which evaluates to whatever
+    \emph{true--branch} evaluates to if \emph{condition} is true and
+    whatever \emph{false--branch} evaluates to otherwise, and \texttt{(if
+    \emph{\textrm{condition}} \emph{\textrm{true--branch}})}, which
+    evaluates to whatever \emph{true--branch} evaluates to if
+    \emph{condition} is true, and to \texttt{nil} otherwise.
+
+      Note that, unlike OCaml, nothing requires both arms of a conditional in
+    Scheme to have the same type, so \texttt{(if (< 2 3) 4 "five")} is a
+    perfectly valid expression.
+
+      Since a conditional (of either type) produces a value, it can be used as
+    a subexpression or operand of other operators or built--in functions.
+
+    \subsection{\texttt{define} and variable bindings}
+
+      Lastly, to get full credit on the project, your interpreter should
+    support the \texttt{define} function.  \texttt{define} is like
+    \texttt{let} in OCaml, and creates a binding of a variable to a value.
+    It must have two arguments, the first of which is an identifier and the
+    second of which is a primitive type or an arbitrary expression, and it
+    evaluates its second argument and binds the identifier to its value
+    (just like a \texttt{let} at the top--level of OCaml).  To implement
+    this your evaluation function must maintain a top--level environment
+    containing the values of variables that have been \texttt{define}d.
+    This top--level environment should persist from one evaluation call to
+    another.  For example, the following sequence of inputs should result in
+    the output 3:
+
+      \vspace{-1mm}
+
+      \begin{center}
+
+        \begin{BVerbatim}
+        (define x 3);;
+        x;;
+        \end{BVerbatim}
+
+      \end{center}
+
+      \vspace{-2mm}
+
+      Notice that as identifiers are defined in Section
+    \ref{section:scanning}, and in real Scheme, they include names that most
+    languages don't consider to be identifiers.  For example, \texttt{*+/-?}
+    is a valid identifier that can have a defined value in this project, and
+    in real Scheme.
+
+      \texttt{define} can bind variables to any possible Scheme values.  In
+    this project a \texttt{define} expression itself (unlike in real Scheme)
+    evaluates to whatever its second operand evaluated to, so a
+    \texttt{define} can be used as a subexpression of a larger expression.
+    Although we don't have any notion of nested scopes in this project, the
+    effect will be that the Scheme top--level that you are implementing is
+    dynamically scoped, and so values may be redefined at any time, even
+    with different types.  When a defined value is used later, its latest
+    definition is the result.
+
+      Notice that since \texttt{define} introduces a side effect, we have to
+    address the issue of evaluation order.  For operators and functions that
+    have multiple arguments where all arguments are evaluated (see below),
+    the arguments must be evaluated \textbf{left--to--right}.  Also, as
+    discussed above, our Scheme interpreter uses call--by--value, meaning
+    that arguments or operands of operators or function are evaluated before
+    the operator or function is performed on them.  However, conditionals
+    (both forms of \texttt{if}) are exceptions to full call--by--value.
+    When a conditional is evaluated, the guard must be evaluated
+    \textbf{first}, and if it's true, \textbf{only} the first arm is
+    evaluated; if the second arm (the ``else'' part) of a three--argument
+    conditional has any side effects they will not occur in this case.
+    Likewise, if the guard is false, any side effects in the first arm will
+    not occur in either a two--argument or a three--argument conditional if
+    the guard is false.
+
+      Consider the following example:
+
+      \vspace{-2mm}
+
+      \begin{center}
+
+        \begin{BVerbatim}
+        (define w 1);;
+        (if (< w 2) (define w 3) 4);;
+        w;;
+        \end{BVerbatim}
+
+      \end{center}
+
+      \vspace{-2mm}
+
+      The \texttt{if} expression would print the value \texttt{3}, because the
+    guard \texttt{(< w 2)} is evaluated \textbf{before} the \texttt{(define
+    w 3)}, and, because the guard is initially true (with the preexisting
+    value of \texttt{w}) the \texttt{define} is executed (so \texttt{w}'s
+    value becomes \texttt{3}) and its result is printed.  If the
+    \texttt{define} were executed before the guard was evaluated then the
+    guard would be false, but this is not what should occur.
+
+      Also consider the following example:
+
+      \vspace{-2mm}
+
+      \begin{center}
+
+        \begin{BVerbatim}
+        (define x 2);;
+        (define y 4);;
+        (define z 6);;
+        (if (< x 3) (define y 5) (define z 6));;
+        x;;
+        y;;
+        z;;
+        \end{BVerbatim}
+
+      \end{center}
+
+      \vspace{-2mm}
+
+      The guard \texttt{(< w 2)} is true when evaluated, only the first or
+    leftmost \texttt{define} inside the \texttt{if} is executed, and
+    \texttt{x}, \texttt{y}, and \texttt{z} have the values \texttt{2},
+    \texttt{5}, and \texttt{6} subsequently.
+
+    \subsection{Evaluation and output}
+
+      Your evaluator will have to have code that executes until the end of the
+    input, similar to the pseudocode given at the end of Section
+    \ref{section:scanning}.  However, this code will have to call your
+    parser to parse the list of tokens, construct the AST, interpret or
+    execute it, and print the final result, which may be any Scheme
+    primitive type.  The final result of executing each expression should be
+    printed on a line by itself, ending with a newline.
+
+    \subsection{Input validity}
+
+      Note that as in the previous parts \textbf{we will only test your
+    interpreter with valid input} (as defined for this project), so your
+    code may do whatever you want if given bad input.  This means that not
+    only can your interpreter expect that it will only see syntactically
+    valid Scheme expressions, but expressions will always be semantically
+    valid, in that the operators and functions will always be applied to the
+    right types of operands as described below.  (However, as above, it's
+    recommended that you add reasonable error handling in the process of
+    coding for your own benefit.)
+
+      Since your interpreter can expect valid expressions, you don't need to
+    handle cases where expressions use an identifier before that identifier
+    has been given a value using \texttt{define} in any particular required
+    way.  You also don't need to handle in any particular way cases in which
+    any primitive type values or built--in operators or functions are
+    redefined, or anything other than a variable name is used as the first
+    operand of a \texttt{define}.  Another example is that you don't need to
+    handle in any particular way cases where primitive operators or
+    built--in functions are used alone as expressions, or as the results of
+    expressions.  Similarly, there is no specific way you have to handle
+    arithmetic operators being applied to nonnumeric operands, or comparison
+    operators being applied to two operands that are of different types.
+    This is not an exhaustive list (creating an exhaustive list of
+    semantically invalid expressions could be impractical), so just keep in
+    mind that your interpreter only has defined behavior for syntactically
+    and semantically valid expressions.
+
+  \section{Compiling and testing your code}
+
+    Your makefile \textbf{must} be named \texttt{Makefile}, and it
+  \textbf{must} have targets named \texttt{scanner}, \texttt{parser}, and
+  \texttt{interpreter}, that build three executables with those exact names.
+  The submit server must be able to create these three executables if it
+  issues the commands ``\texttt{make -f Makefile scanner}'', ``\texttt{make
+  -f Makefile parser}'', and ``\texttt{make -f Makefile interpreter}''.
+
+    You are not required to use separate compilation, although you are
+  encouraged to do so; it is no more difficult than in C, and there is no
+  reason to unnecessarily compile the same code multiple times on either the
+  Grace systems or on the submit server.  To compile code separately, use
+  the \texttt{-c} flag to the OCaml compiler \texttt{ocamlc}, which produces
+  a compiled OCaml object file with extension \texttt{.cmo} (as well as an
+  interface file with extension \texttt{.cmi}); object files can be linked
+  by \texttt{ocamlc} to produce an executable.  Still, if you don't use
+  separate compilation (your rules creating executables just compile
+  \texttt{.ml} source files directly to produce executables) we will never
+  even know, as long as your executables are built and run correctly.
+
+    Note that, unlike the C compiler, the order that OCaml object files appear
+  on the command line is significant for \texttt{ocamlc}.  Files that contain
+  definitions used by other files must appear \textbf{before} them in
+  compilation commands, because the OCaml compiler does not accept either
+  \texttt{\#load} or \texttt{\#use} in compiled files (these directives are
+  defined in and used only for the OCaml top--level).  For example, if a
+  file \texttt{a.ml} uses definitions in the \texttt{Str} module, and
+  contains functions that are used in \texttt{b.ml}, then, assuming separate
+  compilation was used to create \texttt{.cmo} files \texttt{a.cmo} and
+  \texttt{b.cmo}, the compilation command (assuming the desired executable
+  name was \texttt{runme}) would have to have the library and object file
+  names in this order:
+
+    \vspace{-2mm}
+
+    \begin{center}
+
+      \texttt{ocamlc str.cma a.cmo b.cmo -o runme}
+
+    \end{center}
+
+    \vspace{-1.5mm}
+
+    If you are using separate compilation, note that when OCaml code has an
+  error, sometimes the OCaml linker gets confused by the previous contents
+  of object files even after the error is fixed, and you will see a linking
+  error that looks something like the following:
+
+    \vspace{-1.5mm}
+
+    \begin{center}
+
+      \begin{BVerbatim}[gobble=6]
+      Error: Files a.cmo and b.cmo
+             make inconsistent assumptions over interface C
+      \end{BVerbatim}
+
+    \end{center}
+
+    \vspace{-1.5mm}
+
+    As a result, you probably want to add a ``\texttt{clean}'' target to your
+  \texttt{Makefile} that will remove all \texttt{.cmo} object files
+  (\textbf{other than} \texttt{get\_input.cmo}), so that you can easily
+  recompile everything when this error is seen.
+
+    As described, your three executable programs \texttt{scanner},
+  \texttt{parser}, and \texttt{interpreter} are going to have to have code
+  (presumably at the bottom) that is going to repeat indefinitely, until the
+  end of the input is seen.  However, you are probably also going to want to
+  be able to load your code into the OCaml top--level to test your helper
+  functions; if you write your entire scanner, for example, in one file,
+  then whenever you load your file into the OCaml top--level the infinite
+  repetition will start to run.  Furthermore, when you terminate the
+  infinite repetition by pressing control--d, the OCaml top--level is going
+  to stop.  Therefore you probably want to break your scanner up into (at
+  least) two separate files, one with most of the scanner, and one just with
+  the infinite repetition, so that you can load the first part and test
+  functions without the infinite repetition running.  The second part will
+  have to \texttt{open} the module defined by the first part (or other
+  parts).
+
+    It can be a little tricky to write OCaml source files that are going to be
+  both loaded into the top level as well as compiled, without using
+  facilities that we haven't discussed, so the best and easiest solution, if
+  you want to use your code in the top level, is to just use separate
+  compilation, compile it to \texttt{.cmo} files using \texttt{ocamlc -c},
+  and \texttt{\#load} those object files into the OCaml top--level, rather
+  than trying to \texttt{\#use} the corresponding \texttt{.ml} source files
+  at the top level.
+
+    Lastly, note that since our \texttt{get\_input} function prints the prompt
+  character \texttt{>} before reading a line, this character will appear in
+  output files that are created using input redirection, such as the public
+  test expected output files.
+
+  \section{Example}
+
+    The example below shows three short execution sessions with the three
+  programs \texttt{scanner}, \texttt{parser}, and \texttt{interpreter}; it
+  is assume that the commands ``\texttt{make -f Makefile scanner}'',
+  ``\texttt{make -f Makefile parser}'', and ``\texttt{make -f Makefile
+  interpreter}'' were all issued prior to the example.  The UNIX prompt on
+  this system is \texttt{grace2:\string~/330/proj4:}, and for clarity the
+  user's input is shown in \textcolor{blue}{blue}, while everything else is
+  output produced by the three programs.  control--d is pressed to terminate
+  each program.  (To save space on the printed page the example is shown in
+  three columns.)
+
+    \vspace{-1mm}
+
+    {
+
+      \addtolength{\columnsep}{-4.5mm}
+
+      \begin{multicols}{3}
+
+        \small
+
+        \begin{Verbatim}[gobble=6,baselinestretch=.95,commandchars=\\\{\},
+                         xleftmargin=4mm]
+      grace2:~/330/proj4: \textcolor{blue}{scanner}
+      > \textcolor{blue}{3;;}
+      [3]
+      > \textcolor{blue}{"banana";;}
+      ["banana"]
+      > \textcolor{blue}{(+ 2 3);;}
+      [(; +; 2; 3; )]
+      > \textcolor{blue}{(+ 2 (* 3 4));;}
+      [(; +; 2; (; *; 3; 4; ); )]
+      >
+        \end{Verbatim}
+
+        \begin{Verbatim}[gobble=6,baselinestretch=.95,commandchars=\\\{\},
+                         xleftmargin=4mm]
+      grace2:~/330/proj4: \textcolor{blue}{parser}
+      > \textcolor{blue}{3;;}
+      Valid.
+      > \textcolor{blue}{"banana";;}
+      Valid.
+      > \textcolor{blue}{(+ 2 3;;}
+      Invalid.
+      > \textcolor{blue}{())(;;}
+      Invalid.
+      >
+        \end{Verbatim}
+
+        \begin{Verbatim}[gobble=6,baselinestretch=.95,commandchars=\\\{\}]
+      grace2:~/330/proj4: \textcolor{blue}{interpreter}
+      > \textcolor{blue}{3;;}
+      3
+      > \textcolor{blue}{"banana";;}
+      "banana"
+      > \textcolor{blue}{(+ 330 351);;}
+      681
+      > \textcolor{blue}{(= 100 101);;}
+      #f
+      >
+        \end{Verbatim}
+
+      \end{multicols}
+
+    }
+
+    \vspace{-4.5mm}
+
+  \section{Project requirements and submitting your
+           project\label{section:requirements}}
+
+    \begin{enumerate}
+
+      \addtolength{\itemsep}{-.5mm}
+
+      \item You may use the OCaml regular expression library module
+            \texttt{Str} in \texttt{str.cma}, the OCaml list module
+            \texttt{List}, and the \texttt{Pervasives} module.  If you need
+            to convert characters to strings you may use the library
+            functions \texttt{String.make} or \texttt{Char.escaped} (see the
+            OCaml documentation for details), but other than what's listed
+            here \textbf{no other OCaml library modules may be used}.
+
+      \item Loops \textbf{may not be used at all anywhere}.
+
+            \enlargethispage{5mm}
+
+      \item A \textbf{small} number of references may be used.  Since to get
+            a perfect score your interpreter has to support side effects
+            (\texttt{define}), references are the mechanism in OCaml when
+            side effects are required.
+
+      \item You can create whatever functions in whatever files you like, as
+            long as you don't violate the restrictions above, and your
+            makefile \texttt{Makefile} produces the three expected
+            executables (with names exactly as described).
+
+      \item Since your code will be compiled, as long as the executables are
+            properly created incomplete match warnings don't matter (they
+            are warnings, but since they aren't errors they don't prevent
+            compilation).
+
+      \item Your three executables should read all of their input from their
+            standard input until the end of the input is seen, and write all
+            of their output to their standard output.  Of course in UNIX
+            standard input may be redirected from a file, or standard output
+            may be redirected to a file.
+
+      \item To check that your output matches the expected output you can
+            use the UNIX \texttt{diff} command, for example:
+
+            \vspace{-5.5mm}
+
+            \begin{center}
+
+              \begin{BVerbatim}
+        scanner < public1.input > my-output
+        diff -u public1.output my-output
+              \end{BVerbatim}
+
+            \end{center}
+
+            \vspace{-3mm}
+
+            (Note that the output should compare
+            \textbf{\underline{exactly}}, including whitespace so do
+            \textbf{not} use diff's \texttt{bB} options.)
+
+      \item Each of your source files \textbf{must have} a comment near the
+            top that contains your name, TerpConnect login ID (which is your
+            directory ID), your university ID number, and your section
+            number.
+
+            The Campus Senate has adopted a policy asking students to
+            include the following statement on each major assignment in
+            every course: ``I pledge on my honor that I have not given or
+            received any unauthorized assistance on this assignment.''
+            Consequently you're requested to include this pledge in a
+            comment near the top of your program source file.  See the next
+            section for important information regarding academic integrity.
+
+      \item Note that although you are not being graded on your source code
+            or style (see the separate project grading handout), if the TAs
+            cannot read or understand your code they cannot help should you
+            have to come to office hours, until you return with a
+            well--written and clear program.
+
+      \item As before, to submit your program just type the single command
+            \texttt{submit} from the \texttt{proj4} directory, where your
+            source files \texttt{and \texttt{Makefile}} should be.  In this
+            project also you may lose credit for having more than fifteen
+            submissions.
+
+    \end{enumerate}
+
+    \vspace{-4.5mm}
+
+  \section{Academic integrity}
+
+    Please \textbf{carefully read} the academic honesty section of the course
+  syllabus.  \textbf{Any evidence} of impermissible cooperation on projects,
+  use of disallowed materials or resources, or unauthorized use of computer
+  accounts, \textbf{will be submitted} to the Student Honor Council, which
+  could result in an XF for the course, or suspension or expulsion from the
+  University.  Be sure you understand what you are and what you are not
+  permitted to do in regards to academic integrity when it comes to project
+  assignments.  These policies apply to all students, and the Student Honor
+  Council does not consider lack of knowledge of the policies to be a
+  defense for violating them.  Full information is found in the course
+  syllabus-- please review it at this time.
+
+\end{document}

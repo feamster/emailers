@@ -1,0 +1,183 @@
+\documentclass[11pt]{article}
+
+  \usepackage{330-f12}
+
+  \usepackage[none,light,outline,timestamp]{draftcopy}
+
+  % for quizzes and exams, due to the nameblock
+  \addtolength{\headsep}{-6mm}
+  \addtolength{\textheight}{6mm}
+
+\begin{document}
+
+  \hspace{\fill}%
+  \nameblock
+
+  \smallskip
+
+  \header{\course}{Quiz\ \#3}{\Term}
+
+  \vspace{-3mm}
+
+    \noindent
+    This quiz is 40 points.  \textbf{Do not start} until you're told you can
+  begin.  You must turn in your quiz \textbf{immediately} when the end of
+  the quiz is announced.
+
+  \vspace{-2mm}
+
+  \begin{enumerate}
+
+    \addtolength{\itemsep}{20mm}
+
+    \item {[10 pts.]} Give an OCaml type definition that will allow the
+          following to be valid if typed in at the top level.  (It doesn't
+          matter what name you give your type definition.)
+
+          \medskip
+
+          \begin{centering}
+
+            \begin{BVerbatim}
+        let wallet = [Card ("Credit Card", "VISA"); Dollars 20.5;
+                      Card ("ID", "Driver's License")];;
+            \end{BVerbatim}
+
+          \end{centering}
+
+          \medskip\smallskip
+
+          \answerblank{4}{\linewidth}{9mm}
+
+    \item {[12 pts.]} The function \texttt{mapit} below is a variation of
+          the (noncurried) \texttt{map} function discussed in class (we named
+          it \texttt{mapit}, rather than \texttt{map}, because it's a bit
+          different):
+
+          \smallskip
+
+          \begin{centering}
+
+            \begin{BVerbatim}
+        let rec mapit (f, l) = match l with
+            [] -> []
+          | (a::b::t) -> (f (a, b))::(mapit (f, b::t))
+          | (a::_) -> [];;
+            \end{BVerbatim}
+
+          \end{centering}
+
+          \medskip
+
+          Give the output that would be produced for the following call to
+          the \texttt{mapit} function shown below.  The call uses a list
+          whose definition is also shown.  (The \texttt{mapit} function, and
+          the code below, are both valid.)
+
+          \medskip
+
+          \begin{centering}
+
+            \begin{BVerbatim}
+        let numbers = [1; 1; 2; 3; 5; 8];;
+        mapit ((fun (a, b) -> a + b), numbers);;
+            \end{BVerbatim}
+
+          \end{centering}
+
+          \bigskip
+
+          \answerblank{5}{\linewidth}{9mm}
+
+        %             \item \begin{Verbatim}
+        % let game = ["Scissors"; "Paper"; "Rock"; "Lizard"; "Spock"];;
+        % mapit ((fun (str1, str2) -> str1 ^ " beats " ^ str2), game);;
+        %                   \end{Verbatim}
+        % 
+        %                   \medskip
+        % 
+        %                   \answerblank{3}{\linewidth}{9mm}
+        % 
+        %           \end{enumerate}
+        % 
+        %           \vspace{-2.5mm}
+        % 
+        %     \item Give the type of the \texttt{mapit} function:
+        % 
+        %           \bigskip\medskip
+        % 
+        %           \begin{centering}
+        % 
+        %             \ans[4.5in]
+        % 
+        %           \end{centering}
+        %   
+        %   \end{enumerate}
+        % 
+        %   \vspace{-2.5mm}
+
+          \turnover
+
+    \item {[18 pts.]}
+
+          \vspace{-3mm}
+
+          \begin{enumerate}
+
+            \addtolength{\itemsep}{16mm}
+
+            \item Write a recursive OCaml function \texttt{print\_list} that
+                  will print a list of integers.  The output produced should
+                  consist of each number in the list, with a single blank
+                  space separating them.  A blank space should not precede
+                  the first number or follow the last one.  The function
+                  should just not do anything if called on an empty list.
+                  For example, consider the following sample call to your
+                  function:
+
+                  \medskip
+
+                  \begin{centering}
+
+                    \begin{BVerbatim}
+        let numbers = [3; 3; 0; 2; 0; 1; 2];;
+        print_list numbers;
+                    \end{BVerbatim}
+
+                  \end{centering}
+
+                  \medskip
+
+                  The output it should produce for this call is
+                  (blank spaces are shown as \verb*@ @):
+                  \verb*@3 3 0 2 0 1 2@
+
+                  \smallskip
+
+                  You may use the following OCaml library functions:%
+
+                  \medskip
+
+                  \begin{centering}
+
+                    \begin{BVerbatim}
+        print_int: int -> unit
+        print_string: string -> unit
+                    \end{BVerbatim}
+
+                  \end{centering}
+
+                  \bigskip
+
+                  \answerblank{8}{\linewidth}{9mm}
+
+            \item Give the type of your function \texttt{print\_list}:%
+                  \hspace{2mm}\ans[3.5in]
+
+          \end{enumerate}
+
+          \vspace{-2.5mm}
+
+  \end{enumerate}
+
+\end{document}

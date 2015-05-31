@@ -1,0 +1,525 @@
+\documentclass[11pt]{article}
+\usepackage{graphics,epsfig,amsmath,amssymb}
+\usepackage{epsf}
+\usepackage{boxedminipage}
+\usepackage{fullpage}
+\usepackage{fancyheadings}
+\usepackage{times}
+\usepackage{amsmath}
+\usepackage{ifthen}
+%\usepackage{pseudocode}
+\usepackage{psfrag}
+\pagestyle{fancy}
+
+\setlength{\topmargin}{.2in}
+\setlength{\parindent}{0in}
+\setlength{\parskip}{.15in}
+\setlength{\footskip}{0.1in}
+
+\newcounter{pctr}
+\stepcounter{pctr}
+
+\newcounter{partctr}
+
+\newcommand{\ie}{{\em i.e.}}
+\newcommand{\eg}{{\em e.g.}}
+
+\newcommand{\ch}{\item {\bf True~~/~~False~~}}
+\newcommand{\tfnote}{\probnote{Circle True or False for each choice.}}
+\newcommand{\allapply}{\probnote{Circle ALL that apply}}
+\newcommand{\bestanswer}{\probnote{Circle the BEST answer}}
+\newcommand{\ansbelow}{\probnote{Answer legibly in the space below.}}
+
+\renewcommand{\thesection}{{\bf\Roman{section}}}
+\renewcommand{\theenumi}{{\bf\Alph{enumi}.}}
+\renewcommand{\labelenumi}{{\bf\Alph{enumi}.}}
+
+\newcommand{\setversion}[1]{\def\version{#1}}
+%\setversion{answers}
+\setversion{quiz}
+
+\ifthenelse{\equal{\version}{answers}}{
+    \newcommand{\sols}[1]{#1}
+}{
+    \newcommand{\sols}[1]{}
+}
+
+
+\begin{document}
+
+\newcounter{answer}
+\newenvironment{answer}[1][\relax]{\refstepcounter{answer}\begin{list}%
+ {}{\leftmargin 0pt\rightmargin 0pt\labelsep 3pt\parsep 0pt%
+ \setlength{\listparindent}{\parindent}}
+    \item {\bf Answer \theanswer #1}\
+    }{\hspace*{\fill}$\blacksquare$\end{list}} 
+
+
+
+% uses these macros to delimit problems
+\newcommand\prob[1]%
+  {\begin{itemize}\item[]%
+   \vspace{.2in}{\bf\thepctr. ~[#1~ points]:}\stepcounter{pctr}}
+\newcommand\eprob{\end{itemize}}
+\newcommand\probnote[1]%
+  {\\\begin{tabular}{cr} \hspace{3in} & {\bf (#1)} \\ \end{tabular}}
+
+% headers/footers
+\lhead[\fancyplain{}{\bf Page \thepage ~of \pageref{lastpage}}]%
+      {Online CS 6250 Fall 2014, Final Exam}
+\lfoot[{\bf Name: }]%
+      {{\bf Name: }}
+\rhead[Online CS 6250 Fall 2014, Final Exam]%
+      {\fancyplain{}{\bf Page \thepage ~of \pageref{lastpage}}}
+\cfoot{}
+%\setlength{\headrulewidth}{0in}
+\setlength{\headsep}{.3in}
+
+ % Compact itemize and enumerate.  Note that they use the same counters and
+% symbols as the usual itemize and enumerate environments.
+\def\compactify{\itemsep=0pt \topsep=0pt \partopsep=0pt \parsep=0pt}
+\let\latexusecounter=\usecounter
+\newenvironment{CompactItemize}
+  {\def\usecounter{\compactify\latexusecounter}
+   \begin{itemize}}
+  {\end{itemize}\let\usecounter=\latexusecounter}
+\newenvironment{CompactEnumerate}
+  {\def\usecounter{\compactify\latexusecounter}
+   \begin{enumerate}}
+  {\end{enumerate}\let\usecounter=\latexusecounter}
+
+
+\cfoot{}
+\pagestyle{empty}
+
+\begin{center}
+\begin{tabular}{lr}
+\resizebox{1in}{!}{\includegraphics{GT}}
+&
+\parbox{4in}{
+    {\Large\it College of Computing} \\ \\
+    {\LARGE\sf Georgia Institute of Technology} 
+}
+%
+\end{tabular}
+\end{center}
+
+\begin{center}
+{\Large{\bf Online CS 6250: Computer Networking: Fall 2014} \\
+ \vspace{.15in} \Huge{\bf Final Exam}} 
+%\vspace{.2in}
+
+% this is the box on the first page with overall quiz information
+\begin{boxedminipage}[h]{6in}
+There are \underline{15 questions} and \underline{\pageref{lastpage}
+  pages} in this quiz booklet (including this page).  Answer each
+question according to the instructions given.  You have {\bf 85
+  minutes}.
+
+%\vspace{.1in} The last page is an easy question.  {\em Rip this
+%page off of your exam for five bonus points.}  Turn it in anonymously if
+%you like.
+
+
+\vspace{.1in} 
+If you find a question ambiguous, write down any
+assumptions you make.  {\bf Be neat and legible.}  If I can't
+understand your answer, I can't give you credit!  You may want to look
+through the whole quiz to identify which questions you can complete most
+quickly for the most points.
+
+\vspace{.1in} 
+Use the empty sides of this booklet if you need scratch space.  You
+may also use them for answers, although you shouldn't need to.  {\em If you
+do use the blank sides for answers, make sure to clearly say so!}
+
+\vspace{.1in} 
+{\bf Note well: Write your name in the space below AND your initials at the bottom of each
+page of this booklet.}
+
+\begin{center}{\bf THIS IS AN ``CLOSED BOOK'' QUIZ.\\
+YOU ARE PERMITTED ONE DOUBLE-SIDED SHEET OF PAPER FOR NOTES.\\
+{\em ABSOLUTELY NO EMAIL OR MESSAGING OF ANY KIND!} \\
+MAKE SURE YOU'VE READ ALL THE INSTRUCTIONS ABOVE!}
+\end{center}
+{\em Initial here to indicate that (1)~you've read the instructions and (2)~
+you agree to abide by the Georgia Tech Honor Code: }
+
+\vspace{.1in} The last page has easy bonus questions, which you can
+answer outside of the allotted time.  Rip the last page off of your
+quiz for five bonus points.  Turn it in anonymously if you like.
+
+\end{boxedminipage}
+\end{center}
+\vspace*{0.25in}
+\begin{center}
+{\it Do not write in the boxes below}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|} \hline \hline
+{\bf 1-5 (xx/20)}& {\bf 6-12 (xx/49)}& {\bf 13-15 (xx/16)} & {\bf Bonus (xx/5)} & {\bf Total
+  (xx/85)}  \\ \hline 
+ & & & & \\ 
+ & & & &\\ \hline \hline
+\end{tabular}
+\end{center}
+
+\vspace{.2in}
+{\bf\Large{Name:}}
+
+\newpage
+\pagestyle{fancy}
+
+
+\prob{4} From the Dave Clark paper, {\em Design Principles of the DARPA
+  Internet Protocols}, which was the first and foremost fundamental design goal of
+the Internet?
+\bestanswer
+
+\setcounter{partctr}{0}
+\begin{list}{\bf\Alph{partctr}.}{\usecounter{partctr}}
+\item Security of end hosts and traffic.
+\item Multiplexed utilization of existing interconnected networks.
+\item Cost-effectiveness.
+\item East of management
+\item None of the above.
+\end{list}
+\eprob
+
+\sols{
+\begin{answer}
+The answer is: (B).
+\end{answer}
+}
+
+
+\prob{4} Which of the following are characteristics of packet switching?
+\allapply
+\setcounter{partctr}{0}
+\begin{list}{\bf\Alph{partctr}.}{\usecounter{partctr}}
+%\begin{enumerate}
+\item Variable delay.
+\item ``Busy signals''
+\item Sharing of network resources among multiple recipients.
+\item Dedicated resources between each pair of sender and receiver.
+\item None of the above.
+\end{list}
+\eprob
+
+\sols{
+\begin{answer}
+The answer is: (A), (C).
+\end{answer}
+}
+
+\prob{4} Which of the following most accurately describes the {\em most common}
+uses for eBGP, iBGP, and IGP?
+\bestanswer
+\setcounter{partctr}{0}
+\begin{list}{\bf\Alph{partctr}.}{\usecounter{partctr}}
+%\begin{enumerate}
+\item eBGP is used
+  within an AS for external destinations, iBGP is used between ASes for
+  external destinations, and IGP is used within an AS for internal destinations.
+\item eBGP is used between ASes for external destinations, iBGP is used
+  within an AS for external destinations, and IGP is used within an AS
+  for destinations within an AS.
+\item eBGP is used between ASes for external destinations, iBGP is used
+  within an AS for internal destinations, and IGP is used within an AS
+  for external destinations.
+\item None of the above
+\end{list}
+\eprob
+
+\sols{
+\begin{answer}
+The answer is (B).
+\end{answer}
+}
+
+\newpage
+\prob{4} Which of the following is true about required router buffer
+sizing if TCP senders are {\em not} synchronized?
+\allapply
+\setcounter{partctr}{0}
+\begin{list}{\bf\Alph{partctr}.}{\usecounter{partctr}}
+%\begin{enumerate}
+\item The amount of buffering to sustain complete utilization is more
+  than the bandwidth-delay product.
+\item The amount of buffering required to sustain complete utilization
+  is less than the bandwidth-delay product.
+\item Packets from different TCP flows will experience packet drops at
+  different times.
+\item The total amount of packets in the bottleneck buffer at any time
+  will be a normal random variable whose standard deviation is inversely
+  proportional to the square root of the number active flows.  
+\item None of the above
+\end{list}
+\eprob
+
+\sols{
+\begin{answer}
+The answer is: (A), (C), (D).
+\end{answer}
+}
+
+
+\prob{4}  Which of the following are characteristics of interdomain
+routing policies that are commonly applied?
+\allapply
+\setcounter{partctr}{0}
+\begin{list}{\bf\Alph{partctr}.}{\usecounter{partctr}}
+%\begin{enumerate}
+\item Given multiple routes to the same IP prefix, an AS will prefer a
+  route through a provider over a route through its customer.
+\item Given multiple routes to the same IP prefix, an AS will prefer a
+  route through a customer over a route through its peer.
+\item An AS will not advertise a route that it learns via a provider
+  to a peer.
+\item An AS will not advertise a route that it learns via a provider
+  to another provider.
+\item All of the above
+\end{list}
+\eprob
+
+\sols{
+\begin{answer}
+The answer is: (B), (C), (D).
+\end{answer}
+}
+
+\prob{4} What are some of the possible causes of congestion collapse?
+\allapply
+
+\setcounter{partctr}{0}
+\begin{list}{\bf\Alph{partctr}.}{\usecounter{partctr}}
+\item Faulty router software
+\item Spurious retransmissions in flight
+\item Packets traveling distances that are too far in between routers
+\item Undelivered packets
+\item None of the above.
+\end{list}
+\eprob
+
+\sols{
+\begin{answer}
+The answer is: (B), (D).
+\end{answer}
+}
+
+
+\prob{4} Which of the following are true about additive increase
+multiplicative decrease (AIMD) and fairness?
+\allapply
+\setcounter{partctr}{0}
+\begin{list}{\bf\Alph{partctr}.}{\usecounter{partctr}}
+%\begin{enumerate}
+\item Additive increase improves efficiency.
+\item Additive increase improves fairness.
+\item Multiplicative decrease improves efficiency.
+\item Multiplicative increase improves fairness.
+\item All of the above.
+\end{list}
+\eprob
+
+\sols{
+\begin{answer}
+The answer is: (A), (D).
+\end{answer}
+}
+
+\prob{4} Which of the following pathologies can streaming audio and
+video tolerate by adding more buffering at the receiver?
+\allapply
+\setcounter{partctr}{0}
+\begin{list}{\bf\Alph{partctr}.}{\usecounter{partctr}}
+%\begin{enumerate}
+\item Packet loss
+\item Delay variation or jitter
+\item Low throughput
+\item Out of order packets
+\item All of the above
+\end{list}
+\eprob
+
+\sols{
+\begin{answer}
+The answer is (A), (B), (D).
+\end{answer}
+}
+
+\newpage
+\prob{4} 
+Which of the following statistics are possible to gather from
+information such as flow sampling (\eg, NetFlow)?
+\allapply
+\setcounter{partctr}{0}
+\begin{list}{\bf\Alph{partctr}.}{\usecounter{partctr}}
+%\begin{enumerate}
+\item The time in between each packet transmission
+\item Packet headers
+\item The number of bytes that each flow sends
+\item The number of packets that each flow sends
+\item None of the above
+\end{list}
+\eprob
+
+\sols{
+\begin{answer}
+The answer is: (C), (D).
+\end{answer}
+}
+
+
+\prob{4}  Which of the following are true about a leaky bucket traffic shaper?
+\bestanswer
+\setcounter{partctr}{0}
+\begin{list}{\bf\Alph{partctr}.}{\usecounter{partctr}}
+%\begin{enumerate}
+\item A link that is shaped with a leaky bucket traffic shaper will
+  never send traffic on the outgoing link at a rate that is higher than
+  the average drain rate of the bucket.
+\item On a link that is shaped by a leaky bucket, a sender can never
+  send traffic faster than the average drain rate of the bucket; the
+  link will simply drop any traffic that is sent at a higher rate.
+\item Comcast's PowerBoost is likely implemented with a leaky bucket
+  traffic shaper.
+\item None of the above
+\end{list}
+\eprob
+
+\sols{
+\begin{answer}
+The answer is: (A).
+\end{answer}
+}
+
+\prob{4} What are some advantages of separating the data and control
+planes, as in a software defined network (SDN)?
+\allapply
+
+\setcounter{partctr}{0}
+\begin{list}{\bf\Alph{partctr}.}{\usecounter{partctr}}
+\item Independent evolution of data and control plane.
+\item Less likelihood of failure.
+\item Network-wide view of the state of forwarding elements.
+\item Ability to control a network from a single, centralized software program.
+\item None of the above.
+\end{list}
+\eprob
+
+\sols{
+\begin{answer}
+\end{answer}
+}
+
+
+\prob{4} What is the meaning of ``parallel composition'', in terms of
+Pyretic policies?
+\allapply
+\setcounter{partctr}{0}
+\begin{list}{\bf\Alph{partctr}.}{\usecounter{partctr}}
+%\begin{enumerate}
+\item Apply each policy to the same copy of the packet concurrently.
+\item Apply multiple policies to packets in sequence.
+\item Make a copy of the original packet, then apply each policy to an
+  independent copy of the packet.
+\item Apply exactly one of the parallel policies to a copy of the
+  packet, depending on which policy matches.
+\item All of the above.
+\end{list}
+\eprob
+
+\sols{
+\begin{answer}
+\end{answer}
+}
+
+\prob{4} What does the Pyretic policy {\tt match(srcip=A) >> fwd(2)} do?
+\allapply
+\setcounter{partctr}{0}
+\begin{list}{\bf\Alph{partctr}.}{\usecounter{partctr}}
+%\begin{enumerate}
+\item For all packets that will be forwarded via output port 2, rewrite
+the source IP address to A.
+\item Forward packets matching source IP address A via output port 2.
+\item Rewrite packets matching source IP address A so that the virtual packet
+  header for {\tt outport} has the value 2.
+\item Drop packets whose source IP address is not A.
+\item All of the above
+\end{list}
+\eprob
+
+\sols{
+\begin{answer}
+\end{answer}
+}
+
+%% \newpage
+%% \prob{4} 
+%% What are some mechanisms to create virtual hosts and links in a virtual network?
+%% \allapply
+%% \setcounter{partctr}{0}
+%% \begin{list}{\bf\Alph{partctr}.}{\usecounter{partctr}}
+%% %\begin{enumerate}
+%% \item Virtual links with IP-in-IP tunnels
+%% \item Virtual links with Ethernet-in-IP (EGRE) encapsulation
+%% \item Virtual hosts with virtual machines
+%% \item Virtual hosts with virtual environments
+%% \item All of the above
+%% \end{list}
+%% \eprob
+
+%% \sols{
+%% \begin{answer}
+%% \end{answer}
+%% }
+
+
+\newpage
+\prob{4}  Which of the following are true about BGP routing security?
+\allapply
+\setcounter{partctr}{0}
+\begin{list}{\bf\Alph{partctr}.}{\usecounter{partctr}}
+%\begin{enumerate}
+\item An AS can defend against route hijack attacks by filtering route
+  advertisements for IP prefixes that neighbors do not own.
+\item An AS can defend against AS path shortening attacks by filtering
+  route advertisements for AS paths that it does not own.
+\item In Secure BGP (S-BGP), an AS that advertises a route signs a
+  version of the AS path that includes the next AS along the path (i.e.,
+  the AS to whom it is advertising the route).
+\item Attackers can use short-lived BGP routing announcements to make it
+  more difficult to trace certain types of attacks (e.g., spam, DoS).
+\item None of the above
+\end{list}
+\eprob
+
+\sols{
+\begin{answer}
+\end{answer}
+}
+
+\prob{4}  What are some mechanisms that can be used to implement censorship?
+\allapply
+\setcounter{partctr}{0}
+\begin{list}{\bf\Alph{partctr}.}{\usecounter{partctr}}
+%\begin{enumerate}
+\item Blocking DNS requests.
+\item Blocking TCP connections.
+\item Redirecting URLs to a block page.
+\item Withdrawing BGP routes.
+\item None of the above.
+\end{list}
+\eprob
+
+\sols{
+\begin{answer}
+\end{answer}
+}
+
+
+
+\label{lastpage}
+\end{document}

@@ -1,0 +1,31 @@
+Lecture #7: week 4, lecture 2, Thursday September 20
+
+1. Larry
+
+   Larry's office hours next Wednesday will be cancelled.
+
+2. Office hours
+
+   The schedule is on the class webpage and the office hours have started.
+
+3. Project #1
+
+   It should be posted tonight or tomorrow.
+
+4. Practice problems
+
+   Some practice problems about formal regular expressions have been
+   posted now.
+
+   Practice problems about automata (which we'll start covering today) will
+   also be posted soon.
+
+   The practice problems are very important, so work hard on them!  Don't
+   just look at the questions and answers.
+
+5. Formal r.e.'s
+
+   Emphasize that the only formal r.e. operations are concatenation,
+   alternation, and Kleene star.  All the other Ruby r.e. constructs, like
+   +, ?, anchors, character classes, backreferences, abbreviations like \w,
+   \s, \d, etc., are not allowed.

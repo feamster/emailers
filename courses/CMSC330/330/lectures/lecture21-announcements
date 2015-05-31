@@ -1,0 +1,103 @@
+Lecture #21: week 11, lecture 2, Thursday November 8
+
+1. Exam #2
+
+   - Due to the weather cancellation Exam #2 will be next THURSDAY, November
+     15, NOT next Tuesday the 13th.
+
+   - It will definitely cover material up through today.  We'll have to see
+     how far we get in class and let you know on Tuesday if it'll cover any
+     material from that lecture.
+
+   - Like before, we have some practice questions that we'll post soon (with
+     solutions).  Don't just look at the questions or answers; you have to
+     solve the problems.  If you have questions you're welcome to come to
+     office hours.
+
+   - The practice questions are NOT a guarantee of what your exam will look
+     like; they're just a study aid to let you know what you know or what
+     you might need to study more or ask questions about.
+
+   - We'll also post some exams from recent semesters in this course, which
+     are useful practice, but they were not written by this semester's
+     instructors.  Since everyone writes exams and projects a little
+     differently, the practice exams that we wrote are the best guide to the
+     types of questions that you might see (as well as your quizzes this
+     semester, and the posted practice problems).
+
+   - As of when we post these things, we may not have covered all the
+     material they ask about.  Just ignore anything that we don't cover
+     before the exam.
+
+   - At the exam:
+
+     - Use pencil for the exam- not pen- so your answers are legible.
+  
+     - Bring your University ID number to the exam.
+  
+     - The campus Honor Pledge will be on the front page.  The Campus Senate
+       requests that you write it in full and sign it on exams.  I'll give an
+       extra minute for it at the end so it doesn't come out of your exam time.
+  
+     - You will LOSE CREDIT during grading if there are any pages on the exam
+       that you haven't written your name on.  (Obviously the motivation is to
+       get you to write your name on all the pages so we don't have to deduct
+       credit from anyone.)  In the grading process the pages of everyone's
+       exam are separated, and if you don't write your name on all the pages
+       there's a chance one of your pages might get lost, and it takes much
+       longer to grade the exams when we have to figure out which pages belong
+       to whose exam.  Since it already takes a long time to grade the exams,
+       it doesn't need to be made any longer unnecessarily.
+  
+     - You must be prepared to turn in your exam immediately at the end.
+
+2. Practice problems about grammars
+
+   - They're posted.
+
+   - We may have more practice questions about parsing or the current
+     topics, depending on how fast things go in lecture.
+
+3. Test your grammar
+
+   If you have to write an grammar for an exam or a quiz, you have to "test"
+   it just like a program.  Of course you don't run it, unless you write a
+   simulation of an grammar, but you trace it through mentally.  First
+   identify what the language is, and what valid and invalid strings look
+   like (before writing the grammar).  When you've written it, trace it
+   through on valid strings of different forms, to make sure it generates
+   all of them, and invalid strings of different forms and make sure it
+   can't generate all of them.  Just like testing a method, be sure to check
+   special cases and boundary cases, like the empty string, strings of
+   length 1, any strings that are special based on the description of the
+   langauge, etc.  If the grammar is supposed to be unambiguous, make sure
+   it is.
+
+4. Quiz #4
+
+   - It'll be tomorrow.
+
+   - It'll cover material since the last quiz- the last couple of topics
+     about OCaml, and grammars.
+
+   - Do the practice problems about grammars.
+
+   - If we see that any of the prior semesters' quizzes look applicable
+     we'll post them soon also.
+
+   - Since the exam will be before you can get your quiz returned, for this
+     quiz we'll post the questions and answers a few days after the quiz.
+
+5. Project #3
+
+   - It was due Monday, but recall that any project can be submitted late,
+     with a relatively mild late penalty, meaning you can still turn it in
+     until tonight.  Even if you have to turn it in late, or even if you
+     have a project with a low score, you can still do fine in the course.
+
+   - Projects are individual work ONLY.  If you have trouble with something
+     you can come to the TAs' office hours.
+
+6. Project #4
+
+   Look for it soon.

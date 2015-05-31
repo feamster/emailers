@@ -1,0 +1,56 @@
+<html>
+
+<head>
+
+  <title>CMSC 330 - Organization of Programming Languages, Fall 2012</title>
+
+  <link rel="stylesheet" href="../../style.css" type="text/css">
+
+</head>
+
+<body>
+
+  <div class="heading">
+    <div class="heading-bigger">CMSC 330</div>
+    <div class="heading-big">Organization of Programming Languages</div>
+    <div class="heading-normal">Fall 2012</div>
+  </div>
+
+  <table border="0" rows="1" cols="2" width="100%">
+
+    <td width="22%" valign="top">
+
+      <!--#include virtual="../navigation.html" -->
+
+    </td>
+
+    <td width="78%" valign="top">
+
+      <div class="content">
+
+        <div class="content-header">
+          Exam practice and exam solutins
+        </div>
+
+        <div class="subpage">
+          <!--#include virtual="exams.shtml" -->
+        </div>
+
+    </td>
+
+  </table>
+
+  </div>
+
+  <div class="footer">
+
+  This page last modified <!--#flastmod virtual="." -->.
+
+  </address>
+
+  </div>
+
+</body>
+
+</html>
+

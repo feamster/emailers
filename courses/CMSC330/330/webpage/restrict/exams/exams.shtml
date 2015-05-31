@@ -1,0 +1,211 @@
+<!--<! --#include virtual="../../checkbacklater.html"-- >-->
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <h3> Exam #1 practice<br>
+    </h3>
+    <table border="1" cellpadding="3" align="center">
+      <thead>
+        <tr>
+          <th>Problems<br>
+          </th>
+          <th>Solutions<br>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="exam1-practice1.pdf">exam1-practice1.pdf</a><br>
+          </td>
+          <td><a href="exam1-practice1-soln.pdf">exam1-practice1-soln.pdf</a><br>
+          </td>
+        </tr>
+        <tr>
+          <td><a href="exam1-practice2.pdf">exam1-practice2.pdf</a><br>
+          </td>
+          <td><a href="exam1-practice2-soln.pdf">exam1-practice2-soln.pdf</a><br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <h4 style="margin-left: 40px;">Past semesters' exams<br>
+    </h4>
+    <p style="margin-left: 40px;">Notes:</p>
+    <ul>
+      <ul>
+        <li>The instructors teaching the course this semester didn't write any
+          of these problems, so they may be somewhat different from problems you
+          might have, because everyone has their own style of writing questions.</li>
+        <li>We may not have covered some of the material required by some of the
+          questions on some of these exams yet.</li>
+      </ul>
+    </ul>
+    <p></p>
+    <table border="1" cellpadding="3" align="center">
+      <thead>
+        <tr>
+          <th>Problems<br>
+          </th>
+          <th>Solutions<br>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="exam1-sp12.pdf">exam1-sp12.pdf</a><br>
+          </td>
+          <td><a href="exam1-sp12-soln.pdf">exam1-sp12-soln.pdf</a><br>
+          </td>
+        </tr>
+        <tr>
+          <td><a href="exam1-f11.pdf">exam1-f11.pdf</a><br>
+          </td>
+          <td><a href="exam1-f11-soln.pdf">exam1-f11-soln.pdf</a><br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;"><a href="exam1-sp10.pdf">exam1-sp10.pdf</a><br>
+          </td>
+          <td style="vertical-align: top;"><a href="exam1-sp10-soln.pdf">exam1-sp10-soln.pdf</a><br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h4 style="margin-left: 40px;"><a href="exam1-soln.pdf">Exam #1 solutions</a></h4>
+    <p><br>
+    </p>
+    <h3> Exam #2 practice<br>
+    </h3>
+    <table border="1" cellpadding="3" align="center">
+      <thead>
+        <tr>
+          <th>Problems<br>
+          </th>
+          <th>Solutions<br>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="exam2-practice1.pdf">exam2-practice1.pdf</a><br>
+          </td>
+          <td><a href="exam2-practice1-soln.pdf">exam2-practice1-soln.pdf</a><br>
+          </td>
+        </tr>
+        <tr>
+          <td><a href="exam2-practice2.pdf">exam2-practice2.pdf</a><br>
+          </td>
+          <td><a href="exam2-practice2-soln.pdf">exam2-practice2-soln.pdf</a><br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <h4 style="margin-left: 40px;">Past semesters' exam<br>
+    </h4>
+    <p style="margin-left: 40px;">Note: the instructors teaching the course this
+      semester didn't write these problems, so they may be somewhat different
+      from problems you might have, because everyone has their own style of
+      writing questions.</p>
+    <p></p>
+    <table border="1" cellpadding="3" align="center">
+      <thead>
+        <tr>
+          <th>Problems<br>
+          </th>
+          <th>Solutions<br>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="exam2-sp12.pdf">exam2-sp12.pdf</a><br>
+          </td>
+          <td><a href="exam2-sp12-soln.pdf">exam2-sp12-soln.pdf</a><br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p> </p>
+    <h4 style="margin-left: 40px;"><a href="exam2-soln.pdf">Exam #2 solutions</a></h4>
+    <h4></h4>
+    <h4>Quiz #4<br>
+    </h4>
+    <p></p>
+    <p></p>
+    <table style="width: 179px; height: 57px;" border="1" cellpadding="3" align="center">
+      <thead>
+        <tr>
+          <th>Problems<br>
+          </th>
+          <th>Solutions<br>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="quiz4.pdf">quiz4.pdf</a><br>
+          </td>
+          <td><ahref="file: fs="" userdata="" larry="" junkfood="" teach="" f12=""
+              330="" webpage="" restrict="" exams="" exam2-sp12-soln.pdf"=""><a
+                href="quiz4-soln.pdf"><span style="text-decoration: underline;">quiz4-soln.pdf</span></a></ahref="file:><br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h3> Final exam practice</h3>
+    <p style="margin-left: 40px;">Some material may have been covered in some
+      past semesters that was not covered at all this semester.&nbsp; Also, in
+      some semesters some topics (such as lambda calculus, operational
+      semantics, markup languages) were covered in more detail than this
+      semester.&nbsp; You're only responsible for what was covered this
+      semester, to the extent that it was covered.&nbsp; About lambda calculus:
+      you should know how to do basic beta reduction and alpha conversion, but
+      do not have to memorize any encodings (such as booleans or integers).<br>
+    </p>
+    <p></p>
+    <table border="1" align="center">
+      <tbody>
+        <tr>
+          <th>Problems<br>
+          </th>
+          <th>Solutions<br>
+          </th>
+        </tr>
+        <tr>
+          <td><a href="final-fall10.pdf">final-fall10.pdf</a><br>
+          </td>
+          <td><a href="final-soln-fall10.pdf">final-soln-fall10.pdf</a><br>
+          </td>
+        </tr>
+        <tr>
+          <td><a href="final-spr10.pdf">final-spr10.pdf</a><br>
+          </td>
+          <td><a href="final-soln-spr10.pdf">final-soln-spr10.pdf</a><br>
+          </td>
+        </tr>
+        <tr>
+          <td><a href="final-fall09.pdf%20%09final-soln-fall09.pdf">f</a><a href="final-fall09.pdf%20%09final-soln-fall09.pdf">inal-fall09.pdf<br>
+            </a></td>
+          <td><a href="final-soln-fall09.pdf">final-soln-fall09.pdf<br>
+            </a></td>
+        </tr>
+        <tr>
+          <td><a href="final-spr09.pdf">final-spr09.pdf</a><br>
+          </td>
+          <td><a href="final-soln-spr09.pdf">final-soln-spr09.pdf</a><br>
+          </td>
+        </tr>
+        <tr>
+          <td><a href="final-spr08.pdf">final-spr08.pdf</a><br>
+          </td>
+          <td><a href="final-soln-spr08.pdf">final-soln-spr08.pdf</a><br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

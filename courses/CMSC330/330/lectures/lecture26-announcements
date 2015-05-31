@@ -1,0 +1,58 @@
+Lecture #26: week 14, lecture 2, Thursday November 29
+
+1. Final exam
+
+   The final exam will be Thursday, December 13, 4:00-6:00 p.m, in these
+   locations:
+
+   All 010X sections (combined): Armory 0135
+   All 020X sections (combined): Physics 1412
+
+2. Project #5
+
+   It will be posted soon.
+
+3. Exam #2
+
+   - They were returned in lecture on Tuesday.  If you weren't there you can
+     pick up your exam during any of my/Larry Herman's office hours.
+
+   - The exam results and statistics were given on Tuesday.
+
+   - The solutions will be posted soon.
+
+   - If ***AFTER*** comparing your answers to the posted solutions you think
+     there's a grading mistake don't write ANYTHING on your exam itself, (do
+     not make any changes, alterations, notes, or anything in your answers),
+     and AFTER comparing your answer to the solutions that will be posted,
+     staple a sheet to it and write NO MORE THAN THREE SENTENCES explaining
+     the problem.  (I'm sure that any problem in grading can be explained in
+     just a few words.)  You can give it to me or to any of the TAs.  It
+     will be returned in discussion section later.
+
+   - If anyone's concerned about their exam grade or how they're doing in
+     the class, please talk with me about it in office hours.  I think we
+     would have to discuss it in person; it would not be possible to discuss
+     in detail via email.
+
+4. Exam results and quiz tomorrow
+
+   The results on two of the questions, including the OCaml coding question,
+   were good.  What was not good was the question asking you to write a
+   context-free grammar to generate simple UNIX commands, which involves the
+   concepts of writing grammars to enforce precedence and associativity in a
+   grammar.
+
+   As mentioned, we're going to have a quiz tomorrow specifically on that,
+   because it's important to get cleared up on it.
+
+   We added more problems to that problem set (#1 (d) through (h) so you
+   have more to practice.
+
+   IMPORTANT NOTE: Many students seemed to go to horrible contortions in
+   their grammar for this question to avoid left recursive productions.  The
+   ONLY PLACE where left-recursive productions are a problem is if you want
+   to write a RECURSIVE DESCENT parser.  And if you are told that your
+   grammar has to enforce left-associatiativity of some operators, or to
+   generate sequences of things from left to right, THEN YOU **HAVE TO** USE
+   LEFT-RECURSIVE PRODUCIONS.

@@ -1,0 +1,5 @@
+#!/bin/csh -f
+
+set test_number = 3
+ocaml public${test_number}.ml | \
+  diff -u public${test_number}.output -

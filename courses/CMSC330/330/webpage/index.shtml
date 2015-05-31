@@ -1,0 +1,104 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>CMSC 330 - Organization of Programming Languages, Fall 2012</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+  </head>
+  <body>
+    <div class="heading">
+      <div class="heading-bigger">CMSC 330</div>
+      <div class="heading-big">Organization of Programming Languages</div>
+      <div class="heading-normal">Fall 2012</div>
+    </div>
+    <table rows="1" cols="2" border="0" width="100%">
+      <tbody>
+        <tr>
+          <td valign="top" width="22%">
+            <!--#include virtual="navigation.html" --> <br>
+          </td>
+          <td valign="top" width="78%">
+            <div class="content">
+              <div class="content-header"> Announcements </div>
+              <div class="announcements">
+                <!--#include virtual="announcements.html" --> </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="content">
+      <center>
+        <table class="staff" border="2" cellpadding="5">
+          <tbody>
+            <tr>
+              <th>Who</th>
+              <th>What</th>
+              <th>Where</th>
+              <th>When</th>
+            </tr>
+            <tr>
+              <td> Larry Herman </td>
+              <td> instructor, sections 0101, 0102, 0103 </td>
+              <td> AVW 1111, 405-2762 </td>
+              <td> Mon 5 - 6, Wed &amp; Thurs 10 - 11<br>
+              </td>
+            </tr>
+            <tr>
+              <td> Dr. Nick Feamster </td>
+              <td> instructor, sections 0201, 0202, 0203, 0204 </td>
+              <td> AVW 4135, 405-8010 </td>
+              <td> Tue 4:45 - 6<br>
+              </td>
+            </tr>
+            <tr>
+              <td> Tommy Pensyl </td>
+              <td> teaching TA, 0101 &amp; 0102 </td>
+              <td> AVW 1112 </td>
+              <td> Mon 2:30 - 4:30, Wed 3 - 5<br>
+              </td>
+            </tr>
+            <tr>
+              <td> Tammy Tran </td>
+              <td> teaching TA, 0103 &amp; 0201 </td>
+              <td> AVW 1112 </td>
+              <td> Tue 2:30 - 4:30, Thu 12 - 2<br>
+              </td>
+            </tr>
+            <tr>
+              <td> Derek Juba </td>
+              <td> teaching TA, 0202 &amp; 0203 </td>
+              <td> AVW 1112 </td>
+              <td> Tue 12 - 2, Fri 3 - 5<br>
+              </td>
+            </tr>
+            <tr>
+              <td> Varun Nagaraja </td>
+              <td> teaching TA, 0204, and grading </td>
+              <td> AVW 1112 </td>
+              <td> Mon 11 - 1, Wed 1 - 3<br>
+              </td>
+            </tr>
+            <tr>
+              <td> Hao Li </td>
+              <td> grading TA </td>
+              <td> AVW 1112 </td>
+              <td> Thu 3:15 - 5, Fri 10:45 - 1<br>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+      <!--  <p>
+  There may be times when the TAs need to swap office hours due to exams or
+  other obligations, so on occasion you may find a different TA in the  office hours room than the schedule above indicates.
+  </p>
+  -->
+      <!--  <p>
+  <b>
+  Only students who typically and regularly attend class are eligible to  receive assistance with programming projects during office hours.
+  </b>  </p>
+  --> </div>
+    <div class="footer"> This page last modified
+      <!--#flastmod file="announcements.html" -->. </div>
+  </body>
+</html>

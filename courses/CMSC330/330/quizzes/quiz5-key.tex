@@ -1,0 +1,110 @@
+\documentclass[11pt,fleqn]{article}
+
+  %
+  % Besides saying that the grammars should generate nonempty expressions,
+  % the wording should have said that the shortest valid expressions
+  % consist of just an operator.
+  %
+
+  %
+  % Derek said:
+  %
+  % For #7 on the quiz I had a few students correctly say the grammar was
+  % incorrect because it could generate strings like "&& a", but then mention
+  % that this was a problem with associativity.  For these cases I wrote a
+  % note explaining that this is not what's meant by associativity, but I
+  % didn't take off points since they did correctly provide an example of an
+  % invalid string that the grammar could generate.
+  %
+
+  \usepackage{330-f12}
+
+  \psset{unit=1mm,levelsep=10,treesep=8,nodesep=1}
+
+  \showinfo
+
+\begin{document}
+
+  \header{\course}{Quiz \#5 grading key}{\Term}
+
+  Reminder-- you don't need to write the correct answers every single time
+students make mistakes.  It's much quicker to just go give the quiz answers
+once in class (and you can answer questions or solve the problems as needed
+in the process).  But there \textbf{must} be some indication of what's
+wrong.  In other words, you can't just give a score without at least
+indicating which parts of the answer were wrong.  Just circling or marking
+anything incorrect with an X, and writing a word or two, is often
+sufficient.
+
+  Also-- you need to coordinate via email about grading decisions, to ensure
+the consistency of grading between TAs and sections.
+
+  \vspace{-.5mm}
+
+  \begin{enumerate}
+
+    \addtolength{\itemsep}{3mm}
+
+    \item The operators' precedence are all reversed.
+
+    \item Correct!
+
+    \item Incorrect-- can't generate expressions with more than one of any
+          type of operator in sequence.
+
+    \item Ambiguous for expressions using any operators other than
+          \texttt{||}.
+
+    \item This grammar gives the interpretation that the \texttt{\&\&} and
+          \texttt{||} operators,, and the \texttt{<}, \texttt{>}, and
+          \texttt{!}  operators, have the same precedence.
+
+    \item Incomplete-- parentheses can only surround an entire expression,
+          or the leftmost operand (subexpression) of an expression, so
+          expressions like \texttt{a < (b || c)} can't be generated.
+
+    \item Incorrect associativity-- generates sequences of \texttt{->} from
+          right to left, not left to right.  Also generates the empty
+          string, which the problem says is not allowed.
+
+  \end{enumerate}
+
+  \begin{info}{\textbf{\underline{Grading scale:}}}
+
+    \begin{itemize}
+
+      \addtolength{\itemsep}{2mm}
+
+      \item The first two are \pts[circle]{5} each; the remaining five are
+            \pts[circle]{6} each.
+
+      \item No credit for answers of ``correct'' for incorrect grammars.
+
+      \item Also no credit for saying that there are any problems with the
+            grammar in \#2.
+
+      \item If an answer just says ``incorrect'' without a reason just give
+            \pts{1} for that question.
+
+      \item If an answer says ``incorrect'' but gives the wrong reason
+            give \pts{2} for tha question.
+
+      \item If an answer says ``incorrect'' and gives the correct reason
+            that a gramar is wrong, but doesn't give an example in cases
+            that one should have been given, deduct \pts{-2} for that part.
+            (If it seems during grading like \pts{-2} is too much of a
+            deduction, talk to me about it.)
+
+      \item Note: one of the characteristics of a question like this is that
+            it's easy to make unintentional additional errors, in the
+            process of trying to create intentional errors.  If several
+            people identify something as incorrect in any grammar that the
+            answers above don't say, check carefully whether they may
+            actually be right.  (If there are any omissions above, let me
+            know.)
+
+    \end{itemize}
+
+  \end{info}
+
+\end{document}

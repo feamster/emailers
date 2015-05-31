@@ -1,0 +1,172 @@
+\documentclass[11pt]{article}
+
+  %
+  % Turned out there were many small OCaml problems in Chau Wen's spring 12
+  % /www/tests/prac4-fall09.pdf, that I hadn't come across at the time that
+  % I was scavenging these problems from other things in his files.
+  %
+
+  \usepackage{330-f12}
+
+  \pagestyle{empty}
+
+\begin{document}
+
+  \header{\course}{Ocaml}{\Term}
+
+  \enlargethispage{3mm}
+
+  \vspace{-3mm}
+
+  \begin{enumerate}
+
+    \addtolength{\itemsep}{5mm}
+
+    \item Give the type of the following OCaml expressions.  If any has an
+          error, describe it.
+
+          \vspace{-2.5mm}
+
+          \begin{enumerate}
+
+            \addtolength{\itemsep}{0mm}
+
+            \item \texttt{[("1", 2); ("3", 4)]}
+
+            \item \texttt{fun f a -> [a; a + 1]}
+
+            \item \texttt{fun x y -> [x ; y]}
+
+          \end{enumerate}
+
+          \vspace{-2.5mm}
+
+    \item Give the value of the following OCaml expressions.  If any has an
+          error, describe it.
+
+          \vspace{-2.5mm}
+
+          \begin{enumerate}
+
+            \addtolength{\itemsep}{0mm}
+
+            \item \texttt{[1; 2]::[3]}
+
+            \item \texttt{let x y = y 3 in x (fun z -> z - 1)}
+
+            \item \texttt{map ((fun x y -> x+y) 1) [2; 3; 4]}
+
+          \end{enumerate}
+
+          \vspace{-2.5mm}
+
+    \item Write an OCaml expression with the type of each of the following:
+
+          \vspace{-2.5mm}
+
+          \begin{enumerate}
+
+            \addtolength{\itemsep}{0mm}
+
+            \item \texttt{int * int list}
+
+            \item \texttt{int list -> (int -> int)}
+
+            \item \texttt{(int -> 'a) -> 'a}
+
+          \end{enumerate}
+
+          \vspace{-2.5mm}
+
+    \item Solve the following OCaml programming problems.  You are allowed
+          to use \texttt{List.rev} (an OCaml library function that reverses
+          a list) and the following curried versions of the function map and
+          fold, but no other OCaml library functions. Your solution must run
+          in $\mathcal{O}(n)$ time for input lists of length \emph{n}.
+
+          \vspace{-1.5mm}
+
+          \begin{multicols}{2}
+
+            \begin{Verbatim}
+        let rec map f l = match l with
+            [] -> []
+          | (h::t) -> (f h)::(map f t);;
+            \end{Verbatim}
+
+            \columnbreak
+
+            \begin{Verbatim}
+        let rec fold f a l = match l with
+            [] -> a
+          | (h::t) -> fold f (f a h) t;;
+            \end{Verbatim}
+
+          \end{multicols}
+
+          \vspace{-4mm}
+
+          \begin{enumerate}
+
+            \addtolength{\itemsep}{4mm}
+
+            \item Write a function \texttt{makeLists} that when applied to a
+                  list \texttt{lst}, creates a new list for every element of
+                  \texttt{lst}, returning the results in a single list.  You
+                  may use map or fold if you wish, but it is not required.
+                  Example: \texttt{makeLists [1; 2; 4]} should produce
+                  \texttt{[[1]; [2]; [4]]}.
+
+            \item Using either map or fold and an anonymous function, write
+                  a function \texttt{over20} which when applied to a list of
+                  ints \texttt{lst}, returns a list of all elements of lst
+                  that are 21 or over (preserving their relative order in
+                  \texttt{lst}).  Example: \texttt{over20 [33; 18; 21; 19]}
+                  should produce \texttt{[33; 21]}.
+
+            \item Write a function \texttt{growNum} which when given a
+                  number \texttt{k}, returns a list of the first \texttt{k}
+                  integers, starting from \texttt{k}.  Examples:
+
+                  \begin{tabular}[t]{l}
+
+                    \texttt{growNum 0} should return \texttt{[]}
+                      \\
+
+                    \texttt{growNum 1} should return \texttt{[1]}
+                      \\
+
+                    \texttt{growNum 4} should return \texttt{[1; 2; 3; 4]}
+                      \\
+
+                  \end{tabular}
+
+            \item Using either map or fold and an anonymous function, write
+                  a curried function \texttt{countNum} which when given a
+                  number \texttt{n} and a list of ints \texttt{lst}, returns
+                  the number of times \texttt{n} occurs in \texttt{lst}.
+
+                  Examples:
+
+                  \begin{tabular}[t]{l}
+
+                    \texttt{countNum 5 [1; 2; 3; 4]} should return
+                    \texttt{0}
+                      \\
+
+                    \texttt{countNum 5 [1; 2; 3; 4; 5; 6]} should return
+                    \texttt{1}
+                      \\
+
+                    \texttt{countNum 5 [5; 5; 6; 5]} should return \texttt{3}
+                      \\
+
+                  \end{tabular}
+
+          \end{enumerate}
+
+          \vspace{-2.5mm}
+
+  \end{enumerate}
+
+\end{document}

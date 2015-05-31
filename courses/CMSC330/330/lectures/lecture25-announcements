@@ -1,0 +1,112 @@
+Lecture #25: week 14, lecture 1, Tuesday November 27
+
+1. Final exam
+
+   The final exam will be Thursday, December 13, 4:00-6:00 p.m, in these
+   locations:
+
+   All 010X sections (combined): Armory 0135
+   All 020X sections (combined): Physics 1412
+
+2. Exam #2 results
+
+   - I will be returning the exams at the end of lecture today.
+
+   - The solutions will be posted soon, but it's strongly recommended that
+     you first try to fix any mistakes in your answers yourself before
+     looking at them.  You'll learn more by doing that than by just looking
+     at solutions that someone else wrote.
+
+   - You're welcome to compare your answers with your friends; this may be
+     very instructive.
+
+   - The exam statistics and results (for both lectures combined) were as
+     follows (when you can see the average on ELMS it may be a little
+     different, because it includes students who didn't even show up to take
+     the exam).  The results were not as good as Exam #1 but were not
+     terrible.
+
+     Average:            71.2 (Exam #1 was 76.4)
+     Standard deviation: 16.8 (Exam #1 was 11.9; much higher this time,
+                               meaning the grades were much more spread out)
+
+     Distribution:                   90-100: 24
+                                      80-89: 44
+                                      70-79: 37
+                                      60-69: 27
+                                      50-59: 28
+                                       < 50: 23 
+
+     APPROXIMATE letter grade ranges: 87-100: A
+                                       75-86: B
+                                       55-74: C
+                                        < 55: D/F
+
+   - The letter grade range corresponding to your score doesn't enter into
+     your final grade calculation.  Only your numeric exam score will be
+     used in computing your final course grade.  These approximate grade
+     ranges are certainly not a guarantee of anyone's final grade.  They're
+     just to let you know how you did on this exam in relation to other
+     students.  The final grades will include all the quizzes, projects,
+     final, etc.  Some people have one low score but good scores on most
+     other coursework and do fine.  (You're encouraged to come talk with me
+     in office hours if you have any concerns about how you did.)  The
+     important thing if you didn't do well is to come to office hours to get
+     caught up with the material that you had trouble with.
+
+   - I suggest being less concerned about your numeric score, and more
+     concerned about making sure you understand the mistakes you made, and
+     learning whatever concepts correctly that you may not have known.
+
+   - If you think there's a grading mistake don't write ANYTHING on your
+     exam itself, (do not make any changes, alterations, notes, or anything
+     in your answers), and AFTER comparing your answer to the solutions that
+     will be posted, staple a sheet to it and write NO MORE THAN THREE
+     SENTENCES explaining the problem.  (I'm sure that any problem in
+     grading can be explained in just a few words.)  You can give it to me
+     or to any of the TAs.
+
+   - Please wait until AFTER the exam scores are posted before asking any
+     questions about your exam grade or making any regrading requests.
+
+3. Exam results and Friday quiz
+
+   The results on two of the questions, including the OCaml coding question,
+   were good.  What was not good was the question asking you to write a
+   context-free grammar to generate simple UNIX commands, which involves the
+   concepts of writing grammars to enforce precedence and associativity in a
+   grammar.
+
+   Consequently, we're going to have a quiz this Friday specifically on
+   that.
+
+   Go back and reread those slides (about precedence and associativity in
+   grammars), and bring questions in office hours this week if you have any.
+
+   Also go back and redo the second set of practice problems about grammars
+   (practice07), and bring questions in office hours if you don't understand
+   how to do any of them, or if you aren't sure why the answers look the way
+   that they do.
+
+   We added more problems to that problem set (#1 (d) through (h) so you
+   have more to practice.
+
+   IMPORTANT NOTE: Many students seemed to go to horrible contortions in
+   their grammar for this question to avoid left recursive productions.  The
+   ONLY PLACE where left-recursive productions are a problem is if you want
+   to write a RECURSIVE DESCENT parser.  Other parsers DO NOT HAVE A PROBLEM
+   with left-recursive productions.  And if you aren't writing a parser for
+   a grammar (just using it to describe a language), there is ABSOLUTELY
+   NOTHING WRONG with writing left-recursive productions.  And if you are
+   told that your grammar has to enforce left-associatiativity of some
+   operators, or to generate sequences of things from left to right, THEN
+   YOU **HAVE TO** USE LEFT-RECURSIVE PRODUCIONS.  So don't be afraid to,
+   unless you happen to be writing a recursive descent parser.
+
+4. Practice problems
+
+   More practice problems (parsing and parameters) have been posted.
+
+5. Anirudh Shivkumar (Larry's section)
+
+   I need his medical documentation.

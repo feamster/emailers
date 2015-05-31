@@ -1,0 +1,402 @@
+\documentclass[11pt]{article}
+
+  \usepackage{330-f12}
+
+  \usepackage[none,light,outline,timestamp]{draftcopy}
+
+  % for quizzes and exams, due to the nameblock
+  \addtolength{\headsep}{-6mm}
+  \addtolength{\textheight}{6mm}
+
+\begin{document}
+
+  \hspace{\fill}%
+  \nameblock
+
+  \smallskip
+
+  \header{\course}{Quiz\ \#5}{\Term}
+
+  \vspace{-3mm}
+
+    \noindent
+    This quiz is 40 points.  \textbf{Do not start} until you're told you can
+  begin.  You must turn in your quiz \textbf{immediately} when the end of
+  the quiz is announced.
+
+    \medskip
+
+    Some of C's logical operators are listed below, in order of
+  \textbf{decreasing precedence}:
+
+    \vspace{-3.5mm}
+
+    \begin{center}
+
+      \begin{tabular}[t]{|c|l|}
+
+        \hline
+
+        \texttt{!}
+          & the unary prefix logical negation operator is
+            right--associative, and has the highest precedence
+          \\ \hline
+
+        \texttt{<} and \texttt{>}
+          & these binary comparison operators are left--associative
+          \\ \hline
+
+        \texttt{\&\&}
+          & the binary logical and operator is also left--associative
+          \\ \hline
+
+        \texttt{||}
+          & the binary logical or operator is also left--associative, and
+            has the lowest precedence
+          \\ \hline
+
+      \end{tabular}
+
+    \end{center}
+
+    Parentheses may be used in expressions with these operators, and may be
+  thought of as operators with the highest precedence.  Assume that the only
+  valid variable names are \texttt{a}, \texttt{b}, and \texttt{c}.
+
+    Starting below are several grammars that are supposed to generate all
+  valid \textbf{nonempty} expression using these operators, enforcing the
+  precedence and associativity described.  For grammars that are correct,
+  just write ``correct''.  For incorrect grammars:
+
+    \vspace{-2.75mm}
+
+    \begin{itemize}
+
+      \addtolength{\itemsep}{-1.75mm}
+
+      \item If a grammar does not generate all valid expressions using the
+            operators above write ``incomplete'', \textbf{and} give a
+            expression that it cannot generate.
+
+      \item If a grammar generates some invalid expression using the
+            operators above write ``incorrect'' \textbf{and} give an invalid
+            expression that it can generate.
+
+      \item If a grammar is ambiguous write ``ambiguous'' \textbf{and} give
+            an expression for which it is ambiguous.
+
+      \item If a grammar does not enforce or capture the operators'
+            precedence as described above, explain \textbf{briefly}.  (An
+            example is not needed.)
+
+      \item If a grammar does not enforce or capture the operators'
+            associativity described above, explain \textbf{briefly}.  (An
+            example is not needed.)
+
+    \end{itemize}
+
+    \vspace{-2.5mm}
+
+    Each part is \pts{5}  If a grammar has more than one problem you only need
+  to identify one of them.
+
+    \enlargethispage{15mm}
+
+    \vspace{-1mm}
+
+    \begin{multicols}{2}
+
+    \begin{enumerate}
+
+      \addtolength{\itemsep}{14mm}
+
+      \item % the operators' precedence is reversed
+
+            \begin{grammar}[1.4]
+
+              \production{S}{\texttt{!}S \midspc T}
+                \\
+
+              \production{T}{T \ \texttt{<} \ U \midspc
+                             T \ \texttt{>} \ U \midspc U}
+                \\
+
+              \production{U}{U \ \texttt{\&\&} \ V \midspc V}
+                \\
+
+              \production{V}{V \ \texttt{||} \ W \midspc W}
+                \\
+
+              \production{W}{\texttt{a} \midspc \texttt{b}
+                             \midspc \texttt{c} \midspc
+                             \texttt{(}S\texttt{)}}
+                \\
+
+            \end{grammar}
+
+            \bigskip\smallskip
+
+            \answerblank{4}{\linewidth}{9mm}
+
+      \item % correct
+
+            \begin{grammar}[1.4]
+
+              \production{S}{S \ \texttt{||} \ T \midspc T}
+                \\
+
+              \production{T}{T \ \texttt{\&\&} \ U \midspc U}
+                \\
+
+              \production{U}{U \ \texttt{<} \ V \midspc
+                             U \ \texttt{>} \ V \midspc V}
+                \\
+
+              \production{V}{\texttt{!}V \midspc W}
+                \\
+
+              \production{W}{\texttt{a} \midspc \texttt{b}
+                             \midspc \texttt{c} \midspc
+                             \texttt{(}S\texttt{)}}
+                \\
+
+            \end{grammar}
+
+            \bigskip\smallskip
+
+            \answerblank{4}{\linewidth}{9mm}
+
+            \vspace*{-5mm}
+
+            \pagebreak
+
+      \item % incomplete
+
+            \begin{grammar}[1.5]
+
+              \production{S}{T \ \texttt{||} \ T \midspc T}
+                \\
+
+              \production{T}{U \ \texttt{\&\&} \ U \midspc U}
+                \\
+
+              \production{U}{V \ \texttt{<} \ V \midspc
+                             V \ \texttt{>} \ V \midspc V}
+                \\
+
+              \production{V}{\texttt{!}W \midspc W}
+                \\
+
+              \production{W}{\texttt{a} \midspc \texttt{b}
+                             \midspc \texttt{c} \midspc
+                             \texttt{(}S\texttt{)}}
+                \\
+
+            \end{grammar}
+
+            \bigskip\medskip
+
+            \answerblank{4}{\linewidth}{9mm}
+
+      \item % ambiguous
+
+            \begin{grammar}[1.5]
+
+              \production{S}{S \ \texttt{||} \ T \midspc T \midspc
+                             U \midspc V \midspc W}
+                \\
+
+              \production{T}{T \ \texttt{\&\&} \ U \midspc U}
+                \\
+
+              \production{U}{U \ \texttt{<} \ V \midspc
+                             U \ \texttt{>} \ V \midspc V}
+                \\
+
+              \production{V}{\texttt{!}V \midspc W}
+                \\
+
+              \production{W}{\texttt{a} \midspc \texttt{b}
+                             \midspc \texttt{c} \midspc
+                             \texttt{(}S\texttt{)}}
+                \\
+
+            \end{grammar}
+
+            \bigskip\medskip
+
+            \answerblank{4}{\linewidth}{9mm}
+
+      \item % && and ||, and <, >, and !, have the same precedence
+
+            \begin{grammar}[1.5]
+
+              \production{S}{S \ \texttt{||} \ T \midspc
+                             S \ \texttt{\&\&} \ T \midspc T}
+                \\
+
+              \production{T}{T \ \texttt{<} \ U \midspc
+                             T \ \texttt{>} \ U \midspc \texttt{!}U \midspc
+                             U}
+                \\
+
+              \production{U}{\texttt{a} \midspc \texttt{b}
+                             \midspc \texttt{c} \midspc
+                             \texttt{(}S\texttt{)}}
+                \\
+
+            \end{grammar}
+
+            \bigskip\medskip
+
+            \answerblank{4}{\linewidth}{9mm}
+
+            \columnbreak
+
+      \item % incomplete; parentheses can only surround an entire expression
+
+            \begin{grammar}[1.5]
+
+              \production{S}{S \ \texttt{||} \ T \midspc T \midspc
+                             \texttt{(}S\texttt{)}}
+                \\
+
+              \production{T}{T \ \texttt{\&\&} \ U \midspc U}
+                \\
+
+              \production{U}{U \ \texttt{<} \ V \midspc
+                             U \ \texttt{>} \ V \midspc V}
+                \\
+
+              \production{V}{\texttt{!}V \midspc W}
+                \\
+
+              \production{W}{\texttt{a} \midspc \texttt{b}
+                             \midspc \texttt{c}}
+                \\
+
+            \end{grammar}
+
+            \bigskip\medskip
+
+            \answerblank{4}{\linewidth}{9mm}
+
+      % \item % ambiguous
+      % 
+      %       \begin{grammar}[1.5]
+      % 
+      %         \production{S}{S \ \texttt{||} \ S \midspc T}
+      %           \\
+      % 
+      %         \production{T}{T \ \texttt{\&\&} \ T \midspc U}
+      %           \\
+      % 
+      %         \production{U}{U \ \texttt{<} \ U \midspc
+      %                        U \ \texttt{>} \ U \midspc V}
+      %           \\
+      % 
+      %         \production{V}{\texttt{!}V \midspc W}
+      %           \\
+      % 
+      %         \production{W}{\texttt{a} \midspc \texttt{b}
+      %                        \midspc \texttt{c} \midspc
+      %                        \texttt{(}S\texttt{)}}
+      %           \\
+      % 
+      %       \end{grammar}
+      % 
+      %       \bigskip\medskip
+      % 
+      %       \answerblank{4}{\linewidth}{9mm}
+
+      % \item % incorrect
+      % 
+      %       \begin{grammar}[1.5]
+      % 
+      %         \production{S}{S \ \texttt{||} \ TV \midspc TV \midspc U}
+      %           \\
+      % 
+      %         \production{T}{TU \ \texttt{\&\&} \midspc U\ \texttt{\&\&}}
+      %           \\
+      % 
+      %         \production{U}{U \ \texttt{<} \ V \midspc
+      %                        U \ \texttt{>} \ V \midspc V}
+      %           \\
+      % 
+      %         \production{V}{\texttt{!}V \midspc W}
+      %           \\
+      % 
+      %         \production{W}{\texttt{a} \midspc \texttt{b}
+      %                        \midspc \texttt{c} \midspc
+      %                        \texttt{(}S\texttt{)}}
+      %           \\
+      % 
+      %       \end{grammar}
+      % 
+      %       \bigskip\medskip
+      % 
+      %       \answerblank{4}{\linewidth}{9mm}
+
+      \item % generates -> right to left
+
+            \begin{grammar}[1.5]
+
+              \production{S}{S \ \texttt{||} \ UT \midspc T}
+                \\
+
+              \production{T}{\texttt{\&\&} \ UT \midspc \largeepsilon}
+                \\
+
+              \production{U}{U \ \texttt{<} \ V \midspc
+                             U \ \texttt{>} \ V \midspc V}
+                \\
+
+              \production{V}{\texttt{!}V \midspc W}
+                \\
+
+              \production{W}{\texttt{a} \midspc \texttt{b}
+                             \midspc \texttt{c} \midspc
+                             \texttt{(}S\texttt{)}}
+                \\
+
+            \end{grammar}
+
+            \bigskip\medskip
+
+            \answerblank{4}{\linewidth}{9mm}
+
+      % \item % only variables can be parenthesized
+      % 
+      %       \begin{grammar}[1.5]
+      % 
+      %         \production{S}{S \ \texttt{||} \ T \midspc T}
+      %           \\
+      % 
+      %         \production{T}{T \ \texttt{\&\&} \ U \midspc U}
+      %           \\
+      % 
+      %         \production{U}{U \ \texttt{<} \ V \midspc
+      %                        U \ \texttt{>} \ V \midspc V}
+      %           \\
+      % 
+      %         \production{V}{\texttt{!}V \midspc W}
+      %           \\
+      % 
+      %         \production{W}{\texttt{a} \midspc \texttt{b}
+      %                        \midspc \texttt{c} \midspc
+      %                        \texttt{(}W\texttt{)}}
+      %           \\
+      % 
+      %       \end{grammar}
+      % 
+      %       \bigskip\medskip
+      % 
+      %       \answerblank{4}{\linewidth}{9mm}
+
+    \end{enumerate}
+
+    \vspace{-3mm}
+
+    \end{multicols}
+
+\end{document}

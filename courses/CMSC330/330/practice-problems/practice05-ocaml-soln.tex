@@ -1,0 +1,133 @@
+\documentclass[11pt]{article}
+
+  \usepackage{330-f12}
+
+\begin{document}
+
+  \header{\course}{OCaml-- solutions}{\Term}
+
+  \begin{enumerate}
+
+    \addtolength{\itemsep}{8mm}
+
+    \item \begin{enumerate}
+
+            \addtolength{\itemsep}{0mm}
+
+            \item \texttt{(string * int) list}
+
+            \item \texttt{int -> int list}
+
+            \item \texttt{'a -> 'a -> 'a list}
+
+            \item \texttt{fun x -> x 2} or \texttt{let f x = x 2}
+
+          \end{enumerate}
+
+          \vspace{-2.5mm}
+
+    \item \begin{enumerate}
+
+            \addtolength{\itemsep}{0mm}
+
+            \item Any of the following errors would suffice:
+
+                  \begin{tabular}[t]{l}
+
+                    3 has type int but is used with type int list
+                    \\
+
+                    [3] has type int list but is used with type int list list
+                    \\
+
+                    can only add int list [1;2] to int list list
+                    \\
+
+                    trying to add int list [1;2] to int list [3]
+                    \\
+
+                  \end{tabular}
+
+            \item \texttt{2}
+
+            \item \texttt{[3; 4; 5]}
+
+          \end{enumerate}
+
+          \vspace{-2.5mm}
+
+    \item Different answers are possible; here are some:
+
+          \begin{enumerate}
+
+            \addtolength{\itemsep}{0mm}
+
+            \item \texttt{(2, [2])}
+
+            \item \texttt{let f a b = match a with (h::t) -> h + b}
+
+          \end{enumerate}
+
+          \vspace{-2.5mm}
+
+    \item \vspace{-2.5mm}
+
+          \begin{enumerate}
+
+            \addtolength{\itemsep}{4mm}
+
+            \item Different answers are possible; here are some:
+
+                  \begin{Verbatim}
+        let rec makeList x = match x with
+            [] -> []
+          | (h::t) -> [h]::(makeList t);;
+                  \end{Verbatim}
+
+                  \medskip
+
+                  \begin{Verbatim}
+        let makeList x = map (fun y -> [y]) x;;
+                  \end{Verbatim}
+
+                  \medskip
+
+                  \begin{Verbatim}
+        let makeList x = map (fun y -> y::[]) x;;
+                  \end{Verbatim}
+
+                  \medskip
+
+                  \begin{Verbatim}
+        let makeList x = List.rev (fold (fun a y -> [y]::a) [] x);;
+                  \end{Verbatim}
+
+            \item \begin{Verbatim}[gobble=4]
+    let over20 x = List.rev (fold
+                              (fun a y -> if (y > 20) then y::a else a)
+                              []
+                              x);;
+                  \end{Verbatim}
+
+            \item \begin{Verbatim}
+        let growNum x =
+           let rec g n = if n = 0
+                           then []
+                           else n::(g (n-1))
+           in (List.rev (g x));;
+            \end{Verbatim}
+
+            \item \begin{Verbatim}
+        let countNum n lst = fold
+                               (fun a y -> if (y = n) then a + 1 else a)
+                               0
+                               lst;;
+                  \end{Verbatim}
+
+          \end{enumerate}
+
+          \vspace{-2.5mm}
+
+  \end{enumerate}
+
+\end{document}

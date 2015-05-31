@@ -1,0 +1,423 @@
+\documentclass[11pt,fleqn]{article}
+
+  \usepackage{330-f12}
+
+  \begin{document}
+
+  \header{\course}{Exam \#1 practice questions \#1-- solutions}{\Term}
+
+  \begin{enumerate}
+
+    \addtolength{\itemsep}{15mm}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \item {[16 pts.]}
+
+          \begin{enumerate}
+
+            \vspace{-2.75mm}
+
+            \addtolength{\itemsep}{4mm}
+
+            \item Here's an example illustraing that Ruby has dynamic
+                  typing:
+
+                  \vspace{-2mm}
+
+                  \begin{verbatim}
+x= 330
+x= "CMSC 330 is lots of fun!!!"\end{verbatim}
+
+                  \vspace{-1.5mm}
+
+                  Note that dynamic typing isn't the same thing as implicit
+                  variable declarations.  Ruby has implicit declarations,
+                  meaning that variables don't have to be declared, but
+                  there are languages that have static typing that have
+                  implicit declarations.  To show that Ruby has dynamic
+                  typing it's necessary to show that types aren't checked
+                  until runtime, or an example of something's type being
+                  able to change during runtime.
+
+            \item Here are several differences between NFAs and DFAs:
+
+                  \vspace{0mm}
+
+                  \begin{itemize}
+
+                    \addtolength{\itemsep}{1.5mm}
+
+                    \item NFAs can have $\epsilon$--transitions, but DFAs
+                          can't.
+
+                    \item NFAs can have zero or more transitions from any
+                          state on any alphabet symbol, while DFAs must have
+                          exactly one transition from every state on every
+                          alphabet symbol.
+
+                    \item An NFA can have zero or more paths from the start
+                          state to a final state on a string, while a DFA
+                          will always have exactly one path from the start
+                          state for any string.
+
+                    \item An NFA accepts a string if there is some path from
+                          the start state to a final state on the string,
+                          even if other paths for that string don't lead to
+                          a final state, while a DFA accepts a string if the
+                          single path from the start state leads to a final
+                          state.
+
+                  \end{itemize}
+
+            \item To say that a function has \emph{polymorphic} type means
+                  that it can operate upon parameters if different types.
+
+                  Note that if a function has polymorphic type it doesn't
+                  mean that its parameters can be \textbf{any} types, just
+                  that it can operate upon parameters of different (more
+                  than one) type.  For example, in OCaml a function with
+                  type \texttt{'a list -> int} cannot be called with an
+                  \texttt{int}, a \texttt{string}, or a tuple as
+                  parameters-- so clearly the argument can't be any type at
+                  all.  It must be passed a list, but lists with any type of
+                  elements are acceptable.
+
+            \item To say that a language has \emph{higher--order functions}
+                  means that it allows functions to be passed as function
+                  parameters or returned as function return values (or bound
+                  to variables).
+
+          \end{enumerate}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \item {[24 pts.]} Two correct DFAs are shown below; of course other
+          correct versions exist as well.
+
+          \bigskip
+
+          \begin{pspicture}(-10,0)(65,40)
+
+            \Large
+
+            \state[start](5,20){s0}
+            \state(35,35){s1}
+            \state[final](60,20){s2}
+            \state[final](35,5){s3}
+
+            \large
+
+            \transition(s0,\emph{a},s1)
+            \transition[labelposition=.8475,labeloffset=2.5](s0,\emph{b},s0)
+
+            \transition(s1,\emph{a},s2)
+            \transition[offset=-2,labeloffset=-4](s1,\emph{b},s3)
+
+            \transition[labeloffset=1](s2,\emph{a},s2)
+            \transition(s2,\emph{b},s3)
+
+            \transition[offset=-2,labeloffset=-4](s3,\emph{a},s1)
+            \transition(s3,\emph{b},s0)
+
+          \end{pspicture}
+
+          \begin{pspicture}(0,0)(110,70)
+
+            \Large
+
+            \state[start](5,35){s0}
+            \state(35,55){s1}
+            \state[final](65,55){s2}
+            \state[final](95,55){s3}
+            \state(35,15){s4}
+            \state(65,15){s5}
+            \state(95,15){s6}
+
+            \large
+
+            \transition(s0,\emph{a},s1)
+            \transition[labellocation=below](s0,\emph{b},s4)
+
+            \transition(s1,\emph{a},s2)
+            \transition[curved,curvature=.85,angle=50](s1,\emph{b},s3)
+
+            \transition(s2,\emph{a},s2)
+            \transition(s2,\emph{b},s3)
+
+            \transition[offset=-2,labeloffset=-4](s3,\emph{a},s6)
+            \transition[labelposition=.8,labellocation=below](s3,\emph{b},s5)
+
+            \transition[curved,curvature=.85,angle=-50,labellocation=below]%
+                        (s4,\emph{a},s6)
+            \transition(s4,\emph{b},s5)
+
+            \transition(s5,\emph{a},s6)
+            \transition[loopdirection=down](s5,\emph{b},s5)
+
+            \transition[labelposition=.8](s6,\emph{a},s2)
+            \transition[offset=-2,labeloffset=-4](s6,\emph{b},s3)
+
+          \end{pspicture}
+
+          \begin{info}{Grading scale}{6.5in}
+
+            \item The grading procedure for this question involves finding
+                  the closest isomorphism between the student's answer and
+                  the correct DFA.  In doing this, ignore things which are
+                  extra in the student's DFA which don't make it incorrect,
+                  for example, an answer may have more states than
+                  necessary, but this should not be penalized as long as it
+                  recognizes the correct language.  However, if the answer
+                  is missing something required (states, transitions, etc.),
+                  causing it not to correctly recognize the language in some
+                  way, then deduct as described below.
+
+            \item For each missing state which the DFA must have to
+                  recognize the correct language but which is not present,
+                  deduct \pts{-3} This deduction is for both the missing
+                  state and for all of its outgoing (but not incoming)
+                  transitions.
+
+            \item For each missing or incorrect transition deduct \pts{-2}
+                  Incorrect transitions are transitions which aren't shown
+                  at all, or transitions which should go to a state other
+                  than the state they actually do go to (including
+                  transitions which go to some existing state but which
+                  should really go to some state which does not appear in
+                  the DFA).
+
+                  (Note the transitions from the dead state are handled as a
+                  special case below).
+
+                  When a needed state is missing from the DFA, the answer
+                  should lose credit for both the missing state, and for all
+                  of the incorrect transitions which should have gone to
+                  that state but which obviously don't go there (they're
+                  missing or they go somewhere else).
+
+            \item For each state in the DFA which is final when it should be
+                  nonfinal, or which is nonfinal when it should be final,
+                  deduct \pts{-2}
+
+            \item Deduct \pts{-2} if the start state is unlabelled or
+                  wrong.
+
+            \item If notational shortcuts were used then deduct a flat
+                  \pts{-2} for the whole problem.  Notational shortcuts are:
+
+                  \vspace{-.75mm}
+
+                  \begin{itemize}
+
+                    \item Any transition labelled with more than one symbol.
+
+                    \item Omitting transition(s) from the dead state to
+                          itself%
+                          %(which shouldn't occur in this DFA anyway)%
+                          .
+
+                  \end{itemize}
+
+                  \vspace{-.75mm}
+
+            \item Strings in this language must have three basic properties
+                  (alternate between groups of \str{a}'s and \str{b}'s; the
+                  first, third, etc.\ groups must have even length; the
+                  second, fourth, etc.\ groups must have odd length).  If
+                  two of the three properties are basically correctly
+                  enforced by the DFA, but there are problems with the other
+                  property, then the minimum score the answer should receive
+                  should be \pts{13}  In other words, in this case indicate
+                  all mistakes in the solution, but stop deducting points at
+                  \pts{-13}
+
+                  One special case is if the answer missed the requirement
+                  that strings can begin with either \emph{a}'s or with
+                  \emph{b}'s-- in other words, the answer given is basically
+                  just the top half or the bottom half only of the DFA.  I
+                  think \pts{-13} would be too harsh a penalty for that
+                  mistake-- if the answer is correct except for this, then
+                  just just deduct \pts{-8} (\pts{-8} plus any deductions if
+                  there are just a few mistakes in the answer for the half
+                  given).
+
+            \item If the DFA is a poor solution but makes a reasonable
+                  attempt at enforcing one property, then the minimum score
+                  the answer should receive should be \pts{7} In other
+                  words, in this case indicate all mistakes in the solution,
+                  but stop deducting points at \pts{-19}
+
+          \end{info}
+
+          \begin{info}{Grading notes}{6.5in}
+
+            \item Note as above that there is \textbf{no deduction} for
+                  having extra states, as long as the DFA is correct (many
+                  answers are correct but the DFA just isn't minimal).  But
+                  if the DFA has extra states and any extra states have
+                  incorrect transitions, then deduct \pts{2} for each
+                  incorrect transition as described above.
+
+            \item Carefully check that each state has two outgoing
+                  transitions (one on each symbol), and only two outgoing
+                  transitions.
+
+                  Carefully check that each transition goes to the correct
+                  state in order to recognize or accept all and only valid
+                  strings.
+
+            \item Note that entirely omitting the dead state and all of the
+                  transitions to it counts as a missing state (\pts{-3}).
+                  But including it and omitting only the transitions from
+                  itself to itself is \pts{-2}
+
+            \item Due to possible unclear wording in the problem, we didn't
+                  deduct if the start state was nonfinal.
+
+          \end{info}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \item {[18 pts.]} Different answers are possible; here is one:
+
+          \vspace{-2.75mm}
+
+          \begin{verbatim}
+count= 0
+
+while (line= gets)
+  if line =~ /^\(S0,[a-z],[A-Za-z0-9]+\)$/ then
+    count += 1
+  end
+end
+
+print(count, "\n")\end{verbatim}
+
+          \vspace{-1mm}
+
+          It would also have been possible to use something like
+          \texttt{([A-Za-z0-9]+)} in the regular expression where
+          \texttt{S0} appears above, and use a backreference later to
+          compare \texttt{\$1} to the string \texttt{"S0"}.  Using Ruby's
+          \texttt{String.split} method to break apart the transition would
+          not have been the easiest approach, because then the validity of
+          each of the three parts of the transition would have had to be
+          checked for validity separately.
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \vspace{12mm}
+
+    \raggedcolumns
+
+    \setlength{\columnsep}{16mm}
+
+    \begin{multicols}{2}
+
+    \item {[26 pts.]} Different answers are possible; here are several:
+
+          \bigskip
+
+          \hspace{4mm}%
+          \(
+            \lpar \,
+              aa^* (b|c) \midspc b \midspc c \midspc dd^* (b|c)
+            \, \rpar^*
+            \:
+            ( a^* \mid d^* )
+          \)
+
+          \bigskip\medskip
+
+          \hspace{4mm}%
+          \(
+            \lpar \,
+              a^* (b|c) \midspc d^* (b|c)
+            \, \rpar^*
+            \:
+            ( a^* \mid d^* )
+          \)          
+
+          \bigskip\medskip
+
+          \hspace{4mm}%
+          \(
+            \Lpar \:
+              \lpar \,
+                (a|b|c)^* \: (b|c) \: (b|c|d)^*
+              \, \rpar^*
+              \midspc a^*
+              \midspc d^*
+            \: \Rpar
+          \)          
+
+          \bigskip\medskip
+
+          \hspace{4mm}%
+          \(
+            \lpar \,
+              (a^*|d^*) \: (b|c)
+            \, \rpar^*
+            ( a^* \mid d^* )
+          \)          
+
+          \begin{info}{Grading criteria}{6.5in}
+
+            \item Each part is \pts{4}
+
+            \item If the answer in any part is not fully correct but shows
+                  the general idea of what the original regular expression
+                  does, and partly but not completely recognizes or
+                  describes the same language, then give half credit for
+                  that part (\pts{-2}).  For an example, this would be the
+                  case of the answer for (g) was
+                  \(
+                    (
+                      aa \mid aaa \mid aaaa \mid bb \mid bbb \mid bbbb
+                    )
+                  \).
+
+          \end{info}
+
+          \begin{info}{Grading notes}{6.5in}
+
+            \item Deduct \pts{-2} (for the whole problem) for using
+                  \texttt{+} as a regular expression operation, or using
+                  other disallowed regular expression operations, if they
+                  don't make the problem significantly easier to solve.  If
+                  they do, deduct more points, or ask me.
+
+            \item Just giving the r.e.\ \emph{a} for (e) or (f) was \pts{-2}
+
+          \end{info}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \columnbreak
+
+    \item {[16 pts.]}
+
+          \vspace{-2.75mm}
+
+          \begin{enumerate}
+
+            \addtolength{\itemsep}{6mm}
+
+            \item \begin{verbatim}
+let rec nth (n, l) =
+  if n = 1
+    then match l with
+      (h::t) -> h
+    else match l with
+      (h::t) -> nth ((n - 1), t)\end{verbatim}
+
+            \item \verb@int * 'a list -> 'a@
+
+          \end{enumerate}
+
+    \end{multicols}
+
+  \end{enumerate}
+
+\end{document}

@@ -1,0 +1,384 @@
+<!--<! --#include virtual="../../checkbacklater.html"-- >-->
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <table border="1" cellpadding="3">
+      <colgroup> <col width="25%"> <col width="18%"> </colgroup>
+      <tbody>
+        <tr>
+          <td style=" vertical-align: middle;">Lecture slides (PDF)</td>
+          <td style="vertical-align: middle;">Date</td>
+          <td style=" vertical-align: middle;">Material covered</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;"> <a href="slides01-intro.pdf">
+              Lecture 1</a> </td>
+          <td style="vertical-align: middle;"> Thurs., Aug. 30 </td>
+          <td style="vertical-align: middle;"> Course introduction</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;"> <a href="slides02-ruby.pdf">
+              Lecture 2</a> </td>
+          <td style="vertical-align: middle;"> Tues., Sept. 4 </td>
+          <td style="vertical-align: middle;"> Ruby- introduction, basic
+            features, properties, and control structures </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;"> <a href="slides03-ruby2.pdf">
+              Lecture 3</a> </td>
+          <td style="vertical-align: middle;"> Thurs., Sept. 6 </td>
+          <td style="vertical-align: middle;"> Ruby- classes, strings, code
+            blocks, and arrays </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;"><a href="slides04-ruby3.pdf">Lecture
+
+
+
+
+
+
+              4 (beginning)</a><br>
+            <a href="slides04-regular-expressions.pdf">Lecture 4 (rest)</a><br>
+          </td>
+          <td style="vertical-align: middle;">Tues., Sept. 11<br>
+          </td>
+          <td style="vertical-align: middle;">Ruby- hashes, etc.<br>
+            Regular expressions in Ruby- basic r.e. operations<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;"><a href="slides05-regular-expressions2.pdf">Lecture
+
+
+
+
+
+
+
+              5</a><br>
+          </td>
+          <td style="vertical-align: middle;">Thurs., Sept. 13<br>
+          </td>
+          <td style="vertical-align: middle;">Regular expressions in Ruby-
+            extracting parts of strings<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;"><a href="slides06-regular-expressions3.pdf">Lecture
+
+
+
+
+
+
+              6</a><br>
+          </td>
+          <td style="vertical-align: middle;">Tues., Sept. 18<br>
+          </td>
+          <td style="vertical-align: middle;">Formal regular expressions<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;"><a href="slides07-automata.pdf">Lecture
+
+
+
+
+
+
+              7</a><br>
+          </td>
+          <td style="vertical-align: middle;">Thurs., Sept. 20<br>
+          </td>
+          <td style="vertical-align: middle;">Finite automata- DFAs and NFAs<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;"><a href="slides08-automata2.pdf">Lecture
+
+
+
+
+
+
+              8</a><br>
+          </td>
+          <td style="vertical-align: middle;">Tues., Sept. 25<br>
+          </td>
+          <td style="vertical-align: middle;">Finite automata- converting an
+            r.e. to an NFA, and an NFA to a DFA<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;"><a href="slides09-automata3.pdf">Lecture
+
+
+
+
+
+
+              9 (beginning)</a><br>
+            <a href="slides09-ocaml.pdf">Lecture 9 (rest)</a><br>
+          </td>
+          <td style="vertical-align: middle;">Thurs., Sept. 27<br>
+          </td>
+          <td style="vertical-align: middle;">Finite automata- implementing
+            DFAs, minimizing DFAs, the complement of a DFA<br>
+            Introduction to OCaml<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;"><a href="slides10-ocaml2.pdf">Lecture
+
+
+
+
+
+
+              10</a><br>
+          </td>
+          <td style="vertical-align: middle;">Tues., Oct. 2<br>
+          </td>
+          <td style="vertical-align: middle;">OCaml- lists and tuples<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;"><a href="slides11-ocaml3.pdf">Lecture
+
+
+
+
+
+              11</a><br>
+          </td>
+          <td style="vertical-align: middle;">Thurs., Oct. 4<br>
+          </td>
+          <td style="vertical-align: middle;">OCaml- polymorphic types,
+            conditionals, functions on lists<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;"><a href="slides12-ocaml4.pdf">Lecture
+
+
+
+
+
+              12</a><br>
+          </td>
+          <td style="vertical-align: middle;">Tues., Oct. 9<br>
+          </td>
+          <td style="vertical-align: middle;">OCaml- data types and exceptions<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;">Lecture 13<br>
+          </td>
+          <td style="vertical-align: middle;">Thurs., Oct. 11<br>
+          </td>
+          <td style="vertical-align: middle;">Exam #1<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;"><a href="slides14-ocaml5.pdf">Lecture
+
+
+
+
+              14</a><br>
+          </td>
+          <td style="vertical-align: middle;">Tues., Oct. 16<br>
+          </td>
+          <td style="vertical-align: middle;">OCaml- higher-order functions<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;"><a href="slides15-ocaml6.pdf">Lecture
+
+
+
+
+              15</a><br>
+          </td>
+          <td style="vertical-align: middle;">Thurs., Oct. 18<br>
+          </td>
+          <td style="vertical-align: middle;">OCaml- currying<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;"><a href="slides16-ocaml7.pdf">Lecture
+
+
+
+              16</a><br>
+          </td>
+          <td style="vertical-align: middle;">Tues., Oct. 23<br>
+          </td>
+          <td style="vertical-align: middle;">OCaml- modules and imperative
+            features<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;"><a href="slides17-grammars1.pdf">Lecture
+
+
+
+              17</a><br>
+          </td>
+          <td style="vertical-align: middle;">Thurs., Oct. 25<br>
+          </td>
+          <td style="vertical-align: middle;">Grammars (part 1)<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;">Lecture 18<br>
+          </td>
+          <td style="vertical-align: middle;">Tues., Oct. 30<br>
+          </td>
+          <td style="vertical-align: middle;">no class; ferocious hurricane<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;"><a href="slides19-grammars2.pdf">Lecture
+
+
+
+              19 (beginning)</a><br>
+            <a href="slides19-parsing1.pdf">Lecture 19 (rest)</a><br>
+          </td>
+          <td style="vertical-align: middle;">Thurs., Nov. 1<br>
+          </td>
+          <td style="vertical-align: middle;">Grammars (part 2)<br>
+            Parsing (part 1)<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;"><a href="slides20-parsing2.pdf">Lecture
+
+
+
+              20 (beginning)</a><br>
+            <a href="slides20-types+scope+params1.pdf">Lecture 20 (rest)</a><br>
+          </td>
+          <td style="vertical-align: middle;">Tues., Nov. 6<br>
+          </td>
+          <td style="vertical-align: middle;">Parsing (part 2)<br>
+            Types, scope, and parameters (part 1)<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;"><a href="slides21-types+scope+params2.pdf">Lecture
+
+
+              21</a><br>
+          </td>
+          <td style="vertical-align: middle;">Thurs., Nov. 8<br>
+          </td>
+          <td style="vertical-align: middle;">Types, scope, and parameters (part
+            2)<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;"><a href="slides22-types+scope+params3.pdf">Lecture
+
+              22</a><br>
+          </td>
+          <td style="vertical-align: middle;">Tues., Nov. 13<br>
+          </td>
+          <td style="vertical-align: middle;">Types, scope, and parameters (part
+            3)- call by value vs. call by reference vs. call-by-name; tail calls
+            in OCaml<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;">Lecture 23<br>
+          </td>
+          <td style="vertical-align: middle;">Thurs., Nov. 15<br>
+          </td>
+          <td style="vertical-align: middle;">Exam #2<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;"><a href="slides24-threads1.pdf">Lecture
+
+              24</a><br>
+          </td>
+          <td style="vertical-align: middle;">Tues., Nov. 20<br>
+          </td>
+          <td style="vertical-align: middle;">Threads (part 1)<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;"><a href="slides25-threads2.pdf">Lecture
+
+              25</a><br>
+          </td>
+          <td style="vertical-align: middle;">Tues., Nov. 27<br>
+          </td>
+          <td style="vertical-align: middle;">Threads (part 2)<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;"><a href="slides26-threads3.pdf">Lecture
+
+              26 (beginning)</a><br>
+            <a href="slides26-polymorphism1.pdf">Lecture 26 (rest)</a><br>
+          </td>
+          <td style="vertical-align: middle;">Thurs., Nov. 29<br>
+          </td>
+          <td style="vertical-align: middle;">Threads (part 3)<br>
+            Generics and polymorphism (part 1)<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;"><a href="slides27-polymorphism2.pdf">Lecture
+
+              27 (beginning)</a><br>
+            <a href="slides27-lambda.pdf">Lecture 27 (rest)</a><br>
+          </td>
+          <td style="vertical-align: middle;">Tues., Dec. 4<br>
+          </td>
+          <td style="vertical-align: middle;">Generics and polymorphism (part 2)<br>
+            Brief introduction to lambda calculus<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;"><a href="slides28-oo+fp.pdf">Lecture
+
+              28 (beginning)</a><br>
+            <a href="slides28-operational-semantics.pdf">Lecture 28 (rest)</a><br>
+          </td>
+          <td style="vertical-align: middle;">Thurs., Dec. 6<br>
+          </td>
+          <td style="vertical-align: middle;">Relating functional programming
+            and object-oriented programming<br>
+            Brief introduction to operational semantcs<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;"><a href="markup-languages.pdf">Discussion
+              section slides</a><br>
+          </td>
+          <td style="vertical-align: middle;">Fri., Dec. 7<br>
+          </td>
+          <td style="vertical-align: middle;">Markup and query languages<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;"><a href="slides29-pointers+gc.pdf">Lecture
+              29 (beginning)</a><br>
+            <a href="slides29-history.pdf">Lecture 29 (rest)</a><br>
+          </td>
+          <td style="vertical-align: middle;">Thurs., Dec. 11<br>
+          </td>
+          <td style="vertical-align: middle;">Pointers and garbage collection<br>
+            A brief history of programming languages (partly covered in class)<br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

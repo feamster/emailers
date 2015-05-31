@@ -1,0 +1,58 @@
+Lecture #2: week 2, lecture 2, Thursday September 6
+
+1. Webpage and ELMS
+
+   These are still not set up, but will be soon.  The lecture slides should
+   be put on the webpage soon.
+
+   You will need:
+
+   ID:       330student
+   password: opensesame
+
+2. Syllabus
+
+   The syllabus will be ready soon; read it carefully.
+
+3. Piazza
+
+   We'll be using it when the first project is assigned.  (For Larry's
+   sections, most of the students haven't even been added yet.)
+
+4. Ruby information
+
+   Sources of some information about Ruby (besides the lecture slides) will
+   be put on the class webpage.
+
+5. Grace and TerpConnect account
+
+   Programming will be done on the Grace cluster.  You will log into it
+   using your directory ID and password (called your TerpConnect account).
+   If you haven't used your TerpConnect account before, activate it now at
+   www.oit.umd.edu/new.  Once it's activated you should be able to log onto
+   the Grace cluster at grace.umd.edu (a cluster of Linux machines).
+
+6. Illustrate concept from last time in irb
+
+   Methods can be added to the Object class and called from any other class,
+   but they have to be made public.  But they are also present, and can be
+   called from, any other classes, since they're all subclasses of Object.
+
+   Example in irb:
+
+   def info(which, what)
+     puts("#{which} is #{what}.")
+   end
+
+   public(:info)
+
+   Object.methods
+
+   info("rain", "wet")
+   info("icecream", "yummy")
+
+   s= String.new
+
+   String.methods
+
+   s.info("larry", "amazing")

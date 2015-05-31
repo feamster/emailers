@@ -1,0 +1,7 @@
+AuthUserFile /fs/www/class/fall2012/cmsc330/webpage/restrict/.htpasswd
+AuthGroupFile /dev/null
+AuthName "330student"
+AuthType basic
+<Limit GET POST>
+require user 330student
+</Limit>

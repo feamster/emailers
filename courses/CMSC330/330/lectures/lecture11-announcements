@@ -1,0 +1,66 @@
+Lecture #11: week 6, lecture 2, Thursday October 4
+
+1. Practice problems
+
+   The next practice problem set, about automata transformations, was
+   posted.
+
+2. Project #1
+
+   It was due yesterday, but recall that any project can be submitted late,
+   with a relatively mild late penalty.  Be sure to read the posted project
+   grading policy, so you know how your projects are going to be graded.
+   It's three pages, we're not going to read it in class, but it's posted on
+   the webpage available to be read.
+
+   Emphasize that projects are individual work ONLY.  If you have trouble
+   with something you can come to the TAs' office hours.
+
+   Unfortunately we can't make the results for the secret tests visible on
+   the submit server for a while- maybe a week or more.  We have a couple of
+   students who have been very seriously ill who have extra time to work on
+   the project as a result.  But it wouldn't really be fair if they were
+   able to see all the secret test results even before submitting, unlike
+   anyone else.
+
+3. Project #2
+
+   Look for it to be posted very soon.
+
+4. Practice problems
+
+   Recall that problems about automata transformations have been posted.  
+
+5. Exam #1
+
+   It's in a week, next Thursday (the 11th).
+
+   I'm not sure how far it'll cover through; we'll have to see how far we
+   get in class today.  I'll tell you on Tuesday.
+
+   We have some practice exams that we'll post in a day or two (with
+   solutions).  Don't just look at the questions or answers; you have to
+   solve the problems.  If you have questions you're welcome to come to
+   office hours.
+
+   The sample exams are NOT a guarantee of what your exam will look like;
+   they're just a study aid to let you know what you know or what you might
+   need to study more or ask questions about.
+
+   We'll also post some exams from recent semesters in this course, which
+   are useful practice, but they were not written by this semester's
+   instructors.  Since everyone writes exams and projects a little
+   differently, the practice exams that we wrote are the best guide to the
+   types of questions that you might see (as well as your quizzes this
+   semester, and the posted practice problems).
+
+   As of when we post these things, we may not have covered all the material
+   they ask about.  Just ignore anything that we don't cover before the exam
+   (although we will cover more material today and on Tuesday, and may end
+   up covering everything that these practice exams ask about by then).
+
+6. OCaml lists
+
+   Talk about why sharing memory in lists might not be wanted in C or Java,
+   but it's OK in OCaml (because usually new lists are returned without ever
+   modifying existing lists).

@@ -1,0 +1,226 @@
+\documentclass[11pt]{article}
+
+  \usepackage{330-f12}
+
+  \pagestyle{empty}
+
+\begin{document}
+
+  \header{\course}{Context--free grammars}{\Term}
+
+    To make your answers easier to compare with the solutions, use
+  consecutive nonterminals beginning with S when writing your grammars (S,
+  T, U, etc.).
+
+  \vspace{-1.5mm}
+
+  \begin{enumerate}
+
+    \addtolength{\itemsep}{8mm}
+
+    \item In Pascal both of the following syntax forms can be used for an
+          array type
+
+          \vspace{-4.5mm}
+
+          \begin{center}
+
+            \texttt{array[$\textit{\textrm{lower--bound}}_1\texttt{..}
+                           \textit{\textrm{upper--bound}}_1$,
+                          \ldots ,
+                          $\textit{\textrm{lower--bound}}_n\texttt{..}
+                           \textit{\textrm{upper--bound}}_n$]
+                    of \textit{\textrm{element--type}};}
+
+            \texttt{array[$\textit{\textrm{lower--bound}}_1\texttt{..}
+                           \textit{\textrm{upper--bound}}_1$]%
+                          \ldots%
+                          [$\textit{\textrm{lower--bound}}_n\texttt{..}
+                           \textit{\textrm{upper--bound}}_n$]
+                    of \textit{\textrm{element--type}};}
+
+          \end{center}
+
+          \vspace{-4mm}
+
+          What an array's bounds and an array's element type can be are
+          described below.
+
+          Note that an array's lower subscript is not necessarily 0 as in C,
+          Ruby, and Java.  For example, here are a few array types in Pascal
+          (all of which have integer bounds):
+
+          \vspace{-2mm}
+
+          \begin{multicols}{2}
+
+            \texttt{array[1..10] of integer;}
+
+            \texttt{array[5..50] of char;}
+
+            \texttt{array[1..10,10..20] of integer;}
+
+            \texttt{array[1..10][10..20] of integer;}
+
+          \end{multicols}
+
+          \vspace{-2.75mm}
+
+          The second one has subscripts ranging between 5 and 50
+          (inclusive), while the last two are two--dimensional arrays.
+
+          Write an unambiguous grammar generating array types similar to
+          Pascal's as specifically described below.  (Array types in this
+          problem are based upon, but not completely the same as, Pascal's
+          arrays.)
+
+          \vspace{-1.75mm}
+
+          \begin{itemize}
+
+            \addtolength{\itemsep}{.25mm}
+
+            \item For purposes of this problem, an array type begins with
+                  the word \texttt{array}, which is followed by the array's
+                  dimensions, then the word \texttt{of}, then an identifier
+                  and a semicolon.  Don't worry about indicating where
+                  whitespace may appear.
+
+            \item An array's dimensions are either a sequence of one or more
+                  ranges each inside its own set of square braces, or a
+                  single comma--separated list of one or more ranges all
+                  together inside one set of square braces.
+
+            \item For purposes of this problem a range consists of two
+                  constant values of the same type separated by \texttt{..}
+                  (two adjacent period characters).  A range can contain two
+                  boolean constants, two identifiers, two character
+                  constants, or two integer constants.
+
+            \item The only two boolean constants are \texttt{true} and
+                  \texttt{false}.  Assume that identifers consist of
+                  sequences of one or more occurrences of of the letters
+                  \texttt{a}, \texttt{b}, and \texttt{c}, and the characters
+                  that can appear as character constants are \texttt{x},
+                  \texttt{y}, and \texttt{z}.  A character constant is
+                  surrounded by single quotes (\texttt{''}).  An integer
+                  constant consists of a sequence or one or more decimal
+                  digits (\texttt{0} through \texttt{9}), optionally
+                  preceded by a single plus (\texttt{+}) or minus
+                  (\texttt{-}) sign.
+
+          \end{itemize}
+
+          \vspace{-1.75mm}
+
+          Note that your grammar must generate all the tokens (integer
+          constants, character constants, etc.) in array types; the only
+          thing you don't have to worry about is where whitespace may
+          appear.
+
+    \item Write unambiguous grammars for the following languages:
+
+          \vspace{-1mm}
+
+          \begin{enumerate}
+
+            \addtolength{\itemsep}{4mm}
+
+            \item \(
+                    \{ \,
+                      {a^\mathrm{n}}{b^\mathrm{n}} \midspc
+                       \mathrm{n} \: \geq \: 0 \ \:
+                       \mathrm{and} \ \mathrm{n} \ \textrm{is even}
+                     \, \}
+                  \)
+
+            \item \(
+                    \{ \,
+                      {a^\mathrm{i}}{b^\mathrm{j}}
+                       {c^{2\mathrm{i}+1}}{d^\mathrm{k}} \midspc
+                        \mathrm{i,j,k} \: \geq \: 0
+                    \, \}
+                  \)
+
+            \item \(
+                    \{ \,
+                      {\gamma_1}{\gamma_2} \ldots {\gamma_\mathrm{n}}
+                      {\gamma_\mathrm{n}} \ldots {\gamma_2}{\gamma_1}
+                      \midspc \: \gamma_i \: \in \: \{a,b\},
+                      \ 1 \: \leq \: i \: \leq \mathrm{n}
+                    \, \}
+                  \)
+
+                  \medskip
+
+                  Note this language is describing all strings that are
+                  palindromes, that is, they read the same forward as
+                  backwards, over the alphabet $\Sigma \: = \: \{a,b\}$.
+
+            \item \(
+                    \{ \,
+                      {a^\mathrm{m}}{b^\mathrm{n}}{a^{\mathrm{m+n}}} \midspc
+                       \mathrm{m} \: \geq \: 0 \ \mathrm{and} \ 
+                       \mathrm{n} \: \geq \: 1
+                    \, \}
+                  \)
+
+            \item \(
+                    \{ \,
+                      {a^\mathrm{n}}{b^\mathrm{m}}{a^{\mathrm{n-m}}}
+                      \midspc \: \mathrm{n} \: \geq \: \mathrm{m} \: \geq \:
+                      0
+                    \, \}
+                  \)
+
+            \item All possible sequences of balanced parentheses.  Each
+                  string in the language is composed of zero or more of the
+                  symbols \texttt{(} and \texttt{)}.  Each valid string must
+                  have same number of left parentheses as right parentheses,
+                  and they must be properly balanced, with every opening
+                  left parenthesis paired with a later closing right
+                  parentheses.  Valid strings may contain nested
+                  parentheses.  For example, the strings (()) and (()(()()))
+                  contain matching balanced parentheses, while (()(()()) and
+                  (()))( do not.
+
+            \item \(
+                    \{ \,
+                      w \midspc w \: \in \: \{a,b\}^* \ \mathrm{and} \ w \
+                      \textrm{has an equal number of} \
+                      a\textrm{'s} \ \mathrm{and} \ b\textrm{'s}
+                      \, \}
+                  \)
+
+            \item \(
+                    \{ \,
+                      {a^\mathrm{m}}{b^\mathrm{n}} \midspc
+                       \mathrm{m \, \neq \, n} \ \mathrm{and} \ 
+                       \mathrm{m,\, n} \: \geq \: 0
+                    \, \}
+                  \)
+
+            \item \(
+                    \{ \,
+                      {a^\mathrm{m}}{b^\mathrm{n}}{c^\mathrm{p}}{d^\mathrm{q}}
+                       \midspc \mathrm{m \: + \: n \: = \: p \: + \: q}
+                    \, \}
+                  \)
+
+          \end{enumerate}
+
+    \item Write a grammar for the language
+          \(
+            \{ \,
+              {a^n}{b^n}{a^m}{b^m} \midspc \: m,n \: \geq \: 1
+            \, \}
+            \ \cup \
+            \{ \,
+              {a^n}{b^m}{a^m}{b^n} \midspc \: m,n \: \geq \: 1
+            \, \}
+          \).
+          If your grammar is ambiguous, prove that it is.
+
+  \end{enumerate}
+
+\end{document}

@@ -1,0 +1,274 @@
+\documentclass[11pt]{article}
+
+ %
+ % Could add one more question, #6 (c) of Chau Wen's prac3-soln-fall09.pdf,
+ % but got tired of typing....
+ %
+
+  \usepackage{330-f12}
+
+  \pagestyle{empty}
+
+\begin{document}
+
+  \header{\course}{Parsing-- solutions}{\Term}
+
+  \begin{enumerate}
+
+    \addtolength{\itemsep}{12mm}
+
+      \item \(
+              \begin{array}{lcl}
+                \mathrm{first}(S)
+                  & \hspace{-1mm}=\hspace{-1mm}
+                  & \mathrm{first}(\mathrm{A}dg) \: \union \:
+                    \mathrm{first}(\mathrm{B}h) \: = \: \{a, d, f, g\}
+                  \\
+              \end{array}
+            \)
+
+            \smallskip
+
+            \(
+              \begin{array}{lcl}
+                \mathrm{first}(A)
+                  & \hspace{-1mm}=\hspace{-1mm}
+                  & \mathrm{first}(a\mathrm{B}c) \: \union \:
+                    \mathrm{first}(\largeepsilon) \: = \: \{a, \largeepsilon\}
+                  \\
+              \end{array}
+            \)
+
+            \smallskip
+
+            \(
+              \begin{array}{lcl}
+                \mathrm{first}(B)
+                  & \hspace{-1mm}=\hspace{-1mm}
+                  & \mathrm{first}(f) \: \union \: \mathrm{first}(f) \: = \:
+                    \{f, g\}
+                  \\
+              \end{array}
+            \)
+
+            \vspace{6mm}
+
+    \begin{multicols}{2}
+
+    \item \begin{enumerate}
+
+            \addtolength{\itemsep}{6mm}
+
+            \item \begin{grammar}
+
+                    \production{S}{\mathit{b}L}
+                      \\
+
+                    \production{L}{+ \mathit{a}L \midspc + \mathit{b}L \midspc
+                                   \largeepsilon}
+                      \\
+
+                  \end{grammar}
+
+            \item \begin{grammar}
+
+                    \production{S}{cL}
+                      \\
+
+                    \production{L}{+ M \midspc \largeepsilon}
+                      \\
+
+                    \production{M}{\mathit{a}L \midspc \mathit{b}L}
+                      \\
+
+                  \end{grammar}
+
+            \item \begin{grammar}
+
+                    \production{S}{\mathit{a}L}
+                      \\
+
+                    \production{L}{\mathit{bc} \midspc \mathit{c}}
+                      \\
+
+                  \end{grammar}
+
+            \item \begin{grammar}
+
+                    \production{S}{\mathit{a}L}
+                      \\
+
+                    \production{L}{\mathit{a} \midspc \mathit{b} \midspc
+                                   \largeepsilon}
+                      \\
+
+                  \end{grammar}
+
+            \item \begin{grammar}
+
+                    \production{S}{\mathit{a}SL \midspc \mathit{b}}
+                      \\
+
+                    \production{L}{\mathit{c} \midspc \mathit{b}}
+                      \\
+
+                  \end{grammar}
+
+          \end{enumerate}
+
+          \vspace{-2.5mm}
+
+    \item \begin{enumerate}
+
+            \addtolength{\itemsep}{6mm}
+
+            \item \(
+                    \begin{array}{lcl}
+                      \mathrm{first}(\mathrm{true})
+                        & \hspace{-1mm}=\hspace{-1mm}
+                        & \{\mathrm{true}\}
+                        \\
+                    \end{array}
+                  \)
+
+                  \smallskip
+
+                  \(
+                    \begin{array}{lcl}
+                      \mathrm{first}(\mathrm{false})
+                        & \hspace{-1mm}=\hspace{-1mm}
+                        & \{\mathrm{false}\}
+                        \\
+                    \end{array}
+                  \)
+
+                  \smallskip
+
+                  \(
+                    \begin{array}{lcl}
+                      \mathrm{first}((\mathrm{S}))
+                        & \hspace{-1mm}=\hspace{-1mm}
+                        & \{(\}
+                        \\
+                    \end{array}
+                  \)
+
+                  \smallskip
+
+                  \(
+                    \begin{array}{lcl}
+                      \mathrm{first}(\mathrm{S} \ \mathrm{and} \ \mathrm{S})
+                        & \hspace{-1mm}=\hspace{-1mm}
+                        & \{(, \mathrm{true}, \mathrm{false}\}
+                        \\
+                    \end{array}
+                  \)
+
+                  \smallskip
+
+                  \(
+                    \begin{array}{lcl}
+                      \mathrm{first}(\mathrm{S} \ \mathrm{or} \ \mathrm{S})
+                        & \hspace{-1mm}=\hspace{-1mm}
+                        & \{(, \mathrm{true}, \mathrm{false}\}
+                        \\
+                    \end{array}
+                  \)
+
+            \item The first sets of the productions intersect and
+                  the grammar is left recursive.
+
+          \end{enumerate}
+
+          \columnbreak
+
+    \item \begin{enumerate}
+
+            \addtolength{\itemsep}{6mm}
+
+            \item \(
+                    \begin{array}{lcl}
+                      \mathrm{first}(ab\mathrm{S})
+                        & \hspace{-1mm}=\hspace{-1mm}
+                        & \{a\}
+                        \\
+                    \end{array}
+                  \)
+
+                  \smallskip
+
+                  \(
+                    \begin{array}{lcl}
+                      \mathrm{first}(ac\mathrm{S})
+                        & \hspace{-1mm}=\hspace{-1mm}
+                        & \{a\}
+                        \\
+                    \end{array}
+                  \)
+
+                  \smallskip
+
+                  \(
+                    \begin{array}{lcl}
+                      \mathrm{first}(c)
+                        & \hspace{-1mm}=\hspace{-1mm}
+                        & \{c\}
+                        \\
+                    \end{array}
+                  \)
+
+                  \smallskip
+
+                  \(
+                    \begin{array}{lcl}
+                      \mathrm{first}(\mathrm{S})
+                        & \hspace{-1mm}=\hspace{-1mm}
+                        & \{a, c\}
+                        \\
+                    \end{array}
+                  \)
+
+            \item The first sets of the productions overlap:
+                  $\mathrm{first}(abS) \: \intersect \: \mathrm{first}(acS) =
+                  \{a\} \: \intersect \: \{a\} \: \ne \: \emptyset$.
+
+            \item \begin{grammar}
+
+                    \production{S}{\mathit{a}L \midspc \mathit{c}}
+                      \\
+
+                    \production{L}{\mathit{b}S \midspc \mathit{c}S}
+                      \\
+
+                  \end{grammar}
+
+            \item \begin{Verbatim}
+        parse_S() {
+          if (lookahead == "a") {
+            match("a");  // S -> aL
+            parse_L();
+          } else
+            if (lookahead == "c")
+              match("c");  // S -> c
+            else error();
+        }
+
+        parse_L() {
+          if (lookahead == "b") {
+            match("b");  // L -> bS
+            parse_S();
+          } else
+            if (lookahead == "c") {
+              match("c");  // L -> cS
+              parse_S();
+          } else error();
+        }
+                  \end{Verbatim}
+
+          \end{enumerate}
+
+          \end{multicols}
+
+  \end{enumerate}
+
+\end{document}

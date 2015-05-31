@@ -1,0 +1,957 @@
+CMSC 330 introductory TA meeting, Thursdy, August 23
+
+  1. Get everyone to introduce themselves
+
+  2. Describe the course briefly
+
+  3. Find out what everyone's level of experience with the major topics of
+     the course: Ruby, OCaml, formal language theory (regular expressions,
+     grammars, automata), multithreading, lambda calculus, and operational
+     semantics is, as well as any experience as a TA.
+
+  4. Decide on a weekly meeting time
+
+  5. Explain that we're using a webpage as well as ELMS/Blackboard.
+
+     We will add you (and the students) to the course on ELMS soon.
+
+  6. We'll be using Piazza for the course
+
+     - You will need to read it and help answer questions
+
+     - Important: don't give away, in a public venue, too much information
+       about how to write projects.
+
+  7. Tell the TAs to read the draft syllabus when it's ready; students will
+     ask questions during the semester and if you tell them the wrong thing,
+     which could cause them to lose credit on something, they'll be
+     understandably unhappy.
+
+     Find out if there's any particular way any of the TAs want their names
+     spelled on it.
+
+  8. For uniformity I list all the TAs' CS email addresses on the syllabus,
+     and when I have to mail you I usually use your CS email also, so please
+     either check your mail there frequently (meaning several times a day),
+     or just have it forwarded to whereever you prefer to read email.
+
+     In a larger course there's often a lot of coordination and planning
+     that has to occur, and although I try to discuss things in person at
+     the meeting, often things have to be discussed and decided via email,
+     so please reply promptly to email from us.
+
+  9. If students ever ask questions that you don't know the answer to (not
+     something that can just be answered in Piazza):
+
+     - don't say "I can't help you because I don't know"
+
+     - don't make something up
+
+     - don't say "just ask the professor or instructor"
+
+     Instead, tell the student you will find out, contact us to ask, and get
+     back to the student (maybe get their email address first).  We want you
+     to know the answers to things in case the same question comes up again
+     later.  Also, if it's something important we may want to let all the
+     TAs know about it.
+
+  10. Talk about the Junkfood accounts and sharing files in my directory.
+
+  11. Explain the TerpConnect accounts.  The TAs should get TerpConnect
+      accounts ASAP if they don't have them already (www.oit.umd.edu/new).
+
+  12. Discuss the responsibilities of the different types of TAs, and the
+      number of sections/hours teaching TAs will have.
+
+  13. Figure out who's going to teach which sections (how definite is
+      everyone's schedule?):
+
+      Sections:
+
+        0101(17449) L. Herman (FULL: Seats=28, Open=0, Waitlist=0)Books
+            TuTh...... 2:00pm- 3:15pm (CSI 2117)
+            F......... 9:00am- 9:50am (CSI 3120) Dis
+
+        0102(17450) L. Herman (FULL: Seats=28, Open=0, Waitlist=0)Books
+            TuTh...... 2:00pm- 3:15pm (CSI 2117)
+            F.........10:00am-10:50am (CSI 3120) Dis
+
+        0103(17451) L. Herman (FULL: Seats=28, Open=0, Waitlist=0)Books
+            TuTh...... 2:00pm- 3:15pm (CSI 2117)
+            F.........11:00am-11:50am (CSI 3120) Dis
+
+        0201(17452) N. Feamster (FULL: Seats=28, Open=0, Waitlist=1)Books
+            TuTh...... 3:30pm- 4:45pm (CSI 1115)
+            F.........12:00pm-12:50pm (CSI 3120) Dis
+
+        0202(17453) N. Feamster (FULL: Seats=28, Open=0, Waitlist=0)Books
+            TuTh...... 3:30pm- 4:45pm (CSI 1115)
+            F......... 1:00pm- 1:50pm (CSI 3120) Dis
+
+        0203(17454) N. Feamster (FULL: Seats=28, Open=0, Waitlist=0)Books
+            TuTh...... 3:30pm- 4:45pm (CSI 1115)
+            F......... 2:00pm- 2:50pm (CSI 3120) Dis
+
+        0204(17455) N. Feamster (Seats=28, Open=6, Waitlist=0)Books
+            TuTh...... 3:30pm- 4:45pm (CSI 1115)
+            F......... 1:00pm- 1:50pm (CSI 2120) Dis
+
+        The sections are F 9-3, with two sections at 1.  All are in 3120
+        except the second one at 1 (in 2120).
+
+        Get two TAs to teach three sections each, one to teach one section
+        and do some grading, and two to be full time graders.
+
+        Or Tammy could teach four sections and another TA to teach three.
+
+        Or three TAs could teach two sections each, and one of them could
+        teach three, or another could teach one.
+
+        0101 and 0102: Tommy
+        0103 and 0201: Tammy
+        0202 and 0203: Derek
+        0204:          Varun
+
+  14. Talk about the first week's discussion section topics, and make sure
+      the newly-minted teaching TAs know what to do to prepare.
+
+      - I give fairly detailed discussion section instructions to the TAs
+        for larger courses like this with multiple TAs, so it's less work
+        for them (they know basically what to do in discussion).
+
+      - Be sure they know they don't have to make up Powerpointa slides.
+        (They should specifically not use Powerpoint for discussion material
+        in most cases.)
+
+      - The discussion topics and necessary files will be in my directory-
+        give the TAs the path.  Note you can't list the files in my home
+        directory.
+
+      - Be sure to prepare sufficiently in advance so you can make sure your
+        answers are right.
+
+      - It's fine with us if you want to prepare together, or check your
+        results with each other.
+
+      - Nonteaching TAs may have to cover discussion section on rare
+        occasions if a teaching TA is sick/at a conference/whatever.
+
+      - Be sure the teaching TAs (all the TAs) know where the printer and
+        photocopy rooms are, and how to use them, since materials for
+        discussion (mostly quizzes) will have to be printed and copied.
+
+  15. Discuss the number of office hours this semester; the undergraduate
+      chair suggests 10 hours for a TA (due to fewer TAs as a result of
+      budget cuts), but we will have much fewer.
+
+      Discuss what goes on during office hours.
+
+      Get the TAs' office hour preferences, or discuss and give them the
+      schedules to fill out later.  Everyone will have four hours of office
+      hours, but fill in as many 1s as possible.  Usually we especially need
+      TAs to have office hours on Tuesdays, Thursdays, and Fridays.
+
+      (Consider each TA having fewer hours of office hours a week, but more
+      on weeks when projects are due?)
+
+  16. Explain the submit server, and show it briefly if possible to the TAs.
+
+  17. Emphasize that the TAs should not make any travel plans for the end of
+      the semester (until a couple days after finals week ends) without
+      first checking with us.  You will definitely be done by a couple of
+      days after finals week ends, and it could be much earlier- it's just
+      too soon to say.
+
+  18. Feel free (don't hesitate) to ask me any questions.
+
+  19. After the meeting I can take any TAs over to CSI who need help knowing
+      how to use the classroom projection equipment.
+
+  22. Make sure the TAs know they aren't required to come to lecture.
+
+  23. Be sure everyone knows what they're supposed to do:
+
+      - be sure you can access my directory on junkfood
+
+      - read the syllabus
+
+      - learn Eclipse if necessary, and set up your CVS repository
+
+      - teaching TAs, prepare for Monday's discussion and let me know if any
+        questions
+
+  Need to have ready for the meeting if possible:
+
+    - draft syllabus
+
+    - first week discussion topics
+
+    - office hours preference sheet
+
+    - information about the TAs
+
+  After the meeting
+
+    - get keycard access for the TAs if needed
+
+First weekly meeting, Thursday, September 6
+
+  Before the meeting mail the TAs to remind them about it; they frequently
+  forget at first.
+
+  1. If anyone missed the introductory meeting get everyone to introduce
+     themselves again.
+
+  2. Find out how the discussion sections went this week, if there were
+     discussion sections already.
+
+  3. Discuss lecture progress and what we'll be covering next week.
+
+  4. Let the TAs know about the discussion section topics for next week.
+
+     It's fine if you want to prepare together, or to check your results
+     with each other.
+
+  5. For new teaching TAs:
+
+     - your class is in CSI, not in AVW
+
+     - you may want to let the students know that you're new, and that they
+       should let you know if you make any mistakes (to get them on your
+       side)
+
+     - aim at the middle of the class, encourage the students who have
+       trouble following to come to office hours if needed
+
+     - if too much material
+
+     - follow others
+
+  6. When we get your office hours preferences we'll make a schedule and
+     mail it to you for everyone to check, then we'll start office hours,
+     presumably in the early part of next week (ASAP)
+
+     - mail form
+
+     If you haven't given the preference sheet to me yet (Hao? Tammy?) I
+     need it tomorrow.
+
+     Talk about what to do in office hours:
+
+     - 1112
+
+     - put your name on the board and write "back in 5 minutes" if you have
+       to leave
+
+     - erase your name at the end
+
+     - you will need to list your office hours electronically
+
+  8. Check your keycard- teaching TAs should have keycard access to CSI
+     1113, to the CSI classrooms, and the AVW photocopy room.  Let me know
+     if not.  Also graders let me know if you can or can't log into the room
+     PCs with your directory ID and password (a grader may on rare occasions
+     have to cover a discussion section for a teaching TA who's sick or
+     something).
+
+     Tommy and Hao- no printer accccess
+
+  9. Discuss the first project, if it's ready to be discussed yet.
+
+     If not, at least let the TAs know that:
+
+     - they'll be seeing draft assignments before they're assigned
+
+     - their job is to read carefully and find any problems
+
+     - don't tell students anything about upcoming assignments
+
+  10. I will not be on campus Tuesday the 18th (a week from next Tuesday)
+      due to a religious holiday.  I need someone to cover lecture
+      2:00-3:15.
+
+      Derek
+
+  11. Questions about Ruby?
+
+Second weekly meeting, Thursday, September 13
+
+  1. Sorry I've been slow about getting things set up and organized, but
+     they're starting to come together
+
+     - the syllabus is posted; please read it
+
+  2. Find out how the discussion sections went last week.
+
+     - Since our meeting is on Thursday, email me after Fridays to let me
+       know if anything special happened or came up during the discussion,
+       so I can take it into account in planning the next week.
+
+     - Your discussion examples from last time are in the directory
+
+       /afs/glue/class/fall2012/cmsc/330/0101/public
+
+       >>> Dr. Feamster
+
+       As part of the first project students will set up a symlink so this
+       directory is easier to get to.
+
+  3. Quiz #1
+
+     - the final version of the quiz is in my directory now, so you can
+       photocopy it.
+
+     - one question is how much time to give for quizzes.  Let's say 15
+       minutes for this one, and if we need to give more or less for any
+       later ones we'll decide that then.
+
+     - please try to give lots and lots of comments on draft quizzes and
+       other assignments
+
+     - it's fine just to type up your answers in an email (PDF not
+       necessary, but OK)
+
+     - grab the current version immediately before using any draft materials
+
+     - at least for this quiz I'll send you a grading key
+
+     - grading consistency is very important- coordinate with each other via
+       email, or mail me if you have questions
+
+     - enter the grades on ELMS; you can sort the students by section to
+       make it easy (alphabetize the quizzes first)
+
+       >>> add column for quiz
+
+  4. Discuss lecture progress and what we'll be covering next week.
+
+     - covered r.e.'s in Ruby
+
+     - started formal r.e.'s
+
+     - next week is finishing formal r.e.'s, and starting automata- DFAs and
+       then NFAs
+
+  5. Talk about the discussion section topics for next week.
+
+     - return and go over the quiz
+
+     - r.e. and finite automata examples
+
+     - hopefully they should be done soon.
+
+     - explain what the teaching TAs should do if a student misses a quiz
+       (give them a copy for practice); they have to see their instructor to
+       get an excused absence
+
+  6. Project #1
+
+     - it should be posted soon
+
+     - please read it carefully ASAP
+
+     - Hao, I'm going to ask you to implement it so I can use your
+       submission to upload to the submit server.  Your program has to be
+       100% correct.  You'll learn Ruby much better by writing the
+       project :).
+
+  7. Office hours
+
+     Since we're going to be having a project assigned soon we need to start
+     office hours.  I will mail you about the schedule tonight; please read
+     it and presumably we will begin on Monday
+
+     Next time, talk about how to help students in office hours.
+
+  9. Piazza
+
+     - I'll be adding you all, and my students, to Piazza when the first
+       project is assigned
+
+     - it might make office hours easier
+
+     - you're all expected to read it frequently and help answer students
+       questions.  (You can do it during office hours if there aren't any
+       students there.)  I don't want to have to nag you, so do it.
+
+       - students can answer each others' questions, but are often wrong
+
+       - we need to keep an eye out so that students aren't writing things
+         they shouldn't- students can ask about language features and the
+         project requirements, but not post any code, or ask how to
+         implement any part of a project.
+
+       - you may be able to cancel postings that are problematic- if not,
+         let me know and I will do it
+
+       - be cheerful and try to put a good face on things if there are any
+         disgruntled students in a "public" forum
+
+   i'l be away next week
+
+  8. Discuss answering student questions by email with the TAs
+
+  10. Talk to Derek about covering lecture on Tuesday
+
+      - I'll send you slides soon, with lots of notes at the bottom
+
+      - email Dr. Feamster immediately afterwards (and me) to say how far
+        you get
+
+      - I think I said something wrong you'll have to correct
+
+  - discuss how to help students
+
+>>>>> I'll be away Monday and Tuesday
+
+  Next time:
+
+  9. Be sure to read email frequently
+
+  10. If you need to tell students to contact me about anything, unless it's
+      an emergency tell them to please talk to me in person.
+
+Third weekly meeting, Thursday, September 20
+
+  >>> quiz question confusing match string
+
+  1. Thank Derek again for covering lecture
+
+  2. Find out how the discussion sections went last week.
+
+     - any feedback about the quiz?  Common mistakes?
+  
+     - are all the quiz scores typed in?  I think that section 0201 is not.
+
+  3. Discuss lecture progress and what we'll be covering next week.
+
+     - started automata today (DFAs and NFAs)
+
+     - next is transforming an r.e. to an NFA, an NFA to a DFA, and
+       minimizing a DFA
+
+     - then on to OCaml
+
+  4. Talk about the discussion section topics for next week.
+
+     - presumably automata problems or constructions
+
+     - probably the next quiz (we will announce in lecture; don't announce
+       tomorrow because it's a little too early to commit to it)
+
+     - don't give out copies of the discussion topics (in any format)
+
+     - don't give electronic copies of anything that was originally given
+       out only on paper; giving out paper copies is fine
+
+       >>> bring extra copies
+
+  5. Draft quiz/materials
+
+     - Like before, I'll ask for your feedback on the draft quiz
+
+     - LOTS of feedback is needed.
+
+     - When you have to look at draft projects/quizzes/etc., grab the
+       current version in my directory right before reading it
+
+  6. Project #1
+
+     - it should be posted very soon
+
+     - please read it carefully ASAP
+
+     - Hao, I'm going to ask you to implement it so I can use your
+       submission to upload to the submit server.  Your program has to be
+       100% correct.  You'll learn Ruby much better by writing the
+       project :).
+
+  7. Office hours
+
+     - did anyone come today?
+
+     - by the way, I have six hours of office hours (three for each
+       class), so don't think that you have more work than me :)
+
+     - unless an emergency occurs, office hours can't be cancelled or moved,
+       but you can switch with each other, for any reason.
+
+     - I'll put a file in my directory with everyone's contact info so you
+       can contact each other.  Please be willing to swap with someone else,
+       because you may need someone to swap with you
+
+     - Next time, talk more about how to help students in office hours.
+
+  8. Piazza
+
+     You're all expected to read it frequently and help answer students
+     questions.  (You can do it during office hours if there aren't any
+     students there.)  I don't want to have to nag you, so do it.
+
+  9. If a student mails you and you have to ask me about how to answer them,
+     don't just forward my mail to the student (otherwise they just mail me
+     directly next time), and dont' say "Mr. Herman said X"; just reword
+     what I say in your own words when replying to the student.
+
+  10. Be sure to read email frequently
+
+  11. Next Wednesday
+
+      I will again not be on campus, and not reading my mail, next Wednesday
+      (from Tuesday night till Wednesday night), in case you try to reach
+      me.  I won't be missing any lecture for this course.
+
+  >>> making scores visible
+
+Third weekly meeting, Thursday, September 20
+
+Fourth weekly meeting, Thursday, September 27
+
+  1. Please keep your laptops and cell phones away during the meeting unless
+     you're using it to take notes.
+
+  2. Find out how the discussion sections went last week.
+
+     >>> the entire string matches the r.e. Quiz #1
+
+     - Can someone cover Tammy's discussions tomorrow if need be?
+
+       >>>> Can Tammy cover Varun's discussion next week (mail her)?
+
+     - I don't want to make scores visible until after coursework has been
+       returned in discussion (I want to encourage students to focus on
+       getting their graded cousework back and seeing what they got right
+       and wrong, not just on their score, and students sometimes email
+       questions about grading before coursework is even returned, if they
+       see the grades, which is a big waste of time).
+
+  3. Discuss lecture progress and what we'll be covering next week.
+
+     - started OCaml; will probably be about two weeks
+
+  4. Talk about the discussion section topics for tomorrow and next week.
+
+     - tomorrow- how long should we give for the quiz?
+
+       >>> will finish quiz
+
+       >>> 20 minutes
+
+     - next week:
+
+       - return and go over the quiz
+
+         grading key
+
+       - some OCaml examples; probably a variety of recursive functions on
+         lists (one of you should post your solutions)
+
+       - you should have modified your path, because if so, "ocaml" runs
+         "ledit ocaml", with the ledit in the public class bin directory
+
+       - when there are common examples that I give you, can one of you post
+         them in the Grace public directory after discussion just like I
+         did?
+
+       - someone should do that for next week's examples, even though you'll
+         be writing the examples
+
+       - if anyone wrote a good pirate program you can put that in the
+         directory also.  I want to put these on the Grace machines, not the
+         webpage, to encourage students to run them.
+
+  5. Office hours
+
+     - did anyone come?
+
+     - >>>> I put a file in my directory with everyone's contact info so you
+       can contact each other.  Please be willing to swap with someone else,
+       because you may need someone to swap with you
+
+     - if anything comes up and you can't make office hours or discussion
+       section please email the other TAs to try to find a replacement, like
+       Tammy did.  You can email me, but also email everyone else.  If you
+       can't find a replacement, then let me know.
+
+  6. Project #1
+
+     - any questions about it?
+
+     - Hao: status of implementation?
+
+     - >>> extension???
+
+  7. Project #2
+
+     - will use Ruby data structures
+
+     - I will ask you all to read it and give me feedback.
+
+  8. Piazza
+
+     EVERYONE is expected to read it frequently and help answer students
+     questions.  If you don't, we can give you extra responsibilities.
+
+  9. Exam #1 will be two weeks from today
+
+  10. If a student mails you and you have to ask me about how to answer
+      them, don't just forward my mail to the student (otherwise they just
+      mail me directly next time), and dont' say "Mr. Herman said X"; just
+      reword what I say in your own words when replying to the student.
+
+Fifth weekly meeting, Thursday, October 4
+
+  1. Find out how the discussion sections went last week.
+
+  2. Discuss lecture progress and what we'll be covering next week.
+
+     - right now we're up to OCaml lists and recursion
+
+     - I have not started higher-order functions (unlike what the discussion
+       topics say); Dr. Feamster probably will start them today
+
+     - after this we go on to higher-order functions in OCaml, currying (not
+       sure if you know what that is, but you will find out) and closures,
+       and structured data types
+
+     - any questions about tomorrow's topics?
+
+  3. Talk about the discussion section topics for next week.
+
+     - it'll be the day after the exam; attendance will unfortunately
+       probably be low
+
+     - If we get far enough in lecture on Tuesday I'll get you to code up a
+       binary search tree in OCaml next Friday, then maybe turn it into a
+       module (if we get that far), and maybe some recursive functions on
+       strings
+
+     - I don't want electronic copies of the quizzes floating around, but
+       bring a few extra extra printed copies to upcoming discussion
+       sections, in case anyone lost theirs, or missed the quiz for an
+       excused reason (for example, they were ill) and wants a copy to study
+       from.
+
+  4. Project #2
+
+     - it should be posted very soon
+
+     - please read it carefully ASAP; if you see any issues let me know
+
+     - Hao, you'll implement it again
+
+  5. Office hours
+
+     - how were they this week?
+
+  6. Exam #1
+
+     - practice material
+
+     - will be next Thursday
+
+     - Dr. Feamster will be away next week
+
+     - we need proctors: two 2:00-3:15 and two 3:30-4:45.  We can cancel
+       office hours during the exam if needed.
+
+       2:00- Tommy Derek
+       3:30- Varun Tammy
+
+       >>> Friday at 4, cancel Derek office hours
+
+       (Next time, talk about how to proctor, and what the TAs should be
+       doing during proctoring; should have done this.)
+
+     - everyone will take the draft exam next week- on paper, unlike a quiz,
+       and bring me back their written answers
+
+     - the exam is the 11th; the grading needs to be done by Tuesday the
+       16th.  It may take a long time.  I'm going to be busy on Sunday the
+       14th grading exams for my other course.  When can we do it, including
+       spillover plans for a second evening if it takes too long?  (There
+       will be pizza.)
+
+  7. Piazza
+
+     - if you reply to anonymous postings, add that the student should not
+       post anonymously
+
+     - there are a lot of postings that everyone has to read.  The number of
+       postings is inflated by people posting the same questions that have
+       already been asked and answered.  To make students realize that they
+       are wasting everyone's time, when you answer a duplicate question
+       please add something like "you need to read existing postings before
+       posting new questions, to avoid duplicative postings".
+
+     - if a students posts something really bad (test data, their algorithm,
+       whatever), I think you can cancel it just like I can.  If you see it
+       before me, please make a note of the student's name (save a copy of
+       the posting if possible) and just cancel it.
+
+     - the purpose of Piazza is not for the instructors, TAs, and other
+       students to be like little submit servers telling students what the
+       output for different inputs is.  Going forward, instead of students
+       just asking "what is the result of this?" or "what should the output
+       of this be?", I want to at least try to get them to type in what the
+       project says and explain what is confusing to them about it, or
+       explain what their reasoning is and what they think the answer is, so
+       we can tell them if they're right or wrong.
+
+  8. Talk to Tammy about not participating on Piazza (and lying to me about
+     it)
+
+Sixth weekly meeting, Thursday, October 11
+
+  skipped due to grading *****************
+
+Sixth weekly meeting, Thursday, October 18
+
+  1. Thanks for everyone's hard work grading.
+
+  2. Find out how the discussion sections went last week.
+
+     - you didn't give anyone a quiz score of 0, did you?  (I changed them
+       to 0s but I will try to change them back.)
+
+  3. Discuss lecture progress and what we'll be covering next week.
+
+     - right now we're up to closures and currying in OCaml
+
+     - next week: OCaml modules and references
+
+     - then on to the next topic- either paramters and scope, or
+       context-free grammars (haven't decided yet which order to cover these
+       in)
+
+     - any questions about tomorrow's topics?  (Very sorry for being late
+       with them.)
+
+       - should I simplify the quiz?  yes
+
+       - how much time should we give for it?
+
+  4. Talk about the discussion section topics for next week.
+
+     - probably some examples involving curried function, various features
+       of OCaml not covered in lecture, such as reading until EOF, and
+       reading a line and breaking it up into tokens, and maybe turning the
+       binary search tree into a module.  Plus returning and going over the
+       quiz.
+
+  5. Project #3
+
+     - it will just involve writing various small function in OCaml.  (The
+       following project will be a larger program in OCaml.)
+
+     - please read it carefully ASAP; if you see any issues let me know
+
+  6. Office hours
+
+     - how were they this week?
+
+  7. Do I have everyone's exam scans?
+
+  8. How everyone should handle exam regrade questions (including
+     Dr. Feamster's sections)
+
+     - we gave the exam stats in lecture
+
+       >>> Feamster???
+
+     - you can explain what's wrong
+
+     - I handle all of them- even if you graded a question originally,
+       do not regrade it
+
+     - in writing, stapled to the exam
+
+     - can be given to you or to me; shove it under my door if given to
+       you
+
+     - do not accept until after the exam solutions are posted.
+
+     - someone's grade could drop if their answer is wrong and other
+       problems are found in regrading that weren't originally identified
+
+     - we don't tell students the exact grading key (it just leads to
+       disputes)
+
+     - I don't want to argue with students via Piazza about grading
+
+     - number of points isn't up for discussion
+
+  9. Bring the exam (the student who took it as a makeup) to the meeting and
+     get it graded (bring the exam grading keys).  IT SHOULD BE SCANNED
+     (he's in 0102, so he's Tommy's student; I'll give the exam to you when
+     its done and you can return it next Friday.)
+
+  10. Bring the pizza signup sheet and get it signed
+
+  11. Hao- writing tests
+
+      They should be as independent as possible (for example, 0999 was in
+      two inputs)
+
+  >>>> 2d hash of array
+
+  should have mentioned EWGs
+
+???Seventh weekly meeting, Thursday, October 25
+
+  1. Find out how the discussion sections went last week.
+
+     How did the quiz seem to turn out?
+
+  2. Discuss lecture progress and what we'll be covering next week.
+
+     - we started CFGs, which are going to be Tuesday's lecture also.
+
+     - after that there's a lecture on parameters and scope
+
+  3. Talk about the discussion section topics for tomorrow and next week.
+
+     - any questions about tomorrow's topics?
+
+     - next week will probably be features of OCaml that Project #4 will
+       require
+
+  4. Project #3
+
+     - any questions?
+
+     - please read it carefully ASAP; if you see any issues let me know
+
+     - Hao, you'll implement it again
+
+     (- point students (in Piazza) to where the project says something)
+  
+     (- tell them to read existing postings (if something's been answered
+        already))
+
+  5. Office hours
+
+     - how were they this week?
+
+  6. Can one of you proctor an exam a week from Monday?  (Probably anything
+     except 2-3 should work.) Hao after 4, Tommy before noon, Varun 1-3,
+     Derek after 4
+
+  7. Exam grading
+
+     - did you deduct for students writing a correct but nonminimal DFA
+       (extra states)?
+
+     - I'm concerned that there were (at least) two exams with addition
+       mistakes.  There could have been more addition mistakes that favored
+       the student (no one is going to complain in that case so we wouldn't
+       ever know).  Please add carefully.
+
+     - In grading, there must be a few words saying what's wrong (not just
+       -2, -4, etc.).  Otherwise you're just going to have to regrade any
+       exams submittd for regrading later.
+
+     - Is there any chance that any of you have Steven Morton's exam?
+       Tommy, do you remember him being there during the exam?
+
+  7. Get the TAs who graded the Ruby question to look at Erin Kelley's exam.
+
+Eighth weekly meeting, Thursday, October 25
+
+  >>> PUT THE CONTACT INFO FILE IN MY DIRECTORY
+
+  >>> make quiz scores visible (scores all in?)
+
+Ninth weekly meeting, Thursday, November 1
+
+Tenth weekly meeting, Thursday, November 8
+
+  1. Find out how the discussion sections went last week.
+
+  2. Discuss lecture progress and what we'll be covering next week.
+
+  3. Talk about the discussion section topics for tomorrow and next week.
+
+     - any questions about tomorrow's topics?
+
+     - show a quick derivation in the grammar first (I want students to see
+       a derivation before the quiz)
+
+       >>> Tammy
+
+  4. Office hours
+
+     - how were they this week?
+
+  5. Project #4
+
+     - describe it briefly
+
+  8. Exam #1
+
+     - practice material
+
+     - will be next Thursday
+
+     - we need proctors: two 2:00-3:15 and two 3:30-4:45.  We can cancel
+       office hours during the exam if needed.
+
+       last time:
+       2:00- Tommy Derek
+       3:30- Varun Tammy
+
+       Want to grade on Sunday (the 18th)
+
+       12:00
+
+       (Next time, talk about how to proctor, and what the TAs should be
+       doing during proctoring; should have done this.)
+
+     - everyone will take the draft exam next week- on paper, unlike a quiz,
+       and bring me back their written answers
+
+  7. Can one of you proctor an exam a week from Monday?
+
+     Hao at 4:00 or 1:00-3:00
+
+  5. Project #3 grading
+
+     - the source code will have to be checked briefly for Chebyshev (Varun,
+       two sections; Hao, the rest)
+
+     - Hao, can you make a list of test ideas?  Probably lots of small
+       2-point tests for the first three parts of the project, as
+       independent as possible.  Avoid any really weird cases (division by
+       zero).  Maybe one test verifying that an expected exception was
+       thrown.
+
+  9. Grade Anirudh's exam
+
+Eleventh weekly meeting, Thursday, November 15
+
+Thursday, November 22- no meeting; Thansgiving
+
+Twelfth weekly meeting, Thursday, November 29
+
+Thirteenth weekly meeting, Thursday, December 6
+
+  review tomorrow
+
+  scratch paper
+
+  positive points
+
+  final exam grading
+
+  End of semester office hours.
+
+  Entering chebyshev deductions, and checking if anyone asks.
+
+  A student changed his answer on a regrade....
+
+  Varun 12 anytime, Derek Thu anytime, Wed after 4
+
+  course eval
+
+Fourteenth weekly meeting, Thursday, December 13
+

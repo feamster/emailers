@@ -1,0 +1,486 @@
+\documentclass[11pt]{article}
+
+  \usepackage{330-f12}
+
+  \usepackage{multirow}
+
+\begin{document}
+
+  \header{\course}{Exam \#2 practice questions \#2}{\Term}
+
+  \noindent
+  {\large\textbf{\underline{Do not open this exam until you are told.}  Read
+  these instructions:}}
+
+  \vspace{-2mm}
+
+  \thispagestyle{myheadings}
+
+  \begin{enumerate}
+
+    \addtolength{\itemsep}{-2mm}  % reduced space between lines
+
+    \item This is a closed book exam.  \textbf{No
+          % calculators,
+          notes %,
+          or other aids are allowed.}
+
+    \item {\bf You must turn in your exam \underline{immediately} when time is
+          called at the end.}
+
+    \item This exam contains 6 pages, including this one.  \textbf{Make sure
+          you have all the pages.}  Each question's point value is next to
+          its number.  \textbf{Write your name on the top of all pages before
+          starting the exam.}
+
+    \item In order to be eligible for as much partial credit as possible,
+          show all of your work for each problem, and \textbf{clearly
+          indicate} your answers.  Credit \textbf{cannot} be given for
+          illegible answers.
+
+    \item If you finish at least 15 minutes early, bring your exam to the
+          front when you are finished; otherwise, wait until the end of the
+          exam to turn it in. Please be as quiet as possible.
+
+    \item If you have a question, raise your hand.  If you feel an exam
+          question assumes something that is not written, write it down on
+          your exam sheet.  Barring some unforeseen error on the exam,
+          however, you shouldn't need to do this at all, so be careful when
+          making assumptions.
+
+    \item If you need scratch paper during the exam, please raise your hand.
+          Scratch paper must be turned in with your exam, with your name and
+          ID number written on it.  Scratch paper \textbf{will not} be
+          graded.
+
+    \item Small syntax errors will be ignored in any code you have to write
+          on this exam, as long as the concepts are correct.
+
+    \item The Campus Senate has adopted a policy asking students to include
+          the following handwritten statement on each examination and
+          assignment in every course: ``\textit{I pledge on my honor that I
+          have not given or received any unauthorized assistance on this
+          examination\/}.''  Therefore, \textbf{just before turning in your
+          exam}, you are requested to write this pledge \textbf{in full
+          \textmd{and} sign it} below:
+
+          \medskip
+
+          \begin{minipage}[t]{6.6in}
+
+            \addtolength{\baselineskip}{4mm}
+
+            \underline{\hspace{6.6in}}
+
+            \underline{\hspace{6.6in}}
+
+          \end{minipage}
+
+    \medskip
+
+  \end{enumerate}
+
+  \vspace{-1.5mm}
+
+  \noindent
+  Good luck!
+
+  % \enlargethispage{2mm}
+  % 
+  % \vspace{\fill}
+  % 
+  % % 3 exam questions, .6mm scale factor
+  % \hspace{\fill}\parbox[t]{3.15in}{\scoreblank{3}{.6mm}}
+
+  \pagebreak
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  \pagestyle{headings}
+
+  \markright{Name: \hspace{.2mm} \lans\ans}
+
+  \begin{enumerate}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \item Short answer:
+
+      \vspace{-2.5mm}
+
+      \begin{enumerate}
+
+        \addtolength{\itemsep}{1.75in}
+
+        \item Below is the output of the OCaml interpreter after we've typed
+              in various definitions of the function \texttt{f}.  In each
+              case, write a definition of a function \texttt{f} that has
+              that type.
+
+              \begin{enumerate}
+
+                \addtolength{\itemsep}{1in}
+
+                \item \verb@val f : 'a -> 'b -> 'a * 'a * 'b = <fun>@
+
+                \item \verb@val f : ('a -> 'b) -> ('b -> 'c) -> 'a -> 'c @%
+                      \verb@= <fun>@
+
+                \item \verb@val f : 'a -> 'b = <fun>@
+
+              \end{enumerate}
+
+              \vspace{-.5in}
+
+        \item Define what it means for one name to \textit{shadow} another,
+              and give an example of shadowing in the language of your
+              choice.
+
+        \item Suppose in C we define the following function:\hspace{1mm}
+              \begin{minipage}[t]{2in}
+
+                \begin{Verbatim}
+        int and(int x, int y) {
+          return x && y;
+        }
+                \end{Verbatim}
+
+              \end{minipage}
+
+              \medskip
+
+              Is it ever possible that calling \texttt{and($e_1$, $e_2$)}
+              behaves differently than evaluating $e_1 \ \texttt{\&\&}
+              \ e_2$ directly, where $e_1$ and $e_2$ are C expressions?
+              Explain, and give an example if so.
+
+      \end{enumerate}
+
+      \pagebreak
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \item % Context--free grammars:
+          % 
+          % \vspace{-3mm}
+          % 
+          % \begin{enumerate}
+          %
+          %  \item
+          Consider the short grammar below that generates expressions in
+          something that is called the simply--typed lambda calculus (which
+          we will not explain further here):
+
+                  \smallskip
+
+                  \hspace{2mm}%
+                  \begin{grammar}
+                      \production{\mathrm{S}}{\mathrm{U} \midspc \mathrm{V}
+                                            \midspc \lambda
+                                            \mathrm{V}\!:\!\mathrm{T}
+                                            . \mathrm{S} \midspc \mathrm{S} \
+                                            \, \mathrm{S}}
+                        \\
+                      \production{\mathrm{T}}{\mathtt{int} \midspc
+                                              \mathrm{T}\rightarrow
+                                              \mathrm{T}}
+                        \\
+                      \production{\mathrm{U}}{\texttt{1} \midspc \texttt{2}
+                                             \midspc \texttt{3}}
+                        \\
+                      \production{\mathrm{V}}{\texttt{x} \midspc \texttt{y}
+                                              \midspc \texttt{z}}
+                        \\
+
+                  \end{grammar}
+
+                  \smallskip
+
+                  We assume that the only integers are just \texttt{1},
+                  \texttt{2}, and \texttt{3}, and that the only variable
+                  names are just \texttt{x}, \texttt{y}, and \texttt{z}.
+
+                  Prove that this grammar is ambiguous.
+
+                  \pagebreak
+
+          %  \item Now, write a grammar for the same language from part (a)
+          %        that is \textbf{not ambiguous}.  In particular,
+          % 
+          %        \vspace{-1mm}
+          % 
+          %        \begin{itemize}
+          % 
+          %          \item Your grammar should generate exactly the same
+          %                expressions as from part (a)--no more, and no less.
+          %            
+          %          \item Function definitions extend as far to the
+          %                right as possible.  For example, $\mathtt{\lambda
+          %                x\!:\!int.x\ 3}$ should have the interpretation
+          %                $\mathtt{\lambda x\!:\!int.(x\ 3)}$.
+          %            
+          %          \item Function application is
+          %                \textbf{left--associative}.  For example, your
+          %                grammar should interpret \\$\mathtt{\lambda
+          %                x\!:\!int.x \ 1 \ y
+          %                \ 2}$ \hspace{.5mm}as\hspace{.5mm}
+          %                $\mathtt{\lambda x\!:\!int.( \, ( \, ( \, x \ 1 \,
+          %                ) \ y \, ) \ 2 \, )}$
+          %            
+          %          \item Function types are
+          %                \textbf{right--associative}.  For example, your
+          %                grammar should interpret \\$\mathtt{int \rightarrow
+          %                  int \rightarrow int}$
+          %            \hspace{.5mm}as\hspace{.5mm} $\mathtt{int \rightarrow (
+          %              \, int \rightarrow int \, )}$.
+          % 
+          %        \end{itemize}
+          % 
+          %        \vspace{-.5mm}
+          %        
+          %        (Note that lambda calculus expressions in this
+          %        problem may not contain parentheses; we just used
+          %        them for clarification above.)
+          %            
+          %        \vspace{-.5mm}
+          %        
+          %        Some examples (this is for illustration, and does
+          %        \underline{\textbf{not}} illustrate all possible
+          %        valid expressions):
+          % 
+          %        \smallskip
+          % 
+          %        \begin{tabular}[t]{@{\hspace{5mm}}p{2.25in}@{\hspace{.25in}}
+          %                           p{3.75in}@{}}
+          % 
+          %          expression
+          %            & interpretation your grammar should give the expression
+          %            \\ \hline
+          % 
+          %          $\mathtt{1}$
+          %            & $\mathtt{1}$
+          %            \\
+          % 
+          %          $\mathtt{x}$
+          %            & $\mathtt{x}$
+          %            \\
+          % 
+          %          $\mathtt{x \ \: 1}$
+          %            & $\mathtt{x \ \: 1}$
+          %            \\
+          % 
+          %          $\mathtt{x \ \: 1 \ \: y \ \: 2 \ \: z \ \: 3}$
+          %            & $\mathtt{((((x \ \: 1) \ \: y) \ \: 2) \ \: z) \
+          %               \: 3}$
+          %            \\
+          % 
+          %          $\mathtt{\lambda y\!:\!int \rightarrow int . y}$
+          %            & $\mathtt{\lambda y\!:\!int \rightarrow int . y}$
+          %            \\
+          % 
+          %          $\mathtt{\lambda y\!:\!int \rightarrow int
+          %                   \rightarrow int. y}$
+          %            & $\mathtt{\lambda y\!:\!int \rightarrow (int
+          %                      \rightarrow int). y}$
+          %            \\
+          % 
+          %          $\mathtt{\lambda x\!:\!int \rightarrow int . \lambda
+          %                   y\!:\!int . x \ \: y \ \: x}$
+          %            & $\mathtt{\lambda x\!:\!int \rightarrow int . (\lambda
+          %                      y\!:\!int . ((x \ \: y) \ \: x))}$
+          %            \\
+          % 
+          %        \end{tabular}
+          % 
+          %        \medskip
+          % 
+          %        In order for it to be graded as accurately and quickly as
+          %        possible, your grammar should use consecutive nonterminals
+          %        beginning with S (S, T, U, etc.).
+          % 
+          % \end{enumerate}
+
+          \pagebreak
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \item Evaluating Java bytecode: In this problem you will
+          write an OCaml function to evaluate Java bytecodes.  The Java
+          Virtual Machine, which executes bytecodes, is \emph{stack--based},
+          so that bytecode instructions operate on a stack, pushing and
+          popping values, which for this problem will only be integers.
+          Java bytecodes can also access a set of \emph{local variables},
+          which are numbered.
+
+      The following table describes the eight opcodes you will implement for
+      this problem.  The right--most column is a succinct picture of what
+      the instructions do.  Stacks are written with the top of the stack to
+      the left and $\ldots$ used to indicate the portion of the stack that
+      doesn't change.  $V$ is the local variable lookup table, and $V(n)$
+      refers to the value which variable number $n$ maps to in $V$.  The
+      $\Rightarrow$ means that the initial stack's contents are shown to the
+      left of the arrow, and the stack's contents after the instruction is
+      executed are shown to the right of the arrow.  So, for example, the
+      notation ``$\ldots \Rightarrow V(n), \ldots$'' in the 2nd to last row
+      of the table means ``look up $n$ in the table $V$, and push the result
+      onto the stack.''  The last row's notation means ``remove the top
+      value from the stack, and store whatever that was in $V(n)$.''
+
+      \vspace{-1mm}
+
+      \newcommand{\iload}[1]{\texttt{iload}\;#1}
+      \newcommand{\istore}[1]{\texttt{istore}\;#1}
+      \newcommand{\dup}{\texttt{dup}}
+      \newcommand{\iadd}{\texttt{iadd}}
+      \newcommand{\iconst}[1]{\texttt{iconst}\;#1}
+      \newcommand{\nop}{\texttt{nop}}
+      \newcommand{\pop}{\texttt{pop}}
+      \newcommand{\swap}{\texttt{swap}}
+
+      \begin{center}
+        \begin{tabular}{|l|p{3.2in}|l|} \hline
+          Instruction &
+          Description &
+          Example \\ \hline \hline
+          $\iconst{x}$ &
+          Push the value $x$ onto the stack  &
+          $\ldots \Rightarrow x, \ldots$ \\ \hline
+
+          $\iadd$ &
+          Add two ints on top of the stack &
+          $x, y, \ldots \Rightarrow x+y, \ldots$ \\ \hline
+
+          $\dup$ &
+          Duplicate the value on the top of the stack &
+          $x, \ldots \Rightarrow x, x, \ldots$ \\ \hline
+
+          $\nop$ &
+          Do nothing &
+          $\ldots \Rightarrow \ldots$ \\ \hline
+
+          $\pop$ &
+          Pop the top value off of the stack and discard it &
+          $x, \ldots \Rightarrow \ldots$ \\ \hline
+
+          $\swap$ &
+          Swap the top two operand stack values &
+          $x, y, \ldots \Rightarrow y, x, \ldots$ \\ \hline
+
+          $\iload{n}$ &
+          Push the value in local variable \#$n$ onto the stack &
+          $\ldots \Rightarrow V(n), \ldots$ \\ \hline
+
+          \multirow{2}{*}{$\istore{n}$} &
+          Pop the top value off of the stack and store it in local variable
+            \#$n$ &
+          \multirow{2}{*}{$x, \ldots \Rightarrow \ldots \qquad V(n) := x$}
+            \\ \hline
+        \end{tabular}
+      \end{center}
+      
+% These semantics are *really* close to the solution!
+%       \begin{displaymath}
+%         \begin{array}{rcll}
+%           S, \iload{n} & \rightarrow & x::S & \hbox{if } R(n) = x \\ \\
+%           x::S, \istore{n} & \rightarrow & S & R(n) := x \\ \\
+%           x::S, \dup & \rightarrow & x::x::S \\ \\
+%           x::y::S, \iadd & \rightarrow & z::S & z = x+y \\ \\
+%           S, \iconst{x} & \rightarrow & x::S \\ \\
+%           S, \nop & \rightarrow & S \\ \\
+%           x::S, \pop & \rightarrow & S \\ \\
+%           x::y::S, \swap & \rightarrow & y::x::S
+%         \end{array}
+%       \end{displaymath}
+
+      \smallskip
+
+      Below we give an OCaml data type \texttt{instr}
+      representing Java bytecodes.  You job is to write two functions.
+      First, write:
+
+      \vspace{-5mm}
+
+      \begin{center}
+
+        \verb@eval_instr : int list * instr -> int list@
+
+      \end{center}
+
+      \vspace{-2mm}
+
+      which, given a stack and an instruction, returns a new stack
+      according to the behavior of the instruction.  The stack is a
+      list of integers with the head of the list as the top of the
+      stack.  Then write:
+
+      \vspace{-2.75mm}
+
+      \begin{center}
+
+        \verb@eval : int list * instr list -> int list@
+
+      \end{center}
+
+      \vspace{-2.5mm}
+
+      which, given a stack and a list of instructions, returns a new
+      stack which is the result of evaluating each of the
+      instructions in turn, in order from the first instruction in the
+      list to the end of the list.  (You should find this second function
+      much easier to write.)
+
+      \vspace{-2.75mm}
+
+      \begin{itemize}
+      \item It is an error to try to read a local variable that has
+        not been written to, and your solution may do anything if an
+        instruction tries to do this.
+
+      \item It is an error to try to pop from an empty stack, and your
+        solution may do anything if an instruction tries to do this.
+
+      \item You \textbf{may not use OCaml library functions or arrays}
+        for this question.  In particular, if you choose to use associative
+        lists to represent $V$, then you will need to give code that
+        implements them.
+      \end{itemize}
+
+      \vspace{-2mm}
+
+      Here is the data type for instructions:      
+
+      \vspace{-2mm}
+
+      \begin{Verbatim}
+        type instr =
+            IConst of int
+          | IAdd
+          | Dup
+          | Nop
+          | Pop
+          | Swap
+          | ILoad of int
+          | IStore of int
+      \end{Verbatim}
+
+      \vspace{-2mm}
+
+      Here is a sample run of \texttt{eval}:
+
+      \vspace{-2mm}
+
+      \begin{Verbatim}
+        # let l = [IConst 3; IConst 4; IAdd];;
+        val l : instr list = [IConst 3; IConst 4; IAdd]
+        # eval ([], l);;
+        - : int list = [7]
+      \end{Verbatim}
+
+      \vspace{-2mm}
+
+      Write your functions \texttt{eval\_instr} and \texttt{eval}, as well
+      as any other functions or declarations you may need, here:
+
+    \end{enumerate}
+
+\end{document}

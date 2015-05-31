@@ -1,0 +1,192 @@
+\documentclass[12pt]{article}
+
+  \usepackage{330-f12}
+
+  \usepackage{wasysym}
+
+\begin{document}
+
+  \header{\course}{Discussion section topics -- Week \#7}{\Term}
+
+  \section{Discussion \#6, Friday, October 12}
+
+    \subsection{Implement a binary search tree in OCaml}
+
+      Develop and show the students an example of a OCaml code that is a
+    little bit more complex, in this case a binary search tree (of
+    integers).  See if you can get students to help tell you what to do to
+    write the functions, or, if you like, ask the students to spend a few
+    minutes trying to write each function, then show and discuss yours
+    before going on (or let some students write their versions on the board
+    and everyone can see if they're right).
+
+      Note this is going to use data types, but don't make it a module, as we
+    haven't covered modules yet.  You can use the following data type, but
+    explain it, or better yet ask the students what it should look like:
+
+      \medskip
+
+      \begin{minipage}[t]{6in}
+
+        \begin{Verbatim}
+        type bin_tree =
+            Empty
+          | Node of bin_tree * int * bin_tree
+        \end{Verbatim}
+
+      \end{minipage}
+
+      \bigskip
+
+        Here are the functions to be implemented.  Hopefully they should all
+      be pretty self--explanatory.  The tree shouldn't contain any duplicate
+      elements (\texttt{insert} can either throw an exception, or return its
+      argument tree unmodified if an element is already present, as you
+      prefer).
+
+      \medskip
+
+      \begin{minipage}[t]{6in}
+
+        \begin{Verbatim}
+        empty             : bin_tree
+        is_empty          : bin_tree -> bool
+        member            : int * bin_tree -> bool
+        insert            : int * bin_tree -> bin_tree
+        equal             : bin_tree * bin_tree -> bool
+        inorder_traversal : bin_tree -> unit
+        remove            : int * bin_tree -> bin_tree
+        \end{Verbatim}
+
+      % fold     : (int -> 'a -> 'a) -> bin_tree -> 'a -> 'a
+
+      \end{minipage}
+
+      \bigskip\medskip
+
+      \texttt{remove()} might be a little harder; if you don't get to it you
+    can leave it as an exercise for students.
+
+      If you have any trouble coding it due to newness to OCaml you can ask me
+    any questions ahead of time.  Just as an example, so you can see if you
+    have the same idea I do, below is an implementation of
+    \texttt{member()}.
+
+    % Now that I've covered closures in lecture, and I'll be covering
+    % currying and \texttt{function} on Monday, you should show curried
+    % versions of these functions like the example below.  In other words,
+    % instead of the functions taking a tuple as a parameter (for example,
+    % instead of \texttt{member} taking a tuple of a tree and an element) it
+    % can take just an element as a parameter, and contain a
+    % \texttt{function} which matches against the tree in its body, as in
+    % the example below.  It could actually be useful to show for one
+    % function both the style using a tuple as a parameter (example to the
+    % right below) to compare it to the curried version which uses
+    % \texttt{function} shown to the left below.
+
+      Since we haven't covered closures or currying in lecture yet, you should
+    show versions of these functions like the example on the right below.
+    In other words, the functions should take a tuple as a parameter.
+    (Maybe if there's time in discussion next week you can go back and show
+    how one of the functions would look in the style on the left.)
+
+      \vspace{-1mm}
+
+      \raggedcolumns
+
+      \begin{multicols}{2}
+
+        \begin{Verbatim}
+        let rec member elt = function
+            Empty -> false
+          | Node (left, value, right) ->
+              if elt = value
+                then true
+                else
+                  if elt < value
+                    then member elt left
+                    else member elt right
+        \end{Verbatim}
+
+        \columnbreak
+
+        \begin{Verbatim}
+        let rec member (elt, tree) =
+          match tree with
+              Empty -> false
+            | Node(left, value, right) ->
+                if elt = value
+                  then true
+                  else 
+                    if elt < value
+                      then member (elt, left)
+                      else member (elt, right)
+        \end{Verbatim}
+
+      \end{multicols}
+
+      \vspace{-2mm}
+
+      One point you might make after finishing is to compare the length and
+    difficulty of this solution (once you understand OCaml) to what it would
+    take in Java or C, for example, to code up the same functionality in a
+    ordered binary search tree.  It would take much more code, and would
+    probably involve in more errors during development, but OCaml makes it
+    very easy to process data structures recursively in this way; some of
+    the OCaml functions are particularly simple in that they correspond
+    quite closely to an algorithmic description of what the operations have
+    to do.
+
+      After the section, one of you should put your code (ideally with some
+    explanatory comments explaining what the functions do, and some sample
+    calls) in the public directory for students to study.
+
+    \subsection{Strings}
+
+      If the binary tree takes the whole time it's fine, but if not you can go
+    ahead and do this also.  There could be times when it's necessary to
+    recursively iterate over a string, similar to the way we wrote recursive
+    functions over lists.  Write a function like \texttt{count: string ->
+      char -> int} which counts and returns the number of occurrences of the
+    character in the string.  (The main function \texttt{count} will
+    probably have to immediately call a recursive helper function, so maybe
+    see if the students can figure that out.)
+
+      Actually this can be done two ways, so if time permits do it both ways
+    and show both of them:
+
+      \vspace{-1mm}
+
+      \begin{itemize}
+
+        \addtolength{\itemsep}{-1mm}
+
+        \item One way, similar to recursive list functions, is to keep
+              calling the recursive function with the tail of the string
+              (all except the first character), obtained by the
+              \texttt{String.sub} function (substring), which would look
+              something like
+              \texttt{String.sub s 1 ((String.length s) - 1)}.
+
+        \item The second method would be to pass the entire string to each
+              recursive call, but with an integer indicating the current
+              position of the string to be examined, and then compare that
+              character position using \texttt{s.[pos]}.
+
+      \end{itemize}
+
+    \subsection{If you have extra time}
+  
+      If you have any extra time, instead of letting the students go early,
+    see if they have any questions and try to answer them if so.  There may
+    be questions about the second project.  If you didn't finish all the
+    recursive OCaml list functions from last time you could finish them now,
+    or make up some other ones that are similar.  You could also add some
+    functions to the binary tree if you have extra time.
+
+      (Avoid discussing the answers to the exam today-- sometimes some students
+    are ill or had some type of problem at the last minute and missed an
+    exam and have to take a makeup; we don't want to talk about the exam if
+    they happen to be in discussion section to hear about it.)
+
+\end{document}

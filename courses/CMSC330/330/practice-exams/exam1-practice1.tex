@@ -1,0 +1,433 @@
+\documentclass[11pt]{article}
+
+  \usepackage{330-f12}
+
+  \newcommand{\sms}{\ensuremath{\hspace{.1mm}}}
+
+  \newcommand{\terminal}[1]{\texttt{#1}}
+
+  \newcommand{\midspcsmall}{\mbox{\LARGE \ensuremath{\ \mid \ }}}
+
+  \newcommand{\formula}[1]{{\Large\ensuremath{#1}}}
+
+\begin{document}
+
+  % We have to use \header{}{}{}, since \maketitle generates a new page
+  % beforehand.
+  %
+  \header{\course}{Exam \#1 practice questions \#1}{\Term}
+
+  \noindent
+  {\large
+    \textbf{\underline{Do not open this exam until you are told.}
+            Read these instructions:
+    }
+  }
+
+   \vspace{-2mm}
+
+  \thispagestyle{myheadings}
+
+  \begin{enumerate}
+
+    \addtolength{\itemsep}{-2mm}  % reduced space between lines
+
+    \item This is a closed book exam.  {\bf No
+          % calculators,
+          notes %,
+          or other aids are allowed.}  If you have a question during the
+          exam, please raise your hand.  Each question's point value is next
+          to its number.
+
+    \item {\bf You must turn in your exam \underline{immediately} when time is
+          called at the end.}
+
+    % \item 6 pages, 5 problems, 100 points, 50 minutes.
+
+    \item In order to be eligible for as much partial credit as possible,
+          show all of your work for each problem, and \textbf{clearly
+          indicate} your answers.  Credit \textbf{cannot} be given for
+          illegible answers.
+
+    \item You will \textbf{lose credit} if \emph{\textbf{any}} information
+           above is incorrect or missing, or your name is missing from any
+           side of any page.
+
+    \item Parts of this page and of two other pages are
+    % \item Part of this page, and part of the next page, are
+          for scratch work.  If you need extra scratch paper
+    % \item Parts of this page and of another page are
+    % \item Part of this page, and the last page, are
+    %       for scratch work.  If you need extra scratch paper
+    % \item Part of this page is
+    %       for scratch work.  If you need extra scratch paper
+    % \item Part of this page, and parts of two other pages, are
+    %       for scratch work.  If you need extra scratch paper
+          after you have filled
+          % this page
+          % these pages
+          these areas
+          % this area
+          up, please raise your hand.
+          Scratch paper must be turned in with your exam, with your name and
+          ID number written on it.
+          % \textbf{Nothing written on scratch paper will be graded.}
+          Scratch paper \textbf{will not} be graded.
+          % Figure out your answer on scratch paper if necessary, then write
+          % it {\bf neatly} in the answer space provided.
+
+    \item To avoid distracting others, {\bf no one} may leave until the exam
+          is over.
+
+    \item The Campus Senate has adopted a policy asking students to include
+          the following handwritten statement on each examination and
+          assignment in every course: ``\textit{I pledge on my honor that I
+          have not given or received any unauthorized assistance on this
+          examination\/}.''  Therefore, \textbf{just before turning in your
+          exam}, you are requested to write this pledge \textbf{in full
+          \textmd{and} sign it} below:
+
+          \medskip
+
+          \begin{minipage}[t]{6.6in}
+
+            \addtolength{\baselineskip}{4mm}
+
+            \underline{\hspace{6.6in}}
+
+            \underline{\hspace{6.6in}}
+
+          \end{minipage}
+
+    \medskip
+
+  \end{enumerate}
+
+  \vspace{-2mm}
+
+  \noindent
+  Good luck!
+
+  % \enlargethispage{6mm}
+  % 
+  % \vspace{\fill}
+  % 
+  % \noindent
+  % \begin{tabular}[t]{@{}p{2.75in}@{\hspace{.5in}}p{3.75in}@{}}
+  % 
+  %   \vspace{8mm}
+  % 
+  %   \scratchpaper[2.75in]
+  % 
+  % &
+  % 
+  %   \vspace{0mm}
+  % 
+  %   % 4 exam questions, .5mm scale factor
+  %   \hspace{\fill}\parbox[t]{3.325in}{\scoreblank{5}{.45mm}}
+  %   % \scoreblank{4}{.5mm}
+  % 
+  %   %\vspace{-.75in}
+  % 
+  % \end{tabular}
+
+  \pagebreak
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  \pagestyle{headings}
+
+  \markright{Name: \hspace{.2mm} \lans\ans}
+
+  \begin{enumerate}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \item {[16 pts.]} Short--answer questions based on material discussed in
+          class-- answer them quickly and \textbf{very \underline{briefly}},
+          each in \textbf{two sentences} or less.
+
+          \vspace{-2.5mm}
+
+          \begin{enumerate}
+
+            \addtolength{\itemsep}{28mm}
+
+            \item Give a short example (just a few lines of code) that
+                  illustrate that Ruby has dynamic typing.
+
+            \item \textbf{Briefly} describe any \emph{two} differences
+                  between NFAs and DFAs.
+
+            \item \textbf{Briefly} explain what it means to say that a
+                  function has \emph{polymorphic} type.
+
+            \item \textbf{Briefly} explain what it means to say that a
+                  language has \emph{higher--order functions}.
+
+          \end{enumerate}
+
+          \vspace*{26mm}
+
+          \underline{\hspace{6.6225in}}
+
+          \medskip
+
+          \begin{centering}
+
+            \scratchpaper[6.8in]
+
+          \end{centering}
+
+          \pagebreak
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \item {[24 pts.]} Draw a valid, complete, deterministic finite automaton
+          (DFA) that recognizes or accepts the language:
+
+          \vspace{-2mm}
+
+          \begin{centering}
+
+            \(
+              \left\{
+                \ \:
+                \begin{array}[c]{@{}l}
+                w
+                \end{array}
+                \left| \ \ \:
+                w \sms \in \sms \{ \sms a, \, b \sms \}^*, \:
+                \textrm{and the \textbf{second--to--last} symbol of
+                        \emph{w} is an \emph{a}}
+              \ \:
+              \right.
+              \right\}
+            \)
+
+            \vspace{1.25mm}
+
+          \end{centering}
+
+          Strings in this language can be of any length and can have any
+          number of \emph{a}'s and \emph{b}'s, as long as they satisfy the
+          property above.  In particular, all the symbols of a string other
+          than the second--to--last one can be anything at all.  Note that
+          any string that doesn't have a second--to--last character can
+          never have this property.  Some examples are:
+
+          \vspace{-2.75mm}
+
+          \begin{itemize}
+
+            \addtolength{\itemsep}{-.5mm}
+
+            \item The strings \emph{aaaaa}, \emph{bbbab}, and \emph{babab}
+                  are all in this language, since the second--to--last
+                  symbol of each of them is an \emph{a}.
+
+            \item The strings \emph{bbbbb}, \emph{aaaba}, and \emph{ababa}
+                  are all \textbf{not} in this language, since none of them
+                  have a second--to--last symbol that is an \emph{a}.
+
+          \end{itemize}
+
+          \vspace{-2.5mm}
+
+          Note these examples do \textbf{\underline{not}} illustrate all
+          possible valid or invalid strings.
+
+          Be sure to give a \textbf{complete} DFA, not an NFA, and
+          \textbf{do not use any notational shortcuts}.  \emph{\textbf{Write
+          neatly}} for your answer to be graded.
+
+          % -- figure out your DFA in the scratch area first, then write it
+          % here.
+
+          \pagebreak
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \item {[18 pts.]} Consider the following programming problem.  We need
+          to read the transitions of an NFA from a text file and count how
+          many outgoing transitions the state that is named ``\texttt{S0}''
+          has.  A transition is a line of the form (\emph{from\_state},
+          \emph{letter}, \emph{to\_state}), which indicates a transition
+          from \emph{from\_state} on the symbol \emph{letter} to the state
+          \emph{to\_state}.  State names may contain uppercase and lowercase
+          letter and digit characters and may be of length 1 or more, while
+          \emph{letter} is a single lowercase letter.  No other characters
+          can appear on an input transition line, and no whitespace may
+          appear other than the newline terminating each line.  If any input
+          lines are not of this form they represent invalid transitions and
+          are to be ignored.
+
+          Write a complete Ruby program that reads a sequence of such lines
+          from its standard input, and prints the number of
+          \textbf{outgoing} transitions from the state named \texttt{S0};
+          there may be zero or more.  Don't try to ignore duplicate
+          transitions-- every transition that is outgoing from \texttt{S0}
+          should be counted, regardless of what letter the transition is for
+          or which state it goes to.  You may use any Ruby standard library
+          functions.  Minor mistakes in syntax will be ignored if you have
+          the correct concept.
+
+          \pagebreak
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \item {[26 pts.]} \label{re-problem} Write a regular expression that
+          describes or recognizes the language:
+
+          \begin{centering}
+
+            \vspace{.25mm}
+
+            \(
+              \left\{
+                \ \:
+                \begin{array}[c]{@{}l}
+                w
+                \end{array}
+                \left| \ \ \:
+                \parbox[c]{3.5in}{
+                  $w \sms \in \sms \{ \sms a, \, b , \, c , \, d \sms \}^*$,
+                  and \emph{w} does not contain any \emph{a} that is adjacent
+                  to a \emph{d} (or vice versa of course)
+                }
+              \ \:
+              \right.
+              \right\}
+            \)
+
+            \vspace{1.5mm}
+
+          \end{centering}
+
+          Strings in this language can be of any length, and can contain any
+          number of zero or more \emph{a}'s, \emph{b}'s, \emph{c}'s, and
+          \emph{d}'s, as long as they satisfy the property above.  Note that
+          there are no restrictions on the \emph{b}'s and \emph{c}'s in a
+          string.  Some examples are:
+
+          \vspace{-2.75mm}
+
+          \begin{itemize}
+
+            \addtolength{\itemsep}{-.5mm}
+
+            \item The string \emph{abcddcba} is in this language, since none
+                  of its \emph{a}'s and \emph{d}'s are adjacent.
+
+            \item The string \emph{aabbccaabbcc} is also trivially in this
+                  language, as it doesn't even have any \texttt{d}'s.
+
+            \item \emph{bbbbb} also trivially has the property above, so
+                  it's in the language as well.
+
+            \item The string \emph{abcdabcd} is \textbf{not} in this
+                  language, because its first \texttt{d} is adjacent to its
+                  second \emph{a}.
+
+          \end{itemize}
+
+          \vspace{-2.5mm}
+
+          Note these examples do \textbf{\underline{not}} illustrate all
+          possible valid or invalid strings.
+
+          Your regular expression may \textbf{only} use the three formal
+          regular expression operations concatenation, alternation, and
+          Kleene closure, which were defined in class.  These operations can
+          be nested, and terminal symbols, parentheses, and $\epsilon$ may
+          be used as well, but do \textbf{not} use any other regular
+          expression operations, and do \textbf{not} write a Ruby regular
+          expression.
+
+         \pagebreak
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \item {[16 pts.]} Writing an OCaml function.
+
+          \vspace{-2.75mm}
+
+          \begin{enumerate}
+
+            \addtolength{\itemsep}{3in}
+
+            \item Write an OCaml function named \texttt{nth} that has a
+                  tuple of an \texttt{int} named \texttt{n} and a list as a
+                  parameter and that returns the \texttt{n}'th element of
+                  the list.  The list's first element is considered to be
+                  element number 1.  For example:
+
+                  \vspace{-.75mm}
+
+                  \begin{itemize}
+
+                    \addtolength{\itemsep}{-.25mm}
+
+                    \item \texttt{nth (1, [2; 4; 6; 8; 10])} would return
+                          \texttt{2},
+
+                    \item \texttt{nth (2, [2; 4; 6; 8; 10])} would return
+                          \texttt{4}, and
+
+                    \item \texttt{nth (3, ["hi"; "ciao"; "bye"])} would
+                          return \texttt{"bye"}.
+
+                  \end{itemize}
+
+                  \vspace{-.75mm}
+
+                  You can assume the list will always have an \texttt{n}'th
+                  element to be returned, and you can also assume that
+                  $\mathtt{n} > 0$.  It doesn't matter if your function
+                  would generate any incomplete match warnings.
+
+            \item Give the exact type of the function \texttt{nth} that you
+                  wrote above.
+
+          \end{enumerate}
+
+          \vspace*{8mm}
+
+          \underline{\hspace{6.6225in}}
+
+          \medskip
+
+          \begin{centering}
+
+            \scratchpaper[6.8in]
+
+          \end{centering}
+
+          \pagebreak
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  \end{enumerate}
+
+  % end of numbered questions
+
+  % \markright{}
+
+  % \begin{center}
+  % 
+  %   \scratchpaper
+  % 
+  %   % \bigskip
+  %   % 
+  %   % \Large
+  %   % 
+  %   % You can separate this page if you like, to use in solving earlier
+  %   % \linebreak
+  %   % questions, as long as you \textbf{\underline{write your name} on the
+  %   % other side.}
+  % 
+  % \end{center}
+
+   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

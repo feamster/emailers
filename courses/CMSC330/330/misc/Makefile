@@ -1,0 +1,34 @@
+# requires gmake
+
+.PRECIOUS: %.dvi
+
+DIRECTORY= misc
+
+FILES= $(patsubst %.tex,%.ps, $(wildcard *.tex)) \
+       $(patsubst %.tex,%.pdf, $(wildcard *.tex))
+
+all: $(FILES)
+
+schedule.ps: schedule.dvi
+	dvips -t landscape schedule.dvi
+
+%.dvi : %.tex;
+	texi2dvi $<
+
+%.ps : %.dvi;
+	dvips -o -t letter $<
+
+%.pdf : %.ps;
+	ps2pdf $<
+
+check:
+	@ for file in $(FILES); \
+          do if [ ! -f $$file ]; \
+            then echo "The file '$(DIRECTORY)/$$file' is missing!!!"; \
+          fi \
+        done
+
+clean:
+	- rm *.dvi *.ps *.pdf *.log *.out *.eps *.bak *.aux *~ \#* core*
+
+rc: clean

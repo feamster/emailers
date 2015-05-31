@@ -1,0 +1,184 @@
+\documentclass[11pt]{article}
+
+  \usepackage{330-f12}
+
+\begin{document}
+
+  \header{\course}
+         {
+           \begin{tabular}[t]{@{}c@{}}
+             Formal languages and regular expressions -- \\
+             solutions
+           \end{tabular}
+         }
+         {\Term}
+
+  \begin{enumerate}
+
+    \addtolength{\itemsep}{6mm}
+
+    \item \begin{enumerate}
+
+            \addtolength{\itemsep}{2mm}
+
+            \item $ \{ \: a, \, aa, \, aaa\: \} \ \: ( \equiv \mathrm{A}) $
+
+            \item $ \{ \: aa, \, aaa, \, aaaa, \, aaaaa, \, aaaaaa \: \} $
+
+            \item $ \{ \: a, \, aa, \, aaa, \, aaaa, \, aaaaa, \,
+                       aaaaaa \: \} $
+
+            \item $ \{ \: \epsilon, \, a, \, aa, \, aaa, \, aaaa, \, aaaaa, \,
+                       aaaaaa, \, \ldots \: \} $
+
+            \item $ \{ \: bb \: \}  \ \: ( \equiv \mathrm{B})$
+
+            \item $ \{ \: bbbb \: \} $
+
+            \item $ \{ \: bbbbbb \: \} $
+
+            \item $ \{ \: bb, \, bbbb, \, bbbbbb \: \} $
+
+            \item $ \{ \: \epsilon, \, bb, \, bbbb, \, bbbbbb, \, bbbbbbbb, \,
+                       bbbbbbbbbb, \, \ldots \: \} $
+
+            \item $ \{ \: abbabb, \, abbaabb, \, abbaaabb, \, aabbabb, \,
+                       aabbaabb, \, aabbaaabb, \, aaabbabb, \, aaabbaabb, \,
+                       aaabbaaabb \: \} $
+
+            \item $ \{ \: aa, \, aaa, \, aaaa, \, abb, \, aaaaa, \, aabb, \,
+                       aaaaaa, \, aaabb, \, bba, \, bbaa, \, bbaaa, \, bbbb
+                       \: \} $
+
+          \end{enumerate}
+
+    \item Note that different solutions are possible.
+
+          \newcommand{\sss}{\hspace{.35mm}}
+          \newcommand{\mymid}{\mbox{\ensuremath{\sss\mid\sss}}}
+          \newcommand{\common}{\ensuremath{( \sss a \mymid b \sss)}}
+
+          \vspace{-1.5mm}
+
+          \begin{enumerate}
+
+            \addtolength{\itemsep}{2mm}
+
+            \item \(
+                    abab \, \common^{*}
+                  \)
+                  ~or~
+                  \(
+                    abab \, (a^{*}b^{*})^*
+                  \)
+
+                  \smallskip
+
+                  The first of these is arguably clearer, but both describe
+                  the same language.
+
+            \item \(
+                    \common^{*} \, abab
+                  \)
+                  ~or~
+                  \(
+                    (a^{*}b^{*})^{*} \, abab
+                  \)
+
+            \item \(
+                    ( \: ab \, \common^{*} \, ba \: \mid \: aba \: )
+                  \)
+
+            \item \(
+                    b^*ab^*ab^* \, (\: ab^*ab^*ab^*ab^*ab^* \: )^*
+                  \)
+
+            \item \(
+                    ( \:
+                      b^{*}
+                      \, \mid \,
+                      ( \: b^{*}ab^{*}ab^{*} \: )^{*}
+                      \, \mid \, 
+                      ( \: \common \: \common \: )^{*} \:
+                    )
+                  \)
+                  ~or~
+                  \(
+                    ( \:
+                      b^{*}
+                       \, \mid \,
+                      ( b^{*}ab^{*}ab^{*} )^{*}
+                       \, \mid \,
+                      ( \: ab \mid bb \mid ba \mid aa \: )^{*}  \:
+                    )
+                  \)
+
+            \item \(
+                    \common^{*} \ aaa \ \common^{*}
+                  \)
+
+            \item \(
+                    b^{*} \, ( \, ( \epsilon \mid a \mid aa \, ) \, b \, )^* \
+                    ( \epsilon \mid a \mid aa )
+                  \)
+
+          \end{enumerate}
+
+    \item One thing which is interesting which you may have noticed is that
+          even making a small change in the regular expression can have a
+          big effect on the results it produces.
+
+          \vspace{-1.5mm}
+
+          \begin{enumerate}
+
+            \addtolength{\itemsep}{2mm}
+
+            \item This regular expression is wrong.  The two strings 1 and
+                  11 for example are in the language, so the regular
+                  expression should recognize or accept them, but it does
+                  not.
+
+            \item This regular expression is wrong.  The string 1001 for
+                  example is in the language, so the regular expression
+                  should recognize or accept it, but it does not.  The same
+                  would apply to any other valid string which begins or ends
+                  with a 1.
+
+            \item This regular expression is wrong.  The string 111 for
+                  example is not in the language, so the regular expression
+                  should not recognize or accept it, but it does.  The same
+                  would apply to any other invalid string containing three
+                  or more consecutive 1s.
+
+            \item This regular expression is wrong.  The string 001110 for
+                  example is not in the language, so the regular expression
+                  should not recognize or accept it, but it does.  The same
+                  would apply to some other invalid strings containing three
+                  or four consecutive 1s, since the regular expression will
+                  recognize or accept strings in which alternate
+                  subsequences of 1s may have three or four consecutive 1s.
+
+            \item This regular expression is wrong.  The string 0011 for
+                  example is in the language, so the regular expression
+                  should recognize or accept it, but it does not.  The same
+                  would apply to any other valid string which contains more
+                  than zero 0s and which ends with a 1.
+
+            \item This regular expression is wrong.  The string 010100 for
+                  example is in the language, so the regular expression
+                  should recognize or accept it, but it does not.  The same
+                  would apply to other valid strings, since this regular
+                  expression requires that every alternate 0 must be
+                  followed by a 0, but not every valid string has that
+                  property.
+
+            \item This regular expression is correct.
+
+            \item This regular expression is also correct.
+
+          \end{enumerate}
+
+  \end{enumerate}
+
+\end{document}

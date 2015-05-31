@@ -1,0 +1,650 @@
+\documentclass[11pt]{article}
+
+  %
+  % all on Wednesday;
+  % Varun 1
+  % Tommy 1
+  % Tammy after 3
+  % Derek 4
+  % Hao   after 4
+  %
+
+  %
+  % Not sure why I numbered the subparts of #2 (a), then (c), then (b), then
+  % (d), going by columns.  Oh well, doesn't make any difference....
+  %
+
+  %
+  % Next time just drop the instruction about minor syntax errors being
+  % ignored; students don't need to know it, and all it does is encourage
+  % regrades.
+  %
+
+  \usepackage{330-f12}
+
+  \usepackage[none,light,outline,timestamp]{draftcopy}
+
+  \newcommand{\sms}{\ensuremath{\hspace{.1mm}}}
+
+  \newcommand{\mathstr}[1]{\ensuremath{\mathit{#1}}}
+
+  \addtolength{\headsep}{-6mm}
+
+  \addtolength{\textheight}{6mm}
+
+\begin{document}
+
+  \hspace{\fill}%
+  \nameblock
+
+  % We have to use \header{}{}{}, since \maketitle generates a new page
+  % beforehand.
+  %
+  \header{\course}{Exam \#2}{\Term}
+
+  \vspace{-2mm}
+
+  \noindent
+  {\large
+    \textbf{\underline{Do not open this exam until you are told.}
+            Read these instructions:
+    }
+  }
+
+  \vspace{-2mm}
+
+  \thispagestyle{myheadings}
+
+  \begin{enumerate}
+
+    \addtolength{\itemsep}{-2mm}  % reduced space between lines
+
+    \item This is a closed book exam.  {\bf No
+          % calculators,
+          notes %,
+          or other aids are allowed.}  If you have a question during the
+          exam, please raise your hand.  Each question's point value is next
+          to its number.
+
+    \item {\bf You must turn in your exam \underline{immediately} when time is
+          called at the end.}
+
+    \item 6 pages, 4 problems, 100 points, 75 minutes.
+
+    \item In order to be eligible for as much partial credit as possible,
+          show all of your work for each problem, and \textbf{clearly
+          indicate} your answers.  Credit \textbf{cannot} be given for
+          illegible answers.
+
+    \item You will \textbf{lose credit} if \emph{\textbf{any}} information
+          above is incorrect or missing, or your name is missing from any
+          side of any page.
+
+    \item Parts of this page and the next page are for scratch work.  If
+          you need extra scratch paper after you have filled these areas up,
+          please raise your hand.  Scratch paper must be turned in with your
+          exam, with your name and ID number written on it.  Scratch paper
+          \textbf{will not} be graded.
+          % Figure out your answer on scratch paper if necessary, then write
+          % it {\bf neatly} in the answer space provided.
+
+    % \item To avoid distracting others, \textbf{no one may leave until the
+    %      exam is over}.
+
+    \item To avoid distracting others, \textbf{no one may leave in the
+          last 10 minutes}.
+
+    \item The Campus Senate has adopted a policy asking students to include
+          the following handwritten statement on each examination and
+          assignment in every course: ``\textit{I pledge on my honor that I
+          have not given or received any unauthorized assistance on this
+          examination\/}.''  Therefore, \textbf{just before turning in your
+          exam}, you are requested to write this pledge \textbf{in full
+          \textmd{and} sign it} below:
+
+          \medskip
+
+          \begin{minipage}[t]{\linewidth}
+
+            \addtolength{\baselineskip}{4mm}
+
+            \ans[\linewidth]
+
+            \ans[\linewidth]
+
+          \end{minipage}
+
+    \medskip
+
+  \end{enumerate}
+
+  \vspace{-2mm}
+
+  \noindent
+  Good luck!
+
+  \enlargethispage{13mm}
+
+  \vspace{\fill}
+
+  \noindent
+  % \begin{tabular}[t]{@{}p{2.5in}@{\hspace{.5in}}p{4.15in}@{}}
+  \begin{tabular}[t]{@{}p{3.1in}@{\hspace{.5in}}p{3.4in}@{}}
+
+    \vspace{14mm}
+    \scratchpaper[2.5in]
+
+  &
+
+    \vspace{0mm}
+
+    % \hspace*{\fill}\parbox[t]{3.6in}{\scoreblank{5}{.5mm}}
+    \hspace*{\fill}\scoreblank{4}{.5mm}
+
+  \end{tabular}
+
+  \pagebreak
+
+  \addtolength{\headsep}{4mm}
+
+  \addtolength{\textheight}{2mm}
+
+  \pagestyle{headings}
+
+  \markright{Name: \hspace{.2mm} \lans\ans}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  \begin{enumerate}
+
+    % \item { [16 pts.]} Short--answer.  Answer each one \textbf{briefly}.
+    %
+    %       \vspace{-3mm}
+    %
+    %       \begin{enumerate}
+    %
+    %         \addtolength{\itemsep}{40mm}
+    %
+    %         \item What do we mean by saying that OCaml has \emph{type
+    %               inference}?
+    %
+    %         \item \textbf{Briefly} describe what \emph{dynamic scoping} is.
+    %
+    %         \item \textbf{Briefly} describe what a \emph{side effect} is,
+    %               \textbf{and} give an example of a code fragment that has a
+    %               side effect in C.  (Clearly describe what the side effect
+    %               is in your code fragment.)
+    %
+    %               \vspace{12mm}
+    %
+    %         \item Why do we say that a recursive descent parser is a
+    %               \emph{predictive} parser?
+    %
+    %         \item What are \emph{downward funargs}, and why are they more
+    %               efficient than upward funargs in OCaml?
+    %
+    %       \end{enumerate}
+    %
+    %       \vspace{-2.5mm}
+    %
+    %       \pagebreak
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \item {[16 pts.]} The following grammar cannot be used for a recursive
+          descent parser, because the first sets of its productions are not
+          unique.  (The language the grammar generates isn't anything in
+          particular.)  Left factor the grammar so it generates the same
+          language but does not have this problem.  Clearly indicate your
+          answer.
+
+          \vspace{-6.5mm}
+
+          \begin{center}
+
+            \begin{grammar}
+
+              \production{S}{\mathit{ca}S \midspc \mathit{co}S \midspc
+                             \mathit{db}T \midspc \mathit{bd}T \midspc
+                             T}
+                \\
+
+              \production{T}{\mathit{aa}T \midspc \mathit{ab}T \midspc
+                             \mathit{a} \midspc \mathit{b}}
+                \\
+
+            \end{grammar}
+
+          \end{center}
+
+          \vspace{-3mm}
+
+          \textbf{Note}: many grammars can be written that generate the same
+          language.  We are \textbf{not} asking you to write another grammar
+          from scratch.  We are asking you to apply the \textbf{specific}
+          construction or algorithm that was given in class to left factor a
+          grammar, in order to receive full credit.
+
+          \vspace{4in}
+
+          \underline{\hspace{\linewidth}}
+
+          \medskip
+
+          \begin{centering}
+
+            \scratchpaper[6.8in]
+
+          \end{centering}
+
+          \pagebreak
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \item {[20 pts.]} Some students were given the job of writing an
+          \textbf{unambiguous, context--free} grammar that generates the
+          following language:
+
+          \vspace{-3.75mm}
+
+          \begin{center}
+
+            \(
+              \left\{
+                \:
+                {a^\mathrm{p}}{b^\mathrm{q}}{c^\mathrm{r}}{d^\mathrm{s}}
+                \midspc
+                \mathrm{p, \, q, \, r \: \ge \: 0, \ p \: < \: s,
+                        \: and \ q \: - \: r \ \textrm{is a multiple of 3}
+                }
+                \:
+              \right\}
+            \)
+
+          \end{center}
+
+          \vspace{-3.5mm}
+
+          Note that $\mathrm{q \: - \: r}$ may be negative, and recall that
+          0 is a multiple of 3.
+
+          The grammars the students came up with are below.  However, since
+          they took CMSC 330 last semester they are not as smart as you, so
+          they may have made some mistakes.  Determine whether each grammar
+          is correct.  If so, just write ``Correct!''.  If a grammar is
+          incorrect, say why \textbf{\underline{and}} give an example
+          demonstrating the problem.  For instance, if there are any strings
+          in the language above that a grammar can't generate, say so and
+          give one.  If a grammar generates some invalid strings not in the
+          language above, say so and give one.  If a grammar is ambiguous
+          for some strings, say so and give one.  If a grammar has any other
+          problems, explain and give an example if possible.  If a grammar
+          has multiple errors you only need to identify one problem.
+
+          \vspace{-2mm}
+
+          \begin{multicols}{2}
+
+            \begin{enumerate}
+
+              \addtolength{\itemsep}{0mm}
+
+              \item \begin{grammar}[1.35]
+
+                      \production{S}{TU}
+                        \\
+
+                      \production{T}{\mathstr{a}T\mathstr{d} \midspc V}
+                        \\
+
+                      \production{U}{\mathstr{d}U \midspc \mathstr{d}}
+                        \\
+
+                      \production{V}{\mathstr{b}V\mathstr{c} \midspc
+                                     \mathstr{b}X\mathstr{c}}
+                        \\
+
+                      \production{X}{\mathstr{b}X\mathstr{c} \midspc
+                                     \largeepsilon}
+                        \\
+
+                    \end{grammar}
+
+                    \bigskip
+
+                    \begin{center}
+
+                      \answerblank{5}{2.75in}{9.5mm}
+
+                    \end{center}
+
+                    \columnbreak
+
+              \item \begin{grammar}[1.35]
+
+                      \production{S}{\mathstr{a}S\mathstr{d} \midspc T}
+                        \\
+
+                      \production{T}{T\mathstr{d} \midspc \mathstr{d}U}
+                        \\
+
+                      \production{U}{\mathstr{b}U\mathstr{c} \midspc V
+                                     \midspc W}
+                        \\
+
+                      \production{V}{\mathstr{bbb}V \midspc \mathstr{bbb}}
+                        \\
+
+                      \production{W}{W\mathstr{ccc} \midspc \mathstr{ccc}}
+                        \\
+
+                    \end{grammar}
+
+                    \medskip
+
+                    \begin{center}
+
+                      \answerblank{5}{2.75in}{9.5mm}
+
+                    \end{center}
+
+                    \end{enumerate}
+
+            \vspace{-2.5mm}
+
+          \end{multicols}
+
+          \vspace{14mm}
+
+          \begin{multicols}{2}
+
+            \vspace{-2.5mm}
+
+            \begin{enumerate}
+
+              \addtolength{\itemsep}{0mm}
+
+              \setcounter{enumii}{2}
+
+              \item \begin{grammar}[1.35]
+
+                      \production{S}{\mathstr{a}S\mathstr{d} \midspc
+                                     S\mathstr{d} \midspc T\mathstr{d}}
+                        \\
+
+                      \production{T}{\mathstr{b}T\mathstr{c} \midspc
+                                     \mathstr{bbb}T \midspc T\mathstr{ccc}
+                                     \midspc \largeepsilon}
+                        \\
+
+                    \end{grammar}
+
+                    \bigskip
+
+                    \begin{center}
+
+                      \answerblank{5}{2.75in}{9.5mm}
+
+                    \end{center}
+
+                    \columnbreak
+
+              \item \begin{grammar}[1.35]
+
+                      \production{S}{S\mathstr{d} \midspc T\mathstr{d}}
+                        \\
+
+                      \production{T}{\mathstr{a}T\mathstr{d} \midspc U}
+                        \\
+
+                      \production{U}{\mathstr{b}U\mathstr{c} \midspc V}
+                        \\
+
+                      \production{V}{W \midspc X \midspc \largeepsilon}
+                        \\
+
+                      \production{W}{\mathstr{bbb}W \midspc \mathstr{bbb}}
+                        \\
+
+                      \production{X}{X\mathstr{ccc} \midspc \mathstr{ccc}}
+                        \\
+
+                    \end{grammar}
+
+                    \medskip\smallskip
+
+                    \begin{center}
+
+                      \answerblank{5}{2.75in}{9.5mm}
+
+                    \end{center}
+
+            \end{enumerate}
+
+            \vspace{-2.5mm}
+
+          \end{multicols}
+
+          \pagebreak
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \item {[32 pts.]}  Write an \textbf{unambiguous, context--free} grammar
+          on the next page that describes a small subset of UNIX commands
+          according to the following rules:
+
+          \vspace{-2.5mm}
+
+          \begin{itemize}
+
+            \addtolength{\itemsep}{.25mm}
+
+            \item The only three program names that may be used in commands
+                  are \texttt{a}, \texttt{b}, and \texttt{c}.  The shortest
+                  valid commands consist simply of one of the three program
+                  names.
+
+            \item Programs may also be grouped together in a pipeline
+                  separated by the pipe symbol \verb@|&@.  (This is the only
+                  pipe symbol that can be used).  If multiple programs
+                  appear in a pipeline, your grammar should express the
+                  interpretation that they are performed or grouped in
+                  \textbf{left--to--right} order.
+
+            \item Either a single program, or the first program in a
+                  pipeline, may optionally use input redirection, indicated
+                  with the symbol \texttt{<}\hspace{.35mm} followed by a
+                  filename.  The only three filenames are \texttt{f},
+                  \texttt{g}, and \texttt{h}.
+
+            \item Either a single program, or the last program in a
+                  pipeline, may optionally use output redirection, indicated
+                  with the symbol \texttt{>}\hspace{.35mm} followed by a
+                  filename.  Programs in the middle of a pipeline (any
+                  programs besides the first or last ones) cannot use input
+                  or output redirection.  If a single program uses both
+                  input and output redirection, the input redirection must
+                  appear first.
+
+            \item Input redirection has priority over pipelining, but
+                  pipelining has priority over output redirection (see the
+                  examples below).  If a single program uses both input and
+                  output redirection, the input redirection should have
+                  priority.
+
+            \item No other program names, filenames, or other symbols or
+                  operations may be used in commands.  (Don't worry about
+                  spaces in commands.)
+
+          \end{itemize}
+
+          \vspace{-2mm}
+
+          Some valid commands your grammar should generate are:
+
+          \smallskip
+
+          \hspace{.35in}%
+          \begin{tabular}[t]
+                {c@{\hspace{1.05in}}c@{\hspace{1.05in}}c@{\hspace{1.05in}}c@{}}
+
+            \verb@a@
+              & \verb@a |& b |& c@
+              & \verb@a < f |& b@
+              & \verb@b |& c > g@
+              \\
+
+          \end{tabular}
+
+          \smallskip
+
+          Since input redirection has priority over pipelining, in the third
+          command above the program \texttt{a} is run with its input
+          redirected from the file \texttt{f}, then \texttt{a}'s output is
+          used as the input for the program \texttt{b}.  (This means that
+          your grammar should give the interpretation \verb@(a < f) |& b@ to
+          this command.)  But since pipelining has priority over output
+          redirection, in the fourth command above the program \texttt{b} is
+          run, its output is used as the input for the program \texttt{c},
+          and \texttt{c}'s results are sent to the file \texttt{g}.
+
+          Some invalid commands, and reasons why they're incorrect, are:
+
+          {
+
+            \renewcommand{\arraystretch}{1.25}
+
+            \hspace{.35in}%
+            \begin{tabular}[t]{p{1in}@{\hspace{.5in}}p{4.65in}@{}}
+
+              \verb@a b@
+                & no pipeline or redirection symbol separates \texttt{a} and
+                  \texttt{b}
+                \\
+
+              \verb@a |& |& b@
+                & is missing a program name, or has an extra pipe symbol
+                \\
+
+              \verb@a < f < g@
+                & input redirection can only be used once in a command
+                \\
+
+            \end{tabular}
+
+          }
+
+          \medskip
+
+          In order that your answer can be graded as accurately and quickly
+          as possible, your grammar should use nonterminals beginning with S
+          (S, T, U, etc.).  Clearly indicate your answer, and please write
+          the vertical bar symbol used to separate productions in a grammar
+          much larger than the pipeline symbol, so they can be clearly
+          distinguished.  Use the area below to figure out your grammar,
+          then write it \textbf{\underline{neatly}} on the next page.
+          \textbf{Note:} if you have trouble writing the full grammar, try
+          to give a version that's correct except it doesn't use input
+          redirection.
+
+          \pagebreak
+
+          \hspace*{0mm}
+
+          \enlargethispage{6mm}
+
+          \vspace{\fill}
+
+          \begin{center}
+
+            \huge
+
+            \textsl{\textcolor{black}{Don't miss the last problem on the next
+            page!}}
+
+          \end{center}
+
+          \pagebreak
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \item {[32 pts.]} Write a function \texttt{quicksort} in OCaml, that
+          will sort a list of integers using the quicksort algorithm.  Its
+          only argument is the list to be sorted, and it should return the
+          sorted list.
+
+          Here's a review of quicksort: it picks a pivot element (the first
+          element of the list may be used), and arranges the list elements
+          such that all the elements less than the pivot are before it, and
+          all those greater than or equal to the pivot (note that the list
+          elements are not necessarily unique) are after it.  This is called
+          partitioning.  Note that the elements before and after the pivot
+          are not yet sorted, but quicksort then calls itself recursively
+          on the sublist of elements before the pivot, and on the sublist of
+          elements after the pivot.  Combining the sorted sublists, with the
+          pivot between them, results in the sorted list.
+
+          You may use anything in the \texttt{Pervasives} module, but
+          \textbf{no other library modules may be used}. The infix
+          \texttt{@} operator from the \texttt{Pervasives} module, which
+          appends two lists, may be useful.  You may write helper functions
+          but you must show them in full, and they should use currying if
+          they have multiple arguments.  No loops or references may be used.
+          Comments are optional, but your function must be written
+          \textbf{\underline{\underline{\emph{\large neatly}}}}.
+
+          \medskip
+
+          \enlargethispage{8mm}
+
+          \answerblank{21}{\linewidth}{9.15mm}
+
+          \pagebreak
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  \end{enumerate}
+
+  % % end of numbered questions
+  %
+  % \markright{}
+  %
+  % \begin{center}
+  %
+  %   \scratchpaper
+  %
+  %   \bigskip
+  %
+  %   \Large
+  %
+  %   You can separate this page if you like, to use in solving any
+  %   \linebreak
+  %   questions, as long as you \textbf{\underline{write your name} on the
+  %   other side.}
+  %
+  % \end{center}
+  %
+  % \pagebreak
+  %
+  % \markright{}
+  %
+  % \underline{\hspace{\linewidth}}
+  %
+  % \begin{center}
+  %
+  %   \scratchpaper
+  %
+  %   \bigskip
+  %
+  %   \Large
+  %
+  %   You can separate this page if you like, to use in solving earlier
+  %   \linebreak
+  %   questions, as long as you \textbf{\underline{write your name} on the
+  %   other side.}
+  %
+  % \end{center}
+
+   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

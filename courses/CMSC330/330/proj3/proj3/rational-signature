@@ -1,0 +1,13 @@
+module type RATIONAL =
+  sig
+    type t
+
+    val rational : int -> int -> t        (* num -> den -> rat *)
+    val string_of_rational : t -> string  (* num/den, reduced *)
+    val numerator : t -> int              (* numerator *)
+    val denominator : t -> int            (* denominator *)
+    val greaterthan : t -> t -> bool      (* true if 1st arg > 2nd arg *)
+    val multiply : t -> t -> t            (* multiplication *)
+    val add : t -> t -> t                 (* addition *)
+    val ceiling : t -> int                (* ceiling *)
+  end

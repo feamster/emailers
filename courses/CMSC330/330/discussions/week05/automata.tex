@@ -1,0 +1,102 @@
+\documentclass[10pt]{article}
+
+  \usepackage{330-f12}
+
+  \chardef\leftbrace=`\{
+  \chardef\rightbrace=`\}
+
+  \psset{unit=1.1mm}
+  \psset{arrowsize=2.25 1,arrowinset=0,nodesep=0,offset=0,doublesep=.65}%
+
+  \pagestyle{empty}
+
+\begin{document}
+
+  \begin{pspicture}(-10,0)(140,47)
+    \Large%
+
+    \state[start,label=0](10,35){0}
+    \state[label=1](40,35){1}
+    \state[label=2](70,35){2}
+    \state[label=3,final](100,35){3}
+    \state[label=4](130,35){4}
+    \state[label=5](130,0){5}
+
+    \transition(0,\emph{a},1)
+    \transition[curved,angle=-35,curvature=.75,labellocation=below]%
+                (0,\emph{a},3)
+
+    \transition[curved](1,\emph{a},2)
+    \transition[curved,angle=-35,curvature=.75,labellocation=below]%
+                (1,$\epsilon$,2)
+
+    \transition(2,\emph{a},3)
+
+    \transition(3,\emph{a},4)
+
+    \transition[loopdirection=down](4,\emph{b},5)
+
+    \transition[curved,angle=20,curvature=.75](5,\emph{a},3)
+    \transition[curved,angle=-20,curvature=.75,labellocation=below]%
+                (5,$\epsilon$,3)
+
+  \end{pspicture}
+
+  \pagebreak
+
+  \begin{pspicture}(-10,-15)(140,48)
+    \Large%
+
+    \state[start,%
+           label={\large\texttt{\leftbrace}0\texttt{\rightbrace}}]%
+           (10,40){0}
+    \state[final,label=%
+           {\hspace{-1mm}%
+              \large\texttt{\leftbrace}{1,2,3}\texttt{\rightbrace}}]%
+           (40,40){123}
+    \state[final,label=%
+           {\hspace{-1mm}%
+              \large\texttt{\leftbrace}{2,3,4}\texttt{\rightbrace}}]%
+           (70,40){234}
+    \state[final,%
+           label={\hspace{-1mm}%
+                    \large\texttt{\leftbrace}{3,4}\texttt{\rightbrace}}]%
+           (100,40){34}
+    \state[label={\renewcommand{\arraystretch}{.75}%
+                          \normalsize\large%
+                          \begin{tabular}[t]{c}%
+                            dead%
+                              \\%
+                            state%
+                          \end{tabular}}%
+          ](40,5){dead}
+    \state[final,label=%
+           {\large\texttt{\leftbrace}{3,5}\texttt{\rightbrace}}]%
+           (70,5){35}
+    \state[label=%
+           {\large\texttt{\leftbrace}4\texttt{\rightbrace}}](100,5){4}
+
+    \transition(0,\emph{a},123)
+    \transition(0,\emph{b},dead)
+
+    \transition(123,\emph{a},234)
+    \transition(123,\emph{b},dead)
+
+    \transition(234,\emph{a},34)
+    \transition(234,\emph{b},35)
+
+    \transition(34,\emph{a},4)
+    \transition[offset=-2,labeloffset=-5](34,\emph{b},35)
+
+    \transition[loopdirection=w](dead,\emph{a},dead)
+    \transition[loopdirection=down,labelposition=.5](dead,\emph{b},dead)
+
+    \transition[offset=-2,labeloffset=-5](35,\emph{a},34)
+    \transition(35,\emph{b},dead)
+
+    \transition[curved](4,\emph{a},dead)
+    \transition(4,\emph{b},35)
+
+  \end{pspicture}
+
+\end{document}

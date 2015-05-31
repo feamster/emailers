@@ -1,0 +1,200 @@
+\documentclass[11pt]{article}
+
+  \usepackage{330-f12}
+
+  \pagestyle{empty}
+
+\begin{document}
+
+  \header{\course}{Context--free grammars-- solutions}{\Term}
+
+  \begin{enumerate}
+
+    \addtolength{\itemsep}{7mm}
+
+    \item Because we need more nonterminals than the number of letters
+          between S and Z, we just continue using nonterminals A and B.
+
+          \begin{grammar}
+            \production{S}{\texttt{array} \ \: T \ \: \texttt{of} \ \:
+                           Y\texttt{;}}
+              \\
+            \production{T}{\texttt{[}U\texttt{]} \midspc V}
+              \\
+            \production{U}{U\texttt{,}W \midspc W}
+              \\
+            \production{V}{V\texttt{[}W\texttt{]} \midspc
+                           \texttt{[}W\texttt{]}}
+              \\
+            \production{W}{X\texttt{..}X \midspc Y\texttt{..}Y \midspc
+                           Z\texttt{..}Z \midspc A\texttt{..}A}
+              \\
+            \production{X}{\texttt{true} \midspc \texttt{false}}
+              \\
+            \production{Y}{Y\texttt{a} \midspc Y\texttt{b} \midspc
+                           Y\texttt{c} \midspc \texttt{a} \midspc \texttt{b}
+                           \midspc \texttt{c}}
+              \\
+            \production{Z}{\texttt{'x'} \midspc \texttt{'y'} \midspc
+                           \texttt{'z'}}
+              \\
+            \production{A}{\texttt{+}B \midspc\texttt{-}B \midspc B}
+              \\
+            \production{B}{B\texttt{0} \midspc B\texttt{1} \midspc
+                           B\texttt{2} \midspc B\texttt{3} \midspc
+                           B\texttt{4} \midspc B\texttt{5} \midspc
+                           B\texttt{6} \midspc B\texttt{7} \midspc
+                           B\texttt{8} \midspc B\texttt{9} \midspc
+                           \texttt{0} \midspc \texttt{1} \midspc
+                           \texttt{2} \midspc \texttt{3} \midspc
+                           \texttt{4} \midspc \texttt{5} \midspc
+                           \texttt{6} \midspc \texttt{7} \midspc
+                           \texttt{8} \midspc \texttt{9}}
+              \\
+          \end{grammar}
+
+    \item \setlength{\columnsep}{12mm}
+
+          \begin{multicols}{2}
+
+            \begin{enumerate}
+
+              \addtolength{\itemsep}{3mm}
+
+              \item \begin{grammar}
+                      \production{S}{\mathit{aa}S\mathit{bb} \midspc \epsilon}
+                    \end{grammar}
+
+              \item \begin{grammar}
+                      \production{S}{TW}
+                        \\
+                      \production{T}{U\mathit{c}}
+                        \\
+                      \production{U}{\mathit{a}U\mathit{cc} \midspc V}
+                        \\
+                      \production{V}{V\mathit{b} \midspc \epsilon}
+                        \\
+                      \production{W}{W\mathit{d} \midspc \epsilon}
+                        \\
+                    \end{grammar}
+
+              \item \begin{grammar}
+                      \production{S}{\mathit{a\mathrm{S}a \midspc
+                                     b\mathrm{S}b \midspc aa \midspc bb}}
+                    \end{grammar}
+
+              \item Rewrite the language as
+                    ${a^\mathrm{m}}{b^\mathrm{n}}{a^\mathrm{n}}{a^\mathrm{m}}$,
+                    which makes it easier to see how the grammar can be
+                    written.
+
+                    \medskip
+
+                    \begin{grammar}
+                      \production{S}{\mathit{a}S\mathit{a} \midspc T}
+                        \\
+                      \production{T}{\mathit{b\mathrm{T}a \midspc ba}}
+                        \\
+                    \end{grammar}
+
+              \item Rewrite the language as
+                    $\mathrm{{\mathit{a}^{n-m}}{\mathit{a}^m}
+                             {\mathit{b}^m}{\mathit{a}^{n-m}}}$,
+                    which makes it easier to see how the grammar can be
+                    written.
+
+                    \medskip
+
+                    \begin{grammar}
+                      \production{S}{\mathit{a}S\mathit{a} \midspc T}
+                        \\
+                      \production{T}{\mathit{a}T\mathit{b} \midspc \epsilon}
+                        \\
+                    \end{grammar}
+
+          \columnbreak
+
+              \item \begin{grammar}
+                       \production{S}{(S)S \midspc \epsilon}
+                    \end{grammar}
+
+              \item \begin{grammar}
+                      \production{S}{\mathit{a}T \midspc \mathit{b}U \midspc
+                                     \epsilon}
+                        \\
+                      \production{T}{\mathit{b}S \midspc \mathit{a}TT}
+                        \\
+                      \production{U}{\mathit{a}S \midspc \mathit{b}UU}
+                        \\
+                    \end{grammar}
+
+              \item \begin{grammar}
+                      \production{S}{UT \midspc TV}
+                        \\
+                      \production{T}{\mathit{a}T\mathit{b} \midspc \epsilon}
+                        \\
+                      \production{U}{U\mathit{a} \midspc \mathit{a}}
+                        \\
+                      \production{V}{V\mathit{b} \midspc \mathit{b}}
+                        \\
+                    \end{grammar}
+
+              \item \begin{grammar}
+                      \production{S}{\mathit{a\mathrm{S}d \midspc
+                                     a\mathrm{T}c \midspc b\mathrm{U}d \midspc
+                                     b\mathrm{V}c \midspc \epsilon}}
+                        \\
+                      \production{T}{\mathit{a\mathrm{T}c \midspc
+                                     b\mathrm{V}c \midspc \epsilon}}
+                        \\
+                      \production{V}{\mathit{b}V\mathit{c} \midspc \epsilon}
+                        \\
+                      \production{U}{\mathit{b\mathrm{U}d \midspc
+                                     b\mathrm{V}c \midspc \epsilon}}
+                        \\
+                    \end{grammar}
+
+            \end{enumerate}
+
+          \end{multicols}
+
+          \enlargethispage{4mm}
+
+    \item \hspace{1mm}%
+          \begin{grammar}
+            \production{S}{T \midspc V}
+              \\
+            \production{T}{UU}
+              \\
+            \production{U}{\mathit{a\mathrm{U}b \midspc ab}}
+              \\
+            \production{V}{\mathit{a\mathrm{V}b \midspc a\mathrm{W}b}}
+              \\
+            \production{W}{\mathit{b\mathrm{W}a \midspc ba}}
+              \\
+          \end{grammar}
+
+          \smallskip
+
+          To show the grammar is ambiguous show two leftmost derivations, or
+          two rightmost derivations, or two parse trees, for a string such
+          as {\em abab}.  Here are two leftmost derivations:
+
+          \(
+            \begin{array}[t]{@{}l}
+            \mathrm{S \ \Longrightarrow\ T \ \Longrightarrow\ UU \
+                    \Longrightarrow
+                    \  \mathit{ab}U \ \Longrightarrow\  \mathit{abab}}
+              \\
+            \mathrm{S \ \Longrightarrow\ V \ \Longrightarrow\
+                    \mathit{a}W\mathit{b} \
+                    \Longrightarrow \ \mathit{abab}}
+                \\
+            \end{array}
+          \)
+
+          You can construct the corresponding parse trees.
+
+  \end{enumerate}
+
+\end{document}

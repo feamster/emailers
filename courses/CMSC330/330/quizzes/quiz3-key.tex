@@ -1,0 +1,208 @@
+\documentclass[11pt,fleqn]{article}
+
+  \usepackage{330-f12}
+
+  \showinfo
+
+\begin{document}
+
+  \header{\course}{Quiz \#3 grading key}{\Term}
+
+  Reminder-- you don't need to write the correct answers every single time
+students make mistakes.  It's much quicker to just go give the quiz answers
+once in class (and you can answer questions or solve the problems as needed
+in the process).  But there \textbf{must} be some indication of what's
+wrong.  In other words, you can't just give a score without at least
+indicating which parts of the answer were wrong.  Just circling or marking
+anything incorrect with an X, and writing a word or two, is often
+sufficient.
+
+  Also-- you need to coordinate via email about grading decisions, to ensure
+the consistency of grading between TAs and sections.
+
+  \vspace{-.5mm}
+
+  \begin{enumerate}
+
+    \addtolength{\itemsep}{20mm}
+
+    \item {[10 pts.]}
+
+          \vspace{-2mm}
+
+          \begin{Verbatim}
+        type item =
+            Dollars of float
+          | Card of string * string;;
+          \end{Verbatim}
+
+          \vspace{-3mm}
+
+          \begin{info}{\textbf{\underline{Grading scale:}}}
+
+            \begin{itemize}
+
+              \addtolength{\itemsep}{2mm}
+
+              \item Deduct \pts[circle]{-2} for each missing keyword.
+
+              \item Deduct \pts[circle]{-2} for each occurrence of
+                    unnecessary or incorrect syntax like:
+
+                    \vspace{0mm}
+
+                    \begin{itemize}
+
+                      \addtolength{\itemsep}{-.5mm}
+
+                      \item Extra syntax like ``\texttt{match item with}''
+
+                      \item \texttt{Card(string, string)}
+
+                      \item \texttt{Card -> string * string}
+
+                    \end{itemize}
+
+                    \vspace{0mm}
+
+              \item Minor errors like missing \texttt{=}, \texttt{|},
+                    \texttt{;;} can be ingored (but mark them in grading so
+                    the student knows they're wrong; probably we would
+                    deduct for some of these in grading an exam).  (Of
+                    course the \texttt{;;} would only be needed if the type
+                    was entered at the top level anyway; if the type was in
+                    a file that was being compiled it would not be
+                    necessary).
+
+              \item The name of the type doesn't matter.
+
+            \end{itemize}
+
+          \end{info}
+
+    \item {[12 pts.]} \texttt{[2; 3; 5; 8; 13]}
+
+          \begin{info}{\textbf{\underline{Grading scale:}}}
+
+            \begin{itemize}
+
+              \addtolength{\itemsep}{2mm}
+
+              \item Deduct \pts[circle]{-2} for each incorrect number.
+
+            \end{itemize}
+
+          \end{info}
+
+          \pagebreak
+
+    \item {[18 pts.]}
+
+          \vspace{-1.5mm}
+
+          \begin{enumerate}
+
+            \addtolength{\itemsep}{6mm}
+
+            \item {{[15 pts.]}}
+
+                  \begin{Verbatim}
+        let rec print_list a = match a with
+            [] -> print_string ""
+          | (a::b::c) -> print_int a; print_string " "; print_list (b::c)
+          | (a::_) -> print_int a;;
+                  \end{Verbatim}
+
+                  \begin{info}{\textbf{\underline{Grading scale:}}}
+
+                    \begin{itemize}
+
+                      \addtolength{\itemsep}{3mm}
+
+                      \item The first line is \pts[circle]{3}:
+
+                            \smallskip
+
+                            Deduct \pts{-1} for missing \texttt{rec}, and
+                            deduct \pts{-1} for missing \texttt{match a
+                            with}.
+
+                      \item The base case is \pts[circle]{3}:
+
+                            \smallskip
+
+                            \texttt{[] -> ()} is correct, but \texttt{[] ->
+                            []} is not (deduct \pts{-1} for this).
+
+                      \item The case \texttt{(a::b::c)} is \pts[circle]{6}:
+
+                            \vspace{0mm}
+
+                            \begin{itemize}
+
+                              \addtolength{\itemsep}{-1mm}
+
+                              \item Deduct \pts{-2} for missing the print
+                                    function, or \texttt{(a::b::c)}
+
+                              \item Don't deduct if the answer is something
+                                    like \texttt{(a::b) -> print\_int a;
+                                      print\_string " "; print\_list b;;},
+                                    which will print extra space at the
+                                    end-- instead deduct for this in the
+                                    next case.
+
+                            \end{itemize}
+
+                            \vspace{0mm}
+
+                      \item The case \texttt{(a::\_)} is \pts[circle]{3}:
+
+                            \smallskip
+
+                            Ignore minor deviations from the given answer.
+                            Any major error is \pts{-1}.  Deduct \pts{-3}
+                            only if the line is missing.
+
+                      \item If the ordering of cases is incorrect, deduct
+                            \pts{-2}
+
+                      \item A missing ';' can be ignored.
+
+                      \item If you think that any answers should get more or
+                            less partial credit than what's above be sure to
+                            coordinate (via email) with the other TAs
+                            grading the quiz, for consistency of grading (so
+                            that everyone can deduct the same credit for the
+                            same mistake, for all sections).  If you're not
+                            sure whether a mistake should get more or less
+                            partial credit, email all the TAs grading the
+                            quiz.  You can also ask me if you all can't
+                            agree.
+
+                    \end{itemize}
+
+                  \end{info}
+
+            \item {{[3 pts.]}} \texttt{int list -> unit}
+
+                   \begin{info}{\textbf{\underline{Grading scale:}}}
+
+                     \begin{itemize}
+
+                       \addtolength{\itemsep}{2mm}
+
+                       \item Deduct \pts[circle]{-1} for any error (give no
+                             credit only if there is no answer).
+
+                     \end{itemize}
+
+                   \end{info}
+
+          \end{enumerate}
+
+          \vspace{-2.5mm}
+
+  \end{enumerate}
+
+\end{document}

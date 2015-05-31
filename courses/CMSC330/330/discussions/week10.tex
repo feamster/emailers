@@ -1,0 +1,103 @@
+\documentclass[12pt]{article}
+
+  \usepackage{330-f12}
+
+  \pagestyle{empty}
+
+\begin{document}
+
+  \header{\course}{Discussion section topics -- Week \#10}{\Term}
+
+  \section{Discussion \#9, Friday, November 2}
+
+    \subsection{More OCaml}
+
+      \subsubsection{Finish material from last time}
+
+        I think that I recall that you all didn't finish all the material from
+      last time-- you can go back and finish it now.
+
+      \subsubsection{Mutual recursion}
+
+        Show the students how to write mututally recursive functions, using
+      \texttt{and}.  This example is from a text by Ullman; feel free to
+      create your own:
+
+        \begin{Verbatim}
+        let rec
+           take (ls) =
+              if ls = [] then []
+              else List.hd(ls) :: skip(List.tl(ls))
+        and
+           skip (ls) =
+              if ls = [] then []
+              else take(List.tl(ls))
+        \end{Verbatim}
+
+        Also show them how to create mutually recursive data types, also
+      using \texttt{and}; here is one simple example (feel free to
+      create your own):
+
+        \begin{Verbatim}
+        type even =
+            Zero
+          | Even_succ of odd
+        and
+             odd = Odd_succ of even
+        \end{Verbatim}
+
+      \subsubsection{Reading lines until the end of the input}
+
+        Show the students an example of how to read lines from standard input,
+      using \texttt{input\_line}, until the end of the input.  This uses
+      exceptions (he library exception \texttt{End\_of\_file}).
+
+      \subsubsection{Reading lines from an external file}
+
+        Show the students an example of how to open an external file and read
+      lines until the end of the input, a slight extension of what was shown
+      before.  One way to do it would look like this.
+
+        Note the use of \texttt{Printf.printf}, which was showed briefly in
+      one example in lecture; it could be useful to use it again.
+
+        You might point out that if we wanted to do something with the lines
+      read in from the file besides just printing them out, we might want to
+      build a list of them in the function and then return it; students
+      could think about how to do this.  Or if you have time you could add
+      this.
+
+        \begin{Verbatim}[xleftmargin=-5mm]
+        let rec read_all_lines filechannel=
+          let line= input_line filechannel in
+            try
+              Printf.printf "Line read: %s\n" line;
+              read_all_lines filechannel
+            with End_of_file ->
+              print_string "Now at end of file.\n"
+
+        let read_file_lines filename=
+          let filechannel= open_in filename in
+            read_all_lines filechannel
+        \end{Verbatim}
+
+      \subsubsection{Command--line arguments}
+
+        It should just take a moment to let the students know how to access
+      command--line arguments in OCaml, which is actually an array in OCaml
+      (yes, OCaml has arrays); something like:
+
+        \begin{Verbatim}
+        let _ =
+          for i = 0 to Array.length Sys.argv - 1 do
+            Printf.printf "[%i] %s\n" i Sys.argv.(i)
+          done
+        \end{Verbatim}
+
+    \subsection{If you have extra time}
+
+      If you have any extra time, instead of letting the students go early,
+    see if they have any questions and try to answer them if so.  There may
+    be questions about the project.
+
+\end{document}
