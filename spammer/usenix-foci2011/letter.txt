@@ -1,0 +1,108 @@
+Dear @NAME@,
+
+Following on a working meeting last week we had at Georgia Tech
+(http://gtisc.gatech.edu/foci.html) on topics in free and open
+communication on the Internet (a report is forthcoming), Wenke Lee and I
+are co-chairing a USENIX workshop on Free and Open Communication on the
+Internet, to be co-located with the USENIX Security Symposium in August.
+The workshop will solicit position papers and works in progress on both
+policy and technology research related to the topic of ensuring free and
+open communication on the Internet.
+
+We would be delighted if you could help out with this workshop by
+sitting on the program committee.  We expect that the reviewing load for
+the workshop will be very light, not to exceed five or six 6-page
+position papers for each reviewer.
+
+We have included a draft call for papers below.  Please let us know, by
+Wednesday, March 9:
+	* Are you interested in participating?
+	* Do you have any comments on/revisions to the call for papers?
+
+Thanks!
+Nick and Wenke
+
+
+---------------------------------------
+
+
+Draft Call for Papers
+
+The first Workshop on Free and Open Communications on the Internet
+(FOCI) seeks to bring together researchers and practitioners from both
+technology and policy who are working on technologies to detect or
+circumvent practices that block, degrade, or otherwise tamper with free
+and open communications on the Internet.
+
+The growth of the Internet offers great promise for improving the
+communication capabilities for many users, but it also makes it easier
+for organizations to control, monitor, or block user
+communications. ISPs and governments routinely restrict access to
+Internet content and services, either by censoring access to the
+information (i.e., censorship) or degrading the performance of various
+services (i.e., violating network neutrality). Indeed, although we think
+of the Internet as enabling the “democratization” of communications,
+free and open access is at risk: the Open Net Initiative reports that
+nearly 60 countries censor some access to information on the
+Internet. Similarly, ISPs can degrade network performance for certain
+subsets of users for some or all services. For example, some ISPs have
+been found to routinely block or throttle certain application traffic
+(e.g., BitTorrent); additionally, the FCC Broadband Reports show that
+broadband Internet users in the United States achieve download speeds
+that are only half of what their ISPs have promised them.  This growing
+trend towards blocking, tampering with, or otherwise restricting
+communications on the Internet calls for better techniques for both
+monitoring the state of restrictions on Internet content and
+communications (i.e., improving “transparency”) and circumventing
+attempts to censor, degrade, or or otherwise tamper with Internet com-
+munications.
+
+We encourage submissions of new, interesting work on a wide variety of
+topics of interest, including, but not limited to, the following areas:
+
+• Evaluation or analysis of existing anti-censorship systems. 
+
+* Comparisons of existing performance-measurement tools that might be
+  used to detect tampering (e.g.,violations of “network neutrality”)
+
+• Studies and findings on censorship or tampering from field deployments
+  (e.g., what content various countries are currently censoring, the
+  extent to which ISPs are degrading certain types of content)
+
+• Metrics for deniability and robustness 
+
+• Performance metrics and benchmarks for detecting content tampering or
+  performance degradation
+
+• Censorship of search results 
+
+• The design of network protocols and topologies that resist tampering
+  or censorship
+
+• Policy-related issues
+
+We invite short position papers or work-in-progress reports. FOCI will
+favor interesting and new ideas and early results that lead to
+well-founded position papers. We envision that work presented at FOCI
+will ultimately be published at relevant, high-quality conferences.
+Papers will be selected primarily based on technical merit and
+originality, with additional consideration given to their potential to
+generate discussion at the workshop.
+
+
+Submission guidelines. Submitted papers must be no longer than six 8.5”
+x 11” pages, based on the standard ACM template. Specifically, your
+paper should be typeset in two-column format in 10-point type on 12
+point (single-spaced) leading, with a text block no more than 6.5” wide
+by 9” deep. Submissions are single-blind; authors should include their
+names and affiliations as part of their submissions. Papers must be
+submitted via the Web submission form, which will be available
+soon. Simultaneous submission of the same work to multiple venues,
+submission of previously published work, or plagiarism constitutes
+dishonesty or fraud, and such submissions will be rejected without
+review.
+
+Tentative dates for the workshop are as follows:
+• Paper submission: May 1, 2010 
+• Paper notification: June 15, 2010
+• Camera ready: July 11, 2010

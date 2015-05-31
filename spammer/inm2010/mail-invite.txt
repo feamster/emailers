@@ -1,0 +1,26 @@
+Nick Feamster::<feamster@cc.gatech.edu>
+Sanjay Rao::<sanjay@ecn.purdue.edu>
+Ranjita Bhagwan::<bhagwan@microsoft.com>
+Hitesh Ballani::<hitesh@cs.cornell.edu>
+Ramana Kompella::<kompella@cs.purdue.edu>
+Aditya Akella::<akella@cs.wisc.edu>
+Kobus van der Merwe::<kobus@research.att.com>
+Nick McKeown::<nickm@stanford.edu>
+Anja Feldmann::<anja.feldmann@telekom.de>
+Sue Moon::<sbmoon@kaist.edu>
+Sanjay Narain::<narain@research.telcordia.com>
+Tim Griffin::<timothy.griffin@cl.cam.ac.uk>
+Eugene Ng::<eugeneng@cs.rice.edu>
+Olivier Bonaventure::<olivier.bonaventure@uclouvain.be>
+Randy Bush::<randy@psg.com>
+Geoff Huston::<gih@apnic.net>
+Dave Ward::<dward@cisco.com>
+Amin Vahdat::<vahdat@cs.ucsd.edu>
+Jennifer Rexford::<jrex@cs.princeton.edu>
+Russ Clark::<rjc@cc.gatech.edu>
+Renata Teixeira::<renata.teixeira@lip6.fr>
+Srikanth Kandula::<srikanth@microsoft.com>
+Anees Shaikh::<anees@ashaikh.com>
+Ken Calvert::<calvert@netlab.uky.edu>
+James Hamilton::<james@amazon.com>
+Ehab Al-Shaer::<ehab@cs.depaul.edu>

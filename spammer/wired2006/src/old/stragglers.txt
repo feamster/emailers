@@ -1,0 +1,8 @@
+Randy Bush::<randy@psg.com>
+Russ Clark::<rjc@cc.gatech.edu>
+Constantine Dovrolis::<dovrolis@cc.gatech.edu>
+Anja Feldmann::<anja@in.tum.de>
+Lixin Gao::<lgao@ecs.umass.edu>
+Dave Maltz::<dmaltz@microsoft.com>
+Kobus van der Merwe::<kobus@research.att.com>
+Aman Shaikh::<ashaikh@research.att.com>

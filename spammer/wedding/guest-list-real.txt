@@ -1,0 +1,65 @@
+Marshini::Marshini Chetty <marshini@gmail.com>::marshini@gmail.com
+Nick::Nick Feamster <feamster@cc.gatech.edu>::feamster@cc.gatech.edu
+Mom::Carolyn Feamster <cfeamster@gmail.com>::cfeamster@gmail.com
+Dad::Scott Feamster <matrixpfw@earthlink.net>::matrixpfw@earthlink.net
+Moomin::Segeree Chetty <segeree@gmail.com>::segeree@gmail.com
+Sasa::Sasa Reddy <sreddy@cybertrade.co.za>::sreddy@cybertrade.co.za
+Bootifool Yoon::Unita Chetty <unita.c@gmail.com>::unita.c@gmail.com
+Voon::Vanashree Chetty <Neshie@gmail.com>::Neshie@gmail.com
+Foolshan::Rudashan Chetty <moondogg669@gmail.com>::moondogg669@gmail.com
+Foolisha::Rulisha Chetty <rulisha@gmail.com>::rulisha@gmail.com
+Gabe::Gabriel Van Der Berg <gabrielvdb@gmail.com>::gabrielvdb@gmail.com
+Alex::Alex Gray <agray@cc.gatech.edu>::agray@cc.gatech.edu
+Carson::Carson Reynolds <carson@k2.t.u-tokyo.ac.jp>::carson@k2.t.u-tokyo.ac.jp
+Sean::Sean Montgomery <sjmonty@gmail.com>::sjmonty@gmail.com
+Mike::Mike Freedman <mfreed@cs.princeton.edu>::mfreed@cs.princeton.edu
+Dave::Dave Andersen <dga@cs.cmu.edu>::dga@cs.cmu.edu
+Greg::Greg Harfst <gharfst@gmail.com>::gharfst@gmail.com
+Patricio::Patricio Vela <pvela@ece.gatech.edu>::pvela@ece.gatech.edu
+Anukool::Anukool Lakhina <anukool.lakhina@guavus.com>::anukool.lakhina@guavus.com
+Ajay::Ajay Kulkarni <akulkarni@alum.mit.edu>::akulkarni@alum.mit.edu
+Laura::Laura Heimerl <heimerl_laura@hotmail.com>::heimerl_laura@hotmail.com
+Jen::Jennifer Bowen <lalabowen@hotmail.com>::lalabowen@hotmail.com
+Beki::Beki Grinter <beki@cc.gatech.edu>::beki@cc.gatech.edu
+Ben::Ben Tobler <bentobler@gmail.com>::bentobler@gmail.com
+Ildy::Ilda Ladeira <ladeira.ilda@gmail.com>::ladeira.ilda@gmail.com
+Oksie::Oks Wahler <oksana.ryndina@gmail.com>::oksana.ryndina@gmail.com
+Gness::Gerard Petersen <gerard.petersen@gmail.com>::gerard.petersen@gmail.com
+SuperSarah::Sarah Brown <sarah.brown.ct@gmail.com>::sarah.brown.ct@gmail.com
+Lies::Liesl Radloff <liesl.radloff@gmail.com>::liesl.radloff@gmail.com
+Baz::Baz Steyn <barry.steyn@gmail.com>::barry.steyn@gmail.com
+Your Dreness::Andrea Parker <dreometry@gmail.com>::dreometry@gmail.com
+Susan::Susan Wyche <spwych@gmail.com>::spwych@gmail.com
+Ja-Young::JY Sung <jysung@gmail.com>::jysung@gmail.com
+Erika::Erika Poole <erika.shehan@gmail.com>::erika.shehan@gmail.com
+Chris::Chris Wojtan <chris.wojtan@gmail.com>::chris.wojtan@gmail.com
+Gabriela::Gabriela Ciocalie <gabrielafcretu@gmail.com>::gabrielafcretu@gmail.com
+Hari::Hari Balakrishnan <hari@nms.csail.mit.edu>::hari@nms.csail.mit.edu
+Jen::Jennifer Rexford <jrex@cs.princeton.edu>::jrex@cs.princeton.edu
+Aunty La::Aunty La Appasamy <la.leelaa@gmail.com>::la.leelaa@gmail.com
+Aunty Baba::Aunty Baba Pillay <rookmoney.pillay@gmail.com>::rookmoney.pillay@gmail.com
+Aunty Maga::Aunty Maga Thomas <maggapower7@gmail.com>::maggapower7@gmail.com
+Sugs::Sugs Appasamy <sugan.appasamy@gmail.com>::sugan.appasamy@gmail.com
+Hugan::Hugan Naidoo <yugan108@yahoo.com>::yugan108@yahoo.com
+Navs::Navin Naidoo <navinnaidoo@gmail.com>::navinnaidoo@gmail.com
+Uncle Kessie::Kessie Naidoo <kessie8@gmail.com>::kessie8@gmail.com
+Salven::Selvin Pillay <salven.pillay@schwab.com>::salven.pillay@schwab.com
+Ravin::Ravin Pillay <ravinpillay@ravinpillay.com>::ravinpillay@ravinpillay.com
+Kresen::Kresen Pillay <kresenpillay@gmail.com>::kresenpillay@gmail.com
+Thiru::Thiru Appasamy <Thiru.Appasamy@gmail.com>::Thiru.Appasamy@gmail.com
+Uncle Kaya::Kaya Govindasamy <kersie@mweb.co.za>::kersie@mweb.co.za
+Dania::Dania Thomas <dania_3@yahoo.com>::dania_3@yahoo.com
+Aunt Nancy::Nancy Kotch <nancykotch@verizon.net>::nancykotch@verizon.net
+Uncle Michael::Michael Kotch <docmjk@verizon.net>::docmjk@verizon.net
+David::David Kotch <davekotch@yahoo.com>::davekotch@yahoo.com
+Daniel::Daniel Kotch <dankotch@gmail.com>::dankotch@gmail.com
+Naz::Nazil Jubaran <nazli.jugbaran@gmail.com>::nazli.jugbaran@gmail.com
+Nico::Nico de Wet <ndewet@gmail.com>::ndewet@gmail.com
+Gary::Gary Marsden <gaz@cs.uct.ac.za>::gaz@cs.uct.ac.za
+Renata::Renata Teixeira <renata.teixeira@lip6.fr>::renata.teixeira@lip6.fr
+Shabs::Shabita Sumaraj <ssumaraj@gmail.com>::ssumaraj@gmail.com
+Joe::Joe Tullio <tullio@gmail.com>::tullio@gmail.com
+Jonathan::Jonathan Donner <jdonner@microsoft.com>::jdonner@microsoft.com
+Azu::Azania Thomas <azanai@yahoo.com>::azanai@yahoo.com
+Kapil and Claris::Kapil Singh <singh.kapil@gmail.com>::singh.kapil@gmail.com
+Monogran::Monogran Naidu <manogran@telkomsa.net>::manogran@telkomsa.net

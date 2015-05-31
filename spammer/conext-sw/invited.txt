@@ -1,0 +1,11 @@
+Jim Kurose::<kurose@cs.umass.edu>
+Aditya Akella::<aditya@cs.wisc.edu>
+John Crowcroft::<jon.crowcroft@cl.cam.ac.uk>
+Olivier Bonaventure::<olivier.bonaventure@uclouvain.be>
+Geoff Voelker::<voelker@cs.ucsd.edu>
+Ernst Biersack::erbi@eurecom.fr>
+Aman Shaikh::<ashaikh@research.att.com>
+Olaf Maennel::<om@maennel.net>
+Morley Mao::<zmao@eecs.umich.edu>
+Xenofontas Dimitropoulos::<fontas@ece.gatech.edu>
+Luis Costa::<luish@gta.ufrj.br>

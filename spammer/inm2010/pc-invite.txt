@@ -1,0 +1,45 @@
+Dear @NAME@,
+
+The Fourth ACM Workshop on Internet Network Management (INM'10)
+will be held in conjunction with the NSDI conference in San Jose, USA 
+in the end of April 2010.  As the technical program co-chairs for the 
+workshop, we would like to invite you to serve on the technical 
+program committee. We would be delighted if you accept our invitation. 
+
+The TPC is critical for ensuring a high quality program, and building
+on the success of the prior editions of the workshop. 
+Your contribution to this mission will be 
+greatly appreciated, including encouraging high-quality submissions 
+(including submitting your own work) and providing thorough reviews. 
+
+
+The previous editions have been held in conjunction with SIGCOMM (2006,2007),
+and ICNP (2008). For ease of reference, here are some links to past years'
+workshops:
+http://www.cs.rice.edu/~eugeneng/inm08/committee.html
+http://conferences.sigcomm.org/sigcomm/2007/inm/
+http://research.microsoft.com/en-us/um/people/dmaltz/inm06/home.html
+
+This year, we hope to continue with a similar thread of topics, but also
+expand the scope to include topics like Data Center Networking, and
+programmable routers.
+
+ 
+A tentative timeline is as follows:
+
+ Paper submission - early December
+ Acceptance -  late Feburary
+ Camera ready - early April
+
+You will be expected to handle 5-7 papers.
+We expect to hold an TPC meeting through a teleconference - no
+travel is required.
+
+Please let us know your decision before July 24, 2009.
+We hope you will accept this invitation. 
+
+
+Thanks, 
+ 
+Nick Feamster, Sanjay Rao
+PC Co-Chairs, Usenix INM'10 Workshop 

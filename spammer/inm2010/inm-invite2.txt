@@ -1,0 +1,8 @@
+Martin Casado::<casado@cs.stanford.edu>
+Farnam Jahanian::<farnam@umich.edu>
+Andrew Moore::<andrew.moore@cl.cam.ac.uk>
+Jeff Pang::<jeffpang@cs.cmu.edu>
+Vern Paxson::<vern@icir.org>
+Niels Provos::<niels@usenix.org>
+Lili Qiu::<lili@cs.utexas.edu>
+Nina Taft::<nina.taft@intel.com>

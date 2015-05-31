@@ -1,0 +1,11 @@
+Aditya Akella::<akella@cs.wisc.edu>
+Katerina Argyraki::<katerina.argyraki@epfl.ch>
+Matt Caesar::<caesar@cs.uiuc.edu>
+Jaeyeon Jung::<jjung@microsoft.com>
+Ethan Katz-Bassett::<ethanz@gmail.com>
+Arvind Krishnamurthy::<arvind@cs.washington.edu>
+Wenke Lee::<wenke@cc.gatech.edu>
+Vern Paxson::<vern@cs.berkeley.edu>
+Mike Piatek::<piatek@google.com>
+Renata Teixiera::<renata.teixeira@lip6.fr>
+Kobus van der Merwe::<kobus@research.att.com>

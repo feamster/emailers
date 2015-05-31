@@ -1,0 +1,30 @@
+Dear @NAME@,
+
+We are delighted to invite you and your partner/family to celebrate our
+wedding day with us. Our wedding will be held on Saturday, December 17,
+2011 in Cape Town, South Africa. The wedding will be an intimate event 
+for our close friends and family.
+
+For all the details on the wedding, travel logistics, and to RSVP by
+October 15, 2011, we invite you to check out our wedding website.
+Please use this link initially so that we know you have received this
+email:
+
+http://www.marshandnick.us/index.php?u=@ID@
+
+(In the future, you can simply type in the address without the
+"index.php" part, but please click this link initially so we can know
+you received this email.)
+
+We will be updating this website throughout the year, so please check
+back for updates. If we make any significant changes, we'll be sure to
+notify you by email.
+
+If you have any questions that are not covered on the website, feel free
+to drop us an email or give us a call on +1 857 272 1408 (Marsh) or +1
+617 388 7479 (Nick).
+
+We hope to see you in 2011!
+
+With much love,
+Marsh and Nick

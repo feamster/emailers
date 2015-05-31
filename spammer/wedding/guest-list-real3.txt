@@ -1,0 +1,7 @@
+Julia::Julia Mally <juliamappy@optonline.net>::juliamally@optonline.net
+Ed::Ed Mally <epmally@optonline.net>::epmally@optonline.net
+Frank::Frank Lang <frankfl2000@yahoo.com>::frankfl2000@yahoo.com
+Gerry::Gerry Lang <gerryinct@aol.com>::gerryinct@aol.com
+Aunt Susan::Susan Watkins <larksong86@aol.com>::larksong86@aol.com
+Uncle Bill::Bill Watkins <billshirl@aol.com>::billshirl@aol.com
+Jim::Jim Greer <jimgreer@gnventures.com>::jimgreer@gnventures.com

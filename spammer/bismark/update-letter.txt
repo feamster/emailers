@@ -1,0 +1,24 @@
+Dear @NAME@,
+
+Good news!  We are ready to ship the latest release of BISmark routers.  
+
+Please fill out the following form to indicate the following:
+	* Your current mailing address
+	* Your interest in still receiving a BISmark router 
+	* Your agreement to participate
+
+https://docs.google.com/spreadsheet/viewform?formkey=dDdOdExIS3J4V3N5bFhjSjh0YWxja0E6MQ
+
+When you receive your router, you'll be able to plug it in and see continual
+performance information about your ISP.  For example, by going to
+http://networkdaskboard.org/devices/
+and entering the MAC address of your device (e.g., mine is "C43DC7B0AE78"),
+you'll be able to see statistics about upstream and downstream throughput, as
+well as latency.
+
+(Yes, we know the interface is still a bit primitive, but it is functional.  We
+are working on making it a bit more user-friendly.)
+
+Thanks very much for your patience as we prepare for this release!
+
+-Nick

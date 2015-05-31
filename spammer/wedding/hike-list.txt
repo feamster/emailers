@@ -1,0 +1,10 @@
+Sugs::Sugs	Appasamy <sugan.appasamy@gmail.com>::sugan.appasamy@gmail.com
+Dania::Dania	Thomas	<dania_3@yahoo.com>::dania_3@yahoo.com
+Chris::Chris	Wojtan	<chris.wojtan@gmail.com>::chris.wojtan@gmail.com
+Ravin::Ravin	Pillay <ravinpillay@ravinpillay.com>::ravinpillay@ravinpillay.com
+Mom::Carolyn	Feamster	<cfeamster@gmail.com>::cfeamster@gmail.com
+Dad::Scott	Feamster	<matrixpfw@earthlink.net>::matrixpfw@earthlink.net
+Voon::Vanashree 	Chetty	<Neshie@gmail.com>::Neshie@gmail.com
+Greg::Greg	Harfst	<gharfst@gmail.com>::gharfst@gmail.com
+Aunt Nancy::Nancy	Kotch	<nancykotch@verizon.net>::nancykotch@verizon.net
+Uncle Michael::Michael	Kotch	<docmjk@verizon.net>::docmjk@verizon.net

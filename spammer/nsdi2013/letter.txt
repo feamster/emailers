@@ -1,0 +1,129 @@
+Dear @NAME@,
+
+Jeff Mogul and I are PC Co-Chairs for NSDI 2013, and we would be
+thrilled if you would accept our invitation to serve on the Program
+Committee.
+
+We realize that the NSDI PC is a significant time commitment, but we
+believe that your expertise and wisdom will contribute a lot to the
+quality and impact of the NSDI 2013 program.  Many PC members have
+found the process, while a lot of work, to be a rewarding and even
+enjoyable experience.  
+
+We really hope you will be able to accept our invitation.  Before you
+decide, please read the detailed invitation letter below; it explains
+what we will expect of each PC member.
+
+We would appreciate receiving your response by *May 28*. Please let us
+know if you have any questions or concerns.
+
+Thanks,
+Jeff and Nick
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+The 10th annual USENIX Symposium on Networked Systems Design and
+Implementation, NSDI 2013, will be held in Lombard, IL (near Chicago),
+April 3-5, 2013.  As the Program Co-Chairs for the conference, we
+cordially invite you to serve on the Technical Program Committee.
+
+NSDI is sponsored by USENIX in cooperation with ACM SIGCOMM and ACM
+SIGOPS, and has developed a tradition as the source of top
+networked-systems research.  The NSDI PC is the critical body for
+maintaining the strong reputation of the conference.
+
+This year we will continue the practice of having a uniform PC, where
+all PC members have equal roles in reviewing, discussing, and deciding
+upon papers.  We expect to have around 25 PC members and, with
+approximately 175 submissions, we anticipate a review load of
+approximately 28-30 reviews, split into two rounds.
+
+Activities and Expectations
+------------------------------------
+Key aspects of the PC activities include:
+
+1. A paper bidding process for all PC members, giving you a chance to
+tell us which papers you prefer to review.
+2. Round 1 of the review process lasting 5 weeks (~20 papers/person)
+3. Round 2 of the review process lasting 3 weeks (~9 papers/person)
+4. Probably one more paper in a short, third round.
+5. An online discussion phase at the completion of each round.
+6. A one-day PC meeting in Palo Alto, California.
+  We expect *all* PC members to attend the meeting in person,
+  barring unforeseeable events (illness, volcanoes, etc.)
+7. Each PC member will shepherd one (or, in a few cases, two) of the
+accepted papers. Shepherding a paper will include writing a short
+"introduction"    for the paper, about 3 paragraphs, to be published in
+the online proceedings.
+
+We expect all PC members to review their assigned papers themselves,
+without delegating to a colleague or student.  Of course, you can ask
+other people to help you with aspects of your reviews.  To help us make
+effective paper assignments, we will ask you to specify preferences for
+papers after the paper title/abstract registration deadline.  We will do
+our best to honor all preferences.  Note that NSDI reviewing is single
+blind.
+
+We realize that generating high-quality reviews of this many NSDI papers
+represents a significant time commitment, and we will do our best to
+minimize the impact on PC members -- which means, among other things,
+that we will need all PC members to commit to delivering their
+reviews on time, so as to avoid compressing the time available for the
+other PC members (and the PC co-chairs) to perform the next phases of
+reviewing.
+
+To ensure that the PC makes the most informed decisions on paper
+outcomes, we are requiring everyone to attend the PC meeting in person. 
+If you have an exceptional and compelling reason for not attending the
+meeting in person, please contact one of us to discuss your situation
+before accepting this invitation.
+
+Next Steps and Schedule
+----------------------------------
+In the near future, we will be drafting the Call For Papers, but for
+now, you can assume that it will be fairly similar to previous NSDI
+CFPs, such as
+<https://www.usenix.org/conference/nsdi12/call-for-papers-0>.
+
+Our tentative schedule for PC-related activities is:
+
+Paper title/abstract submission:  Sept 12 2012 (20:00 PM PDT)
+Paper submission:  Sept 19 (20:00 PM PDT)
+Paper preferences due:  Sept 22, 2012
+1st round papers assigned:  Sept 25, 2012 (or sooner)
+1st round reviews due:  Oct 29, 2012 [a VERY firm deadline]
+2nd round papers assigned:  Nov 1, 2012
+2nd round reviews due:  Nov 19, 2012
+One 3rd round review due:  Nov 28, 2012
+PC meeting, in Palo Alto:  Dec 3, 2012
+Acceptance notification:  Dec 10, 2012 or sooner
+Camera-ready due:  ca. Feb 20, 2013
+
+We expect to hold the PC meeting on Monday, December 3, at HP Labs in
+Palo Alto.
+
+We designed this schedule to avoid conflicts with other
+networking-related events and with religious holidays, as far as we can
+tell; please let us know if we missed something important.
+
+We are looking forward to your positive reply by *June 12, 2012*.  If
+you have any questions that could help you decide, please do not
+hesitate to contact either or both of us (see below).  We are both
+convinced that your contribution will help NSDI remain at the
+forefront of networked-systems innovation, and we would be delighted if
+you can accept our invitation -- provided you are willing and able to
+commit to the workload.
+
+Please send us a quick note (hopefully of acceptance) to both of us:
+
+    Nick Feamster <feamster@cc.gatech.edu>
+    Jeffrey Mogul <Jeff.Mogul@hp.com>
+    <nsdi13chairs@usenix.org>
+
+Thanks,
+
+Nick Feamster
+Jeff Mogul
+Program Committee Co-Chairs
+NSDI 2013
+

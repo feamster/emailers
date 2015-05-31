@@ -1,0 +1,15 @@
+Richard::Richard Barnes <rbarnes@bbn.com>::rbarnes@bbn.com
+Amogh::Amogh Dhamdhere <amogh@caida.org>::amogh@caida.org
+Matt::Matt Davy <mpd@indiana.edu>::mpd@indiana.edu
+Brian::Brian Tierney <bltierney@es.net>::bltierney@es.net
+Shane::Shane Amante <Shane.Amante@Level3.com>::Shane.Amante@Level3.com
+Shane::Shane Wallin  <wallinjs@epb.net>::wallinjs@epb.net
+Russ::Russ Clark  <rjc@cc.gatech.edu>::rjc@cc.gatech.edu
+Wenke::Wenke Lee <wenke@cc.gatech.edu>::wenke@cc.gatech.edu
+Meredith::Meredith Whittaker <meredithrachel@google.com>::meredithrachel@google.com
+Rahul::Hariharan Rahul <rahul@csail.mit.edu>::rahul@csail.mit.edu
+Nick::Nick Black  <dank@qemfd.net>::dank@qemfd.net
+Greg::Greg Eisenhauer <eisen@gatech.edu>::eisen@gatech.edu
+Zachary::Zachary Bischof  <zachary.bischof@eecs.northwestern.edu>::zachary.bischof@eecs.northwestern.edu
+Yacin::Yacin Nadji <yacin@gatech.edu>::yacin@gatech.edu
+Jerry::Jerry Lofstead <gflofst@sandia.gov>::gflofst@sandia.gov

@@ -1,0 +1,26 @@
+Dear @NAME@,
+
+Here are your grades for each of the assignments, and your projected final grade.
+
+1. Please inform us if you see any discrepancies or things we may have missed. 
+
+2. Please feel free to turn in PS 4 for extra points by midnight Sunday.  We
+have already notified you if you are on a boundary and we think that turning in
+the problem set will help you, but if you have questions about this, please do
+not hesitate to ask us.  You can turn in parts of PS 4 for partial credit.
+
+3. As mentioned on Piazza, we have made every effort to curve up scores where
+possible.  The point weights are as given on the syllabus, and we have also
+already taken care to move some "boundary cases" up to a higher grade if we
+perceive that to be appropriate. More on grades is available from an earlier
+post, here: https://piazza.com/class#spring2013/cs3251a/109
+
+4. Please remember CIOS. :-)
+
+@GRADES@
+
+Thanks again for taking the course.  We really enjoyed having all of you in the
+course, we hoped you learned a lot, and we hope to see many of you around!
+
+Happy summer,
+Nick

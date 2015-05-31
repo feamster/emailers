@@ -1,0 +1,22 @@
+Hari Balakrishnan::<hari@lcs.mit.edu>
+Steve Bellovin::<smb@cs.columbia.edu>
+Olivier Bonaventure::<olivier.bonaventure@uclouvain.be>
+Randy Bush::<randy@psg.com>
+Russ Clark::<rjc@cc.gatech.edu>
+Nick Feamster::<feamster@cc.gatech.edu>
+Anja Feldmann::<anja@in.tum.de>
+Lixin Gao::<lgao@ecs.umass.edu>
+Vijay Gill::<vijay@vijaygill.com>
+Tim Griffin::<timothy.griffin@cl.cam.ac.uk>
+John Heasley::<heas@shrubbery.net>
+Josh Karlin::<karlinjf@cs.unm.edu>
+Ratul Mahajan::<ratul@microsoft.com>
+Dave Maltz::<dmaltz@microsoft.com>
+Morley Mao::<zmao@eecs.umich.edu>
+Kobus van der Merwe::<kobus@research.att.com>
+Andrew Partan::<asp@partan.com>
+Jennifer Rexford::<jrex@cs.princeton.edu>
+Lakshmi Subramanian::<lakme@eecs.berkeley.edu>
+Aman Shaikh::<ashaikh@research.att.com>
+Renata Teixeira::<renata.teixeira@lip6.fr>
+Dave Ward::<dward@cisco.com>

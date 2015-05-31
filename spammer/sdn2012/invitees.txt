@@ -1,0 +1,14 @@
+Katerina Argyraki::<katerina.argyraki@epfl.ch>
+Martin Casado::<casado@nicira.com>
+Bruce Davie::<bdavie@cisco.com>
+Anja Feldmann::<anja@net.t-labs.tu-berlin.de>
+Nate Foster::<jnfoster@cs.cornell.edu>
+Yashar Ganjali::<yganjali@cs.toronto.edu>
+Sachin Katti::<skatti@stanford.edu>
+Teemu Koponen::<koponen@nicira.com>
+Jeff Mogul::<jeff.mogul@hp.com>
+Richard Mortier::<richard.mortier@nottingham.ac.uk>
+Nick McKeown::<nickm@stanford.edu>
+Marcos Rogerio Salvador::<salvador@cpqd.com.br>
+Amin Vahdat::<vahdat@cs.ucsd.edu>
+Dave Ward::<dward@juniper.net>

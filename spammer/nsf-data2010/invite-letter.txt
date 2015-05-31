@@ -1,0 +1,76 @@
+Dear @NAME@,
+
+We invite you to participate in an NSF-sponsored workshop, “Cybersecurity Data
+for Experimentation” on real-world data for cybersecurity data on *Friday,
+August 27, 2010* in the Washington, DC area.  
+
+The workshop's goals are two-fold: (1) to allow people from industry to discuss
+data that they have available to them and problems that they want solved with
+this data; (2) to allow academics to find intersections between research
+problems they are working on and data that may be available from industrial
+partners.  We hope that this workshop will help facilitate such partnerships
+between academic researchers and industry.  
+
+We have included a longer version of the summary below.  As small preparation
+for the workshop, we would ask that academics bring one cybersecurity research
+project that could benefit from real-world data, and that industrial partners
+bring one question they would like answered (or problem they would like solved)
+that is based on data available to them.
+
+**Please reply by Monday, August 16 to let us know whether you can attend this workshop.**  Further information about the workshop, and registration information, is available here:
+http://www.gtisc.gatech.edu/nsf_workshop10.html
+
+Thank you,
+Nick Feamster
+Sean Wang
+Lenore Zuck
+
+
+Agenda (Tentative)
+---------------------------
+08:30-9:00 Breakfast
+09:00-9:15 Introduction 
+09:15-9:45 Keynote: Why is Data so Vital for Academics?  The Need for Data 
+09:45-11:00 What Data is Available and How Should It Be Analyzed? (Industry Panel)
+11:00-11:15 Break
+11:00-12:30 What Data is Needed? (Researcher Panel)
+12:30-01:30 Lunch
+01:30-02:45 Mechanics and Policies (Researcher/Industry/Government Panel)
+02:45-03:00 Break
+03:00-04:00 Wrap-Up and Preparation of Summary Statement
+
+
+Workshop Summary
+----------------------------
+
+As a consequence of the "60-Day Review," it became clear that the academic
+community working on cybersecurity is in dire need of real data.  The PREDICT
+portal is an effort to catalog and house the increasingly available research
+data, and per NSF's request, the needs of the academia for data have been
+documented. On the other hand, agencies, companies and organizations who do
+have data are seeking research innovations in the “arms race” against
+cyber-attacks.  For the purpose of bridging the two sides, we are organizing a
+workshop on “Real-world Cybersecurity Data Research” that will bring together
+people from companies/organizations, academia, and government agencies. The
+goal of the workshop is to discuss (1) models of engagement that will allow the
+research community to conduct experiments with real-world data sets, (2) how to
+share research results, and (3) how funding agencies can facilitate the
+process.  This workshop is sponsored by NSF and is in collaboration with DHS,
+ONR, and the Treasury [we are seeking more]. The workshop has attracted
+companies that are committed to participate and eager to share their data or to
+engage the research community in other ways around real-world data. 
+
+A guiding principle of the workshop is that the resulting models should be
+feasible with the built-in incentives to all parties involved, and the
+guarantees against violations of privacy or other regulations. The workshop
+will be organized around panel discussions of three topics: (1) Data
+availability and use conditions, (2) Research that can greatly benefit from
+available data to make much needed progresses in cyber-defense, and (3)
+Engagement models and related IP issues.  This will be a one-day workshop, in
+the DC metro area, held on August 27th, 2010.  The participants will include
+roughly 15 representatives of companies/organizations that have data, 20
+academics, and government representatives.  The workshop will be broadcast to
+the community at large and will be open to questions and suggestions from the
+listeners.
+ 
+

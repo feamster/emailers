@@ -1,0 +1,28 @@
+Dear @NAME@,
+
+It is our pleasure to invite you to serve on the program committee for
+the SIGCOMM 2013 poster/demo sessions. The poster and demo sessions will
+be held in Hong Kong, during SIGCOMM 2013. More details are available at
+http://conferences.sigcomm.org/sigcomm/2013/posters.php and
+http://conferences.sigcomm.org/sigcomm/2013/demos.php.
+
+Authors of posters will submit a 2-page abstract and of demos a 3-page
+abstract. Hence, we expect the reviewing responsibilities to be quite
+light. Last year, each PC member got 12 reviews and most did them all
+in
+a single day. There will be no TPC meeting. To help you in your
+decision
+here are the important dates:
+
+Abstract Submission: May 17
+Reviews due: May 31
+Author Notification: June 1
+
+
+If you're interested in being on the TPC, please let us know within the
+next week. Thanks for helping us with this.
+
+Thanks,
+Nick Feamster
+Vijay Gopalakrishnan
+Yongguang Zhang

@@ -1,0 +1,5 @@
+Jim Kurose::<kurose@cs.umass.edu>
+John Crowcroft::<jon.crowcroft@cl.cam.ac.uk>
+Ernst Biersack::erbi@eurecom.fr>
+Olaf Maennel::<om@maennel.net>
+Morley Mao::<zmao@eecs.umich.edu>

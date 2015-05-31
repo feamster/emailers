@@ -1,0 +1,10 @@
+Saurabh Bagchi::<sbagchi@purdue.edu>
+Peter Chen::<peterchen@cmu.edu>
+Barry Greene::<bgreene@isc.org>
+Eugene Spafford::<spaf@purdue.edu>
+Venkat Ventakrishnan::<venkat@uic.edu>
+Dawn Capelli::<dmc@cert.org>
+Tom Conway::<tom_conway@mcafee.com>
+Adam Golodner::<adamg@cisco.com>
+Rodney Joffe::<rjoffe@centergate.com>
+Dan Reed::<reed@microsoft.com>
