@@ -57,4 +57,4 @@ end
 
 list = MailList.new("maillist.txt", "letter.txt")
   list.send("Nick Feamster <feamster@cs.princeton.edu>",
-	    "Interview for Coursera SDN Course?","Arpit Gupta <arpitg@cs.princeton.edu>")
+	    "Interview for Coursera SDN Course?","Nick Feamster <feamster@cs.princeton.edu>, Arpit Gupta <arpitg@cs.princeton.edu>")
