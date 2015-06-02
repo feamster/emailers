@@ -14,10 +14,10 @@ class MailList
     @message['reply-to'] = 'feamster@cs.princeton.edu'
   end
   
-  def send(from, subject, cc=nil)
+  def send(from, subject, bcc=nil)
     @message['from'] = from
     @message['subject'] = subject
-    @message['bcc'] = cc
+    @message['bcc'] = bcc
 
     @emails.each { |t|
       t.chomp!
@@ -46,7 +46,7 @@ class MailList
 #      Net::SMTP.start('localhost') do |smtp|
 #	smtp.send_message(fullText,
 #			  @message['from'],
-#			  [@message['to'], @message['cc'].split(/,/)].flatten)
+#			  [@message['to'], @message['bcc'].split(/,/)].flatten)
 #      end
 
     }

@@ -1,7 +1,7 @@
 Hi @NAME@,
 
 You may know that every year, I teach a course on Coursera in Software
-Defined Networking (http://coursera.org/courses/sdn).  As part of the
+Defined Networking (http://coursera.org/course/sdn).  As part of the
 course, I generally invite luminaries and leaders in the field of SDN to
 share their experiences on a topic of their expertise.
 
