@@ -1,0 +1,6 @@
+Nick Feamster::feamster@cs.princeton.edu::routing
+Brighten Godfrey::pbg@illinois.edu::your work on verification, and what Veriflow is up to
+Sachin Katti::skatti@cs.stanford.edu::how SDN applies to wireless networks
+Bryan Larish::blarish@gatech.edu::your work applying SDN to enterprise networks in the government
+Bob Lantz::rlantz@cs.stanford.edu::Mininet, as well as what ON.Lab is working on
+Omar Baldonado::omar.baldonado@ocproject.net::the Open Compute Project

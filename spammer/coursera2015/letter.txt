@@ -1,0 +1,30 @@
+Hi @NAME@,
+
+You may know that every year, I teach a course on Coursera in Software
+Defined Networking (http://coursera.org/courses/sdn).  As part of the
+course, I generally invite luminaries and leaders in the field of SDN to
+share their experiences on a topic of their expertise.
+
+I am wondering if you would be willing to do an interview with me for
+the course over a Google On-Air Hangout.  We can talk about a topic of
+your choice, but I was thinking of gearing the interview towards
+@TOPIC@.
+
+Here’s an example of one that I did with a lead Open Daylight developer
+last year: https://www.youtube.com/watch?v=CY8jT_yewcw
+
+The interviews generally last about 30 minutes, although we don't need
+to keep a strict timeline.  I generally send out a list of questions
+beforehand so that you can prepare a bit in advance.  The interview is
+recorded and made available to the students in the course (this year,
+about 35,000 students are enrolled, although only about 4,000 actively
+participate/watch the videos).  With your permission, I also make the
+video available on YouTube (although I am happy to restrict or remove it
+if you prefer that).
+
+Could you please let me know if you are available to participate in an
+interview sometime in the next 2-3 weeks, and if so, what times might be
+good? 
+
+Thanks so much for considering doing this!
+-Nick
