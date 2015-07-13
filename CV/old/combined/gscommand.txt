@@ -1,1 +1,0 @@
-gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=feamster-packet.pdf -dBATCH ../new/cv.ps ../research/research.ps ../teaching/teaching.ps

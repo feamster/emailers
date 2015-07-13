@@ -1,1 +1,0 @@
-gs -dNOPAUSE -sDEVICE=pswrite -sOUTPUTFILE=feamster-packet.ps -dBATCH ../new/cv.ps ../research/research.ps ../teaching/teaching.ps
