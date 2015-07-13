@@ -1,0 +1,5 @@
+David Brumley::<dbrumley@cmu.edu>
+Michel Cukier::<mcukier@umd.edu>
+Roger Dingledine::<arma@freehaven.net>
+Brian Levine::<brian@cs.umass.edu>
+Clay Shields::<clay@cs.ucsc.edu>

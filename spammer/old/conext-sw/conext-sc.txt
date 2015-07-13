@@ -1,0 +1,10 @@
+Arturo Azcorra::<azcorra@it.uc3m.es>
+Michel Diaz::<Michel.Diaz@laas.fr>
+Laurent Mathy::<laurent@comp.lancs.ac.uk>
+Ioannis Stavrakakis::<ioannis@di.uoa.gr>
+Giorgio Ventre::<giorgio.ventre@unina.it>
+Jim Kurose::<kurose@cs.umass.edu>
+Serge Fdida::<serge.fdida@lip6.fr>
+Christophe Diot::<christophe.diot@gmail.com>
+Jim Kurose::<kurose@cs.umass.edu>
+Jennifer Rexford::<jrex@CS.Princeton.EDU>

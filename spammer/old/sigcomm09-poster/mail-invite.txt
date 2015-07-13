@@ -1,0 +1,17 @@
+Renata Teixeira::<renata.teixeira@lip6.fr>
+Nick Feamster::<feamster@cc.gatech.edu>
+Srikanth Kandula::<srikanth@microsoft.com>
+Rob Sherwood::<capveg@cs.umd.edu>
+Martin May::<martin.may@thomson.net>
+Craig Partridge::<craig@bbn.com>
+Joel Sommers::<jsommers@cs.colgate.edu>
+Krishna Gummadi::<gummadi@mpi-sws.mpg.de>
+Katerina Argyraki::<katerina.argyraki@epfl.ch>
+Himabindu Pucha::<hpucha@cs.cmu.edu>
+
+Suman Banerjee::<suman@cs.wisc.edu>
+Ramesh Johari::<rjohari@stanford.edu>
+Farnam Jahanian::<farnam@umich.edu>
+Ramana Kompella::<kompella@cs.purdue.edu>
+
+Nick McKeown::<nickm@cs.stanford.edu>

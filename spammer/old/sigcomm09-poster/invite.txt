@@ -1,0 +1,33 @@
+* Renata Teixeira, LIP6
+* Nick Feamster, Georgia Tech
+* Nick McKeown, Stanford
+* Craig Partridge, BBN
+* Joel Sommers, Colgate University
+* Srikanth Kandula, MSR
+* Aikaterini Argyraki, EPFL
+* Suman Banerjee, Wisconsin
+* Himabindu Pucha, CMU
+* Krishna Gummadi, MPI
+* Rob Sherwood, T-Labs (internet topology, peer-to-peer)
+* Ramesh Johari, Stanford (economics)
+* Farnam Jahanian, UMich (security)
+* Ramana Kompella, Purdue
+* Martin May, Thomson
+
+
+* Andy Bavier, Princeton (virtualization)
+* Bobby Bhattacharjee, UMD (peer-to-peer)
+* Kyle Jamieson, UCL (wireless)
+* Dave Maltz, MSR (network management)
+* Matt Grossglauser, EPFL (traffic sampling, etc.)
+* Ratul Mahajan, MSR (wireless)
+* Boon Thau Loo, UPenn (Overlay networks, databases/data streaming)
+* Phil Levis, Stanford (sensor networks)
+* Morley Mao, UMich (security, etc.)
+* Chen-nee Chuah, UC Davis (security)
+* Priya Mahadevan, HP Labs
+* Max Ott, NICTA
+* Jia Wang, AT&T
+* Albert Greenberg, MSR
+* Tristan Henderson, St. Andrews
+* Ivan Seskar, WINLAB, Rutgers

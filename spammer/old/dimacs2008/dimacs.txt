@@ -1,0 +1,104 @@
+
+*********************************************************************
+DIMACS/DyDAn Workshop on Secure Internet Routing
+
+  March 24 - 26, 2008
+  DIMACS Center, CoRE Building, Rutgers University
+
+Organizers:
+  Steve Bellovin, Columbia University, smb at cs.columbia.edu
+  Nick Feamster, Georgia Institute of Technology, feamster at  
+cc.gatech.edu
+  Vijay Ramachandran, Stevens Institute of Technology/DIMACS, vijayr  
+at cs.stevens.edu
+
+Presented under the auspices of the DIMACS Special Focus on Algorithmic
+Foundations of the Internet and the Center for Dynamic Data Analysis  
+(DyDAn).
+
+     ************************************************
+
+Designing replacement routing protocols is an important goal for
+continued growth of a versatile, mature Internet. Today's protocols
+have grown organically through interactions between router vendors and
+their customers. This growth has focused less on correct behavior and
+more on providing features that would not break existing
+infrastructure.
+
+Consider the standard Internet interdomain-routing protocol,
+BGP. Formal guarantees of its behavior are lacking in several
+areas. First, no security mechanism exists to provide resilience
+against misconfiguration and malicious attacks. Routes are learned
+through update messages, but the contents of these messages are not
+authenticated in any way. Thus, an adversary could inject messages to
+divert traffic for malicious means, and erroneous messages from even a
+single source can have far-reaching effects. Second, BGP's convergence
+time is O(n!) in the worst case, where n is the number of Internet
+domains, and the protocol has significant transient errors, e.g.,
+routing loops, that also increase with Internet size. Finally, BGP is
+not even guaranteed to converge. Routes are computed based on a
+composition of routing policies through the network; these policies
+could be based on factors as diverse as the terms of business
+contracts, performance issues, and security concerns in distant
+networks. Policies are determined and configured locally, which is
+extremely desirable for the Internet, given that component networks
+are administered by different agents. However, this expressiveness
+without global coordination comes at a cost: the interaction of
+routing policies can lead to global anomalies, such as nondeterminism
+and protocol oscillation.
+
+Formal analysis of routing algorithms has shown inherent trade-offs
+among achieving desirable protocol design goals. However, this
+analysis has also yielded principles toward the design of robust
+protocols and has begun to formalize important desiderata. In
+addition, it has been shown that a combination of local and global
+constraints, some of which are contained in assumptions underlying the
+hierarchy of today's commercial Internet, can guarantee good routing
+behavior. However, much work is needed before realization of a robust
+infrastructure that does not overly limit the ability of honest
+network operators. Doing so not only requires additional research on
+the algorithms used for policy routing, but also requires accompanying
+tools to secure and properly configure the routing system.
+
+Important open questions include the following:
+
+     * What inherent advantages and disadvantages would the use of a
+       centralized routing authority have relative to current
+       distributed routing algorithms?
+     * Can current routing protocols be modified to limit the potential
+       damage inflicted by a subverted router to traffic that has no
+       alternative path on the network?
+     * If we had a strong cryptographic identity infrastructure, could
+       that be used to provide secure routing protocols?
+     * Are there inherent trade-offs between security and local  
+autonomy?
+
+These kinds questions require a combination of theoretical analysis,
+including formal methods, and experimental analysis, including
+large-scale deployment in realistic settings.
+
+This workshop will bring together networking experts and algorithms
+experts in order to discuss recent progress and future directions in
+this area.
+********************************************************************
+Participation:
+
+Participation in the workshop is open to all interested
+researchers.
+
+********************************************************************
+Registration:
+
+The pre-registration deadline has passed, but it would still be  
+helpful if you register in advance so that we can plan accordingly.
+
+Please see website for complete registration details.
+
+*********************************************************************
+Information on participation, registration, accomodations, and travel
+can be found at:
+
+  http://dimacs.rutgers.edu/Workshops/Routing/
+
+********************************************************************
+

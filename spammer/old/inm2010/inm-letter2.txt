@@ -1,0 +1,54 @@
+Dear @NAME@,
+
+We---Aditya Akella, Nick Feamster, Sanjay Rao---are organizing the first
+Joint Workshop on Internet Network Management and Research on Enterprise
+Networks (INM/WREN 2010). The workshop will be held in conjunction with
+the NSDI conference in San Jose, California at the end of April. We
+would like to invite you to serve on the technical program committee. We
+would be delighted if you accept our invitation.
+
+This joint workshop brings together two separate but closely related
+venues---INM and WREN---both of which focus on top-down network design,
+bottom-up measurement and management research. This workshop aims
+provide a common high visibility forum for researchers working in this
+general space.
+
+The TPC is critical for ensuring a high quality program for this
+first-of-a-kind joint endeavor.  Your contribution to this mission will
+be greatly appreciated, including encouraging high-quality submissions
+(including submitting your own work) and providing thorough reviews.
+
+The previous editions of INM have been held in conjunction with SIGCOMM
+(2006,2007) and ICNP (2008). Here are some links to past years'
+workshops:
+
+http://www.cs.rice.edu/~eugeneng/inm08/committee.html
+http://conferences.sigcomm.org/sigcomm/2007/inm/
+http://research.microsoft.com/en-us/um/people/dmaltz/inm06/home.html
+
+The one previous edition of WREN was held in conjunction with SIGCOMM
+2009 (http://conferences.sigcomm.org/sigcomm/2009/workshops/wren/)
+
+The joint workshop will encourage papers on similar topics as previous
+years but expand the scope to wireless networks, data center networks,
+security, system design, and middleware architectures. You can find a
+tentative call for papers at:
+http://www.cs.wisc.edu/~akella/combined_cfp.txt
+
+A tentative timeline is as follows:
+
+Paper submission: Feb 12
+Acceptance: Mar 15
+Camera ready: April 6
+
+You will be expected to handle 5-7 six-page papers. We expect to hold a
+TPC meeting through a teleconference, so no travel is required.
+
+Please let us know your decision before October 12, 2009. We hope you will
+accept this invitation.
+
+
+Thanks,
+
+Aditya Akella, Nick Feamster, Sanjay Rao
+PC Co-Chairs, INM/WREN'10

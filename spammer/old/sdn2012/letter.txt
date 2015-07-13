@@ -1,0 +1,94 @@
+Dear @NAME@,
+
+Jennifer Rexford and I are submitting a proposal to co-chair the first SIGCOMM
+workshop on Hot Topics in Software Defined Networking (HotSDN).  The workshop
+will solicit position papers and works in progress on various topics related to
+Software Defined Networking, as listed in the draft call for papers below.
+
+We would be delighted if you could help out with this workshop by serving on
+the program committee.  We expect that the reviewing load for the workshop will
+be light, not to exceed about ten 6-page papers for each reviewer.  The
+reviewing schedule is included in the draft call for papers below.
+
+We have included a draft call for papers below.  Please let us know, by
+Friday, November 25:
+	* Are you interested in participating?
+	* Do you have any comments on/revisions to the call for papers?
+
+We will know by mid-December whether the workshop is accepted as a SIGCOMM
+workshop.
+
+Thanks!
+Nick and Jen
+
+
+---------------------------------------
+
+ACM SIGCOMM Workshop on Hot Topics in Software Defined Networking (HotSDN)
+                                 Co-located with ACM SIGCOMM'12
+                                     August 13 or August 17, 2012
+                                               Helsinki, Finland
+
+Software Defined Networking (SDN) refactors the relationship between network
+devices and the software that controls them.  Open interfaces to network
+switches enable more flexible and predictable network control, and they make it
+easier to extend network function.  During the past few years, several router
+vendors have introduced software development kits for programming their network
+devices, and several commercial switches now support the emerging OpenFlow
+standard.   Researchers have proposed new applications that can run on top of a
+software defined network, including dynamic access control, server load
+balancing, energy-efficient networking,  and seamless client mobility and
+virtual-machine migration.  Many research and industry groups worldwide are
+pursuing different aspects of software defined networking, and experimental and
+production deployments exist.  [Something about industry or data centers?  What
+about the GENI mesoscale stuff/GENI racks?]
+
+Still, many important research challenges remain: how to design switches and
+APIs that offer greater flexibility without compromising performance; how to
+design a software platform for the control and management of software defined
+networks; how to design new applications that capitalize on the programmability
+of the network; how to lower the barrier to creating, testing, and evaluating
+new applications; how to transition an existing network to SDN, and how a
+software defined network can interoperate with existing protocols and devices;
+and many others.
+
+The goal of the workshop is to explore recent research and developments related
+to SDN; to allow an exchange of ideas; to encourage broad interaction between
+industry and academia; and to help build a wider community to explore and
+realize the potential of SDN.
+
+Topics
+
+We encourage submission of both position papers and work-in-progress papers on
+Software Defined Networking.  We solicit previously unpublished work on topics
+including, but not limited to the following:
+
+Applications of SDN in home, wireless, cellular, enterprise, data-center, and backbone networks
+Application of SDN to network management, performance monitoring, security, etc.)
+Virtual appliances (e.g., firewalls, intrusion detection systems, load balancers, etc.) on SDN
+Virtualization support in software-defined networks
+Switch designs for SDN
+Application Programming Interfaces for SDN
+Control and management software stack for SDN
+Programming languages, verification techniques, and tools for SDN
+Performance evaluation of SDN network elements and controllers
+Experiences deploying SDN technology and applications in operational networks
+Hybrid SDN approaches (integration with other control planes)
+Transitioning existing networks to SDN
+Placement and factoring of SDN control logic
+
+
+
+Important Dates
+
+Registration of abstracts: March 30, 2012
+Submissions due: April 6, 2012
+Notification of acceptance: May 16, 2012
+Camera ready version due: June 8, 2012
+Workshop date: August 13 or 17, 2012
+
+
+PC Co-chairs
+
+Nick Feamster (Georgia Tech)
+Jennifer Rexford (Princeton)

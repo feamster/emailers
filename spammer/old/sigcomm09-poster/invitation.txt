@@ -1,0 +1,24 @@
+Dear @NAME@,
+
+It is our pleasure to invite you to serve on the program committee for the
+SIGCOMM 2009 poster/demo sessions. The poster and demo sessions will be held in
+Barcelona, during SIGCOMM 2009. More details are available at:
+http://conferences.sigcomm.org/sigcomm/2009/posters.php and
+http://conferences.sigcomm.org/sigcomm/2009/demos.php.
+
+Authors of posters will submit a 2-page abstract; authors of demos will submit
+a 3-page abstract. Hence, we expect the reviewing responsibilities to be quite
+light. Last year, each PC member got 12 reviews, and most did them all in a
+single day. There will be no TPC meeting. To help you with your decision, here
+are the important dates:
+
+Abstract Submission: May 4
+Reviews due: May 25
+Author Notification: June 1
+Camera Ready: June 15
+
+If you would like to be on the TPC, please let us know by January 12.
+Thanks for helping us with this.
+
+Nick Feamster and Renata Teixeira 
+SIGCOMM 2009 Poster/Demo Co-Chairs

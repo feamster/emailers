@@ -1,0 +1,35 @@
+Sugs::Sugs	Appasamy <sugan.appasamy@gmail.com>::sugan.appasamy@gmail.com
+Bootifool Yoon::Unita	Chetty	<unita.c@gmail.com>::unita.c@gmail.com
+Dania::Dania	Thomas	<dania_3@yahoo.com>::dania_3@yahoo.com
+Uncle Kaya::Kaya	Govindasamy <kersie@mweb.co.za>::kersie@mweb.co.za
+Dave::Dave	Andersen	<dga@cs.cmu.edu>::dga@cs.cmu.edu
+Oksie::Oks	Wahler	<oksana.ryndina@gmail.com>::oksana.ryndina@gmail.com
+SuperSarah::Sarah	Brown	<sarah.brown.ct@gmail.com>::sarah.brown.ct@gmail.com
+Lies::Liesl	Radloff	<liesl.radloff@gmail.com>::liesl.radloff@gmail.com
+Chris::Chris	Wojtan	<chris.wojtan@gmail.com>::chris.wojtan@gmail.com
+Uncle Kessie::Kessie	Naidoo	<kessie8@gmail.com>::kessie8@gmail.com
+Ravin::Ravin	Pillay <ravinpillay@ravinpillay.com>::ravinpillay@ravinpillay.com
+Ambi::Ambi	Amman	<rsammann@telkomsa.net>::rsammann@telkomsa.net
+Naz::Nazil	Jubaran	<nazli.jugbaran@gmail.com>::nazli.jugbaran@gmail.com
+Nico::Nico 	de Wet	<ndewet@gmail.com>::ndewet@gmail.com
+Gary::Gary	Marsden	<gaz@cs.uct.ac.za>::gaz@cs.uct.ac.za
+Jonathan::Jonathan	Donner	<jdonner@microsoft.com>::jdonner@microsoft.com
+Mom::Carolyn	Feamster	<cfeamster@gmail.com>::cfeamster@gmail.com
+Dad::Scott	Feamster	<matrixpfw@earthlink.net>::matrixpfw@earthlink.net
+Moomin::Segeree	Chetty	<segeree@gmail.com>::segeree@gmail.com
+Sasa::Sasa	Reddy	<sreddy@cybertrade.co.za>::sreddy@cybertrade.co.za
+Voon::Vanashree 	Chetty	<Neshie@gmail.com>::Neshie@gmail.com
+Noob::Rudashan	Chetty	<moondogg669@gmail.com>::moondogg669@gmail.com
+BF::Rulisha	Chetty	<rulisha@gmail.com>::rulisha@gmail.com
+Gabe::Gabriel	Van Der Berg	<gabrielvdb@gmail.com>::gabrielvdb@gmail.com
+Greg::Greg	Harfst	<gharfst@gmail.com>::gharfst@gmail.com
+Ildy::Ilda	Ladeira	<ladeira.ilda@gmail.com>::ladeira.ilda@gmail.com
+Gness::Gerard	Petersen	<gerard.petersen@gmail.com>::gerard.petersen@gmail.com
+Aunty La::Aunty La	Appasamy	<la.leelaa@gmail.com>::la.leelaa@gmail.com
+Aunty Baba::Aunty Baba	Pillay	<rookmoney.pillay@gmail.com>::rookmoney.pillay@gmail.com
+Aunty Maga::Aunty Maga	Thomas	<maggapower7@gmail.com>::maggapower7@gmail.com
+Hugan::Hugan	Naidoo	<yugan108@yahoo.com>::yugan108@yahoo.com
+Aunt Nancy::Nancy	Kotch	<nancykotch@verizon.net>::nancykotch@verizon.net
+Uncle Michael::Michael	Kotch	<docmjk@verizon.net>::docmjk@verizon.net
+Monogran::Monogran	Naidu	<manogran@telkomsa.net>::manogran@telkomsa.net
+Wenke::Wenke	Lee	<wenke@cc.gatech.edu>::wenke@cc.gatech.edu

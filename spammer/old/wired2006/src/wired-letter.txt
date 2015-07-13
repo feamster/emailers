@@ -1,0 +1,110 @@
+Dear @NAME@,
+
+We---Nick Feamster, Tim Griffin, Jennifer Rexford, and Randy Bush---
+invite you to the second Workshop on Internet Routing Evolution and
+Design (WIRED).  The event is planned as a follow-on of the first WIRED
+workshop in 2003.  The invitational workshop, of about 30 researchers,
+operators, and vendors, will be held at Georgia Tech's Technology Square in
+midtown Atlanta.  Please let us know by September 15, 2006 if you can join us.  
+We certainly hope you can make it.
+
+Regards,
+Nick, Tim, Jennifer, and Randy
+
+------------------------------------------------------------------------------
+
+       Workshop on Internet Routing Evolution and Design (WIRED)
+			   October 16-17, 2006
+            Georgia Tech Technology Square Research Building
+			 <http://wired2006.org/>
+
+The Internet routing infrastructure has gained importance over the past
+few years as the Internet is increasingly becoming a component of our
+critical communications infrastructure.  Despite the importance of Internet
+routing, we have not reached consensus on the design of an Internet routing
+system that is easy to manage, control, and secure, yet still scales well and
+provides good performance guarantees to end hosts.
+
+Researchers and practitioners have identified various problems with
+today's Internet routing protocols including, but not limited to, the
+following areas:
+	- Scaling (e.g., AS number and prefix exhaustion)
+	- Security (e.g., route hijacking, data diversion)
+	- Automation (e.g., generation of topology and configuration)
+	- Correctness (e.g., misconfiguration, contract violations)
+	- Traffic Engineering
+	- Performance
+
+The current Internet routing infrastructure was not designed with many
+of these goals in mind, and solutions to these problems has become more
+challenging - and crucial - as users demand more availability and better
+performance from Internet-based services.  Solving the problems above
+requires a unique combination operational expertise and a willingness to
+consider longer-term solutions.  In light of these trends, we'd like to
+invite you to participate in a workshop on the subject of Internet
+routing.
+
+Our goals are to:
+
+	- Convene a focused group of researchers and practitioners who
+	  are concerned with, or working on, Internet routing
+
+	- Gain a better understanding of how the Internet's routing
+          protocols are used in practice and the problems operators face
+          with the current Internet routing infrastructure
+
+	- Discuss the strengths and weaknesses of the existing
+	  protocols, and identify aspects of today's protocols that
+	  should be improved
+
+	- Create a "wish-list" of important research problems, network
+	  management tools, measurement techniques, and router features
+
+This workshop is planned as a by-invitation event involving
+  * A five-minute "position statement" presentation by each attendee
+  * A collection of "debates" on specific Internet routing topics
+  * Ample time for informal discussion and socializing
+
+The outcome of the workshop will be a report that summarizes the
+position statements of each attendee (and ensuing discussions) and
+general discussion.
+
+Attendees are expected to:
+  * Write a 1-2 page position statement on key routing issues for the
+    next ten years, in advance of the workshop (these write-ups will be
+    made available on the Web before the meeting)
+  * Prepare a five-minute talk summarizing the position statement, for
+    presentation at the workshop (these talks will serve as provocative
+    "Introductions" at the beginning of the workshop)
+  * Agree to participate in a debate on a specific Internet routing
+    topic of interest (e.g., soBGP vs. S-BGP vs. some other proposal).
+    The panel topics and assignments will be hashed out via e-mail prior
+    to the event, but they are likely to center around the five broad
+    areas listed above.
+
+The logistics for the workshop are as follows:
+
+  * Key dates:
+      - workshop:              2006 October 16-17
+      - due date to RSVP:      2005 September 15
+		        (via e-mail to <admin@wired2006.org>)
+      - due date for position statements: 2006 September 24
+
+  * Venue details:
+      - workshop location: http://www.gatech.edu/technology-square/tsrb.php
+      - hotel: http://www.ichotelsgroup.com/h/d/ex/hd/atlna?refid=1
+      - rate for room block: $139.00
+      - hotel location: http://tinyurl.com/oxlr9 
+      - public transport: http://www.itsmarta.com/ (North Ave. stop)
+
+  * Organizational aspects:
+      - questions:             admin@wired2006.org
+      - content list:	       wired@wired2006.org
+      - web page:	       http://wired2006.org/
+
+We hope that you are able to attend.
+
+   Nick Feamster, Georgia Tech
+   Tim Griffin, Cambridge
+   Jennifer Rexford, Princeton
+   Randy Bush, IIJ and University of Oregon

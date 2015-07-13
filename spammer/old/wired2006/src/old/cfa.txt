@@ -1,0 +1,72 @@
+[ Sent to academic types on the WIRED attendee list. ]
+
+Hi Folks,
+
+Since you are all supposed to be writing abstracts anyway for WIRED (and
+many of you have done so), the announcement below may be of interest.
+Students could probably just flip their WIRED statements directly to the
+workshop below.  Others may have interested students.
+
+Expect more content on the web site, including thee position statements
+soon, possibly over the coming weekend.
+
+-Nick
+
+
+CoNext Student Workshop
+Lisbon, Portugal
+December 4, 2006
+
+Call for Abstracts
+
+The CoNext Student Workshop is a forum for graduate students around the
+world to interact with their peers, publicize and exchange feedback,
+share experiences, make contacts, and learn about networking problems
+that other students from around the world are working on. Students will
+not only learn about other students' work, but also meet and interact
+with established networking researchers, who will participate in the
+workshop as panelists and organizers. Students will have the opportunity
+to establish connections in the networking community and help shape its
+future.  The workshop will be a day-long program organized in a way that
+promotes interaction and lively discussion.
+
+The CoNext 2006 Student Workshop organizing committee is encouraging the
+submission of abstracts describing ongoing thesis research in all areas
+of computer networking and data communications (for a list of topics,
+please refer to the CoNext 2006 call for papers). Student authors are
+asked to submit 1-2 page abstracts before the deadline below, using the
+CoNext 2006 format. Please visit http://www.co-next.net and follow the
+link to the Student Workshop to submit your abstract. Submissions will
+be reviewed by the program committee, from which a number of abstracts
+will be selected for inclusion in the workshop program. The workshop
+abstracts will appear in the CoNext 2006 proceedings.
+
+CoNext 2006 offer students the opportunity to apply for travel grants.
+Information on travel grants are available from http://www.co-next.net.
+
+Important dates: 
+---------------- 
+Submission: September 29th, 2006
+Notification: October 13th, 2006 
+Final version: October 20th, 2006
+
+
+Student Workshop chairs:
+
+Nick Feamster, Georgia Tech, USA                                            
+Renata Teixeira, LIP6-CNRS, France                                          
+                                                                               
+Program Committee: 
+
+Aditya Akella, University of Wisconsin, USA 
+Ernst Biersack, Institut Eurecom, France 
+Olivier Bonaventure, Universite Catholique de Louvain, Belgium 
+Luis Costa, Universidade Federal do Rio de Janeiro, Brazil 
+Jon Crowcroft, University of Cambridge, UK 
+Xenofontas Dimitropoulos, IBM Zurich 
+Serge Fdida, LIP6-CNRS, France 
+Jim Kurose, University of Massachusetts, Amherst, USA
+Olaf Maennel, University of Adelaide, Australia
+Morley Mao, University of Michigan, USA
+Aman Shaikh, AT&T Research, USA
+Geoff Voelker, University of California San Diego

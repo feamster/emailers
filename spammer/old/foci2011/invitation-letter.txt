@@ -1,0 +1,51 @@
+Dear @NAME@,
+
+We cordially invite you to the Workshop on Free and Open Communication on the
+Internet (FOCI), to be held February 24-25, 2011 at Georgia Tech in Atlanta,
+Georgia.  We tentatively plan to hold the workshop from Thursday
+afternoon/evening until Friday mid-afternoon, with an informal reception or
+dinner on Thursday evening.  We expect the workshop to have about 20-30
+attendees and to last 1-1.5 days, with a few talks from experts and several
+open-ended panel discussions.
+
+We should be able to provide support for up to $500 in expenses for
+workshop attendees.
+
+More details, including a Web site for the workshop, and agenda details
+are forthcoming.  
+
+If possible, and reply to Nick Feamster and Mary Claire Thompson
+<thompson@cc.gatech.edu> to let us know if you will be attending.
+Please let us know whether you plan to attend by Friday, October 29, 2010.
+
+Thank you,
+Nick Feamster
+Santosh Vempala
+Mike Best
+
+-----------------------------
+
+Workshop Summary
+----------------
+More than 50 countries around the world censor or monitor some subset of
+Internet traffic, and recent years have seen both the rise of new
+censorship techniques and technologies to evade these techniques.  As
+Internet connectivity becomes pervasive, government control over and
+surveillance of its citizens’ traffic in countries around the world will
+become an increasingly important issue.  In light of these trends, we
+are hosting a workshop to build a community of people who are working on
+various aspects of Internet censorship and surveillance.  The goals of
+the workshop are as follows: 
+
+    * To gain a better understanding of the state of Internet censorship
+      in various countries around the world.  
+
+    * To understand the policy and legal issues associated with
+      censorship (and anti-censorship) in countries around the world.
+
+    * To understand the important technical problems faced by developers
+      of today’s anti-censorship tools.
+
+    * To identify research problems related to anti-censorship in
+      computer science and technology policy.
+
