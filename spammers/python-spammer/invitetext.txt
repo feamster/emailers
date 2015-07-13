@@ -1,0 +1,50 @@
+Dear @FIRST@,
+
+We are excited to invite you to the CITP Research Conference on Internet
+Censorship, Interference, and Control, to be held on October 9, 2015, at
+the Friend Convocation Center on the Princeton Campus.  The conference
+will be a full-day event with a keynote speaker and three panels.  We
+are planning three panels, with high-level topics and example discussion
+points outlined at the bottom of this message.
+
+@PANELTXT@
+
+@PREWORKSHOP@
+
+We sincerely hope you can attend.  Please let us know by August 1, 2015
+whether you can participate by filling out this response form:
+@REPLYURL@
+
+More details on the workshop, including a detailed agenda, will follow
+in the coming months.
+
+Thanks very much!
+Nick Feamster
+Acting Director, CITP
+
+------------
+
+Tentative Panel Topics
+
+	  * International Security and Human Rights.  
+	    - How do we respond to offensive technologies such as
+	       China's denial of service attacks on Github?
+	    - What role should computer scientists play, in terms of
+  	       measuring and studying these tools?
+	    - What is the role of policy in deterring and responding to
+   	      these types of security threats?
+
+	   * Assessing the State of Internet Accessibility
+	     - What is the state of the art in network measurment for
+	        measuring Internet accessibility?
+	     - What types of measurements do we need to gather to offer
+	        a complete picture of the state of affairs?
+	     - How can information about social and political conditions
+     	       better inform the types of data we need to collect?
+
+	   * Balkanization of the Internet
+	     - Prevalence of national firewalls and Internet
+	        surveillance
+	     - Prevalence of filter bubbles
+	     - Effects of the Snowden Revelations
+	   

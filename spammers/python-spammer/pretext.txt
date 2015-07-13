@@ -1,0 +1,8 @@
+We are also hosting a smaller workshop before the conference on October
+7-8, 2015, at CITP on the Princeton Campus.  The focus of this smaller
+event will be to spend time designing and developing tools for
+characterizing censorship.  We have restricted the invitation list to
+this smaller workshop to researchers and developers who are actively
+working on censorship measurement tools (e.g., OONI, Centinel,
+Satellite).  We plan to allocate time for development, but our goal is
+also to foster some common discussions and community.
