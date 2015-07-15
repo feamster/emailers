@@ -28,7 +28,7 @@ class Spammer(object):
         # read the main mailing list                
         with open(maillist) as f:
             for line in f.readlines():
-                first, last, inst, email, area, panel, moderator, pre, invited = line.strip('\n').split(',')
+                first, last, inst, email, area, panel, moderator, pre, invited, accepted = line.strip('\n').split(',')
                 if not re.match(r'.*@', email): continue
                                 
                 self.ml[email] = (first,last,panel,moderator,pre,invited)
