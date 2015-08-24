@@ -64,5 +64,6 @@ Joss,Wright,Oxford University,joss.wright@oii.ox.ac.uk,,,,,1,1
 ,,Viet Tan (pro-democracy Vietnamese expats),,,,,,,
 ,,,,,,,,,
 Students (Recommended by Attendeees),,,,,,,,,
-Abbas,Razaghpanah,Stony Brook,arazaghpanah@cs.stonybrook.edu,Computer Science,,,1,,
-Rishab,Nithyanand,Stony Brook,rnithyanand@cs.stonybrook.edu,Computer Science,,,1,,
+Abbas,Razaghpanah,Stony Brook,arazaghpanah@cs.stonybrook.edu,Computer Science,,,1,1,
+Rishab,Nithyanand,Stony Brook,rnithyanand@cs.stonybrook.edu,Computer Science,,,1,1,
+Ben,Jones,Princeton,bj6@cs.princeton.edu,Computer Science,,,1,1,
