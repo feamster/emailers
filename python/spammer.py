@@ -28,10 +28,10 @@ class Spammer(object):
         # read the main mailing list                
         with open(maillist) as f:
             for line in f.readlines():
-                first, last, inst, email, area, panel, moderator, pre, invited, accepted = line.strip('\n').split(',')
+                first, last, inst, email, area, panel, moderator, pre, invited, accepted = line.strip('\r\n').split(',')
                 if not re.match(r'.*@', email): continue
                                 
-                self.ml[email] = (first,last,panel,moderator,pre,invited)
+                self.ml[email] = (first,last,panel,moderator,pre,invited,accepted)
 
         # main message
         with open(messagefile) as f:
@@ -53,9 +53,9 @@ class Spammer(object):
     def sendMessage(self, email):
 
         ######
-        # return if we've already invited them
-        if (self.ml[email][5] =='1'): return
-        
+        # return if they have not accepted
+        if (self.ml[email][6] !='1'): return
+
         ######
         # prepare the message body
 
@@ -106,7 +106,9 @@ class Spammer(object):
 
         print msg
 
-        self.smtp.sendmail('feamster@cs.princeton.edu',email, msg.as_string())
+        ######
+        # actually send the message
+        # self.smtp.sendmail('feamster@cs.princeton.edu',email, msg.as_string())
 
 
     def sendMessages(self):
@@ -124,14 +126,14 @@ class Spammer(object):
                         
 ##################################################    
 
-sp = Spammer('censorship-invites.txt', 'invitetext.txt',
+sp = Spammer('censorship-invites.txt', 'logistics.txt',
                 'Nick Feamster <feamster@cs.princeton.edu>',
-                'Invitation to Princeton CITP Research Conference: October @DATE@, 2015',
+                'Logistics for Princeton CITP Research Conference: October @DATE@, 2015',
                 '',
-                'Joanna Huey <jhuey@princeton.edu>, Nick Feamster <feamster@gmail.com>',
-                'paneltext.txt',
+                'Joanna Huey <jhuey@princeton.edu>, Laura Cummings-Abdo <lcumming@princeton.edu>, Nick Feamster <feamster@gmail.com>',
+                'panel-logistics.txt',
                 'modtext.txt',
-                'pretext.txt',
+                'pre-logistics.txt',
                 )
 
 sp.sendMessages()
