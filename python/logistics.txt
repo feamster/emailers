@@ -1,0 +1,73 @@
+Dear @FIRST@,
+
+Thank you for agreeing to attend CITP’s Censorship Conference on October
+9, 2015.  We have assembled an exciting lineup of panels; tentative
+panelists and topics are below. (The conference is open to the public,
+and will be streamed and recorded.) 
+
+At your earliest convenience, please look over the important logistical
+information linked below:
+
+https://citp.princeton.edu/logistics-for-participants-of-censorship-workshop-and-conference/ 
+
+@PANELTXT@
+
+@PREWORKSHOP@
+
+Our hotel block with the Nassau Inn expires on September 8th.  You must
+contact them before then if you would like to book a room; detailed
+instructions are on the webpage. 
+
+The dinner for the workshop and conference has been set for Thursday,
+October 8, 2015, at 6 pm at Palmer House. Please RSVP by Monday,
+September 28th, using the link on the webpage. 
+
+If you have confirmation from Nick Feamster that CITP will reimburse
+your travel expenses, you should review the travel policies linked on
+the webpage. In particular, note that air and train tickets must be
+economy fares booked at least 14 days in advance of the event. Again,
+only participants with prior confirmation from Nick will receive any
+reimbursement. 
+
+If you have any questions or concerns, please feel free to contact me.
+Thank you and have a good day. 
+
+Thanks!
+Nick Feamster
+
+
+----------------
+
+
+Panel 1: International Security and Human Rights.
+ 
+Zeynep Tufecki (University of North Carolina, Chapel Hill)
+Sascha Meinrath (The X Lab)
+Hans Klein (Georgia Tech)
+
+* What are the international security and human rights considerations surrounding interference with Internet communications?
+* How do we deal with offensive technologies such as “Great Cannon”?
+* What is the appropriate response to companies that are selling technology to foreign suppressive regimes?
+* What is the role of network scientists and engineers in this discussion? What is the role of political scientists?
+* How can the two groups work together to design policies to prevent and to reciprocate such as sanctions?
+
+Panel 2: Assessing the State of Internet Accessibility
+
+Roya Ensafi (Princeton University)
+Steven Schultze (Department of State)
+Alex Halderman (University of Michigan)
+
+* What methods do network scientists currently have to measure Internet accessibility? 
+* How do we enable repeatable, reliable longitudinal measurements of Internet accessibility?
+How can empirical network measurements complement methods from qualitative social science?
+* What aspects of sociopolitical context do computer scientists need to be aware of, and what types of data political scientists most need?
+
+Panel 3: Balkanization of the Internet: Internet under attack.
+
+Joe Hall (Center for Democracy and Technology)
+Rob Faris (Berkman Center)
+Vern Paxson (UC Berkeley and International Computer Science Institute)
+
+* How can we assess the prevalence of national firewalls and surveillance?
+* What is the current state of “filter bubbles”? How can we best characterize them?
+* What are the effects of the Snowden revelations on attitudes and behavior?

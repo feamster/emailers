@@ -1,61 +1,54 @@
 Dear @FIRST@,
 
-We have not heard from you regarding whether you can make the CITP Research
-Conference on Internet Censorship, Interference, and Control. The original text
-of the invitation is below. Please let us know whether you can attend by
-filling out the response form: 
-@REPLYURL@
-
-Thanks!
-Nick 
-
-------------
-
-We are excited to invite you to the CITP Research Conference on Internet
-Censorship, Interference, and Control, to be held on October 9, 2015, at
-the Friend Convocation Center on the Princeton Campus.  The conference
+We are excited to invite you to the CITP Research Conference on Global Internet
+Interconnection, to be held on March 11, 2016, at
+the Frist Center on the Princeton Campus.  The conference
 will be a full-day event with a keynote speaker and three panels.  We
 are planning three panels, with high-level topics and example discussion
 points outlined at the bottom of this message.
 
 @PANELTXT@
 
-@PREWORKSHOP@
-
-We sincerely hope you can attend.  Please let us know by August 1, 2015
+We sincerely hope you can attend.  Please let us know by February 15, 2016
 whether you can participate by filling out this response form:
 @REPLYURL@
 
-More details on the workshop, including a detailed agenda, will follow
-in the coming months.
+More information about the conference, including planned panels, is here:
+https://citp.princeton.edu/event/interconnection/
 
 Thanks very much!
 Nick Feamster
 Acting Director, CITP
 
 ------------
-
-Tentative Panel Topics
-
-	  * International Security and Human Rights.  
-	    - How do we respond to offensive technologies such as
-	       China's denial of service attacks on Github?
-	    - What role should computer scientists play, in terms of
-  	       measuring and studying these tools?
-	    - What is the role of policy in deterring and responding to
-   	      these types of security threats?
-
-	   * Assessing the State of Internet Accessibility
-	     - What is the state of the art in network measurment for
-	        measuring Internet accessibility?
-	     - What types of measurements do we need to gather to offer
-	        a complete picture of the state of affairs?
-	     - How can information about social and political conditions
-     	       better inform the types of data we need to collect?
-
-	   * Balkanization of the Internet
-	     - Prevalence of national firewalls and Internet
-	        surveillance
-	     - Prevalence of filter bubbles
-	     - Effects of the Snowden Revelations
 	   
+
+Panel 1: The Evolution of Interconnection
+
+Discussion questions:
+• How does the rise of Software Defined Networking change the nature of peering and interconnection?
+• What are the implications of global IXP proliferation for Internet performance?
+• How does the rise of IXPs affect concerns about surveillance and trans-national data flows?
+• How do wireless mesh networks play a role in improving interconnection and local communications?
+
+Lunch with Keynote Speaker
+
+Break
+
+Panel 2: Congestion and Interconnection
+
+Discussion questions:
+• What is the current state of Internet congestion? What are the main mysteries surrounding Internet congestion today?
+• What tools do we have to identify and locate Internet congestion? Are they adequate?
+• Where is congestion? In the transit networks, at the interconnects, in the last-mile, or in the “last ten feet”?
+• What mechanisms do we have (economic, technical, or political) to manage and mitigate Internet congestion?
+
+Panel 3: Pricing Interconnection
+
+Discussion questions:
+• What are the different ways of pricing Internet congestion?
+• What are the effects of data caps, pay-as-you-go pricing on Internet use?
+• How does zero-rating affect user demand for content or applications?
+
+In addition to these questions, our panelists will discuss open questions and future directions surrounding Internet interconnection.
+

@@ -28,9 +28,8 @@ class Spammer(object):
         # read the main mailing list                
         with open(maillist) as f:
             for line in f.readlines():
-                first, last, inst, email, area, panel, moderator, pre, invited, accepted = line.strip('\r\n').split(',')
+                first, last, inst, email, area, panel, moderator, pre, invited, accepted,rest = line.strip('\r\n').split(',',10)
                 if not re.match(r'.*@', email): continue
-                                
                 self.ml[email] = (first,last,panel,moderator,pre,invited,accepted)
 
         # main message
@@ -53,13 +52,18 @@ class Spammer(object):
     def sendMessage(self, email):
 
         ######
-        # return if they have not accepted
-        if (self.ml[email][6] !='1'): return
+        # return if they have been invited
+        if (self.ml[email][5] == '1'): return
 
         ######
         # prepare the message body
 
         msgtxt = re.sub(r'@FIRST@', self.ml[email][0], self.message)
+
+
+
+        ########################################
+        # Handle Panel and Moderator Text
         
         if (self.ml[email][3]=='1'):
             # moderator
@@ -77,24 +81,33 @@ class Spammer(object):
         # replace panel topic
         msgtxt = re.sub(r'@TOPIC@',self.ml[email][2],msgtxt)
 
+        
+        ########################################
+        # Handle Pre-Workshop
         # add the invitation for pre-workshop folks
         if (self.ml[email][4] == '1'):
+            # replace text with preworkshop text
             msgtxt = re.sub(r'@PREWORKSHOP@', self.pretext, msgtxt)
-            msgtxt = re.sub(r'@REPLYURL@', 'https://goo.gl/FyGIW9', msgtxt)
+            msgtxt = re.sub(r'@REPLYURL@', 'https://goo.gl/uYqVhb', msgtxt)
         else:
+            # not invited to pre-workshop, so replace with blank text
             msgtxt =re.sub(r'\n@PREWORKSHOP@\n', '', msgtxt)
-            msgtxt = re.sub(r'@REPLYURL@', 'https://goo.gl/rVOEOC', msgtxt)
+            msgtxt = re.sub(r'@REPLYURL@', 'https://goo.gl/uYqVhb', msgtxt)
             
                     
-        ######
+        #########################################
         # prepare the message subject line
         if (self.ml[email][4] == '1'):
-            subject = re.sub(r'@DATE@', '7-9', self.subject)
-            msgtxt = re.sub(r'@DATE@', '7-9', msgtxt)
+            subject = re.sub(r'@DATE@', '11', self.subject)
+            msgtxt = re.sub(r'@DATE@', '11', msgtxt)
         else:
-            subject = re.sub(r'@DATE@', '9', self.subject)
-            msgtxt = re.sub(r'@DATE@', '9', msgtxt)
-        
+            subject = re.sub(r'@DATE@', '11', self.subject)
+            msgtxt = re.sub(r'@DATE@', '11', msgtxt)
+
+
+
+        ########################################
+        # prepare the message for sending
         msg = MIMEText(msgtxt)
         msg['From'] = self.sender
         msg['To'] = '{0} {1} <{2}>'.format(self.ml[email][0],
@@ -104,11 +117,14 @@ class Spammer(object):
         if len(self.cc) > 0: msg['cc'] = self.cc 
         if len(self.bcc) > 0: msg['bcc'] = self.bcc
 
-        print msg
+            
+        ######
+        # show what will be sent
+        # print msg
 
         ######
         # actually send the message
-        # self.smtp.sendmail('feamster@cs.princeton.edu',email, msg.as_string())
+        self.smtp.sendmail('feamster@cs.princeton.edu',email, msg.as_string())
 
 
     def sendMessages(self):
@@ -126,9 +142,9 @@ class Spammer(object):
                         
 ##################################################    
 
-sp = Spammer('censorship-invites.txt', 'logistics.txt',
+sp = Spammer('interconnection-invites.txt', 'invitetext.txt',
                 'Nick Feamster <feamster@cs.princeton.edu>',
-                'Logistics for Princeton CITP Research Conference: October @DATE@, 2015',
+                'Invitation to CITP Conference on Global Internet Interconnection: March @DATE@, 2016',
                 '',
                 'Joanna Huey <jhuey@princeton.edu>, Laura Cummings-Abdo <lcumming@princeton.edu>, Nick Feamster <feamster@gmail.com>',
                 'panel-logistics.txt',
