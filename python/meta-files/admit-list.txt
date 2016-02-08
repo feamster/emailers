@@ -1,0 +1,11 @@
+First Name,Last Name,Email,Institution,Area,Rank,Expected Yield,Female/Minority,Advisor Matches/Interests,Interests,Notes,Internal Notes
+Frank,Cangialosi,fcangialosi94@gmail.com,Maryland,Networking/Security,X,,,Nick,"Network measurement, security, Tor","Have read Ting paper; pretty clever. Good GPA, letters.","Have read Ting paper; pretty clever. Pretty good GPA, letters. Test scores not that high. B in OS."
+Chris,Canel,christopher.canel@icloud.com,Berkeley,Systems,X,,,Mike ,Distributed systems,Good letters from Scott and Sylvia.  Large scale distributed data analytics. OSDI submission.,Good letters from Scott and Sylvia. Say Narayan is better. Large scale distributed data analytics. OSDI submission.  Weak GPA (3.28)
+Matheus,Ferreira,matheusventuryne@gmail.com,UCSD/Brazil,Networking,,,,Nick,SDN,Strong recommendation from Snoeren.  Others rate top 2%. A+s at UCSD.,Strong recommendation from Snoeren.  Others rate top 2%. A+s at UCSD.
+Hun,Namkoong,hnamkung15@gmail.com,KAIST,Networking,,,,Nick,SDN,Good letter from Dongsu. Excellent grades at KAIST. Letters are positive.,Good letter from Dongsu. Excellent grades at KAIST. Letters are positive.
+Daeheok,Kim,dkim.cs@gmail.com,KAIST/UT Austin,Networking,,,,Nick/Arvind/Kyle?,"Security, Wireless",Very research active in top conferences. Has contacted Nick. ,Very research active in top conferences. Has contacted Nick. Vitaly says not spectacular but above bar for Cornell
+Christopher,Hodsdon,chrischodsdon@gmail.com,Rutgers Camden,Systems,,0.5,,Mike?,,Workd on OSDI submission. Good grades. Has audited courses at Princeton.,Workd on OSDI submission. Good grades. Has audited courses at Princeton.
+Zhelun,Wu,zhelunwu@hotmail.com,Tsinghua,Networking,,,,Nick/Kai?,SDN,Strong letter from Dan Pei.,Strong letter from Dan Pei.
+Christina,Ilvento,cilvento@gmail.com,Princeton,Security,X,,F,Nick - Wu?,,"Letters, scores, everything looks exceptionally strong. Product manager at Google. Hacking skills?"
+Allison,Kao,ackao@andrew.cmu.edu,CMU,Security,X,,F,Nick,,"Industry experience at Dropbox, strong letters, Brumley's group (CFI). Hacker"
+Youcef,Moumena,ymoumena@yahoo.com,UMD,Security,X,,,Nick/Prateek,Tor/Measurements,Strong letter from Neil Spring. Scores off the charts.
