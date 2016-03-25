@@ -120,11 +120,11 @@ class Spammer(object):
             
         ######
         # show what will be sent
-        # print msg
+        print msg
 
         ######
         # actually send the message
-        self.smtp.sendmail('feamster@cs.princeton.edu',email, msg.as_string())
+        # self.smtp.sendmail('feamster@cs.princeton.edu',email, msg.as_string())
 
 
     def sendMessages(self):
