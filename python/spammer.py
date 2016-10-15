@@ -88,21 +88,21 @@ class Spammer(object):
         if (self.ml[email][4] == '1'):
             # replace text with preworkshop text
             msgtxt = re.sub(r'@PREWORKSHOP@', self.pretext, msgtxt)
-            msgtxt = re.sub(r'@REPLYURL@', 'https://goo.gl/uYqVhb', msgtxt)
+            msgtxt = re.sub(r'@REPLYURL@', 'https://goo.gl/forms/K2pUkGdRzpDaKXTT2', msgtxt)
         else:
             # not invited to pre-workshop, so replace with blank text
             msgtxt =re.sub(r'\n@PREWORKSHOP@\n', '', msgtxt)
-            msgtxt = re.sub(r'@REPLYURL@', 'https://goo.gl/uYqVhb', msgtxt)
+            msgtxt = re.sub(r'@REPLYURL@', 'https://goo.gl/forms/K2pUkGdRzpDaKXTT2', msgtxt)
             
                     
         #########################################
         # prepare the message subject line
         if (self.ml[email][4] == '1'):
-            subject = re.sub(r'@DATE@', '11', self.subject)
-            msgtxt = re.sub(r'@DATE@', '11', msgtxt)
+            subject = re.sub(r'@DATE@', '21', self.subject)
+            msgtxt = re.sub(r'@DATE@', '21', msgtxt)
         else:
-            subject = re.sub(r'@DATE@', '11', self.subject)
-            msgtxt = re.sub(r'@DATE@', '11', msgtxt)
+            subject = re.sub(r'@DATE@', '21', self.subject)
+            msgtxt = re.sub(r'@DATE@', '21', msgtxt)
 
 
 
@@ -123,7 +123,7 @@ class Spammer(object):
         print msg
 
         ######
-        # actually send the message
+        # actually send the message - UNCOMMENT to Send
         # self.smtp.sendmail('feamster@cs.princeton.edu',email, msg.as_string())
 
 
@@ -141,12 +141,13 @@ class Spammer(object):
 
                         
 ##################################################    
+#     def __init__(self, maillist, messagefile, sender, subject, cc, bcc, panelfile, modfile, prefile):
 
-sp = Spammer('interconnection-invites.txt', 'invitetext.txt',
+sp = Spammer('iot-invites.txt', 'invitetext.txt',
                 'Nick Feamster <feamster@cs.princeton.edu>',
-                'Invitation to CITP Conference on Global Internet Interconnection: March @DATE@, 2016',
+                'Invitation to CITP Conference on Security and Privacy for Internet of Things: October @DATE@, 2016',
                 '',
-                'Joanna Huey <jhuey@princeton.edu>, Laura Cummings-Abdo <lcumming@princeton.edu>, Nick Feamster <feamster@gmail.com>',
+                'Jean Butcher <butcher@princeton.edu>, Laura Cummings-Abdo <lcumming@princeton.edu>, Nick Feamster <feamster@gmail.com>',
                 'panel-logistics.txt',
                 'modtext.txt',
                 'pre-logistics.txt',

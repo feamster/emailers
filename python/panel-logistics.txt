@@ -1,5 +1,10 @@
-We would like to invite you to sit on a panel on @TOPIC@.  More
-information about the panels, including moderators, is forthcoming. A
-tentative list of topics and questions is below, but of course as
-panelists, you should feel free to shape the discussion and topic to
-your expertise and taste.
+We would like to invite you to speak on a panel.  A possible topic we have
+identified for your panel is @TOPIC@, but we may adjust this topic
+depending on the availability of panelists.
+
+A tentative list of topics and questions is below, but of course as a
+panelist, you should feel free to shape the discussion and topic to your
+expertise and taste.
+
+We have a limited budget to support travel for speakers and panelists,
+if you need financial support to attend.
