@@ -53,14 +53,12 @@ class Spammer(object):
 
         ######
         # return if they have been invited
-        if (self.ml[email][5] == '1'): return
+        #if (self.ml[email][5] == '0'): return
 
         ######
         # prepare the message body
 
         msgtxt = re.sub(r'@FIRST@', self.ml[email][0], self.message)
-
-
 
         ########################################
         # Handle Panel and Moderator Text
@@ -143,11 +141,11 @@ class Spammer(object):
 ##################################################    
 #     def __init__(self, maillist, messagefile, sender, subject, cc, bcc, panelfile, modfile, prefile):
 
-sp = Spammer('iot-invites.txt', 'invitetext.txt',
+sp = Spammer('panelists.txt', 'infotext.txt',
                 'Nick Feamster <feamster@cs.princeton.edu>',
-                'Invitation to CITP Conference on Security and Privacy for Internet of Things: October @DATE@, 2016',
+                'Panel Reminder: CITP Conference on Security and Privacy for Internet of Things: October @DATE@, 2016',
                 '',
-                'Jean Butcher <butcher@princeton.edu>, Laura Cummings-Abdo <lcumming@princeton.edu>, Nick Feamster <feamster@gmail.com>',
+                'Jean Butcher <butcher@princeton.edu>, Laura Cummings-Abdo <lcumming@princeton.edu>, Joanna Huey <jhuey@princeton.edu>, Nick Feamster <feamster@gmail.com>',
                 'panel-logistics.txt',
                 'modtext.txt',
                 'pre-logistics.txt',
