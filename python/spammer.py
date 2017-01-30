@@ -28,7 +28,7 @@ class Spammer(object):
         # read the main mailing list                
         with open(maillist) as f:
             for line in f.readlines():
-                first, last, inst, email, area, panel, moderator, pre, invited, accepted,rest = line.strip('\r\n').split(',',10)
+                first, last, inst, email, area, panel, moderator, pre, invited, accepted = line.strip('\r\n').split(',',10)
                 if not re.match(r'.*@', email): continue
                 self.ml[email] = (first,last,panel,moderator,pre,invited,accepted)
 
@@ -141,11 +141,11 @@ class Spammer(object):
 ##################################################    
 #     def __init__(self, maillist, messagefile, sender, subject, cc, bcc, panelfile, modfile, prefile):
 
-sp = Spammer('panelists.txt', 'infotext.txt',
+sp = Spammer('qoe-invitees.txt', 'qoe-cancellation.txt',
                 'Nick Feamster <feamster@cs.princeton.edu>',
-                'Panel Reminder: CITP Conference on Security and Privacy for Internet of Things: October @DATE@, 2016',
+                'Cancellation of NSF QoE Workshop: February 2-3, 2017',
                 '',
-                'Jean Butcher <butcher@princeton.edu>, Laura Cummings-Abdo <lcumming@princeton.edu>, Joanna Huey <jhuey@princeton.edu>, Nick Feamster <feamster@gmail.com>',
+                '"Fabian E. Bustamante" <fabianb@eecs.northwestern.edu>, David Clark <ddc@csail.mit.edu>, Nick Feamster <feamster@gmail.com>',
                 'panel-logistics.txt',
                 'modtext.txt',
                 'pre-logistics.txt',
