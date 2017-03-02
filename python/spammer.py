@@ -28,7 +28,7 @@ class Spammer(object):
         # read the main mailing list                
         with open(maillist) as f:
             for line in f.readlines():
-                first, last, inst, email, area, panel, moderator, pre, invited, accepted = line.strip('\r\n').split(',',10)
+                first, last, inst, email, area, panel, moderator, pre, invited, accepted = line.strip('\r\n').split(',')
                 if not re.match(r'.*@', email): continue
                 self.ml[email] = (first,last,panel,moderator,pre,invited,accepted)
 
@@ -141,11 +141,11 @@ class Spammer(object):
 ##################################################    
 #     def __init__(self, maillist, messagefile, sender, subject, cc, bcc, panelfile, modfile, prefile):
 
-sp = Spammer('qoe-invitees.txt', 'qoe-cancellation.txt',
+sp = Spammer('admits.txt', 'admit-text.txt',
                 'Nick Feamster <feamster@cs.princeton.edu>',
-                'Cancellation of NSF QoE Workshop: February 2-3, 2017',
+                'Congratulations on Princeton admission!',
                 '',
-                '"Fabian E. Bustamante" <fabianb@eecs.northwestern.edu>, David Clark <ddc@csail.mit.edu>, Nick Feamster <feamster@gmail.com>',
+                'Nick Feamster <feamster@gmail.com>',
                 'panel-logistics.txt',
                 'modtext.txt',
                 'pre-logistics.txt',
