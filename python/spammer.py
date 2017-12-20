@@ -28,7 +28,7 @@ class Spammer(object):
         # read the main mailing list                
         with open(maillist) as f:
             for line in f.readlines():
-                first, last, inst, email, area, panel, moderator, pre, invited, accepted = line.strip('\r\n').split(',')
+                first, last, email, inst, invited, accepted, area, panel, moderator, pre,  = line.strip('\r\n').split(',')
                 if not re.match(r'.*@', email): continue
                 self.ml[email] = (first,last,panel,moderator,pre,invited,accepted)
 
@@ -141,10 +141,10 @@ class Spammer(object):
 ##################################################    
 #     def __init__(self, maillist, messagefile, sender, subject, cc, bcc, panelfile, modfile, prefile):
 
-sp = Spammer('admits.txt', 'admit-text.txt',
+sp = Spammer('srn-invite-list.txt', 'srn-invite.txt',
                 'Nick Feamster <feamster@cs.princeton.edu>',
-                'Congratulations on Princeton admission!',
-                '',
+                'Invitation to NSF-Sponsored Workshop on Self-Running Networks - February 15-16, 2018',
+                ' Jennifer Rexford <jrex@cs.princeton.edu>',
                 'Nick Feamster <feamster@gmail.com>',
                 'panel-logistics.txt',
                 'modtext.txt',
