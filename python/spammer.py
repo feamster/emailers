@@ -141,9 +141,9 @@ class Spammer(object):
 ##################################################    
 #     def __init__(self, maillist, messagefile, sender, subject, cc, bcc, panelfile, modfile, prefile):
 
-sp = Spammer('srn-invite-list.txt', 'srn-invite.txt',
+sp = Spammer('srn-unknown.txt', 'srn-invite-fu-unknown.txt',
                 'Nick Feamster <feamster@cs.princeton.edu>',
-                'Invitation to NSF-Sponsored Workshop on Self-Running Networks - February 15-16, 2018',
+                'Reminder to Book Hotel: NSF-Sponsored Workshop on Self-Running Networks - February 15-16, 2018',
                 ' Jennifer Rexford <jrex@cs.princeton.edu>',
                 'Nick Feamster <feamster@gmail.com>',
                 'panel-logistics.txt',
