@@ -8,7 +8,7 @@ from email.mime.text import MIMEText
 
 class Spammer(object):
 
-    def __init__(self, maillist, messagefile, sender, subject, cc, bcc, panelfile, modfile, prefile):
+    def __init__(self, maillist, messagefile, sender, subject, cc, bcc):
 
         self.ml = {}
 
@@ -28,82 +28,23 @@ class Spammer(object):
         # read the main mailing list                
         with open(maillist) as f:
             for line in f.readlines():
-                first, last, email, inst, invited, accepted, area, panel, moderator, pre,  = line.strip('\r\n').split(',')
-                if not re.match(r'.*@', email): continue
-                self.ml[email] = (first,last,panel,moderator,pre,invited,accepted)
+               last,first,email  = line.strip('\r\n').split(',')
+               if not re.match(r'.*@', email): continue
+               self.ml[email] = (first,last)
 
         # main message
         with open(messagefile) as f:
             self.message = f.read().rstrip('\n')
-
-        # panelists
-        with open(panelfile) as f:
-            self.paneltext = f.read().rstrip('\n')
-
-        # moderators
-        with open(modfile) as f:
-            self.modtext = f.read().rstrip('\n')
-
-        # pre-workshop invitation
-        with open(prefile) as f:
-            self.pretext = f.read().rstrip('\n')
-               
+              
 
     def sendMessage(self, email):
-
-        ######
-        # return if they have been invited
-        #if (self.ml[email][5] == '0'): return
 
         ######
         # prepare the message body
 
         msgtxt = re.sub(r'@FIRST@', self.ml[email][0], self.message)
 
-        ########################################
-        # Handle Panel and Moderator Text
         
-        if (self.ml[email][3]=='1'):
-            # moderator
-            msgtxt = re.sub(r'@PANELTXT@', self.modtext,
-                            msgtxt)
-        else:
-            if len(self.ml[email][2]) > 0:
-                # panelist
-                msgtxt = re.sub(r'@PANELTXT@', self.paneltext,
-                                msgtxt)
-            else:
-                # regular invitee
-                msgtxt = re.sub(r'\n@PANELTXT@\n', '', msgtxt)
-
-        # replace panel topic
-        msgtxt = re.sub(r'@TOPIC@',self.ml[email][2],msgtxt)
-
-        
-        ########################################
-        # Handle Pre-Workshop
-        # add the invitation for pre-workshop folks
-        if (self.ml[email][4] == '1'):
-            # replace text with preworkshop text
-            msgtxt = re.sub(r'@PREWORKSHOP@', self.pretext, msgtxt)
-            msgtxt = re.sub(r'@REPLYURL@', 'https://goo.gl/forms/K2pUkGdRzpDaKXTT2', msgtxt)
-        else:
-            # not invited to pre-workshop, so replace with blank text
-            msgtxt =re.sub(r'\n@PREWORKSHOP@\n', '', msgtxt)
-            msgtxt = re.sub(r'@REPLYURL@', 'https://goo.gl/forms/K2pUkGdRzpDaKXTT2', msgtxt)
-            
-                    
-        #########################################
-        # prepare the message subject line
-        if (self.ml[email][4] == '1'):
-            subject = re.sub(r'@DATE@', '21', self.subject)
-            msgtxt = re.sub(r'@DATE@', '21', msgtxt)
-        else:
-            subject = re.sub(r'@DATE@', '21', self.subject)
-            msgtxt = re.sub(r'@DATE@', '21', msgtxt)
-
-
-
         ########################################
         # prepare the message for sending
         msg = MIMEText(msgtxt)
@@ -111,7 +52,7 @@ class Spammer(object):
         msg['To'] = '{0} {1} <{2}>'.format(self.ml[email][0],
                                             self.ml[email][1],
                                             email)
-        msg['Subject'] = subject
+        msg['Subject'] = self.subject
         if len(self.cc) > 0: msg['cc'] = self.cc 
         if len(self.bcc) > 0: msg['bcc'] = self.bcc
 
@@ -122,7 +63,7 @@ class Spammer(object):
 
         ######
         # actually send the message - UNCOMMENT to Send
-        # self.smtp.sendmail('feamster@cs.princeton.edu',email, msg.as_string())
+        # self.smtp.sendmail('feamster@uchicago.edu',email, msg.as_string())
 
 
     def sendMessages(self):
@@ -139,17 +80,20 @@ class Spammer(object):
 
                         
 ##################################################    
-#     def __init__(self, maillist, messagefile, sender, subject, cc, bcc, panelfile, modfile, prefile):
+#     def __init__(self, maillist, messagefile, sender, subject, cc, bcc):
 
-sp = Spammer('srn-unknown.txt', 'srn-invite-fu-unknown.txt',
-                'Nick Feamster <feamster@cs.princeton.edu>',
-                'Reminder to Book Hotel: NSF-Sponsored Workshop on Self-Running Networks - February 15-16, 2018',
-                ' Jennifer Rexford <jrex@cs.princeton.edu>',
-                'Nick Feamster <feamster@gmail.com>',
-                'panel-logistics.txt',
-                'modtext.txt',
-                'pre-logistics.txt',
-                )
+sp = Spammer(
+        # maillist
+        'uchicago-phd-2020.txt', 
+        #'test.txt',
+        # messagefile
+        'interview-message.txt',
+        # sender
+        'Nick Feamster <feamster@uchicago.edu>',
+        # subject
+        'Talk about Ph.D. at University of Chicago?',
+        '',
+        'Nick Feamster <feamster@gmail.com>',
+        )
 
 sp.sendMessages()
-

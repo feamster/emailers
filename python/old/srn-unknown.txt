@@ -1,0 +1,11 @@
+First Name,Last Name,Email,Institution,Invited,Accepted,Area,Panel,Moderator,Pre-Workshop
+Matei,Zaharia,matei@cs.stanford.edu,,,,,,,
+Peter,Bailis,pbailis@cs.stanford.edu,,,,,,,
+Ben,Zorn,zorn@microsoft.com,,,,,,,
+Ratul,Mahajan,ratul@ratul.org,,,,,,,
+Brighten,Godfrey,pbg@illinois.edu,,,,,,,
+George,Varghese,varghese@cs.ucla.edu,,,,,,,
+Vyas,Sekar,vsekar@andrew.cmu.edu,,,,,,,
+Ethan,Katz-Bassett,ethan@ee.columbia.edu,,,,,,,
+Wyatt,Lloyd,wlloyd@princeton.edu,,,,,,,
+Rachit,Agarwal,rgarawal@cs.cornell.edu,,,,,,,

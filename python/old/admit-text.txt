@@ -1,0 +1,30 @@
+Hi @FIRST@,
+
+I wanted to congratulate you on your admission to Princeton! We’re very
+excited at the possibility that you might come here.
+
+I was hoping you might be interested in chatting about Princeton sometime in
+the coming couple of weeks.
+
+My current interests and research projects include: (1) security and privacy
+in the Internet of Things (IoT), with a particular focus on smart homes; (2)
+global measurement and circumvention of Internet censorship and information
+control, from filtering to propaganda; (3) quality of experience on the
+Internet (e.g., the performance of applications such as streaming video).
+
+Many of these projects are just getting off the ground and seem like they
+might dovetail with some of your interests. In many cases, other faculty in
+the department are also interested in these topics, so there might be some
+interesting opportunities to work with multiple faculty on some interesting
+projects that cross disciplines from networking to systems to security and
+privacy.
+
+I hope that you’re planning to come to our visit day on March 8, we can also talk more there:
+
+  http://www.cs.princeton.edu/visit-day-2017
+
+Congratulations again!  I’m very much looking forward to meeting you. Let me
+know if you'd like to catch up in the coming couple of weeks, as well.
+
+All the best,
+-Nick

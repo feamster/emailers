@@ -1,0 +1,31 @@
+Dear @FIRST@,
+
+We would like to invite you to the second NSF/FCC workshop on tracking quality
+of experience in the Internet.
+
+In the first meeting, we discussed a range of issues related to QoE.  The
+final report of that workshop can be found at
+http://aqualab.cs.northwestern.edu/component/attachments/download/695
+
+Based on the outcome of that meeting, this second meeting will be focused
+somewhat more narrowly on issues relevant to the network context--the
+relationship between QoE and network design and performance.
+
+The high-level goal is to answer two questions:
+
+   - What are the critical design parameters of a network such that a
+   	 particular class of application will achieve good QoE?
+
+   - What measurements are useful and appropriate in determining whether the
+   	 network is impairing QoE?
+
+If you are planning to attend, please register at the following site:
+
+https://www.eventbrite.com/e/nsffcc-2nd-workshop-on-tracking-quality-of-experience-in-the-internet-tickets-29528968941
+
+To expand the group, we would like to ask you for one or two names (and
+contact information) of people you think should be included. The committee
+will review the proposed names and send invite to as many of them as possible.
+
+Thanks!
+David, Fabian, and Nick

@@ -1,0 +1,23 @@
+Dear @FIRST@,
+
+My name is Nick Feamster. I'm a professor in the Computer Science department at
+the University of Chicago. I also direct the Center for Data and Computing,
+which is the university's intellectual hub for data science research on campus.
+
+I work on applications of machine learning to computer networks, with a focus
+on Internet performance, security, and privacy. Some topics I'm specifically
+interested in these days include security and privacy in smart homes, Internet
+censorship, and quality of experience of Internet applications (including video
+streaming and gaming).  Most of my work involves the application of machine
+learning and large-scale Internet measurement to these problems.
+You can read more about me here: https://people.cs.uchicago.edu/~feamster/.
+
+I read your application to University of Chicago, and I'm interested 
+in learning more about your research interests and plans for your Ph.D. I am
+really excited by your past work and interests. 
+
+I'm hoping we can find a time to chat sometime in the coming week.  Would you
+have time? Let me know; I'm really looking forward to talking more with you!
+
+Best, 
+Nick Feamster

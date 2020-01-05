@@ -1,0 +1,163 @@
+Dear @FIRST@,
+
+We invite you to the NSF-sponsored workshop on Self-Running Networks,
+on February 15-16, 2018 at Princeton University.
+
+Please fill out the form below to indicate your interest in attending by
+December 4, 2017.
+https://goo.gl/forms/J1kXgqRwdJfbAamF2
+
+* Vision *
+
+Our vision is that networks might one day be able to largely manage
+themselves, through a combination of query-driven network measurement,
+automated inference techniques, and programmatic control.  
+
+We have outlined a broad research agenda for the workshop in this position paper:
+https://arxiv.org/abs/1710.11583
+(the position paper abstract is at the bottom of this email)
+
+* Motivation *
+
+The tools that network operators often use to gather data from the
+network have not changed appreciably in decades, even as both demands on
+the network and as traffic volumes have increased. If communications
+networks are to achieve high performance, reliability, and security 
+going forward, the research community must rethink how networks are
+managed, from the ground up. Specifically, new security and performance
+requirements create a growing need for new approaches to real-time
+network management that exploit the growing capabilities in 
+programmable networks and systems that support the analysis of real-time
+streaming data. Although there is much previous work on algorithmic
+support for streaming data in the form of sketches, the set of queries
+that network management requires is far more rich than can be supported
+by these methods alone. 
+
+* Outcome*
+
+We expect that the outcome of this workshop will be a set of challenging
+open questions that can serve as a research agenda for the networking
+community for the next several years. 
+
+* Lodging *
+
+We are holding a block of hotel rooms at the Nassau Inn in Princeton at
+a discounted rate of  $155.00. Instructions below.
+
+The group room block will be held until * January 15, 2018*.  All guest
+rooms will be held until this date. Your group is noted in our system
+as: Princeton University Computer Science Department 
+ 
+The method of reservation for your group is: Individual Call - In.
+The guests will have the capability to book their own reservation by
+either of the following two methods: (1) by calling the Reservation
+Department at 1-800 (862)-7728 and using the Booking ID 23589 or (2) through
+our website using the following link: 
+ 
+http://bookings.ihotelier.com/bookings.jsp?groupID=2073563&hotelID=13522
+ 
+If using the website, the individual guest will need to click on “the
+“GROUPS” tab, and when asked for their “ATTENDEE CODE”, they must enter
+their Booking ID, which is 23589. Once they select their dates, all of
+the group information will be displayed. 
+ 
+
+* Preliminary Agenda * 
+
+A preliminary workshop agenda is included below.
+
+Thanks!
+Nick Feamster and Jennifer Rexford
+
+
+———————
+
+Preliminary (Tentative) Agenda
+
+Day 1
+
+9:00 - 9:30 a.m.
+Continental Breakfast / Pastries
+
+9:30 - 10:30 a.m.
+Plenary Talks. Opening talks from industry that frame the needs (“application pull”) of network operators, engineers, and business units that are limited by current network measurement capabilities.
+
+10:30 a.m. - 12:30 p.m.
+Breakout Session #1: Common Network Management Tasks
+
+Breakout groups comprising experts from a cross-section of computer science disciplines to address problems in the areas including:
+• Network security ranging from detection to proactive prediction of attacks.
+• Network performance, from network-level metrics to application quality of experience.
+• Network troubleshooting, diagnosis, and root-cause analysis.
+• Network capacity prediction and provisioning, on various timescales.
+
+We expect that some other topics may also emerge from the morning plenary talks.
+
+12:30 - 1:30 p.m.
+Working Lunch. We anticipate a plenary speaker from the big data/machine learning community who could update the networking community on advances in the field of big data or machine learning, as well as emerging tools that can help advance research on self-running networks.
+
+1:30 - 3:30 p.m.
+Breakout Session #2: Security, Performance, and Policy.
+
+The second set of breakout sessions will address cross-cutting themes, such as:
+	• The relationship of interconnection and interdomain business relationships to application performance, as well as other challenges relating the performing measurements that span multiple independently operated networks.
+	• Legal, policy, and privacy problems and questions that could be affected by or informed by improvements to network measurement infrastructure.
+
+3:30 - 5:30 p.m.
+Reconvene Breakout Session #1. 
+
+The first breakout session reconvenes to incorporate lessons or insights from the cross-cutting themes that could inform the problems discussed from the first breakout. This time should also be dedicated to writing a breakout summary and writeup.
+
+5:30 - 7:30 p.m.
+Reception for Cross-Disciplinary Collaboration Building
+
+Day 2
+
+8:00 a.m. - 8:30 a.m.
+Continental Breakfast
+
+8:30 a.m.  - 12:30 p.m.
+Breakout Session #3: The Relationship Between Measurement and Control. 
+
+Previous research on software-defined networking has largely focused on how programmable software controllers can better manage network traffic. This breakout session will ask researchers to think about the role that next-generation measurement technology can play in this control loop. 
+
+We will start the discussion with two questions: (1) How programmatic control, coupled with programmable data planes, can guide more scalable, efficient measurements; (2) How inference of higher-level network properties can better guide network control and automation to help realize the goals of “self-driving networks”.
+
+We also expect that these discussions will give rise to challenging research questions that may arise from attempts to close the control loop between measurement and control.
+
+This session is twice as long as other breakout sessions, as time is allotted for both discussion and writeup.
+
+1:30 p.m. - 3:30 p.m.
+Reconvene Breakout #2. 
+
+Further discussion and writeup on the cross-cutting themes above.
+
+---------------------------
+
+Why (and How) Networks Should Run Themselves
+--------------------------------------------
+The proliferation of networked devices, systems, and applications that
+we depend on every day makes managing networks more important than
+ever. The increasing security, availability, and performance demands
+of these applications suggest that these increasingly difficult
+network management problems be solved in real time, across a complex
+web of interacting protocols and systems. Alas, just as the importance
+of network management has increased, the network has grown so complex
+that it is seemingly unmanageable. In this new era, network management
+requires a fundamentally new approach. 
+
+Instead of optimizations based on closed-form analysis of individual
+protocols, network operators need data-driven, machine-learning-based
+models of end-to-end and application performance based on high-level
+policy goals and a holistic view of the underlying components. Instead
+of anomaly detection algorithms that operate on offline analysis of
+network traces, operators need classification and detection algorithms
+that can make real-time, closed-loop decisions. Networks should learn
+to drive themselves. This paper explores this concept, discussing how
+we might attain this ambitious goal by more closely coupling
+measurement with real-time control and by relying on learning for
+inference and prediction about a networked application or system, as
+opposed to closed-form analysis of individual protocols.
+
+
+

@@ -1,0 +1,75 @@
+Dear @FIRST@,
+
+We are very excited to have you on a panel tomorrow at the Princeton
+Center for Information Technology Policy (CITP) for the conference on
+Security and Privacy for the Internet of Things.  To remind you, you're
+signed up to speak on the @TOPIC@ panel.
+
+You can see the full schedule for the conference, including a schedule
+of all panels here:
+https://citp.princeton.edu/event/conference-internet-of-things/
+
+There are nearly 200 people registered for the conference, and there
+will also be live-streaming, so there will be quite an audience.
+
+**To the Panelists**: I've contacted your panel moderator earlier this
+morning to get in touch to see about kicking off some discussion about
+each panel prior to tomorrow.  The format can be relatively fluid, as we
+want to leave ample time for discussion and questions from our audience,
+but we would ask you to have some prepared remarks.  Some possible
+thought questions/food for thought are included at the bottom of this
+email. 
+
+Here is some logistical information:
+* Each panel's length is 75 minutes.  
+* There are four panelists on each panel, plus the moderator (who may
+  choose to set the stage with some initial comments).
+* If we assume no more than 10 minutes per panelist, plus some moderator
+  commentary, that leaves about 30 minutes for each panel for moderator
+  questions plus Q&A from the audience.
+* You are welcome to use slides if you like---we do have projection
+  capability. However, slides are not necessary if you would rather
+  speak from notes.  You can speak from the podium or the dais,
+  whichever you prefer.
+* As a reminder, the conference will be recorded.
+
+Thanks very much!
+Nick Feamster
+Acting Director, CITP
+
+p.s. Sorry that this email is coming later than it should!
+
+------------
+
+
+Some of the topics and questions that the conference plans to address include:
+
+Robustness.
+- How long can consumers expect to receive software updates and security
+  patches for the devices that they purchase? 
+- How should manufacturers communicate end-of-life expectations to
+  consumers? What are reasonable end-of-life expectations? 
+- What are the best ways to guarantee robust device operation in the
+  face of network failures and other network disconnection events? 
+- What are the possible approaches for addressing “trolley problems” in
+  IoT settings, where software has been programmed to make a particular
+  choice that encodes ethics? 
+
+Privacy.
+- What are the best technical and policy mechanisms to ensure the security of private data?
+- How can IoT technologies best provide users with transparency,
+  control, and choice over how the data from IoT devices are collected,
+  shared, and retained? 
+- How can we provide better visibility into and control over how their
+  devices communicate with cloud service providers and other third
+  parties?  
+- To what extent can consumers maintain control over how data from IoT
+  devices is collected, shared, and retained? 
+
+Security.
+- Who should bear the liability or responsibility for ensuring that
+  connected IoT devices remain secure and up-to-date? 
+- Given that many IoT devices may ship with software vulnerabilities
+  that will never be patched, what are the appropriate ways to deal with
+  these devices?	    
+

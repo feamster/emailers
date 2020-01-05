@@ -1,0 +1,58 @@
+Dear @FIRST@,
+
+We are excited to invite you to the CITP Research Conference on Security
+and Privacy for the Internet of Things to be held on October 21, 2016, at
+the Friend Center Convocation Room on the Princeton Campus.  
+
+The conference will be a full-day event with speakers and several
+panels.  We are planning three panels, with high-level topics and
+example discussion points outlined at the bottom of this message.
+
+@PANELTXT@
+
+We sincerely hope you can attend.  Please let us know by September 21, 2016
+whether you can participate by filling out this response form:
+@REPLYURL@
+
+More information about the conference, including planned topics for
+discussion, is here: 
+https://citp.princeton.edu/event/conference-internet-of-things/
+
+Thanks very much!
+Nick Feamster
+Acting Director, CITP
+
+------------
+
+
+Some of the topics and questions that the conference plans to address include:
+
+Robustness.
+- How long can consumers expect to receive software updates and security
+  patches for the devices that they purchase? 
+- How should manufacturers communicate end-of-life expectations to
+  consumers? What are reasonable end-of-life expectations? 
+- What are the best ways to guarantee robust device operation in the
+  face of network failures and other network disconnection events? 
+- What are the possible approaches for addressing “trolley problems” in
+  IoT settings, where software has been programmed to make a particular
+  choice that encodes ethics? 
+
+Privacy.
+- What are the best technical and policy mechanisms to ensure the security of private data?
+- How can IoT technologies best provide users with transparency,
+  control, and choice over how the data from IoT devices are collected,
+  shared, and retained? 
+- How can we provide better visibility into and control over how their
+  devices communicate with cloud service providers and other third
+  parties?  
+- To what extent can consumers maintain control over how data from IoT
+  devices is collected, shared, and retained? 
+
+Security.
+- Who should bear the liability or responsibility for ensuring that
+  connected IoT devices remain secure and up-to-date? 
+- Given that many IoT devices may ship with software vulnerabilities
+  that will never be patched, what are the appropriate ways to deal with
+  these devices?	    
+

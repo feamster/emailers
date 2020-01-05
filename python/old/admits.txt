@@ -1,0 +1,9 @@
+First Name,Last Name,Institution,Email,Area,Panel,Moderator,Workshop,Invited,Accepted
+Meryem,Essaidi,,essaidi.meryem@gmail.com,,,,,,
+James,Hong,,jamesh93@stanford.edu,,,,,,
+Evgenya,Pergament,,jenyapergament@gmail.com,,,,,,
+Josh,Fried,,fjosh@seas.upenn.edu,,,,,,
+Han,Zhang,,zhanghan010@hotmail.com,,,,,,
+Arun,Venkat,,zhanghan010@hotmail.com,,,,,,
+Soham,Sankaran,,soham.sankaran@gmail.com,,,,,,
+Gur-Eyal,Sela,,eyal3400@gmail.com,,,,,,
